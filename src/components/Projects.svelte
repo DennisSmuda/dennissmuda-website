@@ -7,7 +7,10 @@
 <section class="main-padding projects">
   <div class="container">
     <div class="subline">latest</div>
-    <p class="big-paragraph">What I'm working on</p>
+    <p class="big-paragraph">
+      We're building
+      <span class="emphasis">KontaktHelfer.</span>
+    </p>
     <p>
       Right now we are building a platform to handle contact-list keeping via
       qr-codes.

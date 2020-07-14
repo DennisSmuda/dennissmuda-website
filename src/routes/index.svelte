@@ -1,48 +1,25 @@
 <script>
+  import Hero from "../components/Hero.svelte";
   import Projects from "../components/Projects.svelte";
+  import Footer from "../components/Footer.svelte";
 </script>
 
 <style>
-  p {
-    color: var(--copy-color);
-    max-width: 380px;
-    margin: 0.5rem 0;
-  }
-
-  h1 {
-    display: inline-flex;
-    text-align: left;
-    border-bottom: 4px solid var(--accent-color);
-    padding-bottom: 1rem;
-  }
-
-  .hero {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 2rem;
-  }
-
-  @media screen and (min-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .intro {
-    margin-top: 6rem;
-    max-width: 380px;
-    align-self: end;
-  }
-
   .face--container {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .face--container {
+      justify-content: center;
+    }
   }
 
   .face {
@@ -77,31 +54,11 @@
   <title>Dennis Smuda</title>
 </svelte:head>
 
-<div class="hero main-padding">
-  <div class="title">
-    <h1>
-      Dennis
-      <br />
-      Smuda
-    </h1>
-  </div>
-  <div class="intro">
-    <div class="subline">It's Me</div>
-    <p class="big-paragraph">
-      <span class="keyword">Frontend Developer</span>
-      from
-      <span class="emphasis">Germany</span>
-      .
-    </p>
-    <p>
-      There is not much to see yet. But that's okay, you can still
-      <a href="mailto:smuda.dennis@gmail.com">reach me</a>
-      .
-    </p>
-  </div>
-</div>
+<Hero />
 
 <Projects />
+
+<Footer />
 
 <div class="face--container">
   <div class="face">
