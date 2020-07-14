@@ -6,6 +6,7 @@
 <style>
   nav {
     display: flex;
+    justify-content: space-between;
     user-select: none;
   }
 
@@ -46,7 +47,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
     padding: 0 2.5rem;
     cursor: pointer;
   }
@@ -60,7 +62,7 @@
   }
 
   .light-mode-toggle {
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     right: 0;
     padding: 1rem;
@@ -69,34 +71,34 @@
 
 <nav>
   <a href="." class="brand title">
-    DS
+    ds
     <span>.</span>
   </a>
   <ul>
-    <li>
+    <!-- <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         home
       </a>
-    </li>
-    <li>
+    </li> -->
+    <!-- <li>
       <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         about
       </a>
-    </li>
+    </li> -->
 
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
+    <!-- <li>
       <a
         rel="prefetch"
         aria-current={segment === 'blog' ? 'page' : undefined}
         href="blog">
         blog
       </a>
-    </li>
+    </li> -->
   </ul>
+  <div class="light-mode-toggle">
+    <Toggle />
+  </div>
 </nav>
 
-<div class="light-mode-toggle">
-  <Toggle />
-</div>

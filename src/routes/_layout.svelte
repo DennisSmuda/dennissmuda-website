@@ -5,7 +5,7 @@
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Rubik:wght@500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
   :global(body) {
     background-color: #191c26;
@@ -29,7 +29,7 @@
   }
 
   :global(h1, h2, h3, h4, h5, h6, .title) {
-    font-family: "Alegreya", serif;
+    font-family: "Poppins", serif;
   }
 
   :global(p) {
