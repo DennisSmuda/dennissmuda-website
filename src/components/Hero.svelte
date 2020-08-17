@@ -50,8 +50,7 @@
     </p>
     <p>
       There is not much to see yet. But that's okay, you can still
-      <a href="mailto:smuda.dennis@gmail.com">reach me</a>
-      .
+      <a href="mailto:smuda.dennis@gmail.com">reach me.</a>
     </p>
   </div>
 </div>

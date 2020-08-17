@@ -17,7 +17,9 @@
     --accent-color: #ea7b15;
     --emphasis-color: #9da6c3;
     --link-color: #38cfff;
+    --background-color: #191c26;
     --second-background-color: #1d212f;
+    font-size: 18px;
   }
 
   :global(body.light-mode) {
@@ -25,8 +27,9 @@
     color: #191c26;
 
     --primary-color: #191c26;
-    --copy-color: #7d7861;
+    --copy-color: #6d6955;
     --link-color: #00a1d3;
+    --background-color: #fffbeb;
     --second-background-color: #fcf5d8;
   }
 
@@ -36,6 +39,7 @@
 
   :global(p) {
     color: var(--copy-color);
+    margin: 0.25em 0 1em;
   }
 
   :global(p a) {
@@ -76,12 +80,16 @@
     font-size: 2rem;
     line-height: 1.25;
     max-width: initial;
-    margin: 1rem 0;
+    margin: 0.5em 0 0.25em;
   }
 
   :global(.container) {
     margin: 0 auto;
     max-width: 1440px;
+  }
+
+  :global(.container--narrow) {
+    max-width: 1000px;
   }
 
   /* @media (min-width: 560px) {
