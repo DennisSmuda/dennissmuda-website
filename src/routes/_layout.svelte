@@ -57,6 +57,12 @@
   :global(.keyword) {
     color: var(--accent-color);
   }
+  :global(.h-padding) {
+    padding: 0 clamp(2.5rem, 10vw, 2.5rem) 0;
+  }
+  :global(.secondary-background) {
+    background-color: var(--second-background-color);
+  }
 
   :global(.main-padding) {
     padding: 2.5rem clamp(2.5rem, 10vw, 2.5rem) 5rem;

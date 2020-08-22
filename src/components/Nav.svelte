@@ -21,13 +21,14 @@
     color: var(--copy-color);
   }
 
-  [aria-current] {
+  [aria-current],
+  a[aria-current] {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     color: var(--primary-color);
   }
 
-  [aria-current]::after {
+  [aria-current]::after:not(.brand) {
     position: absolute;
     content: "";
     width: calc(100% - 1em);
@@ -41,6 +42,7 @@
     text-decoration: none;
     padding: 1em 0.5em;
     display: block;
+    color: var(--copy-color);
   }
 
   .brand {
@@ -67,14 +69,28 @@
     right: 0;
     padding: 1rem;
   }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
 
 <nav>
-  <a href="." class="brand title">
+  <a
+    href="."
+    class="brand title"
+    aria-current={segment === undefined ? 'page' : undefined}>
     ds
     <span>.</span>
   </a>
-  <ul>
+  <div class="menu">
+    <a
+      rel="prefetch"
+      aria-current={segment === 'blog' ? 'page' : undefined}
+      href="blog">
+      writing
+    </a>
     <!-- <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         home
@@ -89,16 +105,9 @@
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
     <!-- <li>
-      <a
-        rel="prefetch"
-        aria-current={segment === 'blog' ? 'page' : undefined}
-        href="blog">
-        blog
-      </a>
     </li> -->
-  </ul>
-  <div class="light-mode-toggle">
-    <Toggle />
+    <div class="light-mode-toggle">
+      <Toggle />
+    </div>
   </div>
 </nav>
-
