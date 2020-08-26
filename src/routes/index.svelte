@@ -13,7 +13,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    pointer-events: none;
+    /* pointer-events: none; */
+    transition: transform 0.3s ease;
+    transform: translateY(8px);
+  }
+  .face--container:hover {
+    transform: translateY(-4px);
   }
 
   @media screen and (min-width: 768px) {
@@ -24,7 +29,7 @@
 
   .face {
     width: 20%;
-    height: 3rem;
+    /* height: 3rem; */
   }
 
   .eyes {
@@ -38,7 +43,19 @@
     height: 0.5rem;
     background-color: var(--copy-color);
     border-radius: 2rem;
-    margin: 0 1rem;
+    margin: 0 0.75rem;
+    transform: scale(1, 1);
+    animation: blink 5s linear alternate infinite;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      transform: scale(1, 0);
+    }
+    5%,
+    95% {
+      transform: scale(1, 1);
+    }
   }
 
   .mouth {
@@ -46,7 +63,7 @@
     height: 1rem;
     background-color: var(--copy-color);
     border-radius: 10vw;
-    margin: 0.5rem auto 0;
+    margin: 0.25rem auto 0;
   }
 </style>
 
