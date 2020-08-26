@@ -85,12 +85,12 @@
     <span>.</span>
   </a>
   <div class="menu">
-    <a
+    <!-- <a
       rel="prefetch"
       aria-current={segment === 'blog' ? 'page' : undefined}
       href="blog">
       writing
-    </a>
+    </a> -->
     <!-- <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         home
