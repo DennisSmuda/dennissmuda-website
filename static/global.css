@@ -47,7 +47,6 @@ code {
   border: 2px solid var(--primary-color);
   padding: 0.5rem 1rem;
   font-size: 1.125rem;
-  margin-top: 1rem;
   text-decoration: none;
   border-radius: 0.5rem;
   display: flex;
@@ -68,11 +67,16 @@ code {
 }
 
 .button--primary {
+  color: var(--background-color);
   background-color: var(--primary-color);
 }
 
 .button-row {
   display: flex;
+}
+.button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .button-row > * {

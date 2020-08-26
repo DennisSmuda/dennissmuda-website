@@ -1,22 +1,68 @@
 <script>
   import { onMount } from "svelte";
+  import Cookie from "../components/Cookie.svelte";
+  import { fade, fly } from "svelte/transition";
+  import { notifier } from "../components/Notifications/notifier.js";
+  import Display from "../components/Notifications/Display.svelte";
 
   let totalCookies = 0;
+  let maxCookies = 0;
+  let perSecond = 0;
+  let showIntro;
+
+  let numButterPounders = 0;
 
   onMount(() => {
+    if (!process.browser) return;
     const cookies = localStorage.getItem("collectedCookies");
+    const perSecondSaved = localStorage.getItem("perSecond");
     console.log("Mounted", cookies);
-    if (parseInt(cookies)) {
-      totalCookies = parseInt(cookies);
+    if (parseFloat(cookies)) {
+      totalCookies = parseFloat(cookies);
+      showIntro = false;
+      maxCookies = localStorage.getItem("maxCookies");
+    } else {
+      showIntro = true;
     }
+
+    if (perSecondSaved) perSecond = parseFloat(perSecondSaved);
+
+    setInterval(() => {
+      totalCookies += parseFloat(perSecond);
+      localStorage.setItem("collectedCookies", totalCookies);
+      localStorage.setItem("perSecond", perSecond);
+      localStorage.setItem("maxCookies", maxCookies);
+      console.log("max coolies", maxCookies);
+    }, 1000);
   });
 
   const collectCookie = () => {
-    console.log("collect cookie");
     totalCookies += 1;
+    if (totalCookies > maxCookies) maxCookies = totalCookies;
+    showIntro = false;
+    localStorage.setItem("collectedCookies", totalCookies);
+
+    if (totalCookies === 1) {
+      notifier.success("Interesting.. 🤔?");
+    }
+
+    if (totalCookies === 15) {
+      notifier.info("you learned how to make butter", 6000);
+    }
   };
   const eatCookie = () => {
     console.log("Eat");
+    notifier.show("danger", "JO ALLA", 300);
+  };
+
+  const addFarm = i => {
+    console.log("Farm", i);
+    if (i === 1) {
+      // Butter Pounder
+      totalCookies -= i * 10;
+      perSecond += 0.25;
+      numButterPounders += 1;
+    }
   };
 </script>
 
@@ -24,197 +70,179 @@
   @media screen and (min-width: 768px) {
     .game-container {
       display: grid;
-      grid-template-columns: 300px 1fr;
-    }
-    .content {
-      max-width: 768px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .clicker {
-      border-radius: 1rem;
-      padding: 0.5rem;
+      gap: 1rem;
+      grid-template-columns: minmax(420px, 0.25fr) 1fr;
+      max-width: 1024px;
+      margin: 0 auto;
     }
   }
+  .content {
+    max-width: 768px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    user-select: none;
+  }
+
+  .clicker {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
   .cookie-container {
     margin: 2rem 1rem;
     cursor: pointer;
+    transform: scale(1);
+    transition: scale 0.15s;
   }
   .cookie-container:active {
-    transform: translateY(1px);
+    transform: scale(0.95);
   }
-  #cookie {
-    animation: float 9s ease alternate infinite;
+  .number {
+    font-size: 2rem;
+    font-weight: 900;
+    padding-right: 0.5rem;
   }
-
-  #eye-1,
-  #eye-2 {
-    stroke-dasharray: 4px;
-    /* stroke-dashoffset: -2px; */
-    animation: blink 5s linear alternate infinite;
+  .cookie-info {
+    flex-grow: 1;
+    margin-left: 1rem;
+    user-select: none;
   }
-  @keyframes blink {
-    0%,
-    100% {
-      stroke-dashoffset: -3px;
-    }
-    5%,
-    95% {
-      stroke-dashoffset: 0px;
-    }
+  .cookie-info .number {
+    font-size: 3rem;
+    min-width: 4rem;
+    display: block;
+    text-align: right;
   }
-  @keyframes float {
-    0% {
-      transform: translate3d(1px, 2px, 0) rotate(-2deg);
-    }
-    33% {
-      transform: translate3d(-1px, -1px, 0) rotate(0deg);
-    }
-    66% {
-      transform: translate3d(-2px, 1px, 0) rotate(2deg);
-    }
-    100% {
-      transform: translate3d(0px, 3px, 0) rotate(-2deg);
-    }
+  .summary {
+    display: flex;
+    align-items: baseline;
+  }
+  .farm {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    user-select: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .farm .image {
+    min-width: 80px;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
-{#if totalCookies === 0}
+<Display />
+
+{#if totalCookies === 0 && showIntro === true}
   <section class="main-padding">
     <div class="content">
       <h1>Awkward</h1>
       <p>You find a lone cookie...</p>
-      <div class="cookie-container">
-        <svg
-          id="cookie"
-          width="81"
-          height="80"
-          viewBox="0 0 81 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <circle cx="41" cy="40" r="40" fill="#F7D29C" />
-          <mask
-            id="mask0"
-            mask-type="alpha"
-            maskUnits="userSpaceOnUse"
-            x="1"
-            y="0"
-            width="80"
-            height="80">
-            <circle cx="41" cy="40" r="40" fill="#F7D29C" />
-          </mask>
-          <g mask="url(#mask0)">
-            <path
-              d="M72.8726 64.7585C64.2343 76.1139 12.6528 83.5678 -0.364502
-              32.8253L3.24362 86.1326L66.9094 89.9103L72.8726 64.7585Z"
-              fill="#270606"
-              fill-opacity="0.1" />
-          </g>
-          <ellipse
-            cx="6.99999"
-            cy="49"
-            rx="2"
-            ry="4"
-            transform="rotate(-10.0189 6.99999 49)"
-            fill="#634201" />
-          <circle cx="64.5" cy="51.5" r="3.5" fill="#634201" />
-          <ellipse
-            cx="27.6874"
-            cy="9.41322"
-            rx="5"
-            ry="3"
-            transform="rotate(-18.2248 27.6874 9.41322)"
-            fill="#634201" />
-          <ellipse
-            cx="34.7555"
-            cy="63.43"
-            rx="2.0403"
-            ry="3"
-            transform="rotate(93.9989 34.7555 63.43)"
-            fill="#634201" />
-          <ellipse
-            cx="57.5726"
-            cy="14.512"
-            rx="6.5"
-            ry="5"
-            transform="rotate(15 57.5726 14.512)"
-            fill="#634201" />
-          <ellipse
-            cx="66.1251"
-            cy="71.0461"
-            rx="6.29509"
-            ry="3.34689"
-            transform="rotate(-37.3409 66.1251 71.0461)"
-            fill="#634201" />
-          <ellipse
-            cx="6.04604"
-            cy="24.1252"
-            rx="6.29509"
-            ry="3.34689"
-            transform="rotate(-60 6.04604 24.1252)"
-            fill="#634201" />
-          <ellipse
-            cx="21.338"
-            cy="73.1189"
-            rx="4.17891"
-            ry="3.34689"
-            transform="rotate(34.2695 21.338 73.1189)"
-            fill="#634201" />
-          <g class="face">
-            <path
-              d="M35 46C40 49.5 42 49.5 47.5 46"
-              stroke="#271A01"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round" />
-            <line
-              id="eye-1"
-              x1="29"
-              y1="35"
-              x2="29"
-              y2="39"
-              stroke="#271A01"
-              stroke-width="4"
-              stroke-linecap="round" />
-            <line
-              id="eye-2"
-              x1="54"
-              y1="35"
-              x2="54"
-              y2="39"
-              stroke="#271A01"
-              stroke-width="4"
-              stroke-linecap="round" />
-          </g>
-        </svg>
+      <div on:click={collectCookie} class="cookie-container">
+        <Cookie />
       </div>
 
-      <p>You make an obvious choice</p>
-
-      <div class="button-row">
-        <!-- <button class="button" on:click={eatCookie}>
-          <span>eat it</span>
-        </button> -->
-        <button class="button" on:click={collectCookie}>
-          <span>start business</span>
-        </button>
-      </div>
+      <p>You make the obvious choice and start a cookie business!</p>
     </div>
   </section>
-{:else}
+{/if}
+{#if showIntro === false}
   <section class="main-padding game-container">
-    <div class="clicker secondary-background">
-      <h1>{totalCookies}</h1>
-      <button class="button button--primary" on:click={collectCookie}>
+    <div in:fade class="clicker secondary-background">
+      <div on:click={collectCookie} class="cookie-container">
+        <Cookie />
+      </div>
+      <div class="cookie-info">
+        <div class="summary">
+          <span id="numCookies" class="number">
+            {parseFloat(totalCookies).toFixed(2)}
+          </span>
+          cookies
+        </div>
+        {#if perSecond > 0}
+          <div>
+            <span class="perSecond">{perSecond}</span>
+            per Second
+          </div>
+        {/if}
+      </div>
+      <!-- <button class="button button--primary" on:click={collectCookie}>
         <span>Collect!</span>
-      </button>
+      </button> -->
     </div>
     <div class="farms">
-      {#if totalCookies >= 10}
-        <div class="farm">Get Butter Farm</div>
+      {#if maxCookies >= 15}
+        <div in:fade class="farm secondary-background">
+          <div class="image">
+            <svg
+              width="34"
+              height="63"
+              viewBox="0 0 34 63"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect
+                y="63"
+                width="63"
+                height="34"
+                rx="2"
+                transform="rotate(-90 0 63)"
+                fill="#ecdd56" />
+              <g class="face">
+                <path
+                  d="M11 30.656C16 32.448 18 32.448 23.5 30.656"
+                  stroke="#271A01"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <line
+                  class="eye"
+                  x1="5"
+                  y1="26"
+                  x2="5"
+                  y2="26.096"
+                  stroke="#271A01"
+                  stroke-width="4"
+                  stroke-linecap="round" />
+                <line
+                  class="eye"
+                  x1="30"
+                  y1="26"
+                  x2="30"
+                  y2="26.096"
+                  stroke="#271A01"
+                  stroke-width="4"
+                  stroke-linecap="round" />
+              </g>
+            </svg>
+          </div>
+          <div class="info">
+            <div class="summary">
+
+              <div class="number">
+                <!-- {#if totalCookies >= 10} -->
+                {numButterPounders}
+              </div>
+              butter pounders
+            </div>
+            <div class="buy">
+              <button
+                class="button"
+                on:click={() => addFarm(1)}
+                disabled={totalCookies < 10}>
+                buy
+              </button>
+            </div>
+          </div>
+        </div>
       {/if}
     </div>
   </section>
