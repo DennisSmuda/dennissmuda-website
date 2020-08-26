@@ -19,7 +19,7 @@
   }
 
   .intro {
-    /* margin-top: 6rem; */
+    margin-top: 2rem;
     max-width: 380px;
     align-self: end;
   }
@@ -50,7 +50,7 @@
     <!-- <div class="line" /> -->
   </div>
   <div class="intro">
-    <div class="subline">It's Me</div>
+    <div class="subline">it's me</div>
     <p class="big-paragraph">
       <span class="keyword">Frontend Developer</span>
       <span>from</span>

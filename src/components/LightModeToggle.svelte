@@ -32,12 +32,22 @@
 
 <button on:click={toggle}>
   {#if isLightMode}
-    <svg viewBox="0 0 20 20" fill="currentColor" class="moon">
+    <svg
+      viewBox="0 0 20 20"
+      width="24px"
+      height="24px"
+      fill="currentColor"
+      class="moon">
       <path
         d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
     </svg>
   {:else}
-    <svg viewBox="0 0 20 20" fill="currentColor" class="sun w-6 h-6">
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="sun"
+      width="24px"
+      height="24px">
       <path
         fill-rule="evenodd"
         d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4

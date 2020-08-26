@@ -137,10 +137,7 @@
         We've built
         <span class="emphasis">KontaktHelfer.</span>
       </p>
-      <p>
-        Right now we are building a platform to handle contact-list keeping via
-        qr-codes.
-      </p>
+      <p>A platform to handle contact-list keeping via qr-codes.</p>
       <div class="tech-tags tags">
         <div class="tag tag--vue">vue.js</div>
         <div class="tag tag--graphql">graphql</div>
