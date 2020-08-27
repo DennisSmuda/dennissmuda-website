@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import Cookie from "../components/Cookie.svelte";
   import { fade, fly } from "svelte/transition";
   import { notifier } from "../components/Notifications/notifier.js";
@@ -32,6 +32,7 @@
   ];
 
   let numButterPounders = 0;
+  let rafId;
 
   onMount(() => {
     if (!process.browser) return;
@@ -50,7 +51,13 @@
 
     if (perSecondSaved) perSecond = parseFloat(perSecondSaved);
 
-    // window.requestAnimationFrame(loop);
+    rafId = window.requestAnimationFrame(loop);
+  });
+
+  onDestroy(() => {
+    if (!process.browser) return;
+    console.log("Destroy", rafId);
+    cancelAnimationFrame(rafId);
   });
 
   const collectCookie = () => {
@@ -83,12 +90,30 @@
     localStorage.setItem("maxCookies", maxCookies);
   };
 
-  const loop = () => {
-    console.log("Loop", displayNumber);
-    displayNumber = (parseFloat(displayNumber) + 0.02).toFixed(2);
-    console.log("Loop", displayNumber + 0.2);
-    window.requestAnimationFrame(loop);
+  let lastSecondTime = 0;
+
+  const loop = now => {
+    let targetNumber = totalCookies;
+
+    displayNumber = lerp(displayNumber, targetNumber, 0.1, perSecond === 0);
+
+    if (!lastSecondTime || now - lastSecondTime >= 1 * 1000) {
+      lastSecondTime = now;
+      // createNewObject();
+      console.log("Add Stuff");
+      totalCookies += perSecond;
+      targetNumber += perSecond;
+    }
+
+    displayNumber = lerp(displayNumber, targetNumber, 0.1, false);
+
+    rafId = window.requestAnimationFrame(loop);
   };
+
+  function lerp(start, end, amt, ret = false) {
+    if (end - start < 0.1) return end.toFixed(5);
+    return (1 - amt) * start + amt * end;
+  }
 </script>
 
 <style>
@@ -173,10 +198,15 @@
     top: 0.5rem;
     left: 1rem;
   }
+  .farm .info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+  }
 </style>
 
 <Display />
-{displayNumber}
+
 {#if totalCookies === 0 && showIntro === true}
   <section class="main-padding">
     <div class="content">
@@ -199,7 +229,8 @@
       <div class="cookie-info">
         <div class="summary">
           <span id="numCookies" class="number">
-            {parseFloat(totalCookies).toFixed(2)}
+            <!-- {parseFloat(totalCookies).toFixed(2)} -->
+            {displayNumber}
           </span>
           cookies
         </div>
