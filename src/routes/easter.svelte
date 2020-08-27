@@ -4,11 +4,32 @@
   import { fade, fly } from "svelte/transition";
   import { notifier } from "../components/Notifications/notifier.js";
   import Display from "../components/Notifications/Display.svelte";
+  import Butter from "../components/illustrations/Butter.svelte";
 
   let totalCookies = 0;
   let maxCookies = 0;
   let perSecond = 0;
   let showIntro;
+  let displayNumber = 0.0;
+
+  let shops = [
+    {
+      name: "Butter Stick",
+      initialCost: 3.738,
+      coefficient: 1.07,
+      initialTime: 0.6,
+      initialRevenue: 1,
+      initialProductivity: 1.67
+    },
+    {
+      name: "Chocolate Bar",
+      initialCost: 60.0,
+      coefficient: 1.15,
+      initialTime: 3,
+      initialRevenue: 60,
+      initialProductivity: 20
+    }
+  ];
 
   let numButterPounders = 0;
 
@@ -16,7 +37,9 @@
     if (!process.browser) return;
     const cookies = localStorage.getItem("collectedCookies");
     const perSecondSaved = localStorage.getItem("perSecond");
+
     console.log("Mounted", cookies);
+
     if (parseFloat(cookies)) {
       totalCookies = parseFloat(cookies);
       showIntro = false;
@@ -27,32 +50,21 @@
 
     if (perSecondSaved) perSecond = parseFloat(perSecondSaved);
 
-    setInterval(() => {
-      totalCookies += parseFloat(perSecond);
-      localStorage.setItem("collectedCookies", totalCookies);
-      localStorage.setItem("perSecond", perSecond);
-      localStorage.setItem("maxCookies", maxCookies);
-      console.log("max coolies", maxCookies);
-    }, 1000);
+    // window.requestAnimationFrame(loop);
   });
 
   const collectCookie = () => {
     totalCookies += 1;
     if (totalCookies > maxCookies) maxCookies = totalCookies;
     showIntro = false;
-    localStorage.setItem("collectedCookies", totalCookies);
 
     if (totalCookies === 1) {
       notifier.success("Interesting.. 🤔?");
     }
 
     if (totalCookies === 15) {
-      notifier.info("you learned how to make butter", 6000);
+      notifier.info("you learn how to exploit butter", 6000);
     }
-  };
-  const eatCookie = () => {
-    console.log("Eat");
-    notifier.show("danger", "JO ALLA", 300);
   };
 
   const addFarm = i => {
@@ -63,6 +75,19 @@
       perSecond += 0.25;
       numButterPounders += 1;
     }
+  };
+
+  const saveGame = () => {
+    localStorage.setItem("collectedCookies", totalCookies);
+    localStorage.setItem("perSecond", perSecond);
+    localStorage.setItem("maxCookies", maxCookies);
+  };
+
+  const loop = () => {
+    console.log("Loop", displayNumber);
+    displayNumber = (parseFloat(displayNumber) + 0.02).toFixed(2);
+    console.log("Loop", displayNumber + 0.2);
+    window.requestAnimationFrame(loop);
   };
 </script>
 
@@ -151,7 +176,7 @@
 </style>
 
 <Display />
-
+{displayNumber}
 {#if totalCookies === 0 && showIntro === true}
   <section class="main-padding">
     <div class="content">
@@ -193,51 +218,12 @@
       {#if maxCookies >= 15}
         <div in:fade class="farm secondary-background">
           <div class="image">
-            <svg
-              width="34"
-              height="63"
-              viewBox="0 0 34 63"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect
-                y="63"
-                width="63"
-                height="34"
-                rx="2"
-                transform="rotate(-90 0 63)"
-                fill="#ecdd56" />
-              <g class="face">
-                <path
-                  d="M11 30.656C16 32.448 18 32.448 23.5 30.656"
-                  stroke="#271A01"
-                  stroke-width="4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <line
-                  class="eye"
-                  x1="5"
-                  y1="26"
-                  x2="5"
-                  y2="26.096"
-                  stroke="#271A01"
-                  stroke-width="4"
-                  stroke-linecap="round" />
-                <line
-                  class="eye"
-                  x1="30"
-                  y1="26"
-                  x2="30"
-                  y2="26.096"
-                  stroke="#271A01"
-                  stroke-width="4"
-                  stroke-linecap="round" />
-              </g>
-            </svg>
+            <Butter />
           </div>
           <div class="info">
 
             <div class="number">{numButterPounders}</div>
-            <div class="summary">butter pounders</div>
+            <div class="summary">butter sticks</div>
             <div class="buy">
               <button
                 class="button button--small"
