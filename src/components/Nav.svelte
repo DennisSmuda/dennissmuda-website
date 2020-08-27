@@ -38,9 +38,26 @@
     border-radius: 0.5rem;
     width: 3rem;
     height: 3rem;
+    position: relative;
   }
   a:hover {
     background-color: var(--third-background-color);
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    border-radius: 0.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    right: -0.25rem;
+    top: -0.25rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
   }
 
   .brand {
@@ -98,6 +115,7 @@
           00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
           3z" />
       </svg>
+      <div class="badge">1</div>
     </a>
     <!-- <a
       rel="prefetch"

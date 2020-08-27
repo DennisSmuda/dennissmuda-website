@@ -6,7 +6,7 @@
   .eye {
     /* stroke-dashoffset: -2px; */
     animation: blink 3s linear alternate infinite;
-    transform-origin: center;
+    transform-origin: 0% 45%;
   }
   @keyframes blink {
     0%,

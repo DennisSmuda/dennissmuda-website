@@ -5,6 +5,8 @@
   import { notifier } from "../components/Notifications/notifier.js";
   import Display from "../components/Notifications/Display.svelte";
   import Butter from "../components/illustrations/Butter.svelte";
+  import Chocolate from "../components/illustrations/Chocolate.svelte";
+  import Egg from "../components/illustrations/Egg.svelte";
 
   let totalCookies = 0;
   let maxCookies = 0;
@@ -19,7 +21,11 @@
       coefficient: 1.07,
       initialTime: 0.6,
       initialRevenue: 1,
-      initialProductivity: 1.67
+      initialProductivity: 1.67,
+      unlockCookieAmount: 10,
+      unlocked: false,
+      unlockMessage: "you learn how to exploit butter",
+      owned: 0
     },
     {
       name: "Chocolate Bar",
@@ -27,9 +33,28 @@
       coefficient: 1.15,
       initialTime: 3,
       initialRevenue: 60,
-      initialProductivity: 20
+      initialProductivity: 20,
+      unlockCookieAmount: 60,
+      unlockMessage: "you make your own chocolate now?",
+      unlocked: false,
+      owned: 0
+    },
+    {
+      name: "Veggplants",
+      initialCost: 720.0,
+      coefficient: 1.14,
+      initialTime: 6,
+      initialRevenue: 540,
+      initialProductivity: 90,
+      unlockCookieAmount: 540,
+      unlocked: false,
+      unlockMessage: "Eggs from plants?!",
+      owned: 0
     }
   ];
+
+  let timers = [];
+  let progress = [];
 
   let numButterPounders = 0;
   let rafId;
@@ -56,37 +81,37 @@
 
   onDestroy(() => {
     if (!process.browser) return;
-    console.log("Destroy", rafId);
     cancelAnimationFrame(rafId);
   });
 
   const collectCookie = () => {
     totalCookies += 1;
-    if (totalCookies > maxCookies) maxCookies = totalCookies;
     showIntro = false;
 
-    if (totalCookies === 1) {
+    if (maxCookies === 1) {
       notifier.success("Interesting.. 🤔?");
-    }
-
-    if (totalCookies === 15) {
-      notifier.info("you learn how to exploit butter", 6000);
     }
   };
 
   const addFarm = i => {
-    console.log("Farm", i);
-    if (i === 1) {
-      // Butter Pounder
-      totalCookies -= i * 10;
-      perSecond += 0.25;
-      numButterPounders += 1;
+    console.log("Farm", shops[i]);
+    let shop = shops[i];
+
+    if (shops[i].owned === 0) {
+      console.log("Buy Initial");
+      timers.push(0);
+      progress.push(0);
     }
+    const cost = (
+      shop.initialCost * Math.pow(shop.coefficient, shop.owned)
+    ).toFixed(2);
+
+    shops[i].owned += 1;
+    totalCookies -= cost;
   };
 
   const saveGame = () => {
     localStorage.setItem("collectedCookies", totalCookies);
-    localStorage.setItem("perSecond", perSecond);
     localStorage.setItem("maxCookies", maxCookies);
   };
 
@@ -95,35 +120,58 @@
   const loop = now => {
     let targetNumber = totalCookies;
 
-    displayNumber = lerp(displayNumber, targetNumber, 0.1, perSecond === 0);
+    displayNumber = lerp(displayNumber, targetNumber, 0.1);
 
-    if (!lastSecondTime || now - lastSecondTime >= 1 * 1000) {
-      lastSecondTime = now;
-      // createNewObject();
-      console.log("Add Stuff");
-      totalCookies += perSecond;
-      targetNumber += perSecond;
-    }
+    timers.forEach((t, i) => {
+      if (!t || now - t >= shops[i].initialTime * 1000) {
+        totalCookies += shops[i].initialProductivity * shops[i].owned;
+        timers[i] = now;
+        console.log("Timer", i);
+      } else {
+        let currentProgress = (now - t) / shops[i].initialTime / 10;
+        progress[i] = currentProgress;
+        // console.log("Progress", progress);
+      }
+    });
 
     displayNumber = lerp(displayNumber, targetNumber, 0.1, false);
+    if (totalCookies > 10) {
+      console.log("Display", parseFloat(displayNumber));
+      displayNumber = parseFloat(displayNumber).toFixed(2);
+    }
 
     rafId = window.requestAnimationFrame(loop);
+
+    updateAchievements();
+  };
+
+  const updateAchievements = () => {
+    if (totalCookies > maxCookies) maxCookies = totalCookies;
+
+    shops.forEach(s => {
+      if (maxCookies >= s.unlockCookieAmount && s.unlocked === false) {
+        console.log("unlock", s.unlockCookieAmount, maxCookies);
+        notifier.info(s.unlockMessage, 6000);
+        s.unlocked = true;
+      }
+    });
   };
 
   function lerp(start, end, amt, ret = false) {
     if (end - start < 0.1) return end.toFixed(5);
-    return (1 - amt) * start + amt * end;
+    return ((1 - amt) * start + amt * end).toFixed(5);
   }
 </script>
 
 <style>
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 820px) {
     .game-container {
       display: grid;
       gap: 1rem;
       grid-template-columns: minmax(420px, 0.25fr) 1fr;
       max-width: 1024px;
       margin: 0 auto;
+      align-items: flex-start;
     }
   }
   .content {
@@ -141,6 +189,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
   }
 
   .cookie-container {
@@ -171,8 +222,11 @@
   }
   .summary {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
+  }
+  .per {
+    opacity: 0.5;
   }
 
   .farm {
@@ -184,6 +238,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
   }
   .farm .image {
     min-width: 80px;
@@ -202,6 +257,20 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+  }
+
+  .progress {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0rem;
+    background-color: var(--accent-color);
+    border-radius: 1rem;
+  }
+  .buy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 </style>
 
@@ -222,16 +291,14 @@
 {/if}
 {#if showIntro === false}
   <section class="main-padding game-container">
+    <!-- Cookie -->
     <div in:fade class="clicker secondary-background">
       <div on:click={collectCookie} class="cookie-container">
         <Cookie />
       </div>
       <div class="cookie-info">
         <div class="summary">
-          <span id="numCookies" class="number">
-            <!-- {parseFloat(totalCookies).toFixed(2)} -->
-            {displayNumber}
-          </span>
+          <span id="numCookies" class="number">{displayNumber}</span>
           cookies
         </div>
         {#if perSecond > 0}
@@ -241,41 +308,61 @@
           </div>
         {/if}
       </div>
-      <!-- <button class="button button--primary" on:click={collectCookie}>
-        <span>Collect!</span>
-      </button> -->
     </div>
+    <!-- Farms -->
     <div class="farms">
-      {#if maxCookies >= 15}
-        <div in:fade class="farm secondary-background">
-          <div class="image">
-            <Butter />
-          </div>
-          <div class="info">
-
-            <div class="number">{numButterPounders}</div>
-            <div class="summary">butter sticks</div>
-            <div class="buy">
-              <button
-                class="button button--small"
-                on:click={() => addFarm(1)}
-                disabled={totalCookies < 10}>
-                <span>buy</span>
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="plus w-6 h-6">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2
-                    0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                    clip-rule="evenodd" />
-                </svg>
-              </button>
+      {#each shops as shop, i}
+        {#if maxCookies >= shop.unlockCookieAmount}
+          <div in:fade|local class="farm secondary-background">
+            <div class="progress" style={`width: ${progress[i]}%`} />
+            <div class="image">
+              {#if i === 0}
+                <Butter />
+              {/if}
+              {#if i === 1}
+                <Chocolate />
+              {/if}
+              {#if i === 2}
+                <Egg />
+              {/if}
+            </div>
+            <div class="info">
+              <div class="number">{shop.owned}</div>
+              <div class="summary">
+                <div class="name">{shop.name}</div>
+                {#if shops[i].owned}
+                  <div class="productivity">
+                    {(shops[i].initialProductivity * shops[i].owned).toFixed(3)}
+                    <span class="per">per {shops[i].initialTime}s</span>
+                  </div>
+                {/if}
+              </div>
+              <div class="buy">
+                <button
+                  class="button button--small"
+                  on:click={() => addFarm(i)}
+                  disabled={shop.initialCost * Math.pow(shop.coefficient, shop.owned) > totalCookies}>
+                  <!-- <span>buy</span> -->
+                  <span>
+                    {(shop.initialCost * Math.pow(shop.coefficient, shop.owned)).toFixed(2)}
+                  </span>
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="plus w-6 h-6">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2
+                      0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      {/if}
+        {/if}
+      {/each}
+
     </div>
   </section>
 {/if}
