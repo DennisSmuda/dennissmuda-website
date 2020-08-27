@@ -75,13 +75,15 @@
 
   :global(.toasts) > .toast {
     position: relative;
-    margin: 1vh 1vw;
+    margin: 1rem;
+    padding: 0.25rem 1rem;
     min-width: 40vw;
     position: relative;
     animation: animate-in 600ms forwards;
     color: #fff;
     border-radius: 0.5rem;
     user-select: none;
+    font-size: 1rem;
   }
 
   :global(.toasts) > .toast > .content {
@@ -93,6 +95,7 @@
   :global(.toasts) > .toast > .progress {
     position: absolute;
     bottom: 0;
+    left: 0;
     background-color: rgb(0, 0, 0, 0.3);
     height: 6px;
     width: 100%;

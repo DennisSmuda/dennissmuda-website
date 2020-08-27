@@ -7,6 +7,7 @@
   import Butter from "../components/illustrations/Butter.svelte";
   import Chocolate from "../components/illustrations/Chocolate.svelte";
   import Egg from "../components/illustrations/Egg.svelte";
+  import Cloud from "../components/illustrations/Cloud.svelte";
 
   let totalCookies = 0;
   let maxCookies = 0;
@@ -20,7 +21,6 @@
       initialCost: 3.738,
       coefficient: 1.07,
       initialTime: 0.6,
-      initialRevenue: 1,
       initialProductivity: 1.67,
       unlockCookieAmount: 10,
       unlocked: false,
@@ -32,9 +32,8 @@
       initialCost: 60.0,
       coefficient: 1.15,
       initialTime: 3,
-      initialRevenue: 60,
       initialProductivity: 20,
-      unlockCookieAmount: 60,
+      unlockCookieAmount: 50,
       unlockMessage: "you make your own chocolate now?",
       unlocked: false,
       owned: 0
@@ -44,11 +43,21 @@
       initialCost: 720.0,
       coefficient: 1.14,
       initialTime: 6,
-      initialRevenue: 540,
       initialProductivity: 90,
       unlockCookieAmount: 540,
       unlocked: false,
       unlockMessage: "Eggs from plants?!",
+      owned: 0
+    },
+    {
+      name: "Sugar Clouds",
+      initialCost: 8640.0,
+      coefficient: 1.13,
+      initialTime: 12,
+      initialProductivity: 360,
+      unlockCookieAmount: 4320,
+      unlocked: false,
+      unlockMessage: "You invent Sugar Clouds!",
       owned: 0
     }
   ];
@@ -208,6 +217,14 @@
     font-weight: 900;
     padding-right: 0.5rem;
   }
+  .productivity {
+    display: flex;
+    align-items: baseline;
+    /* font-weight: 900; */
+  }
+  .prod-number {
+    margin-right: 0.5rem;
+  }
   .cookie-info {
     flex-grow: 1;
     margin-left: 1rem;
@@ -272,6 +289,9 @@
     top: 0.5rem;
     right: 0.5rem;
   }
+  .summary .name {
+    font-weight: 900;
+  }
 </style>
 
 <Display />
@@ -325,6 +345,9 @@
               {#if i === 2}
                 <Egg />
               {/if}
+              {#if i === 3}
+                <Cloud />
+              {/if}
             </div>
             <div class="info">
               <div class="number">{shop.owned}</div>
@@ -332,7 +355,9 @@
                 <div class="name">{shop.name}</div>
                 {#if shops[i].owned}
                   <div class="productivity">
-                    {(shops[i].initialProductivity * shops[i].owned).toFixed(3)}
+                    <div class="prod-number">
+                      {(shops[i].initialProductivity * shops[i].owned).toFixed(3)}
+                    </div>
                     <span class="per">per {shops[i].initialTime}s</span>
                   </div>
                 {/if}
