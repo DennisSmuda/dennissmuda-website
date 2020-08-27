@@ -117,12 +117,16 @@
     min-width: 4rem;
     display: block;
     text-align: right;
+    line-height: 1;
   }
   .summary {
     display: flex;
-    align-items: baseline;
+    flex-direction: column-reverse;
+    align-items: flex-start;
   }
+
   .farm {
+    position: relative;
     border-radius: 1rem;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -133,10 +137,16 @@
   }
   .farm .image {
     min-width: 80px;
-    margin: 1rem;
+    margin: 2rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .farm .number {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
   }
 </style>
 
@@ -225,20 +235,25 @@
             </svg>
           </div>
           <div class="info">
-            <div class="summary">
 
-              <div class="number">
-                <!-- {#if totalCookies >= 10} -->
-                {numButterPounders}
-              </div>
-              butter pounders
-            </div>
+            <div class="number">{numButterPounders}</div>
+            <div class="summary">butter pounders</div>
             <div class="buy">
               <button
-                class="button"
+                class="button button--small"
                 on:click={() => addFarm(1)}
                 disabled={totalCookies < 10}>
-                buy
+                <span>buy</span>
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  class="plus w-6 h-6">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2
+                    0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                    clip-rule="evenodd" />
+                </svg>
               </button>
             </div>
           </div>

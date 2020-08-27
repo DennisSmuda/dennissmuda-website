@@ -19,6 +19,8 @@
     --link-color: #38cfff;
     --background-color: #191c26;
     --second-background-color: #1d212f;
+    --third-background-color: #23293e;
+    --outline-color: #ffc400;
     font-size: 18px;
   }
 
@@ -31,6 +33,7 @@
     --link-color: #00a1d3;
     --background-color: #fffbeb;
     --second-background-color: #fcf5d8;
+    --third-background-color: #ded8b8;
   }
 
   :global(h1, h2, h3, h4, h5, h6, .title) {

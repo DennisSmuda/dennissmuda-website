@@ -8,19 +8,30 @@
 </script>
 
 <style>
-  button {
+  .button {
     background-color: transparent;
-    color: var(--copy-color);
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem;
-    text-transform: uppercase;
     width: 3rem;
     height: 3rem;
+    padding: 0.5rem;
+    border: none;
+    color: var(--copy-color);
+    /*
+    border-radius: 4px;
+    text-transform: uppercase;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+  .button svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   button:hover {
+    background-color: var(--third-background-color);
+  }
+  button:focus {
     color: var(--primary-color);
   }
 
@@ -30,7 +41,7 @@
   }
 </style>
 
-<button on:click={toggle}>
+<button class="button" on:click={toggle}>
   {#if isLightMode}
     <svg
       viewBox="0 0 20 20"

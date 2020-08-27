@@ -8,17 +8,7 @@
     display: flex;
     justify-content: space-between;
     user-select: none;
-  }
-
-  ul {
-    display: flex;
     align-items: center;
-    padding: 0;
-  }
-
-  li {
-    display: block;
-    color: var(--copy-color);
   }
 
   [aria-current],
@@ -40,10 +30,17 @@
 
   a {
     text-decoration: none;
-    padding: 1em 0.5em;
+    padding: 0.5rem;
     color: var(--copy-color);
     display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  a:hover {
+    background-color: var(--third-background-color);
   }
 
   .brand {
@@ -52,8 +49,11 @@
     justify-content: center;
     font-size: 2rem;
     font-weight: 700;
-    padding: 0 2.5rem;
+    margin: 0 2rem;
     cursor: pointer;
+    width: initial;
+    height: 3rem;
+    padding: 0.25rem 0.5rem;
   }
 
   .brand span {
@@ -86,7 +86,7 @@
     <span>.</span>
   </a>
   <div class="menu">
-    <a aria-current={segment === 'easter' ? 'page' : undefined} href="/easter">
+    <!-- <a aria-current={segment === 'easter' ? 'page' : undefined} href="/easter">
       <svg
         viewBox="0 0 20 20"
         fill="currentColor"
@@ -98,7 +98,7 @@
           00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
           3z" />
       </svg>
-    </a>
+    </a> -->
     <!-- <a
       rel="prefetch"
       aria-current={segment === 'blog' ? 'page' : undefined}
