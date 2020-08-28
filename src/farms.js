@@ -9,6 +9,7 @@ export const farms = [
     unlocked: false,
     unlockMessage: "you learn how to exploit butter",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Chocolate Bar",
@@ -20,6 +21,7 @@ export const farms = [
     unlockMessage: "you make your own chocolate now?",
     unlocked: false,
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Veggplants",
@@ -31,6 +33,7 @@ export const farms = [
     unlocked: false,
     unlockMessage: "Eggs from plants?!",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Sugar Clouds",
@@ -42,6 +45,7 @@ export const farms = [
     unlocked: false,
     unlockMessage: "You invent Sugar Clouds!",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Vanilli",
@@ -53,6 +57,7 @@ export const farms = [
     unlocked: false,
     unlockMessage: "Vanili joins forces!",
     owned: 0,
+    multiplier: 1,
   },
 ];
 
@@ -67,6 +72,7 @@ export const debugFarms = [
     unlocked: false,
     unlockMessage: "you learn how to exploit butter",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Chocolate Bar",
@@ -78,6 +84,7 @@ export const debugFarms = [
     unlockMessage: "you make your own chocolate now?",
     unlocked: false,
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Veggplants",
@@ -89,6 +96,7 @@ export const debugFarms = [
     unlocked: false,
     unlockMessage: "Eggs from plants?!",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Sugar Clouds",
@@ -100,6 +108,7 @@ export const debugFarms = [
     unlocked: false,
     unlockMessage: "You invent Sugar Clouds!",
     owned: 0,
+    multiplier: 1,
   },
   {
     name: "Vanilli",
@@ -111,5 +120,6 @@ export const debugFarms = [
     unlocked: false,
     unlockMessage: "Vanili joins forces!",
     owned: 0,
+    multiplier: 1,
   },
 ];

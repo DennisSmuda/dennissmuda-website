@@ -75,6 +75,16 @@
 
     shops[i].owned += 1;
     totalCookies -= cost;
+
+    if (shops[i].owned === 10) {
+      notifier.success(`${shops[i].name} 25% faster`, 6000);
+      shops[i].initialTime = shops[i].initialTime * 0.75;
+    }
+
+    if (shops[i].owned === 50) {
+      notifier.success(`${shops[i].name} 25% faster`, 6000);
+      shops[i].initialTime = shops[i].initialTime * 0.75;
+    }
   };
 
   const saveGame = () => {
@@ -319,9 +329,11 @@
                 {#if shops[i].owned}
                   <div class="productivity">
                     <div class="prod-number">
-                      {(shops[i].initialProductivity * shops[i].owned).toFixed(3)}
+                      {(shops[i].initialProductivity * shops[i].owned).toFixed(2)}
                     </div>
-                    <span class="per">per {shops[i].initialTime}s</span>
+                    <span class="per">
+                      per {shops[i].initialTime.toFixed(3)}s
+                    </span>
                   </div>
                 {/if}
               </div>
