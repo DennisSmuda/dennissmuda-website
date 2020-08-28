@@ -115,7 +115,9 @@
           00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
           3z" />
       </svg>
-      <div class="badge">1</div>
+      {#if segment !== 'easter'}
+        <div class="badge">1</div>
+      {/if}
     </a>
     <!-- <a
       rel="prefetch"

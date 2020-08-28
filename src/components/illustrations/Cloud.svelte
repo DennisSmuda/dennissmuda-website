@@ -6,7 +6,7 @@
   .eye {
     /* stroke-dashoffset: -2px; */
     animation: blink 3s linear alternate infinite;
-    transform-origin: 0% 35%;
+    transform-origin: 0% 55%;
   }
   @keyframes blink {
     0%,
@@ -48,36 +48,31 @@
     ry="17.7065"
     transform="rotate(-3.06772 33.3481 21.9994)"
     fill="white" />
-
   <ellipse cx="52.5" cy="31" rx="16.5" ry="13" fill="white" />
-  <g>
-    <path
-      d="M25 28C30.2 28 32.28 28 38 28"
-      stroke="#271A01"
-      stroke-opacity="0.69"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round" />
-    <line
-      x1="2"
-      y1="-2"
-      x2="3.86486"
-      y2="-2"
-      transform="matrix(-0.350371 0.936611 -0.926431 -0.376464 16.0549 16)"
-      stroke="#271A01"
-      stroke-opacity="0.69"
-      stroke-width="4"
-      stroke-linecap="round" />
-    <line
-      x1="2"
-      y1="-2"
-      x2="4.33293"
-      y2="-2"
-      transform="matrix(0.157905 0.987454 -0.985246 0.171145 42.0275 16.662)"
-      stroke="#271A01"
-      stroke-opacity="0.69"
-      stroke-width="4"
-      stroke-linecap="round" />
-  </g>
+  <path
+    d="M25 28C30.2 28 32.28 28 38 28"
+    stroke="#271A01"
+    stroke-opacity="0.69"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
   <ellipse cx="16" cy="37.5" rx="10" ry="6.5" fill="white" />
+  <line
+    class="eye"
+    x1="18.8858"
+    y1="20.4003"
+    x2="19.4003"
+    y2="19.1142"
+    stroke="#6A6150"
+    stroke-width="4"
+    stroke-linecap="round" />
+  <line
+    class="eye"
+    x1="41.3534"
+    y1="18.5689"
+    x2="41.5689"
+    y2="19.6466"
+    stroke="#6A6150"
+    stroke-width="4"
+    stroke-linecap="round" />
 </svg>

@@ -8,6 +8,8 @@
   import Chocolate from "../components/illustrations/Chocolate.svelte";
   import Egg from "../components/illustrations/Egg.svelte";
   import Cloud from "../components/illustrations/Cloud.svelte";
+  import Vanilla from "../components/illustrations/Vanilla.svelte";
+  import { farms, debugFarms } from "../farms";
 
   let totalCookies = 0;
   let maxCookies = 0;
@@ -15,52 +17,7 @@
   let showIntro;
   let displayNumber = 0.0;
 
-  let shops = [
-    {
-      name: "Butter Stick",
-      initialCost: 3.738,
-      coefficient: 1.07,
-      initialTime: 0.6,
-      initialProductivity: 1.67,
-      unlockCookieAmount: 10,
-      unlocked: false,
-      unlockMessage: "you learn how to exploit butter",
-      owned: 0
-    },
-    {
-      name: "Chocolate Bar",
-      initialCost: 60.0,
-      coefficient: 1.15,
-      initialTime: 3,
-      initialProductivity: 20,
-      unlockCookieAmount: 50,
-      unlockMessage: "you make your own chocolate now?",
-      unlocked: false,
-      owned: 0
-    },
-    {
-      name: "Veggplants",
-      initialCost: 720.0,
-      coefficient: 1.14,
-      initialTime: 6,
-      initialProductivity: 90,
-      unlockCookieAmount: 540,
-      unlocked: false,
-      unlockMessage: "Eggs from plants?!",
-      owned: 0
-    },
-    {
-      name: "Sugar Clouds",
-      initialCost: 8640.0,
-      coefficient: 1.13,
-      initialTime: 12,
-      initialProductivity: 360,
-      unlockCookieAmount: 4320,
-      unlocked: false,
-      unlockMessage: "You invent Sugar Clouds!",
-      owned: 0
-    }
-  ];
+  let shops = farms;
 
   let timers = [];
   let progress = [];
@@ -145,8 +102,10 @@
 
     displayNumber = lerp(displayNumber, targetNumber, 0.1, false);
     if (totalCookies > 10) {
-      console.log("Display", parseFloat(displayNumber));
       displayNumber = parseFloat(displayNumber).toFixed(2);
+    }
+    if (totalCookies > 100) {
+      displayNumber = parseFloat(displayNumber).toFixed(1);
     }
 
     rafId = window.requestAnimationFrame(loop);
@@ -167,8 +126,8 @@
   };
 
   function lerp(start, end, amt, ret = false) {
-    if (end - start < 0.1) return end.toFixed(5);
-    return ((1 - amt) * start + amt * end).toFixed(5);
+    if (end - start < 0.1) return end.toFixed(4);
+    return ((1 - amt) * start + amt * end).toFixed(4);
   }
 </script>
 
@@ -347,6 +306,9 @@
               {/if}
               {#if i === 3}
                 <Cloud />
+              {/if}
+              {#if i === 4}
+                <Vanilla />
               {/if}
             </div>
             <div class="info">
