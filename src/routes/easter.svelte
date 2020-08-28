@@ -81,7 +81,15 @@
       shops[i].initialTime = shops[i].initialTime * 0.75;
     }
 
+    if (shops[i].owned === 25) {
+      notifier.success(`${shops[i].name} 25% faster`, 6000);
+      shops[i].initialTime = shops[i].initialTime * 0.75;
+    }
     if (shops[i].owned === 50) {
+      notifier.success(`${shops[i].name} 25% faster`, 6000);
+      shops[i].initialTime = shops[i].initialTime * 0.75;
+    }
+    if (shops[i].owned === 100) {
       notifier.success(`${shops[i].name} 25% faster`, 6000);
       shops[i].initialTime = shops[i].initialTime * 0.75;
     }
