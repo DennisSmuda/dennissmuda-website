@@ -29,7 +29,7 @@
   .tag {
     padding: 0.125rem 0.75rem;
     margin-right: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-size: 0.875rem;
     border-radius: 0.25rem;
   }
