@@ -17,7 +17,7 @@
   let showIntro;
   let displayNumber = 0.0;
 
-  let shops = farms;
+  let shops = JSON.parse(JSON.stringify(farms));
 
   let timers = [];
   let progress = [];
@@ -47,6 +47,7 @@
 
   onDestroy(() => {
     if (!process.browser) return;
+    shops = null;
     cancelAnimationFrame(rafId);
   });
 

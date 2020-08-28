@@ -16,7 +16,7 @@ export const farms = [
     coefficient: 1.15,
     initialTime: 3,
     initialProductivity: 20,
-    unlockCookieAmount: 50,
+    unlockCookieAmount: 45,
     unlockMessage: "you make your own chocolate now?",
     unlocked: false,
     owned: 0,

@@ -17,17 +17,19 @@
   }
 
   article:nth-child(even) {
-    align-self: flex-end;
+    align-self: center;
   }
 
   .tags {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
   }
 
   .tag {
     padding: 0.125rem 0.75rem;
     margin-right: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 0.875rem;
     border-radius: 0.25rem;
   }

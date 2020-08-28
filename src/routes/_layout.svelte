@@ -98,7 +98,7 @@
   }
 
   :global(.container--narrow) {
-    max-width: 1000px;
+    max-width: 920px;
   }
 
   /* @media (min-width: 560px) {
