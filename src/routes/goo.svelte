@@ -44,9 +44,9 @@
 </style>
 
 <section class="main-padding">
-  <h2>Gooey</h2>
+  <!-- <h2>Gooey</h2> -->
   <div class="goo-button-container">
-    <div class="button">JO</div>
+    <div class="button" />
     <div class="particle" />
     <div class="particle" />
     <div class="particle" />
