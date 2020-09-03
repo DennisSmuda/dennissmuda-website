@@ -241,4 +241,6 @@
   </div>
 </section>
 
+<div class="main-padding" />
+
 <Footer />

@@ -275,7 +275,7 @@
 <Display />
 
 {#if totalCookies === 0 && showIntro === true}
-  <section class="main-padding">
+  <section class="h-padding">
     <div class="content">
       <h1 class="color-change">Awkward</h1>
       <p>You find a lone cookie...</p>

@@ -32,7 +32,7 @@
     margin-top: 3rem;
     overflow: visible;
     margin-left: -0.25rem;
-    cursor: none;
+    /* cursor: none; */
   }
   .firstname path,
   .dot-container {
@@ -118,19 +118,16 @@
     fill: var(--accent-color);
   }
   svg:hover circle {
-    /* fill: var(--primary-color); */
     fill: #fff;
     mix-blend-mode: difference;
     mix-blend-mode: exclusion;
   }
-  /* :global(body.light-mode) {
-  } */
 </style>
 
 <!-- on:mousemove={e => move(e)} -->
 <svg
   on:click={() => (expanded = !expanded)}
-  on:mousemove={e => coords.set({ x: e.offsetX - 24, y: e.offsetY + 24 })}
+  on:mousemove={e => coords.set({ x: e.offsetX + 24, y: e.offsetY + 32 })}
   on:mouseleave={e => {
     coords.set({ x: 308, y: 17 });
     size.set(12);
@@ -284,14 +281,14 @@
         137.08C357.96 137.08 361.4 135.6 364.2 132.64C367.08 129.68 368.52
         125.64 368.52 120.52Z" />
     </g>
-    <g class="dot-container">
-      <circle
-        in:fly={{ y: -120, delay: 650 }}
-        cx={$coords.x}
-        cy={$coords.y}
-        r={$size}
-        class="dot" />
-      <!-- <path
+    <!-- <g class="dot-container"> -->
+    <circle
+      in:fly={{ y: -120, delay: 650 }}
+      cx={$coords.x}
+      cy={$coords.y}
+      r={$size}
+      class="dot" />
+    <!-- <path
           class="dot"
           in:fly={{ delay: 250 }}
           d="M298.88 24.96C301.2 27.04 304.16 28.08 307.76 28.08C311.28 28.08
@@ -299,6 +296,6 @@
           13.84 318.72 11.2 316.4 9.12001C314.16 6.96001 311.28 5.88 307.76
           5.88C304.16 5.88 301.2 6.96001 298.88 9.12001C296.64 11.2 295.52 13.84
           295.52 17.04C295.52 20.16 296.64 22.8 298.88 24.96Z" /> -->
-    </g>
+    <!-- </g> -->
   {/if}
 </svg>

@@ -4,6 +4,7 @@
 
 <style>
   .footer {
+    /* margin-top: 4rem; */
     padding-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -38,11 +39,24 @@
     stroke: currentColor;
     fill: none;
   }
+
+  .internal {
+    margin-top: 2rem;
+    display: flex;
+  }
+  .internal .button {
+    margin-right: 1.5rem;
+  }
 </style>
 
 <footer class="footer container main-padding">
   <div class="brand">ds.</div>
   <span>©{date} built by myself.</span>
+  <div class="internal">
+    <a href="/about" class="button">about</a>
+    <a href="/imprint" class="button">imprint</a>
+
+  </div>
   <div class="links">
     <a href="https://github.com/dennissmuda" target="_blank">
       <svg

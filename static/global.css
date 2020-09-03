@@ -39,7 +39,8 @@ h1 {
   margin: 0.75em 0 0.25em 0;
 }
 
-.content h2 {
+.content h2,
+.content h3 {
   margin: 2em 0 0.25em 0;
 }
 
