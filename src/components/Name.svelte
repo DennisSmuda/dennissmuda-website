@@ -29,8 +29,8 @@
 
   function move(e) {
     const ratio = svgWidth / initialWidth;
-    console.log("e", svgWidth / initialWidth);
     coords.set({ x: e.offsetX / ratio, y: e.offsetY / ratio });
+    // size.set(48);
   }
 </script>
 
@@ -145,8 +145,10 @@
       size.set(12);
     }}
     class={expanded && 'expanded'}
-    on:mousedown={() => size.set(128)}
-    on:mouseup={() => size.set(12)}
+    on:mousedown={() => {
+      size.set(128);
+    }}
+    on:mouseup={() => size.set(48)}
     viewBox="0 0 397 172"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">
