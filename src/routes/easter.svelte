@@ -277,7 +277,7 @@
 {#if totalCookies === 0 && showIntro === true}
   <section class="main-padding">
     <div class="content">
-      <h1>Awkward</h1>
+      <h1 class="color-change">Awkward</h1>
       <p>You find a lone cookie...</p>
       <div on:click={collectCookie} class="cookie-container">
         <Cookie />

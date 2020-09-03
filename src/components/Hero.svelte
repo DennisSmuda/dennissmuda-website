@@ -24,13 +24,6 @@
     max-width: 380px;
   }
 
-  /* h1 {
-    display: inline-flex;
-    text-align: left;
-    padding-bottom: 1rem;
-    border-bottom: 4px solid var(--accent-color);
-  } */
-
   .intro {
     margin-top: 2rem;
     max-width: 380px;
@@ -54,6 +47,50 @@
       max-width: initial;
     }
   }
+  .button-row {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .keyword {
+    animation: colorChange 20s linear alternate infinite;
+  }
+  .reach-me {
+    transform: rotate(32deg);
+  }
+  .text-button {
+    padding: 0.25rem 0.5rem;
+    margin-right: 2rem;
+  }
+
+  .button {
+    transition: 0.3s background-color;
+  }
+  .button:hover {
+    background-color: var(--accent-color);
+  }
+  .button:hover span {
+    transform: translateX(-4px);
+  }
+  .button:hover .reach-me {
+    transform: translateX(4px) rotate(90deg);
+  }
+
+  @keyframes colorChange {
+    0% {
+      color: var(--primary-color);
+    }
+    33% {
+      color: var(--accent-color);
+    }
+    66% {
+      color: var(--link-color);
+    }
+    100% {
+      color: var(--copy-color);
+    }
+  }
 </style>
 
 <div class="hero main-padding">
@@ -67,15 +104,32 @@
     <!-- <div class="line" /> -->
   </div>
   <div class="intro">
-    <div class="subline">it's me</div>
+    <!-- <div class="subline">it's me</div> -->
+    <!-- <p class="big-paragraph">
+      <span class="keyword">Frontend Developer</span>
+      <span>from</span>
+      <span class="emphasis">Germany.</span>
+    </p> -->
     <p class="big-paragraph">
       <span class="keyword">Frontend Developer</span>
       <span>from</span>
       <span class="emphasis">Germany.</span>
     </p>
-    <p>
-      Nice to meet you! Feel free to look around and if you like, you can even
-      <a href="mailto:smuda.dennis@gmail.com">reach me.</a>
-    </p>
+    <div class="button-row">
+      <!-- <a href="/about" class="text-button">about me</a> -->
+      <a class="button" href="mailto:smuda.dennis@gmail.com">
+        <span>reach me</span>
+        <svg
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="paper-airplane reach-me">
+          <path
+            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169
+            1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0
+            00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+        </svg>
+      </a>
+    </div>
+
   </div>
 </div>

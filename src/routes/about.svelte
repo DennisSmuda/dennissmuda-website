@@ -1,7 +1,12 @@
 <svelte:head>
-	<title>About</title>
+  <title>About Me | Dennis Smuda</title>
 </svelte:head>
 
-<h1>About this site</h1>
+<section class="main-padding">
 
-<p>This is the 'about' page. There's not much here.</p>
+  <div class="content">
+    <h1 class="color-change">About Me</h1>
+
+    <p>Hey there!</p>
+  </div>
+</section>
