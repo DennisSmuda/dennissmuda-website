@@ -26,12 +26,69 @@ h6 {
 h1 {
   font-size: calc(1rem + 8vw);
 }
+
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.content .keyword {
+  font-weight: 500;
+}
 .content h1 {
-  margin: 0 0 0.5em 0;
+  margin: 0.75em 0 0.25em 0;
 }
 
-.content p {
+.content h2 {
+  margin: 2em 0 0.25em 0;
+}
+
+.content p,
+.content ul {
   max-width: 560px;
+}
+.content ul {
+  color: var(--copy-color);
+  padding-left: 0;
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  top: calc(50% -0.25rem);
+  left: -1.5rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--copy-color);
+
+  transition: all 0.3s;
+}
+
+ul li:hover::after {
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+ul li:active::after {
+  width: 1rem;
+  background-color: var(--accent-color);
+}
+
+.emoji {
+  display: inline-flex;
+  margin: 0 0.5rem;
+  /* padding: 0.25rem; */
+  /* background-color: #fff; */
+  font-size: 2rem;
 }
 
 a {
@@ -111,6 +168,12 @@ code {
   100% {
     color: var(--copy-color);
   }
+}
+
+.spacer {
+  height: 4rem;
+  width: 100%;
+  margin: 4rem 0 1rem;
 }
 
 a:focus,

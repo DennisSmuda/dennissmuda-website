@@ -25,7 +25,7 @@
   }
 
   .intro {
-    margin-top: 2rem;
+    user-select: none;
     max-width: 380px;
     align-self: end;
   }
@@ -47,6 +47,13 @@
       max-width: initial;
     }
   }
+
+  /* @media screen and (min-width: 920px) {
+    .title {
+      margin-bottom: -1.5vw;
+    }
+  } */
+
   .button-row {
     margin-top: 1.5rem;
     display: flex;
