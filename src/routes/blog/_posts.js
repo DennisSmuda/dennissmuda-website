@@ -13,7 +13,17 @@ const posts = [
     slug: "hello-world",
     createdAt: "Sept. 20",
     html: `
-		<p>Hey there, how's it going? This is my first blog post for testing and debug purposes.</p>
+		<p>Hey there, how's it going? This is my first blog post for testing and debug purposes. This site is built using <a href="https://svelte.dev/" target="_blank">svelte</a>, which I can only recommend to check out, if you haven't already!</p>
+		<p>This is how you can start your first very own <span class="keyword">sapper</span> project:</p>
+
+			<pre><code>npx degit "sveltejs/sapper-template#rollup" my-app
+			cd my-app
+			npm install # or yarn!
+			npm run dev
+			</code></pre>
+
+		<p>I recommend following the  <a href="https://svelte.dev/tutorial/basics" target="_blank">official tutorial</a> first though!</p>
+
 		`,
   },
 ];

@@ -14,6 +14,7 @@
 </script>
 
 <script>
+  import Footer from "../../components/Footer.svelte";
   export let post;
 </script>
 
@@ -32,11 +33,13 @@
   }
 
   .content :global(pre) {
-    background-color: #f9f9f9;
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--third-background-color);
+    border-radius: 0.5rem;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-    padding: 0.5em;
-    border-radius: 2px;
+    padding: 1.5rem;
     overflow-x: auto;
+    margin: 1.5rem -1.5rem;
   }
 
   .content :global(pre) :global(code) {
@@ -59,9 +62,13 @@
 
 <section class="h-padding container container--narrow">
   <div class="content">
-    <h1>{post.title}</h1>
-  </div>
-  <div class="content">
+    <h1 class="color-change">{post.title}</h1>
+    <span>{post.createdAt}</span>
+
     {@html post.html}
   </div>
 </section>
+
+<div class="main-padding" />
+
+<Footer />

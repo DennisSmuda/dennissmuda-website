@@ -123,8 +123,9 @@ a {
 code {
   font-family: menlo, inconsolata, monospace;
   font-size: calc(1em - 2px);
-  color: #555;
-  background-color: #f0f0f0;
+  /* color: var(--primary-color); */
+  /* background-color: var(--third-background-color); */
+  /* background-color: #f0f0f0; */
   padding: 0.2em 0.4em;
   border-radius: 2px;
 }
