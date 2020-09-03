@@ -41,6 +41,10 @@
     margin-left: -0.25rem;
     cursor: none;
   }
+  svg path,
+  svg g {
+    pointer-events: none;
+  }
   .firstname path,
   .dot-container {
     transition: transform 0.2s ease, fill 0.5s;
