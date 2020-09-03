@@ -269,6 +269,10 @@ button:focus {
   /* color: #413000; */
   color: #f05133;
 }
+.tag--coffee {
+  color: white;
+  background-color: #6f0b0b;
+}
 .tag--js {
   color: #f7df1e;
   background-color: #000;

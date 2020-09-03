@@ -72,12 +72,18 @@
     height: 3rem;
     padding: 0.25rem 0.5rem;
   }
-
   .brand span {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+  }
+
+  .brand[aria-current] span {
     /* transition: color 0.3s; */
+    color: var(--accent-color);
   }
 
   .brand:hover span {
+    transform: translate3d(0, -0.5rem, 0);
     color: var(--accent-color);
   }
 
