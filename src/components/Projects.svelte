@@ -26,44 +26,6 @@
     margin-bottom: 1rem;
   }
 
-  .tag {
-    padding: 0.125rem 0.75rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.875rem;
-    border-radius: 0.25rem;
-  }
-
-  .tag--svelte {
-    background-color: #ff3e00;
-    color: white;
-  }
-
-  .tag--node {
-    background-color: #026e00;
-    color: white;
-  }
-
-  .tag--serverless {
-    background-color: #000;
-    color: white;
-  }
-
-  .tag--vue {
-    background-color: #00a591;
-    color: white;
-  }
-
-  .tag--graphql {
-    background-color: #fff;
-    color: #e10098;
-  }
-
-  .tag--mongo {
-    background-color: #13aa52;
-    color: #fff;
-  }
-
   .button {
     color: var(--background-color);
     background-color: var(--primary-color);

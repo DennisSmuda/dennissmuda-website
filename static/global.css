@@ -58,12 +58,18 @@ ul li {
   align-items: center;
   position: relative;
   cursor: pointer;
+  user-select: none;
+}
+::selection {
+  background-color: var(--primary-color);
+  color: var(--background-color);
 }
 
 ul li::after {
   content: "";
   position: absolute;
-  top: calc(50% -0.25rem);
+  top: calc(50% - 0.25rem);
+  top: 50%;
   left: -1.5rem;
   height: 0.5rem;
   width: 0.5rem;
@@ -71,11 +77,13 @@ ul li::after {
   background-color: var(--copy-color);
 
   transition: all 0.3s;
+  transform-origin: center;
 }
 
 ul li:hover::after {
   height: 100%;
   background-color: var(--primary-color);
+  transform: translateY(calc(-50% + 0.25rem));
 }
 
 ul li:active::after {
@@ -84,11 +92,12 @@ ul li:active::after {
 }
 
 .emoji {
-  display: inline-flex;
+  display: inline-block;
   margin: 0 0.5rem;
   /* padding: 0.25rem; */
   /* background-color: #fff; */
   font-size: 2rem;
+  white-space: nowrap;
 }
 
 a {
@@ -223,4 +232,71 @@ button:focus {
 
 .button--outline {
   border: 2px solid var(--primary-color);
+}
+
+/**
+  * Tags
+  **/
+.tag {
+  padding: 0.25rem 0.75rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  transform: scale(1);
+  transition: all 0.3s;
+  user-select: none;
+  background-color: var(--third-background-color);
+  cursor: pointer;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+}
+.tag:active {
+  transform: scale(0.95);
+}
+
+.tag span {
+  margin: 0 0.5rem;
+}
+
+.tag--git {
+  /* color: #413000; */
+  color: #f05133;
+}
+.tag--js {
+  color: #f7df1e;
+  background-color: #000;
+}
+.tag--svelte {
+  background-color: #ff3e00;
+  color: white;
+}
+
+.tag--node {
+  background-color: #026e00;
+  color: white;
+}
+
+.tag--serverless {
+  background-color: #000;
+  color: white;
+}
+
+.tag--vue {
+  color: #00a591;
+  background-color: white;
+}
+
+.tag--graphql {
+  background-color: #fff;
+  color: #e10098;
+}
+
+.tag--mongo {
+  background-color: #13aa52;
+  color: #fff;
 }
