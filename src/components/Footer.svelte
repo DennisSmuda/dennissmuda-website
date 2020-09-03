@@ -61,6 +61,7 @@
   <span>©{date} built by myself.</span>
   <div class="internal">
     <a href="/about" class="button">about</a>
+    <a href="/blog" class="button">writing</a>
     <a href="/imprint" class="button">imprint</a>
 
   </div>
