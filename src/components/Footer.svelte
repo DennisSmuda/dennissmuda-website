@@ -16,6 +16,11 @@
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -2.3px;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+    margin-left: -0.5rem;
   }
   .brand:hover {
     color: var(--primary-color);
@@ -24,6 +29,7 @@
   .links {
     margin-top: 2.5rem;
     display: flex;
+    margin-left: -0.5rem;
   }
 
   span {
@@ -33,6 +39,11 @@
   .links a {
     color: var(--copy-color);
     margin-right: 2.5rem;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
   }
 
   .links a:hover {
@@ -57,7 +68,7 @@
 </style>
 
 <footer class="footer container main-padding">
-  <div class="brand">ds.</div>
+  <a href="./" class="brand">ds.</a>
   <span>©{date} built by myself.</span>
   <div class="internal">
     <a href="/about" class="button">about</a>

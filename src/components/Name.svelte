@@ -9,7 +9,7 @@
   const initialHeight = 172;
 
   let coords = spring(
-    { x: 308, y: 17 },
+    { x: -400, y: 17 },
     {
       stiffness: 0.1,
       damping: 0.25
@@ -23,8 +23,13 @@
 
   onMount(() => {
     console.log("Mounted");
+    // coords.set({ x: 0, y: 0 });
+    size.set(100);
     mounted = true;
-    setTimeout(() => {}, 500);
+    setTimeout(() => {
+      coords.set({ x: 308, y: 17 });
+      size.set(13);
+    }, 700);
   });
 
   function move(e) {
@@ -296,7 +301,7 @@
       </g>
       <!-- <g class="dot-container"> -->
       <circle
-        in:fly={{ y: -120, delay: 650 }}
+        in:fly={{ y: 0, delay: 450 }}
         cx={$coords.x}
         cy={$coords.y}
         r={$size}
