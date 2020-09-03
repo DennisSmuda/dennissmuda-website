@@ -1,26 +1,45 @@
 <script>
   import { onMount } from "svelte";
 
-  let visible = false;
-
-  onMount(() => {
-    visible = true;
-  });
+  let expanded = false;
 </script>
 
 <style>
   svg {
+    margin-top: 3rem;
     overflow: visible;
+    margin-left: -0.25rem;
+    cursor: pointer;
+  }
+  .firstname,
+  .dot-container {
+    transition: transform 0.2s;
   }
   .firstname {
     fill: var(--primary-color);
   }
+
+  svg:hover .firstname,
+  svg:hover .dot-container {
+    transform: translateY(-32px);
+  }
+
   .lastname {
     fill: var(--primary-color);
     animation: colorChange 20s linear alternate infinite;
   }
   .dot {
+    pointer-events: none;
     animation: bounce 3s ease alternate infinite;
+  }
+
+  .expanded .firstname,
+  .expanded .dot-container {
+    transform: translateY(-48px);
+  }
+  svg.expanded:hover .firstname,
+  svg.expanded:hover .dot-container {
+    transform: translateY(-56px);
   }
 
   @keyframes bounce {
@@ -50,6 +69,8 @@
 </style>
 
 <svg
+  on:click={() => (expanded = !expanded)}
+  class={expanded && 'expanded'}
   width="397"
   height="172"
   viewBox="0 0 397 172"
@@ -175,12 +196,14 @@
       343.44 108.4C340.64 111.28 339.24 115.28 339.24 120.4C339.24 125.52 340.64
       129.6 343.44 132.64C346.32 135.6 349.8 137.08 353.88 137.08C357.96 137.08
       361.4 135.6 364.2 132.64C367.08 129.68 368.52 125.64 368.52 120.52Z" />
-    <path
-      class="dot"
-      d="M298.88 24.96C301.2 27.04 304.16 28.08 307.76 28.08C311.28 28.08 314.16
-      27.04 316.4 24.96C318.72 22.8 319.88 20.16 319.88 17.04C319.88 13.84
-      318.72 11.2 316.4 9.12001C314.16 6.96001 311.28 5.88 307.76 5.88C304.16
-      5.88 301.2 6.96001 298.88 9.12001C296.64 11.2 295.52 13.84 295.52
-      17.04C295.52 20.16 296.64 22.8 298.88 24.96Z" />
+    <g class="dot-container">
+      <path
+        class="dot"
+        d="M298.88 24.96C301.2 27.04 304.16 28.08 307.76 28.08C311.28 28.08
+        314.16 27.04 316.4 24.96C318.72 22.8 319.88 20.16 319.88 17.04C319.88
+        13.84 318.72 11.2 316.4 9.12001C314.16 6.96001 311.28 5.88 307.76
+        5.88C304.16 5.88 301.2 6.96001 298.88 9.12001C296.64 11.2 295.52 13.84
+        295.52 17.04C295.52 20.16 296.64 22.8 298.88 24.96Z" />
+    </g>
   </g>
 </svg>

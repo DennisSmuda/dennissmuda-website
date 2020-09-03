@@ -56,12 +56,34 @@
   .keyword {
     animation: colorChange 20s linear alternate infinite;
   }
+
   .reach-me {
     transform: rotate(32deg);
   }
+
   .text-button {
+    position: relative;
     padding: 0.25rem 0.5rem;
     margin-right: 2rem;
+  }
+  .text-button span {
+    position: relative;
+    z-index: 10;
+  }
+
+  .text-button:after {
+    transition: height 0.2s ease-out;
+    z-index: 0;
+  }
+  .text-button:hover {
+    transition: color 0.3s;
+    /* color: var(--background-color); */
+  }
+
+  .text-button:hover:after {
+    /* background-color: var(--copy-color); */
+    height: 100%;
+    bottom: 0;
   }
 
   .button {
@@ -116,7 +138,9 @@
       <span class="emphasis">Germany.</span>
     </p>
     <div class="button-row">
-      <!-- <a href="/about" class="text-button">about me</a> -->
+      <a href="/about" class="text-button">
+        <span>about me</span>
+      </a>
       <a class="button" href="mailto:smuda.dennis@gmail.com">
         <span>reach me</span>
         <svg
