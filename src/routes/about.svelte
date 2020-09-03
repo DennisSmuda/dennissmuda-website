@@ -39,7 +39,7 @@
   <title>About Me | Dennis Smuda</title>
 </svelte:head>
 
-<section class="container h-padding">
+<section class="container container--narrow h-padding">
 
   <div class="content ">
     <h1 class="color-change">About me</h1>

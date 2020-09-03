@@ -62,6 +62,15 @@ ul li {
   cursor: pointer;
   user-select: none;
 }
+ul li div,
+ul li a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 ::selection {
   background-color: var(--primary-color);
   color: var(--background-color);

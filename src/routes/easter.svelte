@@ -56,7 +56,7 @@
     showIntro = false;
 
     if (maxCookies === 1) {
-      notifier.success("Interesting.. 🤔?");
+      notifier.success("You got it! 🤘");
     }
   };
 

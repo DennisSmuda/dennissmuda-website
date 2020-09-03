@@ -9,13 +9,36 @@
 </script>
 
 <script>
+  import Footer from "../../components/Footer.svelte";
   export let posts;
 </script>
 
 <style>
   ul {
-    margin: 0 0 1em 0;
-    line-height: 1.5;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  li {
+    height: 5rem;
+  }
+  li:after {
+    /* top: 0; */
+    height: 2rem;
+  }
+  li:hover:after {
+    height: 100%;
+  }
+  li a {
+    margin-top: 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--primary-color);
   }
 </style>
 
@@ -23,21 +46,35 @@
   <title>Blog | Dennis Smuda</title>
 </svelte:head>
 
-<section class="main-padding">
-  <h1>Recent posts</h1>
-</section>
-<section class="h-padding secondary-background">
-  <p>No Posts yet...</p>
-</section>
-
-<!-- <ul> -->
-<!-- {#each posts as post} -->
-<!-- we're using the non-standard `rel=prefetch` attribute to
+<section class="h-padding container container--narrow">
+  <div class="content">
+    <h1 class="color-change">Writing</h1>
+    <p class="big-paragraph">
+      here are some thoughts
+      <br />
+      and words
+    </p>
+    <!-- </section>
+<section class="h-padding secondary-background"> -->
+    <div class="container container--narrow">
+      <ul>
+        {#each posts as post}
+          <!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-<!-- <li> -->
-<!-- <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> -->
-<!-- </li> -->
-<!-- {/each} -->
-<!-- </ul> -->
+          <li>
+            <!-- {JSON.stringify(post)} -->
+            <a rel="prefetch" href="blog/{post.slug}">
+              <span class="created">{post.createdAt}</span>
+              <span class="title">{post.title}</span>
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<Footer />

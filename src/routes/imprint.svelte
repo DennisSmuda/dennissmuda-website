@@ -2,9 +2,9 @@
   import Footer from "../components/Footer.svelte";
 </script>
 
-<section class="container h-padding">
+<section class="container container--narrow h-padding">
 
-  <div class="content ">
+  <div class="content">
     <h1 class="color-change">Impressum</h1>
 
     <p>

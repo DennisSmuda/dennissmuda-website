@@ -70,8 +70,9 @@
 
   .text-button {
     position: relative;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1.25rem;
     margin-right: 2rem;
+    border-radius: 0.5rem;
   }
   .text-button span {
     position: relative;
@@ -79,8 +80,9 @@
   }
 
   .text-button:after {
-    transition: height 0.2s;
+    transition: all 0.2s;
     z-index: 0;
+    border-radius: 0.5rem;
   }
   .text-button:hover {
     transition: color 0.3s;
