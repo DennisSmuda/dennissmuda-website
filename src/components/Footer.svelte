@@ -11,6 +11,7 @@
     align-items: flex-start;
   }
   .brand {
+    user-select: none;
     color: var(--copy-color);
     font-size: 2rem;
     font-weight: 700;

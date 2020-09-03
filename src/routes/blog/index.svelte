@@ -50,9 +50,9 @@
   <div class="content">
     <h1 class="color-change">Writing</h1>
     <p class="big-paragraph">
-      here are some thoughts
+      here are some
       <br />
-      and words
+      thoughts and words
     </p>
     <!-- </section>
 <section class="h-padding secondary-background"> -->
@@ -76,5 +76,5 @@
 
   </div>
 </section>
-
+<div class="main-padding" />
 <Footer />

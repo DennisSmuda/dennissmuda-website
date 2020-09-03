@@ -41,12 +41,17 @@ h1 {
 
 .content h2,
 .content h3 {
-  margin: 2em 0 0.25em 0;
+  line-height: 1.4;
+  margin: 2em 0 0.5em 0;
 }
 
 .content p,
 .content ul {
+  line-height: 1.75;
   max-width: 560px;
+}
+.content p.big-paragraph {
+  line-height: 1.2;
 }
 .content ul {
   color: var(--copy-color);
