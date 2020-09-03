@@ -57,7 +57,7 @@
 </style>
 
 <svelte:head>
-  <title>{post.title}</title>
+  <title>{post.title} - Blog | Dennis Smuda</title>
 </svelte:head>
 
 <section class="h-padding container container--narrow">

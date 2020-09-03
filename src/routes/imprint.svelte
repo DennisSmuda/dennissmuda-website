@@ -2,6 +2,10 @@
   import Footer from "../components/Footer.svelte";
 </script>
 
+<svelte:head>
+  <title>Impressum | Dennis Smuda</title>
+</svelte:head>
+
 <section class="container container--narrow h-padding">
 
   <div class="content">
@@ -19,7 +23,7 @@
     </p>
 
     <h2>Journalistisch-redaktionelle Angebote</h2>
-    <p>Inhaltlich verantwortlich: Martin Kriegeskorte (Adresse wie oben)</p>
+    <p>Inhaltlich verantwortlich: Dennis Smuda (Adresse wie oben)</p>
 
     <h2>Haftungs- und Urheberrechtshinweise</h2>
     <p>
