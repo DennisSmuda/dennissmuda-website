@@ -24,8 +24,14 @@
   onMount(() => {
     console.log("Mounted");
     // coords.set({ x: 0, y: 0 });
-    size.set(100);
+    // size.set(100);
     mounted = true;
+    setTimeout(() => {
+      size.set(48);
+    }, 300);
+    setTimeout(() => {
+      coords.set({ x: 508, y: -80 });
+    }, 400);
     setTimeout(() => {
       coords.set({ x: 308, y: 17 });
       size.set(13);
@@ -301,7 +307,7 @@
       </g>
       <!-- <g class="dot-container"> -->
       <circle
-        in:fly={{ y: 0, delay: 450 }}
+        in:fly={{ y: 0, delay: 250 }}
         cx={$coords.x}
         cy={$coords.y}
         r={$size}
