@@ -30,18 +30,40 @@
     margin-left: -0.25rem;
     cursor: pointer;
   }
-  .firstname,
+  .firstname path,
   .dot-container {
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, fill 0.5s;
   }
   .firstname {
     fill: var(--primary-color);
   }
 
-  /* svg:hover .firstname,
+  svg:hover .firstname path,
   svg:hover .dot-container {
+    /* fill: var(--accent-color); */
     transform: translateY(-32px);
-  } */
+  }
+
+  svg .firstname path:nth-child(5) {
+    transition-delay: 0s;
+  }
+
+  svg .firstname path:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+  svg .firstname path:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  svg .firstname path:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+  svg .firstname path:nth-child(4),
+  svg .firstname path:nth-child(6) {
+    transition-delay: 0.05s;
+  }
+  svg .dot-container {
+    transition-delay: 0.05s;
+  }
 
   .lastname {
     fill: var(--primary-color);
@@ -50,7 +72,7 @@
 
   .dot {
     pointer-events: none;
-    animation: bounce 3s ease alternate infinite;
+    /* animation: bounce 3s ease alternate infinite; */
   }
 
   /* .expanded .firstname,

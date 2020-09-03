@@ -48,11 +48,11 @@
     }
   }
 
-  /* @media screen and (min-width: 920px) {
+  @media screen and (min-width: 920px) {
     .title {
       margin-bottom: -1.5vw;
     }
-  } */
+  }
 
   .button-row {
     margin-top: 1.5rem;
@@ -123,27 +123,18 @@
 </style>
 
 <div class="hero main-padding">
+  <!-- My Name -->
   <div class="title">
     <Name />
-    <!-- <h1>
-      Dennis
-      <br />
-      Smuda
-    </h1> -->
-    <!-- <div class="line" /> -->
   </div>
   <div class="intro">
-    <!-- <div class="subline">it's me</div> -->
-    <!-- <p class="big-paragraph">
-      <span class="keyword">Frontend Developer</span>
-      <span>from</span>
-      <span class="emphasis">Germany.</span>
-    </p> -->
+    <!-- Intro -->
     <p class="big-paragraph">
       <span class="keyword">Frontend Developer</span>
       <span>from</span>
       <span class="emphasis">Germany.</span>
     </p>
+    <!-- Buttons -->
     <div class="button-row">
       <a href="/about" class="text-button">
         <span>about me</span>
