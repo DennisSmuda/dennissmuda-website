@@ -70,7 +70,7 @@
 
   .text-button {
     position: relative;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     margin-right: 2rem;
   }
   .text-button span {
@@ -79,7 +79,7 @@
   }
 
   .text-button:after {
-    transition: height 0.2s ease-out;
+    transition: height 0.2s;
     z-index: 0;
   }
   .text-button:hover {

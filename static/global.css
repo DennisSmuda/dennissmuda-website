@@ -149,6 +149,7 @@ code {
   text-decoration: none;
   position: relative;
 }
+
 .text-button:after {
   content: "";
   position: absolute;
@@ -288,8 +289,8 @@ button:focus {
 }
 
 .tag--vue {
-  color: #00a591;
-  background-color: white;
+  background-color: #00a591;
+  color: white;
 }
 
 .tag--graphql {
