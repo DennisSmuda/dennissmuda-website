@@ -16,6 +16,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding-right: 2rem;
+    overflow: visible;
   }
 
   :global(.title svg) {

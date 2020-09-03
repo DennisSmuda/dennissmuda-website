@@ -129,6 +129,7 @@
     mix-blend-mode: exclusion;
   }
   .wrapper {
+    overflow: visible;
     width: 100%;
     height: 100%;
   }
