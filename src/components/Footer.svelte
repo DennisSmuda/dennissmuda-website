@@ -8,10 +8,16 @@
     padding-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
   .brand {
+    color: var(--copy-color);
     font-size: 2rem;
     font-weight: 700;
+    letter-spacing: -2.3px;
+  }
+  .brand:hover {
+    color: var(--primary-color);
   }
 
   .links {

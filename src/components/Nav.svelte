@@ -71,6 +71,7 @@
     width: initial;
     height: 3rem;
     padding: 0.25rem 0.5rem;
+    letter-spacing: -2.3px;
   }
   .brand span {
     transform: translate3d(0, 0, 0);

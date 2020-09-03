@@ -22,6 +22,17 @@
     width: 2rem;
     height: 2rem;
   }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: rotate(180deg);
+    z-index: 0;
+    display: none;
+  }
 </style>
 
 <svelte:head>
@@ -240,6 +251,47 @@
 
   </div>
 </section>
+
+<div class="bg">
+  <svg
+    width="1492"
+    height="420"
+    viewBox="0 0 1492 420"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <mask
+      id="mask0"
+      mask-type="alpha"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1492"
+      height="420">
+      <rect width="1492" height="420" fill="#C4C4C4" />
+    </mask>
+    <g mask="url(#mask0)">
+      <circle cx="247" cy="231" r="184" fill="#5C6687" />
+      <circle cx="448" cy="239" r="184" fill="#5C6687" />
+      <circle cx="566" cy="286" r="184" fill="#5C6687" />
+      <circle cx="809" cy="249" r="184" fill="#5C6687" />
+      <circle cx="1438" cy="196" r="184" fill="#5C6687" />
+      <circle cx="1242" cy="239" r="184" fill="#5C6687" />
+      <circle cx="1007" cy="241" r="184" fill="#5C6687" />
+      <circle cx="136" cy="213" r="184" fill="#4E5670" />
+      <circle cx="407" cy="291" r="184" fill="#4E5670" />
+      <circle cx="685" cy="338" r="184" fill="#4E5670" />
+      <circle cx="928" cy="271" r="184" fill="#4E5670" />
+      <circle cx="1067" cy="298" r="184" fill="#4E5670" />
+      <circle cx="1351" cy="271" r="184" fill="#4E5670" />
+      <circle cx="76" cy="276" r="184" fill="#41475F" />
+      <circle cx="317" cy="334" r="184" fill="#41475F" />
+      <circle cx="585" cy="371" r="184" fill="#41475F" />
+      <circle cx="837" cy="342" r="184" fill="#41475F" />
+      <circle cx="1097" cy="321" r="184" fill="#41475F" />
+      <circle cx="1371" cy="304" r="184" fill="#41475F" />
+    </g>
+  </svg>
+</div>
 
 <div class="main-padding" />
 
