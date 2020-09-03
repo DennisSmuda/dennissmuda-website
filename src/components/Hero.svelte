@@ -1,3 +1,9 @@
+<script>
+  // import { fade } from "svelte/transition";
+
+  import Name from "./Name.svelte";
+</script>
+
 <style>
   p {
     color: var(--copy-color);
@@ -9,14 +15,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-right: 2rem;
   }
 
-  h1 {
+  :global(.title svg) {
+    width: 100%;
+    height: 100%;
+    max-width: 380px;
+  }
+
+  /* h1 {
     display: inline-flex;
     text-align: left;
     padding-bottom: 1rem;
     border-bottom: 4px solid var(--accent-color);
-  }
+  } */
 
   .intro {
     margin-top: 2rem;
@@ -37,16 +50,20 @@
     .hero {
       grid-template-columns: 1fr 1fr;
     }
+    :global(.title svg) {
+      max-width: initial;
+    }
   }
 </style>
 
 <div class="hero main-padding">
   <div class="title">
-    <h1>
+    <Name />
+    <!-- <h1>
       Dennis
       <br />
       Smuda
-    </h1>
+    </h1> -->
     <!-- <div class="line" /> -->
   </div>
   <div class="intro">
