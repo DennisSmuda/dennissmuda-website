@@ -9,7 +9,7 @@
   const initialHeight = 172;
 
   let coords = spring(
-    { x: -400, y: 17 },
+    { x: -200, y: -270 },
     {
       stiffness: 0.1,
       damping: 0.25
@@ -24,14 +24,13 @@
 
   onMount(() => {
     console.log("Mounted");
-    // coords.set({ x: 0, y: 0 });
-    // size.set(100);
+    // size.set(300);
     mounted = true;
+    // size.set(8);
+    // coords.set({ x: 508, y: 80 });
+
     setTimeout(() => {
-      size.set(48);
-    }, 300);
-    setTimeout(() => {
-      coords.set({ x: 508, y: -80 });
+      // coords.set({ x: 508, y: -80 });
     }, 400);
     setTimeout(() => {
       coords.set({ x: 308, y: 17 });
@@ -49,19 +48,24 @@
 
 <style>
   svg {
-    margin-top: 3rem;
     overflow: visible;
     margin-left: -0.25rem;
     cursor: none;
+    pointer-events: none;
   }
+  svg.interactive {
+    pointer-events: visible;
+  }
+
   svg path,
   svg g {
     pointer-events: none;
   }
-  .firstname path,
-  .dot-container {
+
+  .firstname path {
     transition: transform 0.2s ease, fill 0.5s;
   }
+
   .firstname {
     fill: var(--primary-color);
   }
@@ -142,6 +146,7 @@
     mix-blend-mode: exclusion;
   }
   .wrapper {
+    margin-top: 3rem;
     overflow: visible;
     width: 100%;
     height: 100%;
