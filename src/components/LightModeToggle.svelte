@@ -1,5 +1,20 @@
 <script>
   let isLightMode = false;
+  // import { fly } from "svelte/transition";
+  import { elasticOut } from "svelte/easing";
+
+  function spin(node, { duration }) {
+    return {
+      duration,
+      css: t => {
+        const eased = elasticOut(t);
+        return `
+          transform: scale(${eased}) rotate(${eased * 1080}deg);
+
+        `;
+      }
+    };
+  }
 
   function toggle() {
     window.document.body.classList.toggle("light-mode");
@@ -44,6 +59,7 @@
 <button class="button" on:click={toggle}>
   {#if isLightMode}
     <svg
+      in:spin={{ duration: 800 }}
       viewBox="0 0 20 20"
       width="24px"
       height="24px"
@@ -54,6 +70,7 @@
     </svg>
   {:else}
     <svg
+      in:spin={{ duration: 800 }}
       viewBox="0 0 20 20"
       fill="currentColor"
       class="sun"
