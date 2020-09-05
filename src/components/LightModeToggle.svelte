@@ -1,6 +1,5 @@
 <script>
   let isLightMode = false;
-  // import { fly } from "svelte/transition";
   import { elasticOut } from "svelte/easing";
 
   function spin(node, { duration }) {
@@ -10,7 +9,6 @@
         const eased = elasticOut(t);
         return `
           transform: scale(${eased}) rotate(${eased * 1080}deg);
-
         `;
       }
     };
