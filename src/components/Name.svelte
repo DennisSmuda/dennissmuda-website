@@ -20,6 +20,7 @@
 
   let expanded = false;
   let mounted = false;
+  let interactive = false;
 
   onMount(() => {
     console.log("Mounted");
@@ -35,6 +36,7 @@
     setTimeout(() => {
       coords.set({ x: 308, y: 17 });
       size.set(13);
+      interactive = true;
     }, 700);
   });
 
@@ -64,7 +66,7 @@
     fill: var(--primary-color);
   }
 
-  svg:hover .firstname path {
+  svg.interactive:hover .firstname path {
     /* fill: var(--accent-color); */
     transform: translateY(-32px);
   }
@@ -155,7 +157,8 @@
       coords.set({ x: 308, y: 17 });
       size.set(12);
     }}
-    class={expanded && 'expanded'}
+    class:expanded={expanded === true}
+    class:interactive={interactive === true}
     on:mousedown={() => {
       size.set(128);
     }}
