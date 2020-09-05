@@ -1,5 +1,6 @@
 <script>
   import Hero from "../components/Hero.svelte";
+  // import CircleDivider from "../components/dividers/Circles.svelte";
   import Projects from "../components/Projects.svelte";
   import Footer from "../components/Footer.svelte";
 </script>
@@ -77,6 +78,8 @@
 </svelte:head>
 
 <Hero />
+
+<!-- <CircleDivider /> -->
 
 <Projects />
 

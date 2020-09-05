@@ -14,6 +14,8 @@
     margin: 4rem 0;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
   }
 
   article:nth-child(even) {
