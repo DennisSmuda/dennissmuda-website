@@ -1,19 +1,23 @@
 <script>
   import { onMount, onDestroy } from "svelte";
+  import Vehicle from "../utils/Vehicle";
 
   let sketch;
+  let p5;
 
   onMount(async () => {
     const module = await import("p5");
-    const p5 = module.default;
+    p5 = module.default;
 
     let mover;
+    let vehicle;
 
     const s = sk => {
       sketch = sk;
       sk.setup = () => {
-        mover = new Mover(sk);
         sk.createCanvas(window.innerWidth, window.innerHeight);
+        // mover = new Mover(sk);
+        vehicle = new Vehicle(p5, sk);
 
         sk.stroke(200);
         sk.strokeWeight(3);
@@ -21,9 +25,11 @@
 
       sk.draw = () => {
         sk.background("#191c26");
-        mover.update(sk);
+        // mover.update(sk);
+        vehicle.update(sk);
 
-        mover.draw(sk);
+        // mover.draw(sk);
+        vehicle.draw(sk);
       };
     };
     const P5 = new p5(s);
@@ -44,7 +50,7 @@
       );
       this.velocity = sk.createVector(0, 0);
       this.acceleration = sk.createVector(0, 0);
-      this.mass = 100.0;
+      this.mass = 10.0;
     }
 
     update(sk) {
@@ -58,16 +64,15 @@
 
     accelerate(sk) {
       const mousePos = sk.createVector(sk.mouseX, sk.mouseY);
-      const target = mousePos
-        .sub(this.position)
-        .normalize()
-        .mult(0.1);
+      const target = mousePos.sub(this.position).normalize();
       // console.log("Accel", target);
-      this.acceleration.add(target);
+      // this.acceleration.add(target);
+      this.applyForce(target);
     }
 
     applyForce(force) {
-      this.acceleration.add(force);
+      let f = p5.Vector.div(force, this.mass);
+      this.acceleration.add(f);
     }
 
     collide(sk) {
