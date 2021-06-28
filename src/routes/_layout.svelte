@@ -4,8 +4,28 @@
   export let segment;
 </script>
 
+<svelte:head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <meta
+    name="google-site-verification"
+    content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998"
+  />
+</svelte:head>
+
+<Nav {segment} />
+
+<main>
+  <slot />
+</main>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+  :global(html) {
+    font-size: 18px;
+  }
 
   :global(body) {
     background-color: #191c26;
@@ -21,7 +41,7 @@
     --second-background-color: #1d212f;
     --third-background-color: #23293e;
     --outline-color: #ffc400;
-    font-size: 18px;
+    font-size: 100%;
   }
 
   :global(body.light-mode) {
@@ -68,7 +88,13 @@
   }
 
   :global(.main-padding) {
-    padding: 2.5rem clamp(2.5rem, 10vw, 2.5rem) 5rem;
+    padding: 1.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    :global(.main-padding) {
+      padding: 2.5rem clamp(2.5rem, 10vw, 2.5rem) 5rem;
+    }
   }
 
   :global(.subline) {
@@ -107,16 +133,3 @@
     }
   } */
 </style>
-
-<svelte:head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet" />
-  <meta name="google-site-verification" content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998" />
-</svelte:head>
-
-<Nav {segment} />
-
-<main>
-  <slot />
-</main>

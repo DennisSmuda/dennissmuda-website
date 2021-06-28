@@ -4,6 +4,41 @@
   import Name from "./Name.svelte";
 </script>
 
+<div class="hero main-padding">
+  <!-- My Name -->
+  <div class="title">
+    <Name />
+  </div>
+  <div class="intro">
+    <!-- Intro -->
+    <p class="big-paragraph">
+      <span class="keyword">Frontend Developer</span>
+      <span>from</span>
+      <span class="emphasis">Germany.</span>
+    </p>
+    <!-- Buttons -->
+    <div class="button-row">
+      <a href="/about" class="text-button">
+        <span>about me</span>
+      </a>
+      <a class="button" href="mailto:smuda.dennis@gmail.com">
+        <span>reach me</span>
+        <svg
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="paper-airplane reach-me"
+        >
+          <path
+            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169
+            1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0
+            00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
 <style>
   p {
     color: var(--copy-color);
@@ -14,38 +49,56 @@
   .title {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-right: 2rem;
+    align-items: center;
     overflow: visible;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .title,
+  .big-paragraph {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .title {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   :global(.title svg) {
     width: 100%;
     height: 100%;
-    max-width: 380px;
   }
 
   .intro {
     user-select: none;
     max-width: 380px;
-    align-self: end;
   }
 
   .hero {
     max-width: 1440px;
     margin: 0 auto;
-    display: grid;
-    grid-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     padding-bottom: 5rem;
     position: relative;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 920px) {
     .hero {
-      grid-template-columns: 1fr 1fr;
+      flex-direction: row;
     }
-    :global(.title svg) {
-      max-width: initial;
+    .title {
+      width: calc(100% - 22rem);
+      max-width: 768px;
+    }
+    .title,
+    .big-paragraph {
+      text-align: left;
     }
   }
 
@@ -58,7 +111,17 @@
   .button-row {
     margin-top: 1.5rem;
     display: flex;
-    align-items: baseline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 520px) {
+    .button-row {
+      flex-direction: row;
+      align-items: baseline;
+    }
   }
 
   .keyword {
@@ -72,7 +135,6 @@
   .text-button {
     position: relative;
     padding: 0.5rem 1.25rem;
-    margin-right: 2rem;
     border-radius: 0.5rem;
   }
   .text-button span {
@@ -124,37 +186,3 @@
     }
   }
 </style>
-
-<div class="hero main-padding">
-  <!-- My Name -->
-  <div class="title">
-    <Name />
-  </div>
-  <div class="intro">
-    <!-- Intro -->
-    <p class="big-paragraph">
-      <span class="keyword">Frontend Developer</span>
-      <span>from</span>
-      <span class="emphasis">Germany.</span>
-    </p>
-    <!-- Buttons -->
-    <div class="button-row">
-      <a href="/about" class="text-button">
-        <span>about me</span>
-      </a>
-      <a class="button" href="mailto:smuda.dennis@gmail.com">
-        <span>reach me</span>
-        <svg
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="paper-airplane reach-me">
-          <path
-            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169
-            1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0
-            00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-        </svg>
-      </a>
-    </div>
-
-  </div>
-</div>
