@@ -1,4 +1,5 @@
 <section class="main-padding projects">
+  <div class="background-shape" />
   <div class="background background--left">
     <h2>Projects</h2>
   </div>
@@ -86,12 +87,20 @@
   .projects .container {
     display: flex;
     gap: 4rem;
-    flex-direction: row;
-    /* align-items: center; */
-
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     /* padding: 4rem; */
-    padding-top: 5rem;
+    padding: 4rem 1rem;
+  }
+
+  @media screen and (min-width: 920px) {
+    .projects .container {
+      flex-direction: row;
+      align-items: flex-start;
+
+      flex-wrap: wrap;
+      padding: 4rem 2rem 8rem;
+    }
   }
 
   article {
@@ -100,11 +109,13 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+    max-width: 420px;
   }
 
   @media screen and (min-width: 920px) {
     article {
-      max-width: 380px;
+      /* max-width: 320px; */
+      flex: calc(50% - 2rem) 0 0;
     }
   }
 
@@ -146,7 +157,7 @@
 
   h2 {
     font-size: 3rem;
-    opacity: 0.05;
+    opacity: 0.1;
   }
 
   .background {
@@ -166,7 +177,9 @@
   }
 
   .background--left h2 {
-    transform: translateY(2rem) translateX(2rem);
+    transform: translateY(1rem) translateX(2.25rem);
+    user-select: none;
+    letter-spacing: -0.03em;
   }
 
   @media screen and (min-width: 520px) {
@@ -178,17 +191,30 @@
   @media screen and (min-width: 768px) {
     .background--left h2 {
       font-size: 8rem;
-      transform: rotate(90deg) translateY(14rem) translateX(50%);
+      transform: rotate(90deg) translateY(14rem) translateX(40%);
     }
   }
 
   @media screen and (min-width: 1024px) {
     .background--left h2 {
-      transform: rotate(90deg) translateY(14rem) translateX(50%);
+      transform: rotate(90deg) translateY(14rem) translateX(40%);
     }
 
     h2 {
       font-size: 10rem;
     }
+  }
+
+  .background-shape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: var(--background-color);
+    transform: rotate(4deg) scaleX(1.5) translateX(-25%);
+    transform-origin: center left;
+    z-index: 0;
   }
 </style>

@@ -4,39 +4,42 @@
   import Name from "./Name.svelte";
 </script>
 
-<div class="hero main-padding">
-  <!-- My Name -->
-  <div class="title">
-    <Name />
-  </div>
-  <div class="intro">
-    <!-- Intro -->
-    <p class="big-paragraph">
-      <span class="keyword">Frontend Developer</span>
-      <span>from</span>
-      <span class="emphasis">Germany.</span>
-    </p>
-    <!-- Buttons -->
-    <div class="button-row">
-      <a href="/about" class="text-button">
-        <span>about me</span>
-      </a>
-      <a class="button" href="mailto:smuda.dennis@gmail.com">
-        <span>reach me</span>
-        <svg
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="paper-airplane reach-me"
-        >
-          <path
-            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169
+<div class="hero">
+  <div class="container main-padding">
+    <!-- My Name -->
+    <div class="title">
+      <Name />
+    </div>
+    <div class="intro">
+      <!-- Intro -->
+      <p class="big-paragraph">
+        <span class="keyword">Frontend Developer</span>
+        <span>from</span>
+        <span class="emphasis">Germany.</span>
+      </p>
+      <!-- Buttons -->
+      <div class="button-row">
+        <a href="/about" class="text-button">
+          <span>about me</span>
+        </a>
+        <a class="button" href="mailto:smuda.dennis@gmail.com">
+          <span>reach me</span>
+          <svg
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="paper-airplane reach-me"
+          >
+            <path
+              d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169
             1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0
             00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
-          />
-        </svg>
-      </a>
+            />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
+  <div class="background-shape" />
 </div>
 
 <style>
@@ -53,6 +56,11 @@
     overflow: visible;
     width: 100%;
     max-width: 520px;
+  }
+
+  .title,
+  .intro {
+    z-index: 2;
   }
 
   .title,
@@ -76,8 +84,12 @@
     user-select: none;
     max-width: 380px;
   }
-
   .hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero .container {
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
@@ -86,10 +98,25 @@
     gap: 2rem;
     padding-bottom: 5rem;
     position: relative;
+    overflow: hidden;
+  }
+
+  .background-shape {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: var(--second-background-color);
+
+    transform: rotate(-4deg) scaleX(1.5);
+    transform-origin: center right;
+    z-index: 0;
   }
 
   @media screen and (min-width: 920px) {
-    .hero {
+    .hero .container {
       flex-direction: row;
     }
     .title {
