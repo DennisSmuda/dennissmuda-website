@@ -255,26 +255,30 @@ button:focus {
 /**
   * Tags
   **/
+.tech-tags {
+  display: flex;
+  gap: 1rem;
+}
+
 .tag {
   padding: 0.25rem 0.75rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
+  /* margin-right: 1rem;
+  margin-bottom: 1rem; */
+  font-size: 0.75rem;
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
   transform: scale(1);
-  transition: all 0.3s;
   user-select: none;
   background-color: var(--third-background-color);
   cursor: pointer;
 }
 
 .tag:hover {
-  transform: scale(1.05);
+  transform: translateY(-1px);
 }
 .tag:active {
-  transform: scale(0.95);
+  transform: translateY(1px);
 }
 
 .tag span {

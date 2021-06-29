@@ -8,7 +8,7 @@
     <span>©{date} built by myself.</span>
     <div class="internal">
       <a href="/about" class="button">about</a>
-      <a href="/blog" class="button">writing</a>
+      <!-- <a href="/blog" class="button">writing</a> -->
       <a href="/imprint" class="button">imprint</a>
     </div>
     <div class="links">
@@ -71,6 +71,10 @@
 </footer>
 
 <style>
+  .footer {
+    border-bottom: 0.25rem solid var(--accent-color);
+  }
+
   .footer .container {
     /* margin-top: 4rem; */
     padding-bottom: 2.5rem;
@@ -79,7 +83,6 @@
     align-items: flex-start;
     position: relative;
     z-index: 1;
-    border-bottom: 0.25rem solid var(--accent-color);
   }
 
   .brand {

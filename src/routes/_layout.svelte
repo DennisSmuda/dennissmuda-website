@@ -64,6 +64,8 @@
     --third-background-color: #23293e;
     --outline-color: #ffc400;
     font-size: 100%;
+
+    transition: background-color 0.3s;
   }
 
   :global(body.light-mode) {
@@ -107,6 +109,7 @@
   }
   :global(.secondary-background) {
     background-color: var(--second-background-color);
+    transition: background-color 0.3s;
   }
 
   :global(.main-padding) {
@@ -117,20 +120,6 @@
     :global(.main-padding) {
       padding: 2.5rem clamp(2.5rem, 10vw, 2.5rem) 5rem;
     }
-  }
-
-  :global(.subline) {
-    position: relative;
-  }
-
-  :global(.subline::after) {
-    content: "";
-    position: absolute;
-    top: calc(50% - 2px);
-    right: calc(100% + 0.5rem);
-    height: 2px;
-    width: 0.5rem;
-    background-color: var(--copy-color);
   }
 
   :global(.big-paragraph) {
