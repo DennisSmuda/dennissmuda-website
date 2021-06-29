@@ -13,6 +13,28 @@
     name="google-site-verification"
     content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998"
   />
+
+  <meta name="author" content="Dennis Smuda" />
+  <title>Dennis Smuda – Web-Developer based in Germany</title>
+  <meta
+    name="description"
+    content="web dev who loves code, design and everything that goes into creating unique experiences for others"
+  />
+
+  <link rel="canonical" href="https://www.dennissmuda.com" />
+
+  <meta property="og:url" content="https://www.dennissmuda.com" />
+  <meta property="og:type" content="website" /><meta
+    property="og:title"
+    content="Dennis Smuda – Web-Developer based in Germany"
+  />
+  <meta
+    property="og:description"
+    content="web dev who loves code, design and everything that goes into creating unique experiences for others"
+  />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
 </svelte:head>
 
 <Nav {segment} />
