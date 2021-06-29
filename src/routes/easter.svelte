@@ -30,8 +30,6 @@
     const cookies = localStorage.getItem("collectedCookies");
     const perSecondSaved = localStorage.getItem("perSecond");
 
-    console.log("Mounted", cookies);
-
     if (parseFloat(cookies)) {
       totalCookies = parseFloat(cookies);
       showIntro = false;
@@ -60,7 +58,7 @@
     }
   };
 
-  const addFarm = i => {
+  const addFarm = (i) => {
     console.log("Farm", shops[i]);
     let shop = shops[i];
 
@@ -102,7 +100,7 @@
 
   let lastSecondTime = 0;
 
-  const loop = now => {
+  const loop = (now) => {
     let targetNumber = totalCookies;
 
     displayNumber = lerp(displayNumber, targetNumber, 0.1);
@@ -135,7 +133,7 @@
   const updateAchievements = () => {
     if (totalCookies > maxCookies) maxCookies = totalCookies;
 
-    shops.forEach(s => {
+    shops.forEach((s) => {
       if (maxCookies >= s.unlockCookieAmount && s.unlocked === false) {
         console.log("unlock", s.unlockCookieAmount, maxCookies);
         notifier.info(s.unlockMessage, 6000);
@@ -149,6 +147,117 @@
     return ((1 - amt) * start + amt * end).toFixed(4);
   }
 </script>
+
+<Display />
+
+{#if totalCookies === 0 && showIntro === true}
+  <section class="h-padding">
+    <div class="content">
+      <h1 class="color-change">Awkward</h1>
+      <p>You find a lone cookie...</p>
+      <div on:click={collectCookie} class="cookie-container">
+        <Cookie />
+      </div>
+
+      <p>You make the obvious choice and start a cookie business!</p>
+    </div>
+  </section>
+{/if}
+{#if showIntro === false}
+  <section class="main-padding game-container">
+    <!-- Cookie -->
+    <div in:fade class="clicker secondary-background">
+      <div on:click={collectCookie} class="cookie-container">
+        <Cookie />
+      </div>
+      <div class="cookie-info">
+        <div class="summary">
+          <span id="numCookies" class="number">{displayNumber}</span>
+          cookies
+        </div>
+        {#if perSecond > 0}
+          <div>
+            <span class="perSecond">{perSecond}</span>
+            per Second
+          </div>
+        {/if}
+      </div>
+    </div>
+    <!-- Farms -->
+    <div class="farms">
+      {#each shops as shop, i}
+        {#if maxCookies >= shop.unlockCookieAmount}
+          <div in:fade|local class="farm secondary-background">
+            <div class="progress" style={`width: ${progress[i]}%`} />
+            <div class="image">
+              {#if i === 0}
+                <Butter />
+              {/if}
+              {#if i === 1}
+                <Chocolate />
+              {/if}
+              {#if i === 2}
+                <Egg />
+              {/if}
+              {#if i === 3}
+                <Cloud />
+              {/if}
+              {#if i === 4}
+                <Vanilla />
+              {/if}
+            </div>
+            <div class="info">
+              <div class="number">{shop.owned}</div>
+              <div class="summary">
+                <div class="name">{shop.name}</div>
+                {#if shops[i].owned}
+                  <div class="productivity">
+                    <div class="prod-number">
+                      {(shops[i].initialProductivity * shops[i].owned).toFixed(
+                        2
+                      )}
+                    </div>
+                    <span class="per">
+                      per {shops[i].initialTime.toFixed(3)}s
+                    </span>
+                  </div>
+                {/if}
+              </div>
+              <div class="buy">
+                <button
+                  class="button button--small"
+                  on:click={() => addFarm(i)}
+                  disabled={shop.initialCost *
+                    Math.pow(shop.coefficient, shop.owned) >
+                    totalCookies}
+                >
+                  <!-- <span>buy</span> -->
+                  <span>
+                    {(
+                      shop.initialCost * Math.pow(shop.coefficient, shop.owned)
+                    ).toFixed(2)}
+                  </span>
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="plus w-6 h-6"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2
+                      0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        {/if}
+      {/each}
+    </div>
+  </section>
+{/if}
 
 <style>
   @media screen and (min-width: 820px) {
@@ -271,106 +380,3 @@
     font-weight: 900;
   }
 </style>
-
-<Display />
-
-{#if totalCookies === 0 && showIntro === true}
-  <section class="h-padding">
-    <div class="content">
-      <h1 class="color-change">Awkward</h1>
-      <p>You find a lone cookie...</p>
-      <div on:click={collectCookie} class="cookie-container">
-        <Cookie />
-      </div>
-
-      <p>You make the obvious choice and start a cookie business!</p>
-    </div>
-  </section>
-{/if}
-{#if showIntro === false}
-  <section class="main-padding game-container">
-    <!-- Cookie -->
-    <div in:fade class="clicker secondary-background">
-      <div on:click={collectCookie} class="cookie-container">
-        <Cookie />
-      </div>
-      <div class="cookie-info">
-        <div class="summary">
-          <span id="numCookies" class="number">{displayNumber}</span>
-          cookies
-        </div>
-        {#if perSecond > 0}
-          <div>
-            <span class="perSecond">{perSecond}</span>
-            per Second
-          </div>
-        {/if}
-      </div>
-    </div>
-    <!-- Farms -->
-    <div class="farms">
-      {#each shops as shop, i}
-        {#if maxCookies >= shop.unlockCookieAmount}
-          <div in:fade|local class="farm secondary-background">
-            <div class="progress" style={`width: ${progress[i]}%`} />
-            <div class="image">
-              {#if i === 0}
-                <Butter />
-              {/if}
-              {#if i === 1}
-                <Chocolate />
-              {/if}
-              {#if i === 2}
-                <Egg />
-              {/if}
-              {#if i === 3}
-                <Cloud />
-              {/if}
-              {#if i === 4}
-                <Vanilla />
-              {/if}
-            </div>
-            <div class="info">
-              <div class="number">{shop.owned}</div>
-              <div class="summary">
-                <div class="name">{shop.name}</div>
-                {#if shops[i].owned}
-                  <div class="productivity">
-                    <div class="prod-number">
-                      {(shops[i].initialProductivity * shops[i].owned).toFixed(2)}
-                    </div>
-                    <span class="per">
-                      per {shops[i].initialTime.toFixed(3)}s
-                    </span>
-                  </div>
-                {/if}
-              </div>
-              <div class="buy">
-                <button
-                  class="button button--small"
-                  on:click={() => addFarm(i)}
-                  disabled={shop.initialCost * Math.pow(shop.coefficient, shop.owned) > totalCookies}>
-                  <!-- <span>buy</span> -->
-                  <span>
-                    {(shop.initialCost * Math.pow(shop.coefficient, shop.owned)).toFixed(2)}
-                  </span>
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="plus w-6 h-6">
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2
-                      0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        {/if}
-      {/each}
-
-    </div>
-  </section>
-{/if}

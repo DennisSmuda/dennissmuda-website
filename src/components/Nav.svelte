@@ -1,7 +1,69 @@
 <script>
   import Toggle from "./LightModeToggle.svelte";
+  import { playClick } from "../utils/Sounds";
+
   export let segment;
 </script>
+
+<nav>
+  <a
+    href="."
+    class="brand title"
+    aria-current={segment === undefined ? "page" : undefined}
+    on:click={playClick}
+  >
+    ds
+    <span>.</span>
+  </a>
+  <div class="menu">
+    <a
+      on:click={playClick}
+      aria-current={segment === "easter" ? "page" : undefined}
+      href="/easter"
+    >
+      <svg
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        width="20px"
+        height="20px"
+        class="bell w-6 h-6"
+      >
+        <path
+          d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0
+          00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
+          3z"
+        />
+      </svg>
+      {#if segment !== "easter"}
+        <div class="badge">1</div>
+      {/if}
+    </a>
+    <!-- <a
+      rel="prefetch"
+      aria-current={segment === 'blog' ? 'page' : undefined}
+      href="blog">
+      writing
+    </a> -->
+    <!-- <li>
+      <a aria-current={segment === undefined ? 'page' : undefined} href=".">
+        home
+      </a>
+    </li> -->
+    <!-- <li>
+      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
+        about
+      </a>
+    </li> -->
+
+    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
+		     the blog data when we hover over the link or tap it on a touchscreen -->
+    <!-- <li>
+    </li> -->
+    <div class="light-mode-toggle">
+      <Toggle />
+    </div>
+  </div>
+</nav>
 
 <style>
   nav {
@@ -100,55 +162,3 @@
     justify-content: center;
   }
 </style>
-
-<nav>
-  <a
-    href="."
-    class="brand title"
-    aria-current={segment === undefined ? 'page' : undefined}>
-    ds
-    <span>.</span>
-  </a>
-  <div class="menu">
-    <a aria-current={segment === 'easter' ? 'page' : undefined} href="/easter">
-      <svg
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        width="20px"
-        height="20px"
-        class="bell w-6 h-6">
-        <path
-          d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0
-          00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
-          3z" />
-      </svg>
-      {#if segment !== 'easter'}
-        <div class="badge">1</div>
-      {/if}
-    </a>
-    <!-- <a
-      rel="prefetch"
-      aria-current={segment === 'blog' ? 'page' : undefined}
-      href="blog">
-      writing
-    </a> -->
-    <!-- <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-        home
-      </a>
-    </li> -->
-    <!-- <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
-        about
-      </a>
-    </li> -->
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <!-- <li>
-    </li> -->
-    <div class="light-mode-toggle">
-      <Toggle />
-    </div>
-  </div>
-</nav>

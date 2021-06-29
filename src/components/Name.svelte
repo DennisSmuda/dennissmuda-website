@@ -23,7 +23,6 @@
   let interactive = false;
 
   onMount(() => {
-    console.log("Mounted");
     // size.set(300);
     mounted = true;
     // size.set(8);

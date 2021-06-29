@@ -1,4 +1,5 @@
 <script>
+  import { playClick } from "../utils/Sounds";
   // import { fade } from "svelte/transition";
 
   import Name from "./Name.svelte";
@@ -19,10 +20,14 @@
       </p>
       <!-- Buttons -->
       <div class="button-row">
-        <a href="/about" class="text-button">
+        <a on:click={playClick} href="/about" class="text-button">
           <span>about me</span>
         </a>
-        <a class="button" href="mailto:smuda.dennis@gmail.com">
+        <a
+          on:click={playClick}
+          class="button"
+          href="mailto:smuda.dennis@gmail.com"
+        >
           <span>reach me</span>
           <svg
             viewBox="0 0 20 20"

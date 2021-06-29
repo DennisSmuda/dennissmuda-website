@@ -1,18 +1,24 @@
 <script>
+  import { playClick } from "../utils/Sounds";
   const date = new Date().getFullYear();
 </script>
 
 <footer class="footer">
   <div class="container main-padding">
-    <a href="./" class="brand">ds.</a>
+    <a on:click={playClick} href="./" class="brand">ds.</a>
     <span>©{date} built by myself.</span>
     <div class="internal">
-      <a href="/about" class="button">about</a>
+      <a on:click={playClick} href="/about" class="button">about</a>
       <!-- <a href="/blog" class="button">writing</a> -->
-      <a href="/imprint" class="button">imprint</a>
+      <a on:click={playClick} href="/imprint" class="button">imprint</a>
     </div>
     <div class="links">
-      <a href="https://github.com/dennissmuda" target="_blank">
+      <a
+        on:click={playClick}
+        href="https://github.com/dennissmuda"
+        target="_blank"
+      >
+        github
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -31,7 +37,12 @@
           />
         </svg>
       </a>
-      <a href="https://gitlab.com/DennisSmuda" target="_blank">
+      <a
+        on:click={playClick}
+        href="https://gitlab.com/DennisSmuda"
+        target="_blank"
+      >
+        gitlab
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-brand-gitlab"
@@ -48,7 +59,8 @@
           <path d="M21 14l-9 7-9-7L6 3l3 7h6l3-7z" />
         </svg>
       </a>
-      <a href="mailto:smuda.dennis@gmail.com">
+      <a on:click={playClick} href="mailto:smuda.dennis@gmail.com">
+        e-mail
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-mail"
@@ -120,6 +132,7 @@
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.5rem;
+    font-size: 0;
   }
 
   .links a:hover {
