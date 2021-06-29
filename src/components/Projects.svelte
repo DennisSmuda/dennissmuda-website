@@ -28,7 +28,7 @@
       titlePrefix=""
       titleSuffix=", for triathletes"
       name="TriDeals"
-      link="https://tri-dals.de/"
+      link="https://tri-deals.de/"
       tags={[
         { name: "vue.js", value: "vue" },
         { name: "graphql", value: "graphql" },
