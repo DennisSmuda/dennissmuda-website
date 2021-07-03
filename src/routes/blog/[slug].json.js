@@ -1,28 +1,54 @@
-import posts from './_posts.js';
+import path from "path";
+import fs from "fs";
+import grayMatter from "gray-matter";
+import marked from "marked";
+import hljs from "highlight.js";
 
-const lookup = new Map();
-posts.forEach(post => {
-	lookup.set(post.slug, JSON.stringify(post));
-});
+/**
+ * Markdown Blog Posts - inspired by:
+ * https://www.mahmoudashraf.dev/blog/build-a-blog-with-svelte-and-markdown/
+ */
+
+const getPost = (fileName) =>
+  fs.readFileSync(path.resolve("content", `${fileName}.md`), "utf-8");
 
 export function get(req, res, next) {
-	// the `slug` parameter is available because
-	// this file is called [slug].json.js
-	const { slug } = req.params;
+  const { slug } = req.params;
 
-	if (lookup.has(slug)) {
-		res.writeHead(200, {
-			'Content-Type': 'application/json'
-		});
+  // get the markdown text
+  const post = getPost(slug);
 
-		res.end(lookup.get(slug));
-	} else {
-		res.writeHead(404, {
-			'Content-Type': 'application/json'
-		});
+  // function that expose helpful callbacks
+  // to manipulate the data before convert it into html
+  const renderer = new marked.Renderer();
 
-		res.end(JSON.stringify({
-			message: `Not found`
-		}));
-	}
+  // use hljs to highlight our blocks codes
+  renderer.code = (source, lang) => {
+    const { value: highlighted } = hljs.highlight(lang, source);
+    return `<pre class='language-javascriptreact'><code>${highlighted}</code></pre>`;
+  };
+
+  // parse the md to get front matter
+  // and the content without escaping characters
+  const { data, content } = grayMatter(post);
+
+  const html = marked(content, { renderer });
+
+  if (html) {
+    res.writeHead(200, {
+      "Content-Type": "application/json",
+    });
+
+    res.end(JSON.stringify({ html, ...data }));
+  } else {
+    res.writeHead(404, {
+      "Content-Type": "application/json",
+    });
+
+    res.end(
+      JSON.stringify({
+        message: `Not found`,
+      })
+    );
+  }
 }

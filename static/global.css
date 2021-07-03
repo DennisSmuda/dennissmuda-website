@@ -120,7 +120,17 @@ a {
   color: inherit;
 }
 
-code {
+p code {
+  display: inline-block;
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+  margin-left: 0.15rem;
+  margin-right: 0.15rem;
+  color: white;
+  background-color: var(--black);
+}
+
+pre code {
   font-family: menlo, inconsolata, monospace;
   font-size: calc(1em - 2px);
   /* color: var(--primary-color); */

@@ -18,6 +18,24 @@
   export let post;
 </script>
 
+<svelte:head>
+  <title>{post.title} - Blog | Dennis Smuda</title>
+  <meta name="description" content={post.description} />
+</svelte:head>
+
+<section class="h-padding container container--narrow">
+  <div class="content">
+    <h1 class="color-change">{post.title}</h1>
+    <span class="created-at">{post.createdAt}</span>
+
+    {@html post.html}
+  </div>
+</section>
+
+<div class="main-padding" />
+
+<Footer />
+
 <style>
   /*
 		By default, CSS is locally scoped to the component,
@@ -28,13 +46,21 @@
 		all elements inside .content
 	*/
   .content :global(h2) {
+    font-size: 1.8em;
+    font-weight: 500;
+    font-weight: 800;
+  }
+
+  .content :global(h3) {
     font-size: 1.4em;
     font-weight: 500;
+    font-weight: 800;
   }
 
   .content :global(pre) {
     border-left: 3px solid var(--accent-color);
-    background-color: var(--third-background-color);
+    background-color: var(--black);
+    color: white;
     border-radius: 0.5rem;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
@@ -54,21 +80,9 @@
   .content :global(li) {
     margin: 0 0 0.5em 0;
   }
+
+  .created-at {
+    display: block;
+    margin-bottom: 1rem;
+  }
 </style>
-
-<svelte:head>
-  <title>{post.title} - Blog | Dennis Smuda</title>
-</svelte:head>
-
-<section class="h-padding container container--narrow">
-  <div class="content">
-    <h1 class="color-change">{post.title}</h1>
-    <span>{post.createdAt}</span>
-
-    {@html post.html}
-  </div>
-</section>
-
-<div class="main-padding" />
-
-<Footer />

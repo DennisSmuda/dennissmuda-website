@@ -18,7 +18,7 @@
   <title>Dennis Smuda – Web-Developer based in Germany</title>
   <meta
     name="description"
-    content="web dev who loves code, design and everything that goes into creating unique experiences for others"
+    content="Hey, my name is Dennis Smuda and I'm a web developer who loves code, design and everything that goes into creating unique experiences for others"
   />
 
   <link rel="canonical" href="https://www.dennissmuda.com" />
@@ -30,7 +30,7 @@
   />
   <meta
     property="og:description"
-    content="web dev who loves code, design and everything that goes into creating unique experiences for others"
+    content="Hey, my name is Dennis, and I'm a web developer who loves code, design and everything that goes into creating unique experiences for others"
   />
 
   <meta name="robots" content="index,follow" />
@@ -53,6 +53,7 @@
     background-color: #191c26;
     color: #fffbeb;
     /* transition: background-color 0.25s, color 0.25s; */
+    --black: #111219;
 
     --primary-color: #fffbeb;
     --copy-color: #9da6c3;

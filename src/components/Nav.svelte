@@ -17,6 +17,22 @@
   </a>
   <div class="menu">
     <a
+      rel="prefetch"
+      aria-current={segment === "blog" ? "page" : undefined}
+      href="blog"
+      on:click={playClick}
+    >
+      writing
+    </a>
+    <a
+      aria-current={segment === "about" ? "page" : undefined}
+      href="about"
+      on:click={playClick}
+    >
+      about
+    </a>
+    <a
+      class="icon-button"
       on:click={playClick}
       aria-current={segment === "easter" ? "page" : undefined}
       href="/easter"
@@ -38,21 +54,12 @@
         <div class="badge">1</div>
       {/if}
     </a>
-    <!-- <a
-      rel="prefetch"
-      aria-current={segment === 'blog' ? 'page' : undefined}
-      href="blog">
-      writing
-    </a> -->
     <!-- <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         home
       </a>
     </li> -->
     <!-- <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
-        about
-      </a>
     </li> -->
 
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
@@ -92,16 +99,26 @@
 
   a {
     text-decoration: none;
-    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 900;
     color: var(--copy-color);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+  }
+
+  a.icon-button {
+    padding: 0.5rem;
     width: 3rem;
     height: 3rem;
-    position: relative;
+    margin: 0;
   }
+
   a:hover {
     background-color: var(--third-background-color);
   }
@@ -135,6 +152,7 @@
     padding: 0.25rem 0.5rem;
     letter-spacing: -2.3px;
   }
+
   .brand span {
     transform: translate3d(0, 0, 0);
     transition: transform 0.3s;
@@ -148,6 +166,9 @@
   .brand:hover span {
     transform: translate3d(0, -0.5rem, 0);
     color: var(--accent-color);
+  }
+  .brand:focus span {
+    transform: translate3d(0, 0, 0);
   }
 
   .light-mode-toggle {

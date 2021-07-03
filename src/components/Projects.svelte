@@ -9,7 +9,7 @@
   </div>
   <div class="container container--narrow">
     <Project
-      titlePrefix="I made a"
+      titlePrefix="I made "
       titleSuffix=""
       name="BackyTracky"
       link="https://backytracky.com/"
@@ -135,9 +135,5 @@
     transform: rotate(4deg) scaleX(1.5) translateX(-25%) translateY(5rem);
     transform-origin: center left;
     z-index: 0;
-  }
-
-  .big-paragraph {
-    margin-top: 0;
   }
 </style>

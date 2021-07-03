@@ -8,6 +8,10 @@
   const initialWidth = 397;
   const initialHeight = 172;
 
+  let expanded = false;
+  let mounted = false;
+  let interactive = false;
+
   let coords = spring(
     { x: -200, y: -270 },
     {
@@ -18,19 +22,9 @@
 
   let size = spring(13);
 
-  let expanded = false;
-  let mounted = false;
-  let interactive = false;
-
   onMount(() => {
-    // size.set(300);
     mounted = true;
-    // size.set(8);
-    // coords.set({ x: 508, y: 80 });
 
-    setTimeout(() => {
-      // coords.set({ x: 508, y: -80 });
-    }, 400);
     setTimeout(() => {
       coords.set({ x: 308, y: 17 });
       size.set(13);
@@ -217,7 +211,6 @@
           132.64C367.08 129.68 368.52 125.64 368.52 120.52Z"
         />
       </g>
-      <!-- <g class="dot-container"> -->
       <circle
         in:fly={{ y: 0, delay: 250 }}
         cx={$coords.x}
@@ -225,15 +218,6 @@
         r={$size}
         class="dot"
       />
-      <!-- <path
-          class="dot"
-          in:fly={{ delay: 250 }}
-          d="M298.88 24.96C301.2 27.04 304.16 28.08 307.76 28.08C311.28 28.08
-          314.16 27.04 316.4 24.96C318.72 22.8 319.88 20.16 319.88 17.04C319.88
-          13.84 318.72 11.2 316.4 9.12001C314.16 6.96001 311.28 5.88 307.76
-          5.88C304.16 5.88 301.2 6.96001 298.88 9.12001C296.64 11.2 295.52 13.84
-          295.52 17.04C295.52 20.16 296.64 22.8 298.88 24.96Z" /> -->
-      <!-- </g> -->
     {/if}
   </svg>
 </div>
@@ -292,17 +276,7 @@
 
   .dot {
     pointer-events: none;
-    /* animation: bounce 3s ease alternate infinite; */
   }
-
-  /* .expanded .firstname,
-  .expanded .dot-container {
-    transform: translateY(-48px);
-  }
-  svg.expanded:hover .firstname,
-  svg.expanded:hover .dot-container {
-    transform: translateY(-56px);
-  } */
 
   @keyframes bounce {
     from {
