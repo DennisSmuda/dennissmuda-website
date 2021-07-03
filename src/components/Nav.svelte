@@ -5,7 +5,7 @@
   export let segment;
 </script>
 
-<nav>
+<nav class="container h-padding">
   <a
     href="."
     class="brand title"
@@ -25,6 +25,7 @@
       writing
     </a>
     <a
+      rel="prefetch"
       aria-current={segment === "about" ? "page" : undefined}
       href="about"
       on:click={playClick}
@@ -32,6 +33,7 @@
       about
     </a>
     <a
+      rel="prefetch"
       class="icon-button"
       on:click={playClick}
       aria-current={segment === "easter" ? "page" : undefined}
@@ -54,18 +56,6 @@
         <div class="badge">1</div>
       {/if}
     </a>
-    <!-- <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-        home
-      </a>
-    </li> -->
-    <!-- <li>
-    </li> -->
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <!-- <li>
-    </li> -->
     <div class="light-mode-toggle">
       <Toggle />
     </div>
@@ -78,6 +68,8 @@
     justify-content: space-between;
     user-select: none;
     align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   [aria-current],
@@ -109,7 +101,6 @@
     position: relative;
     padding: 0.5rem 1rem;
     height: 3rem;
-    margin: 0 0.5rem;
   }
 
   a.icon-button {
@@ -145,7 +136,8 @@
     justify-content: center;
     font-size: 2rem;
     font-weight: 700;
-    margin: 0 2rem;
+    transform: translateX(-0.5rem);
+    margin: 0;
     cursor: pointer;
     width: initial;
     height: 3rem;
@@ -175,11 +167,21 @@
     /* position: fixed; */
     bottom: 0;
     right: 0;
-    padding: 1rem;
   }
   .menu {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .icon-button,
+  .light-mode-toggle {
+    display: none;
+  }
+  @media screen and (min-width: 640px) {
+    .icon-button,
+    .light-mode-toggle {
+      display: flex;
+    }
   }
 </style>

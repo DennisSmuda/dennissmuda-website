@@ -34,20 +34,19 @@ import { onMount } from "svelte"; // lifecycle
 import { fly } from "svelte/transition"; // transition
 import { spring } from "svelte/motion"; // spring-animation
 
-const sizeSpring = spring(13);
+const sizeSpring = spring(0);
 
 onMount(() => {
   mounted = true;
 
   setTimeout(() => {
     sizeSpring.set(13);
-    interactive = true;
   }, 700);
 });
 ```
 
-As you can see, I set the `mounted` variable which will trigger the letters to animate in!
-Within the markup, we can now setup events on the svg element and define the "fly-transition" for every letter!
+The `mounted` variable will make sure that our letters get appended to the DOM after the component has mounted.
+Within the markup, we can now setup events on the svg element similar to a lot of other current frameworks.
 
 ```html
 <svg

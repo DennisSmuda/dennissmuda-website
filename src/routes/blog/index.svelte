@@ -9,7 +9,6 @@
 </script>
 
 <script>
-  import Footer from "../../components/Footer.svelte";
   import { playClick } from "../../utils/Sounds";
 
   export let posts;
@@ -50,7 +49,6 @@
 </section>
 
 <div class="main-padding" />
-<Footer />
 
 <style>
   ul {

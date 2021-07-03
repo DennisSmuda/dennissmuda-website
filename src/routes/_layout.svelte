@@ -1,5 +1,6 @@
 <script>
   import Nav from "../components/Nav.svelte";
+  import Footer from "../components/Footer.svelte";
 
   export let segment;
 </script>
@@ -42,6 +43,8 @@
 <main>
   <slot />
 </main>
+
+<Footer {segment} />
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
@@ -105,9 +108,6 @@
   :global(.keyword) {
     color: var(--accent-color);
   }
-  :global(.h-padding) {
-    padding: 0 clamp(2.5rem, 10vw, 2.5rem) 0;
-  }
   :global(.secondary-background) {
     background-color: var(--second-background-color);
     transition: background-color 0.3s;
@@ -116,10 +116,16 @@
   :global(.main-padding) {
     padding: 1.5rem;
   }
+  :global(.h-padding) {
+    padding: 0 clamp(1.5rem, 10vw, 1.5rem) 0;
+  }
 
   @media screen and (min-width: 768px) {
     :global(.main-padding) {
       padding: 2.5rem clamp(2.5rem, 10vw, 2.5rem) 5rem;
+    }
+    :global(.h-padding) {
+      padding: 0 clamp(2.5rem, 10vw, 2.5rem) 0;
     }
   }
 

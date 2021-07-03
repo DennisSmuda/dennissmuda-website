@@ -1,5 +1,4 @@
 <script>
-  import Footer from "../components/Footer.svelte";
   import { playClick } from "../utils/Sounds";
 </script>
 
@@ -328,7 +327,6 @@
 </div>
 
 <div class="main-padding" />
-<Footer />
 
 <style>
   ul li {

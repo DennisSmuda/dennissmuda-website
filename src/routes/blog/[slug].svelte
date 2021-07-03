@@ -14,7 +14,6 @@
 </script>
 
 <script>
-  import Footer from "../../components/Footer.svelte";
   export let post;
 </script>
 
@@ -33,8 +32,6 @@
 </section>
 
 <div class="main-padding" />
-
-<Footer />
 
 <style>
   /*

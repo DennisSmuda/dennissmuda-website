@@ -1,13 +1,8 @@
-<script>
-  import Footer from "../components/Footer.svelte";
-</script>
-
 <svelte:head>
   <title>Impressum | Dennis Smuda</title>
 </svelte:head>
 
 <section class="container container--narrow h-padding">
-
   <div class="content">
     <h1 class="color-change">Impressum</h1>
 
@@ -49,5 +44,3 @@
 </section>
 
 <div class="main-padding" />
-
-<Footer />

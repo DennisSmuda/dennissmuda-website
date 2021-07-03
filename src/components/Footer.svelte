@@ -1,4 +1,7 @@
 <script>
+  export let segment;
+
+  import Toggle from "./LightModeToggle.svelte";
   import { playClick } from "../utils/Sounds";
   const date = new Date().getFullYear();
 </script>
@@ -6,14 +9,29 @@
 <footer class="footer">
   <div class="container main-padding">
     <a on:click={playClick} href="./" class="brand">ds.</a>
-    <span class="subline"
-      >©{date} built and designed with ♥️ by me.
-      <div class="internal">
-        <a on:click={playClick} href="/about" class="button">about</a>
-        <a on:click={playClick} href="/blog" class="button">writing</a>
-        <a on:click={playClick} href="/imprint" class="button">imprint</a>
-      </div>
-      <div class="links">
+    <span class="subline">©{date} built and designed with ♥️ by me. </span>
+    <div class="internal">
+      <a
+        on:click={playClick}
+        href="/about"
+        class="button"
+        aria-current={segment === "about" ? "page" : undefined}>about</a
+      >
+      <a
+        on:click={playClick}
+        href="/blog"
+        class="button"
+        aria-current={segment === "blog" ? "page" : undefined}>writing</a
+      >
+      <a
+        on:click={playClick}
+        href="/imprint"
+        class="button"
+        aria-current={segment === "imprint" ? "page" : undefined}>imprint</a
+      >
+    </div>
+    <div class="links">
+      <div class="socials">
         <a
           on:click={playClick}
           href="https://github.com/dennissmuda"
@@ -38,28 +56,6 @@
             />
           </svg>
         </a>
-        <!-- <a
-        on:click={playClick}
-        href="https://gitlab.com/DennisSmuda"
-        target="_blank"
-      >
-        gitlab
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-brand-gitlab"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="#2c3e50"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" />
-          <path d="M21 14l-9 7-9-7L6 3l3 7h6l3-7z" />
-        </svg>
-      </a> -->
         <a on:click={playClick} href="mailto:smuda.dennis@gmail.com">
           e-mail
           <svg
@@ -80,7 +76,37 @@
           </svg>
         </a>
       </div>
-    </span>
+      <div class="controls">
+        <a
+          rel="prefetch"
+          class="easter-button"
+          on:click={playClick}
+          aria-current={segment === "easter" ? "page" : undefined}
+          aria-label="Easter Egg"
+          href="/easter"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            width="20px"
+            height="20px"
+            class="bell w-6 h-6"
+          >
+            <path
+              d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0
+          00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3
+          3z"
+            />
+          </svg>
+          {#if segment !== "easter"}
+            <div class="badge">1</div>
+          {/if}
+        </a>
+        <div class="light-mode-toggle">
+          <Toggle />
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -123,7 +149,15 @@
   .links {
     margin-top: 2.5rem;
     display: flex;
-    margin-left: -0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .links > div {
+    display: flex;
+    align-items: center;
   }
 
   span {
@@ -131,23 +165,67 @@
   }
 
   .links a {
-    color: var(--copy-color);
-    margin-right: 2.5rem;
     display: flex;
     flex-direction: center;
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.5rem;
     font-size: 0;
+    color: var(--copy-color);
+  }
+
+  .controls > * {
+    margin-left: 1.5rem;
+  }
+
+  .socials > * {
+    margin-right: 1.5rem;
+  }
+
+  .light-mode-toggle {
+    margin-left: 1.5rem;
+  }
+
+  .links a {
+    position: relative;
+    color: var(--copy-color);
   }
 
   .links a:hover {
     color: var(--primary-color);
+    background-color: var(--third-background-color);
+  }
+
+  .easter-button svg {
+    padding: 0.25rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    border-radius: 0.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    right: -0.25rem;
+    top: -0.25rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+  }
+
+  .internal [aria-current] {
+    background-color: var(--accent-color);
   }
 
   .links svg {
     width: 2rem;
     height: 2rem;
+  }
+
+  .socials svg {
     stroke-width: 1;
     stroke: currentColor;
     fill: none;

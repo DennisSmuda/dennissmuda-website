@@ -260,6 +260,10 @@
 {/if}
 
 <style>
+  section {
+    min-height: 720px;
+  }
+
   @media screen and (min-width: 820px) {
     .game-container {
       display: grid;

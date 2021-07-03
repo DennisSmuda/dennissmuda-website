@@ -115,7 +115,7 @@
     height: 10rem;
     background-color: var(--second-background-color);
 
-    transform: rotate(-4deg) scaleX(1.5);
+    transform: rotate(-4deg) scaleX(1.8) translateX(10%);
     transform-origin: center right;
     z-index: 0;
   }
