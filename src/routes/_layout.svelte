@@ -16,6 +16,7 @@
   />
 
   <meta name="author" content="Dennis Smuda" />
+  <meta name="keywords" content="Development, Web, Frontend, Javascript" />
   <title>Dennis Smuda – Web-Developer based in Germany</title>
   <meta
     name="description"

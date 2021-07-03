@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Dennis Smuda | Personal Portfolio Page</title>
+  <title>Dennis Smuda – Web-Developer based in Germany</title>
   <meta
     name="description"
     content="Web Developer from Germany, with a frontend/design/ux focus. Also a
