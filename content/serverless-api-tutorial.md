@@ -125,7 +125,7 @@ const connectToDatabase = () => {
 export { connectToDatabase };
 ```
 
-This is pretty much all you need to start talking to your database inside your endpoint. We can now _get real users_ like so:
+This is pretty much all you need to start talking to your database inside your endpoint. We can now _get real users_ by connnecting to our database and basically using our User model to query it:
 
 ```js
 // api/users/index.js
