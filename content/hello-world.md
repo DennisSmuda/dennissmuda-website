@@ -1,8 +1,8 @@
 ---
 slug: "hello-world"
 title: "Hello World."
-description: "Introducing my new website, and a story about animating my name."
-createdAt: "September 21st of 2020"
+description: "Introducing my new website, and a quick story about how I animated my name."
+createdAt: "Sept. 21, 2020"
 ---
 
 Cool, you made it! Welcome to my website, I hope you like what you've seen so far. Continue reading if you'd like to kow more about it.

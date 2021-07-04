@@ -111,9 +111,9 @@
 </footer>
 
 <style>
-  .footer {
+  /* .footer {
     border-bottom: 0.25rem solid var(--accent-color);
-  }
+  } */
 
   .footer .container {
     /* margin-top: 4rem; */

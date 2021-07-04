@@ -22,9 +22,9 @@
   <div class="content">
     <h1 class="color-change">Writing</h1>
     <p class="big-paragraph">
-      here are some
+      some thoughts
       <br />
-      thoughts and words
+      and words
     </p>
     <!-- </section>
 <section class="h-padding secondary-background"> -->
@@ -38,8 +38,11 @@
           <li>
             <!-- {JSON.stringify(post)} -->
             <a rel="prefetch" href="blog/{post.slug}" on:click={playClick}>
-              <span class="created">{post.createdAt}</span>
-              <span class="title">{post.title}</span>
+              <div class="title-line">
+                <span class="title">{post.title}</span>
+                <span class="created">{post.createdAt}</span>
+              </div>
+              <span class="description">{post.description}</span>
             </a>
           </li>
         {/each}
@@ -56,25 +59,55 @@
     margin-bottom: 4rem;
   }
   li {
-    height: 5rem;
+    /* height: 5rem; */
   }
   li:after {
-    /* top: 0; */
+    top: 0rem;
     height: 2rem;
   }
   li:hover:after {
     height: 100%;
+    transform: translateY(0);
   }
+
   li a {
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
     height: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
+  }
+
+  .created {
+  }
+
+  .title-line {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (min-width: 560px) {
+    .title-line {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    li:after {
+      top: 0.75rem;
+    }
+    ul li:hover::after {
+      height: calc(100% - 0.75rem);
+    }
   }
 
   .title {
     font-weight: 900;
     font-size: 2rem;
     color: var(--primary-color);
+  }
+  .description {
+    color: var(--copy-color);
+    white-space: initial;
+    width: calc(100% - 2.5rem);
   }
 </style>
