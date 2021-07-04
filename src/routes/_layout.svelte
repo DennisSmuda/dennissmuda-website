@@ -144,6 +144,7 @@
 
   :global(.container--narrow) {
     max-width: 920px;
+    margin: 0 auto;
   }
 
   /* @media (min-width: 560px) {

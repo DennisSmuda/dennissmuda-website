@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import grayMatter from "gray-matter";
 
+const mode = process.env.NODE_ENV;
+const dev = mode === "development";
+
 const getAllPosts = () =>
   fs.readdirSync("content").map((fileName) => {
     const post = fs.readFileSync(path.resolve("content", fileName), "utf-8");
@@ -14,5 +17,15 @@ export function get(req, res) {
   });
 
   const posts = getAllPosts();
-  res.end(JSON.stringify(posts));
+  posts.sort(function (a, b) {
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  });
+  const publishedPosts = posts.filter((post) => {
+    return post.published === true;
+  });
+  if (dev) {
+    res.end(JSON.stringify(posts));
+  } else {
+    res.end(JSON.stringify(publishedPosts));
+  }
 }

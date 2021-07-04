@@ -22,11 +22,14 @@
   <meta name="description" content={post.description} />
 </svelte:head>
 
-<section class="h-padding container container--narrow">
+<section class="h-padding container">
   <div class="content">
     <h1 class="color-change">{post.title}</h1>
+  </div>
+</section>
+<section class="h-padding container--narrow">
+  <div class="content">
     <span class="created-at">{post.createdAt}</span>
-
     {@html post.html}
   </div>
 </section>
@@ -58,11 +61,16 @@
     border-left: 3px solid var(--accent-color);
     background-color: var(--black);
     color: white;
-    border-radius: 0.5rem;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
     overflow-x: auto;
     margin: 1.5rem -1.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .content :global(pre) {
+      border-radius: 0.5rem;
+    }
   }
 
   .content :global(pre) :global(code) {

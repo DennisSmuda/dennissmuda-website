@@ -26,44 +26,50 @@
       <br />
       and words
     </p>
-    <!-- </section>
+  </div>
+  <!-- </section>
 <section class="h-padding secondary-background"> -->
-    <div class="container container--narrow">
-      <ul>
-        {#each posts as post}
-          <!-- we're using the non-standard `rel=prefetch` attribute to
+  <div class="container container--narrow">
+    <ul>
+      {#each posts as post}
+        <!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-          <li>
-            <!-- {JSON.stringify(post)} -->
-            <a rel="prefetch" href="blog/{post.slug}" on:click={playClick}>
-              <div class="title-line">
-                <span class="title">{post.title}</span>
-                <span class="created">{post.createdAt}</span>
-              </div>
-              <span class="description">{post.description}</span>
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+        <li>
+          <!-- {JSON.stringify(post)} -->
+          <a rel="prefetch" href="blog/{post.slug}" on:click={playClick}>
+            <div class="title-line">
+              <span class="title">{post.title}</span>
+              <span class="created">{post.createdAt}</span>
+            </div>
+            <span class="description">{post.description}</span>
+          </a>
+        </li>
+      {/each}
+    </ul>
   </div>
 </section>
 
 <div class="main-padding" />
 
 <style>
+  .big-paragraph {
+    margin-top: 0;
+  }
   ul {
     margin-top: 4rem;
     margin-bottom: 4rem;
+    padding-left: 0;
   }
   li {
     /* height: 5rem; */
+    margin-top: 5rem;
   }
   li:after {
     top: 0rem;
-    height: 2rem;
+    left: -1rem;
+    height: 1.5rem;
   }
   li:hover:after {
     height: 100%;
@@ -75,10 +81,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
 
   .created {
+    color: var(--copy-color);
   }
 
   .title-line {
@@ -91,12 +98,13 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: baseline;
+      gap: 1rem;
     }
     li:after {
-      top: 0.75rem;
+      height: 2rem;
     }
     ul li:hover::after {
-      height: calc(100% - 0.75rem);
+      height: 100%;
     }
   }
 
@@ -104,10 +112,13 @@
     font-weight: 900;
     font-size: 2rem;
     color: var(--primary-color);
+    white-space: initial;
+    line-height: 1.125;
   }
   .description {
     color: var(--copy-color);
     white-space: initial;
     width: calc(100% - 2.5rem);
+    max-width: 420px;
   }
 </style>
