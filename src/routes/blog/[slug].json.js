@@ -28,6 +28,10 @@ export function get(req, res, next) {
     return `<pre class='language-javascriptreact'><code>${highlighted}</code></pre>`;
   };
 
+  renderer.image = (href, _title, text) => {
+    return `<img class="content-image" alt="${text}" src="${href}" loading=lazy /> `;
+  };
+
   // parse the md to get front matter
   // and the content without escaping characters
   const { data, content } = grayMatter(post);

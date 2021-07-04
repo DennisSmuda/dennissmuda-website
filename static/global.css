@@ -50,9 +50,32 @@ h1 {
   line-height: 1.75;
   max-width: 560px;
 }
+
+.content-image {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: calc(100vw - 3rem);
+  border: 2px solid var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .content-image {
+    width: calc(100vw - 2rem);
+    margin: 1.5rem -1.5rem;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .content-image {
+    width: calc(920px - 2rem);
+  }
+}
+
 .content p.big-paragraph {
   line-height: 1.2;
 }
+
 .content ul {
   color: var(--copy-color);
   padding-left: 0;
@@ -154,8 +177,14 @@ pre code {
 blockquote {
   margin: 1.5rem -1.5rem;
   padding: 1.5rem;
-  background-color: var(--black);
+  background-color: var(--blackest-background);
   border-left: 3px solid var(--copy-color);
+}
+
+@media screen and (min-width: 768px) {
+  blockquote {
+    border-radius: 0.5rem;
+  }
 }
 
 p em {

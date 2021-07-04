@@ -58,6 +58,7 @@
     color: #fffbeb;
     /* transition: background-color 0.25s, color 0.25s; */
     --black: #111219;
+    --blackest-background: #111219;
 
     --primary-color: #fffbeb;
     --copy-color: #9da6c3;
@@ -83,6 +84,7 @@
     --background-color: #fffbeb;
     --second-background-color: #fcf5d8;
     --third-background-color: #ded8b8;
+    --blackest-background: #efebdb;
   }
 
   :global(h1, h2, h3, h4, h5, h6, .title) {
