@@ -180,6 +180,9 @@ blockquote {
   background-color: var(--blackest-background);
   border-left: 3px solid var(--copy-color);
 }
+blockquote p {
+  margin-bottom: 0;
+}
 
 @media screen and (min-width: 768px) {
   blockquote {
