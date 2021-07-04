@@ -72,11 +72,25 @@
     padding-bottom: 1rem;
   }
 
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  @media screen and (min-width: 560px) {
+    .menu {
+      gap: 1rem;
+    }
+  }
+
   [aria-current],
   a[aria-current] {
     position: relative;
     /* display: inline-block; */
     color: var(--primary-color);
+    background-color: var(--third-background-color);
   }
 
   [aria-current]::after:not(.brand) {
@@ -112,6 +126,9 @@
 
   a:hover {
     background-color: var(--third-background-color);
+  }
+  a:active {
+    background-color: var(--background-color);
   }
 
   .badge {
@@ -168,17 +185,13 @@
     bottom: 0;
     right: 0;
   }
-  .menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   .icon-button,
   .light-mode-toggle {
     display: none;
   }
-  @media screen and (min-width: 640px) {
+
+  @media screen and (min-width: 560px) {
     .icon-button,
     .light-mode-toggle {
       display: flex;

@@ -25,6 +25,7 @@
 </script>
 
 <button class="button" on:click={toggle} arial-label="light mode toggle">
+  <div>Toggle light/dark mode</div>
   {#if isLightMode}
     <svg
       in:spin={{ duration: 800 }}
@@ -94,5 +95,9 @@
   :global(body.dark-mode) button {
     background-color: #0084f6;
     color: white;
+  }
+
+  button > div {
+    font-size: 0;
   }
 </style>

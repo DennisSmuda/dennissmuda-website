@@ -149,15 +149,21 @@
   .links {
     margin-top: 2.5rem;
     display: flex;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     width: 100%;
   }
 
   .links > div {
     display: flex;
+    flex-direction: column;
     align-items: center;
+  }
+  @media screen and (min-width: 480px) {
+    .links > div {
+      flex-direction: row;
+    }
   }
 
   span {
@@ -200,26 +206,6 @@
     padding: 0.25rem;
   }
 
-  .badge {
-    font-size: 0.75rem;
-    border-radius: 0.75rem;
-    height: 1.25rem;
-    width: 1.25rem;
-    position: absolute;
-    right: -0.25rem;
-    top: -0.25rem;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-  }
-
-  .internal [aria-current] {
-    background-color: var(--accent-color);
-  }
-
   .links svg {
     width: 2rem;
     height: 2rem;
@@ -240,11 +226,40 @@
 
   .internal .button {
     font-size: 0.875rem;
+    background-color: var(--second-background-color);
+    color: var(--copy-color);
+  }
+  .internal .button:hover {
+    background-color: var(--third-background-color);
+  }
+  .internal .button:active {
+    background-color: var(--second-background-color);
+  }
+
+  .internal .button[aria-current] {
+    background-color: var(--third-background-color);
+    color: var(--primary-color);
   }
 
   .footer {
     position: relative;
     margin-top: 5rem;
     overflow: hidden;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    border-radius: 0.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    right: -0.125rem;
+    top: -0.125rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
   }
 </style>
