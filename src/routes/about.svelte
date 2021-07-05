@@ -28,7 +28,7 @@
     </p>
     <p>
       I deeply enjoy building things that can be interacted with, especially if
-      there is room to make interactions more <span class="emphasis">fun</span>!
+      there is room to make things more <span class="emphasis">fun</span>!
     </p>
 
     <h2>I use</h2>
