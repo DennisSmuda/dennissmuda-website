@@ -20,11 +20,15 @@
       applications.
     </p>
     <p>
-      I'm constantly looking for new challenges, ways to improve, while trying
-      to focus on
-      <span class="emphasis">creating unique experiences</span>. I enjoy
-      building things that can be interacted with, especially if there is room
-      to make interactions more fun!
+      I'm always looking for new challenges, ways to improve, and inspiration
+      from others.
+      <span class="emphasis">Experiences</span>,
+      <span class="emphasis">Interactions</span> and their meaning in software has
+      pretty much driven me to be a web-developer.
+    </p>
+    <p>
+      I deeply enjoy building things that can be interacted with, especially if
+      there is room to make interactions more <span class="emphasis">fun</span>!
     </p>
 
     <h2>I use</h2>
