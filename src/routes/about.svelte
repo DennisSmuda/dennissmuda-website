@@ -263,7 +263,7 @@
     <ul>
       <li on:click={playClick}>
         <div>
-          playing music
+          to play music
           <span class="emoji">🎸</span>
         </div>
       </li>
@@ -341,8 +341,6 @@
 <div class="main-padding" />
 
 <style>
-  ul li {
-  }
   ul li div {
     width: 100%;
     display: block;
