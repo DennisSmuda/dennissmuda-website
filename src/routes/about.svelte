@@ -13,10 +13,18 @@
     <p>
       Nice to meet you! My name is
       <span class="keyword">Dennis</span>
-      and I have been working as a web dev for the last 5+ years. I'm constantly
-      looking for new challenges and I try to focus on
-      <span class="emphasis">creating unique experiences</span>
-      - whatever that means.
+      and I have been working as a <span class="keyword">web developer</span>
+      for the
+      <em>last {new Date().getFullYear() - 2014}+ years</em>. I have worked on
+      projects ranging from small company/personal websites to full fledged web
+      applications.
+    </p>
+    <p>
+      I'm constantly looking for new challenges, ways to improve, while trying
+      to focus on
+      <span class="emphasis">creating unique experiences</span>. I enjoy
+      building things that can be interacted with, especially if there is room
+      to make interactions more fun!
     </p>
 
     <h2>I use</h2>
