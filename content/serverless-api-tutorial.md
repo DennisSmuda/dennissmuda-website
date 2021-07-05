@@ -146,7 +146,9 @@ There you go! If everything went right, you can try out our `curl` from earlier 
 
 If you really want, you can create some users by hand inside your clusters web ui, but I don't recommend doing that. Instead, we should rather _create new users_ whenever a user registers a new account within your application.
 
-In the _next blog post_ we will handle the authentication part of our API, which will include login/register routes and some middlewares to handle access control.
+In the next blog post we will handle the _authentication_ part of our API, which will include _login/register_ routes and some middlewares to handle access control.
+
+> Check out [the next part](/blog/serverless-auth-tutorial)
 
 ## FYI
 
