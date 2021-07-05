@@ -82,9 +82,12 @@
     --copy-color: #6d6955;
     --link-color: #00a1d3;
     --background-color: #fffbeb;
-    --second-background-color: #fcf5d8;
+    /* --second-background-color: #fcf5d8;
     --third-background-color: #ded8b8;
-    --blackest-background: #efebdb;
+    --blackest-background: #efebdb; */
+    --second-background-color: #f1ebd0;
+    --third-background-color: #e2dcc0;
+    --blackest-background: #e2dcc0;
   }
 
   :global(h1, h2, h3, h4, h5, h6, .title) {
