@@ -29,7 +29,17 @@
 </section>
 <section class="h-padding container--narrow">
   <div class="content">
-    <span class="created-at">{post.createdAt}</span>
+    <div class="meta">
+      <span class="created-at">{post.createdAt}</span>
+
+      <div class="tags">
+        <div class="tech-tags">
+          {#each post.tags as tag}
+            <div class="tag tag--{tag.value}">{tag.name}</div>
+          {/each}
+        </div>
+      </div>
+    </div>
     {@html post.html}
   </div>
 </section>
@@ -45,6 +55,11 @@
 		so we have to use the :global(...) modifier to target
 		all elements inside .content
 	*/
+  @media screen and (min-width: 1200px) {
+    .content h1 {
+      font-size: 116px;
+    }
+  }
   .content :global(h2) {
     font-size: 1.8em;
     font-weight: 500;
@@ -86,8 +101,21 @@
     margin: 0 0 0.5em 0;
   }
 
+  .meta {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 550px) {
+    .meta {
+      flex-direction: row-reverse;
+    }
+  }
+
   .created-at {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 </style>

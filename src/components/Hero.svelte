@@ -13,11 +13,12 @@
     </div>
     <div class="intro">
       <!-- Intro -->
-      <p class="big-paragraph">
+      <h1 class="big-paragraph">
+        <span class="hidden">Dennis Smuda - </span>
         <span class="keyword">Frontend Developer</span>
         <span>from</span>
         <span class="emphasis">Germany.</span>
-      </p>
+      </h1>
       <!-- Buttons -->
       <div class="button-row">
         <a on:click={playClick} href="/about" class="text-button">
@@ -67,6 +68,10 @@
   .intro {
     z-index: 2;
   }
+  .big-paragraph {
+    font-weight: 300;
+    letter-spacing: initial;
+  }
 
   .title,
   .big-paragraph {
@@ -88,6 +93,7 @@
   .intro {
     user-select: none;
     max-width: 380px;
+    margin-bottom: 1rem;
   }
   .hero {
     position: relative;
@@ -123,6 +129,7 @@
   @media screen and (min-width: 920px) {
     .hero .container {
       flex-direction: row;
+      align-items: flex-end;
     }
     .title {
       width: calc(100% - 22rem);

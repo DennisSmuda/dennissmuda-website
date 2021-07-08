@@ -13,15 +13,15 @@
     <div class="internal">
       <a
         on:click={playClick}
-        href="/about"
-        class="button"
-        aria-current={segment === "about" ? "page" : undefined}>about</a
-      >
-      <a
-        on:click={playClick}
         href="/blog"
         class="button"
         aria-current={segment === "blog" ? "page" : undefined}>writing</a
+      >
+      <a
+        on:click={playClick}
+        href="/about"
+        class="button"
+        aria-current={segment === "about" ? "page" : undefined}>about</a
       >
       <a
         on:click={playClick}

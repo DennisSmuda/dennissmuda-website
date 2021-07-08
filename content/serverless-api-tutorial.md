@@ -4,6 +4,11 @@ title: "Introduction to serverless APIs"
 description: "How to build a serverless REST API with user authentication and mongoDB Part 1"
 createdAt: "Jul. 4, 2021"
 published: true
+tags:
+  [
+    { name: "node.js", value: "node" },
+    { name: "serverless", value: "serverless" },
+  ]
 ---
 
 > We will be using _Vercel and MongoDB_ - cloud software which is _fast and free_, but requires you to create some accounts and do stuff via their ui.

@@ -40,10 +40,17 @@
           <!-- {JSON.stringify(post)} -->
           <a rel="prefetch" href="blog/{post.slug}" on:click={playClick}>
             <div class="title-line">
-              <span class="title">{post.title}</span>
+              <h3 class="title">{post.title}</h3>
               <span class="created">{post.createdAt}</span>
             </div>
             <span class="description">{post.description}</span>
+            <div class="tags">
+              <div class="tech-tags">
+                {#each post.tags as tag}
+                  <div class="tag tag--{tag.value}">{tag.name}</div>
+                {/each}
+              </div>
+            </div>
           </a>
         </li>
       {/each}
@@ -55,7 +62,7 @@
 
 <style>
   .big-paragraph {
-    margin-top: 0;
+    margin-top: -1rem;
   }
   ul {
     margin-top: 4rem;
@@ -111,14 +118,37 @@
   .title {
     font-weight: 900;
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--copy-color);
     white-space: initial;
     line-height: 1.125;
+    transition: color 0.3s;
   }
+
+  a:hover .title {
+    color: var(--primary-color);
+  }
+  a:hover .description {
+    opacity: 1;
+  }
+
   .description {
     color: var(--copy-color);
     white-space: initial;
     width: calc(100% - 2.5rem);
     max-width: 420px;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+  .tags * {
+    width: initial;
+  }
+
+  .tags {
+    display: block;
+    margin-top: 0.5rem;
+    width: initial;
+  }
+  .tag {
+    display: inline;
   }
 </style>

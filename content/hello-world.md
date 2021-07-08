@@ -4,6 +4,7 @@ title: "Hello World."
 description: "Introducing my new website, and a quick story about how I animated my name."
 createdAt: "Sept. 21, 2020"
 published: true
+tags: [{ name: "casual", value: "casual" }, { name: "svelte", value: "svelte" }]
 ---
 
 Cool, you made it! Welcome to my website, I hope you like what you've seen so far. Continue reading if you'd like to kow more about it.

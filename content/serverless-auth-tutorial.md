@@ -1,9 +1,14 @@
 ---
 slug: "serverless-auth-tutorial"
-title: "serverless authentication"
+title: "Serverless authentication"
 description: "How to build a serverless REST API with user authentication and mongoDB Part 2"
 createdAt: "Jul. 5, 2021"
 published: true
+tags:
+  [
+    { name: "node.js", value: "node" },
+    { name: "serverless", value: "serverless" },
+  ]
 ---
 
 Welcome to _part two_ of my serverless api introduction, where we will tackle user login and registration.

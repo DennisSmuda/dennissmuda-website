@@ -332,6 +332,7 @@ button:focus {
   font-size: 0.75rem;
   border-radius: 0.25rem;
   display: flex;
+  flex-grow: 0;
   align-items: center;
   transform: scale(1);
   user-select: none;

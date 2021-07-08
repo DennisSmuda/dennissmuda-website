@@ -75,18 +75,18 @@
   }
 
   :global(body.light-mode) {
-    background-color: #fffbeb;
+    background-color: #fdfbf5;
     color: #191c26;
 
     --primary-color: #191c26;
     --copy-color: #7d7966;
     --link-color: #00a1d3;
-    --background-color: #fffbeb;
+    --background-color: #fdfbf5;
     /* --second-background-color: #fcf5d8;
     --third-background-color: #ded8b8;
     --blackest-background: #efebdb; */
-    --second-background-color: #f1ebd0;
-    --third-background-color: #e5dfc7;
+    --second-background-color: #f5f2e8;
+    --third-background-color: #eae4d9;
     --blackest-background: #e2dcc0;
   }
 
@@ -142,6 +142,9 @@
     margin: 0.5em 0 0.25em;
   }
 
+  :global(.hidden) {
+    display: none;
+  }
   :global(.container) {
     margin: 0 auto;
     max-width: 1440px;
