@@ -6,10 +6,14 @@
   <title>About Me | Dennis Smuda</title>
 </svelte:head>
 
+<section class="h-padding container">
+  <div class="content">
+    <h1 class="color-change">About me</h1>
+  </div>
+</section>
+
 <section class="container container--narrow h-padding">
   <div class="content ">
-    <h1 class="color-change">About me</h1>
-
     <p>
       Nice to meet you! My name is
       <span class="keyword">Dennis</span>

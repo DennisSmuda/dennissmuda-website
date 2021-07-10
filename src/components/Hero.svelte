@@ -49,12 +49,6 @@
 </div>
 
 <style>
-  p {
-    color: var(--copy-color);
-    max-width: 380px;
-    margin: 0.5rem 0;
-  }
-
   .title {
     display: flex;
     flex-direction: column;

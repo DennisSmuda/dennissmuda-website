@@ -2,10 +2,14 @@
   <title>Impressum | Dennis Smuda</title>
 </svelte:head>
 
-<section class="container container--narrow h-padding">
+<section class="h-padding container">
   <div class="content">
     <h1 class="color-change">Impressum</h1>
+  </div>
+</section>
 
+<section class="container container--narrow h-padding">
+  <div class="content">
     <p>
       Dennis Smuda
       <br />

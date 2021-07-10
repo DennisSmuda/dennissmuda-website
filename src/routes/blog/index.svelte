@@ -18,8 +18,8 @@
   <title>Blog | Dennis Smuda</title>
 </svelte:head>
 
-<section class="h-padding container container--narrow">
-  <div class="content">
+<section class="h-padding container">
+  <div class="content content-h">
     <h1 class="color-change">Writing</h1>
     <p class="big-paragraph">
       some thoughts
@@ -27,6 +27,9 @@
       and words
     </p>
   </div>
+</section>
+<section class="h-padding container container--narrow">
+  <div class="content" />
   <!-- </section>
 <section class="h-padding secondary-background"> -->
   <div class="container container--narrow">
@@ -61,8 +64,11 @@
 <div class="main-padding" />
 
 <style>
+  h1 {
+    margin-bottom: 0;
+  }
   .big-paragraph {
-    margin-top: -1rem;
+    margin-top: 0.5rem;
   }
   ul {
     margin-top: 4rem;
@@ -150,5 +156,14 @@
   }
   .tag {
     display: inline;
+  }
+  @media screen and (min-width: 920px) {
+    .content-h {
+      display: flex;
+      align-items: flex-end;
+    }
+    .content-h p {
+      margin-left: 2rem;
+    }
   }
 </style>
