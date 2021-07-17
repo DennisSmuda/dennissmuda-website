@@ -71,13 +71,13 @@
 
     background-color: var(--background-color);
     border-radius: 1rem;
-    transform: scale(0.85);
+    /* transform: scale(1, 0.8); */
     transition: transform 0.3s;
   }
 
-  article:hover::before {
+  /* article:hover::before {
     transform: scale(1);
-  }
+  } */
 
   .article-content {
     display: flex;
@@ -111,6 +111,7 @@
     display: flex;
     align-items: center;
     font-size: 1rem;
+    margin-bottom: -2rem;
   }
 
   .button span {

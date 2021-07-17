@@ -413,5 +413,8 @@ button:focus {
 .tag--tailwind {
   color: #06b6d4;
 }
+.tag--godot {
+  color: #478cbf;
+}
 /*
 */
