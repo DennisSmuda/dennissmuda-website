@@ -326,7 +326,7 @@ button:focus {
 }
 
 .tag {
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   margin-right: 0.75rem;
   margin-bottom: 0.75rem;
   font-size: 0.75rem;
@@ -336,11 +336,17 @@ button:focus {
   align-items: center;
   transform: scale(1);
   user-select: none;
-  background-color: var(--blackest-background);
+  /* background-color: var(--blackest-background); */
   background-color: var(--third-background-color);
   cursor: pointer;
   transition: all 0.3s;
 }
+
+.tag svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .tag img {
   /* height: 2rem; */
   width: 2rem;
@@ -359,14 +365,17 @@ button:focus {
 .tag--git {
   color: #f05133;
 }
+
 .tag--coffee {
   /* color: white; */
   color: #ff7070;
 }
+
 .tag--js {
   color: #f7df1e;
   /* background-color: #000; */
 }
+
 .tag--svelte {
   color: #ff3e00;
   /* color: white; */

@@ -9,9 +9,9 @@
   </div>
   <div class="container container--narrow">
     <Project
-      titlePrefix=""
-      titleSuffix=" launch!"
-      name="BattleRockets"
+      titlePrefix="Launch of the "
+      titleSuffix=""
+      name="BattleRockets!"
       link="https://battlerockets.netlify.app/"
       tags={[
         { name: "svelte", value: "svelte" },
@@ -23,13 +23,13 @@
       ]}
     >
       <p>
-        Simplistic "io-type"-game. Purely skill based, perfectly balanced and
-        100% free!
+        Simplistic <em>"io-type"-game</em>. Purely skill based, perfectly
+        balanced and 100% free!
       </p>
     </Project>
     <Project
       titlePrefix="I made "
-      titleSuffix=""
+      titleSuffix="."
       name="BackyTracky"
       link="https://backytracky.com/"
       tags={[
@@ -41,12 +41,14 @@
       ]}
     >
       <p>something to help you practice solos, scales and licks.</p>
-      <p>create your own tracks, or jam to other peoples backing tracks!</p>
+      <p>
+        create your own tracks, or jam to other peoples <em>backing tracks</em>!
+      </p>
     </Project>
 
     <Project
       titlePrefix=""
-      titleSuffix=", for triathletes"
+      titleSuffix=", for triathletes."
       name="TriDeals"
       link="https://tri-deals.de/"
       tags={[
@@ -55,7 +57,7 @@
         { name: "graphql", value: "graphql" },
       ]}
     >
-      <p>a website that has handpicked deals for very sporty people</p>
+      <p>a website that has <em>handpicked deals</em> for very sporty people</p>
     </Project>
 
     <Project
@@ -69,7 +71,7 @@
         { name: "graphql", value: "graphql" },
       ]}
     >
-      <p>A platform to handle contact-list keeping via qr-codes.</p>
+      <p>A platform to handle <em>contact-list</em> keeping via qr-codes.</p>
     </Project>
   </div>
 </section>

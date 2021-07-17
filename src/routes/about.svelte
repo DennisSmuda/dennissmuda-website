@@ -400,11 +400,6 @@
     flex-wrap: wrap;
   }
 
-  .tag svg {
-    width: 2rem;
-    height: 2rem;
-  }
-
   .bg {
     position: absolute;
     top: 0;
