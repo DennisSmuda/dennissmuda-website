@@ -376,6 +376,10 @@ button:focus {
   background-color: #000;
 }
 
+.tag--css {
+  color: #1572b6;
+}
+
 .tag--svelte {
   color: #ff3e00;
   /* color: white; */
@@ -424,6 +428,24 @@ button:focus {
 }
 .tag--godot {
   color: #478cbf;
+}
+
+.tag--aseprite {
+  color: #7d929e;
+}
+
+.tag--netlify {
+  color: #00c7b7;
+}
+
+.tag--spotify {
+  color: #1ed760;
+}
+.tag--vscode {
+  color: #007acc;
+}
+.tag--vim {
+  color: #019733;
 }
 /*
 */

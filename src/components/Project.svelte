@@ -53,6 +53,7 @@
     position: relative;
     z-index: 1;
     max-width: 420px;
+    margin-bottom: 2rem;
   }
 
   :global(article p) {
@@ -76,7 +77,7 @@
   }
 
   /* article:hover::before {
-    transform: scale(1);
+    transform: scale(1.1);
   } */
 
   .article-content {
