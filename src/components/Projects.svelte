@@ -9,15 +9,35 @@
   </div>
   <div class="container container--narrow">
     <Project
+      titlePrefix=""
+      titleSuffix=" launch!"
+      name="BattleRockets"
+      link="https://battlerockets.netlify.app/"
+      tags={[
+        { name: "svelte", value: "svelte" },
+        { name: "phaser", value: "phaser" },
+        { name: "websockets", value: "websockets" },
+        { name: "serverless", value: "serverless" },
+        { name: "node.js", value: "node" },
+        { name: "mongo", value: "mongo" },
+      ]}
+    >
+      <p>
+        Simplistic "io-type"-game. Purely skill based, perfectly balanced and
+        100% free!
+      </p>
+    </Project>
+    <Project
       titlePrefix="I made "
       titleSuffix=""
       name="BackyTracky"
       link="https://backytracky.com/"
       tags={[
         { name: "svelte", value: "svelte" },
-        { name: "mongo", value: "mongo" },
+        { name: "tailwind.css", value: "tailwind" },
         { name: "serverless", value: "serverless" },
         { name: "node.js", value: "node" },
+        { name: "mongo", value: "mongo" },
       ]}
     >
       <p>something to help you practice solos, scales and licks.</p>
@@ -31,6 +51,7 @@
       link="https://tri-deals.de/"
       tags={[
         { name: "vue.js", value: "vue" },
+        { name: "tailwind.css", value: "tailwind" },
         { name: "graphql", value: "graphql" },
       ]}
     >
@@ -44,6 +65,7 @@
       link="https://kontakthelfer.de/"
       tags={[
         { name: "vue.js", value: "vue" },
+        { name: "tailwind.css", value: "tailwind" },
         { name: "graphql", value: "graphql" },
       ]}
     >

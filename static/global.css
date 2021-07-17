@@ -322,13 +322,13 @@ button:focus {
   **/
 .tech-tags {
   display: flex;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .tag {
   padding: 0.25rem 0.75rem;
-  /* margin-right: 1rem;
-  margin-bottom: 1rem; */
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
   font-size: 0.75rem;
   border-radius: 0.25rem;
   display: flex;
@@ -336,8 +336,14 @@ button:focus {
   align-items: center;
   transform: scale(1);
   user-select: none;
+  background-color: var(--blackest-background);
   background-color: var(--third-background-color);
   cursor: pointer;
+  transition: all 0.3s;
+}
+.tag img {
+  /* height: 2rem; */
+  width: 2rem;
 }
 
 .tag:hover {
@@ -350,45 +356,62 @@ button:focus {
 .tag span {
   margin: 0 0.5rem;
 }
-
 .tag--git {
-  /* color: #413000; */
   color: #f05133;
 }
 .tag--coffee {
-  color: white;
-  background-color: #6f0b0b;
+  /* color: white; */
+  color: #ff7070;
 }
 .tag--js {
   color: #f7df1e;
-  background-color: #000;
+  /* background-color: #000; */
 }
 .tag--svelte {
-  background-color: #ff3e00;
-  color: white;
+  color: #ff3e00;
+  /* color: white; */
 }
 
 .tag--node {
-  background-color: #026e00;
-  color: white;
+  color: #026e00;
+  /* color: white; */
 }
 
 .tag--serverless {
-  background-color: #000;
-  color: white;
+  /* background-color: #000; */
+  color: var(--primary-color);
 }
 
 .tag--vue {
-  background-color: #00a591;
-  color: white;
+  color: #00a591;
+  /* color: white; */
 }
 
 .tag--graphql {
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #e10098;
 }
 
 .tag--mongo {
-  background-color: #13aa52;
-  color: #fff;
+  color: #13aa52;
+  /* color: #fff; */
 }
+.tag--phaser {
+  color: #99388c;
+  /* color: #fff; */
+}
+.tag--figma {
+  color: #1abcfe;
+  /* background-color: black; */
+}
+
+.tag--websockets {
+  color: #8731d2;
+  /* color: #fff; */
+}
+
+.tag--tailwind {
+  color: #06b6d4;
+}
+/*
+*/

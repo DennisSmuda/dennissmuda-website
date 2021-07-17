@@ -69,7 +69,7 @@
     right: -1rem;
     bottom: -1rem;
 
-    background-color: var(--third-background-color);
+    background-color: var(--background-color);
     border-radius: 1rem;
     transform: scale(0.85);
     transition: transform 0.3s;
@@ -101,8 +101,8 @@
   }
 
   .button {
-    color: var(--background-color);
-    background-color: var(--primary-color);
+    /* color: var(--background-color); */
+    /* background-color: var(--accent-color); */
     padding: 0.5rem 1rem;
     align-self: flex-end;
     margin-top: 1rem;
@@ -124,6 +124,11 @@
     transform: translateX(0px);
     transition: transform 0.3s;
   }
+
+  .button:hover {
+    background-color: var(--accent-color);
+  }
+
   .button:hover svg {
     transform: translateX(4px);
   }
