@@ -386,7 +386,7 @@ button:focus {
 }
 
 .tag--node {
-  color: #026e00;
+  color: #339933;
   /* color: white; */
 }
 
@@ -406,7 +406,7 @@ button:focus {
 }
 
 .tag--mongo {
-  color: #13aa52;
+  color: #47a248;
   /* color: #fff; */
 }
 .tag--phaser {
@@ -424,7 +424,7 @@ button:focus {
 }
 
 .tag--tailwind {
-  color: #06b6d4;
+  color: #38b2ac;
 }
 .tag--godot {
   color: #478cbf;
@@ -441,11 +441,24 @@ button:focus {
 .tag--spotify {
   color: #1ed760;
 }
+
 .tag--vscode {
   color: #007acc;
 }
+
 .tag--vim {
   color: #019733;
+}
+
+.tag--pug {
+  color: #a86454;
+}
+
+.tag--greensock {
+  color: #88ce02;
+}
+.tag--terminal {
+  color: var(--copy-color);
 }
 /*
 */
