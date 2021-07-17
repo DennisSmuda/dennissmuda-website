@@ -373,7 +373,7 @@ button:focus {
 
 .tag--js {
   color: #f7df1e;
-  /* background-color: #000; */
+  background-color: #000;
 }
 
 .tag--svelte {

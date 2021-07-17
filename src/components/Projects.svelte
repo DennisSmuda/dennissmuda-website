@@ -1,5 +1,10 @@
 <script>
   import Project from "./Project.svelte";
+
+  let activeProject = null;
+  const setActiveProject = (project) => {
+    activeProject = project;
+  };
 </script>
 
 <section class="main-padding projects">
