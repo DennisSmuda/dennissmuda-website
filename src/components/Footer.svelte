@@ -127,11 +127,12 @@
   }
 
   .links {
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
   }
 
@@ -139,6 +140,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1.5rem;
   }
 
   @media screen and (min-width: 480px) {
@@ -160,6 +162,7 @@
     font-size: 0;
     color: var(--copy-color);
     margin-right: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .links a {
@@ -199,6 +202,7 @@
     background-color: var(--second-background-color);
     color: var(--copy-color);
     margin-right: 1rem;
+    margin-bottom: 1rem;
   }
   .internal .button:hover {
     background-color: var(--third-background-color);

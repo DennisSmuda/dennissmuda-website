@@ -53,12 +53,7 @@
     position: relative;
     z-index: 1;
     max-width: 420px;
-    margin-bottom: 6rem;
-  }
-  @media screen and (min-width: 880px) {
-    article {
-      margin-bottom: 2rem;
-    }
+    margin-bottom: 2rem;
   }
 
   :global(article p) {

@@ -120,7 +120,7 @@
     padding: 0.5rem;
     width: 3rem;
     height: 3rem;
-    margin: 0;
+    margin-right: 1rem;
   }
 
   a:hover {
