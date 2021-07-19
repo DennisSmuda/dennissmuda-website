@@ -76,13 +76,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-  }
-
-  @media screen and (min-width: 560px) {
-    .menu {
-      gap: 1rem;
-    }
   }
 
   [aria-current],
@@ -115,6 +108,12 @@
     position: relative;
     padding: 0.5rem 1rem;
     height: 3rem;
+    margin-left: 0.5rem;
+  }
+  @media screen and (min-width: 560px) {
+    a {
+      margin-left: 1rem;
+    }
   }
 
   a.icon-button {

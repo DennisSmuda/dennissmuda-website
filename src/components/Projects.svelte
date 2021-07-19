@@ -91,20 +91,20 @@
 
   .projects .container {
     display: flex;
+    /* grid-template-columns: repeat(3, minmax(200px, 1fr)); */
     gap: 4rem;
     flex-direction: column;
     align-items: center;
     /* padding: 4rem; */
-    padding: 5rem 1rem;
+    padding: 5rem 0rem;
   }
 
-  @media screen and (min-width: 920px) {
+  @media screen and (min-width: 880px) {
     .projects .container {
-      flex-direction: row;
-      align-items: flex-start;
-
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       padding: 4rem 2rem 12rem;
+      align-items: start;
     }
   }
 

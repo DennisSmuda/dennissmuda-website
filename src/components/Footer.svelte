@@ -191,7 +191,6 @@
   .internal {
     margin-top: 2rem;
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
   }
 
@@ -199,6 +198,7 @@
     font-size: 0.875rem;
     background-color: var(--second-background-color);
     color: var(--copy-color);
+    margin-right: 1rem;
   }
   .internal .button:hover {
     background-color: var(--third-background-color);
