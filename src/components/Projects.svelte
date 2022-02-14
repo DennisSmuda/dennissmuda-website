@@ -14,43 +14,21 @@
   </div>
   <div class="container container--narrow">
     <Project
-      titlePrefix="Launch of the "
-      titleSuffix=""
-      name="BattleRockets!"
-      link="https://battlerockets.netlify.app/"
+      titlePrefix=""
+      titleSuffix=" personal website."
+      name="Lukas Gorgon"
+      link="https://lukasgorgon.com/"
       tags={[
-        { name: "svelte", value: "svelte" },
-        { name: "phaser", value: "phaser" },
-        { name: "websockets", value: "websockets" },
-        { name: "serverless", value: "serverless" },
-        { name: "node.js", value: "node" },
-        { name: "mongo", value: "mongo" },
-      ]}
-    >
-      <p>
-        Simplistic <em>"io-type"-game</em>. Purely skill based, perfectly
-        balanced and 100% free!
-      </p>
-    </Project>
-    <Project
-      titlePrefix="I made "
-      titleSuffix="."
-      name="BackyTracky"
-      link="https://backytracky.com/"
-      tags={[
-        { name: "svelte", value: "svelte" },
+        { name: "next.js", value: "nextjs" },
         { name: "tailwind.css", value: "tailwind" },
-        { name: "serverless", value: "serverless" },
-        { name: "node.js", value: "node" },
-        { name: "mongo", value: "mongo" },
+        { name: "figma", value: "figma" },
       ]}
     >
-      <p>something to help you practice solos, scales and licks.</p>
       <p>
-        create your own tracks, or jam to other peoples <em>backing tracks</em>!
+        Lukas makes awesome videos with his <em>FPV drones</em>! I built a small
+        website that let's him showcase his passion.
       </p>
     </Project>
-
     <Project
       titlePrefix=""
       titleSuffix=", for triathletes."
@@ -77,6 +55,45 @@
       ]}
     >
       <p>A platform to handle <em>contact-list</em> keeping via qr-codes.</p>
+    </Project>
+
+    <Project
+      titlePrefix="I made "
+      titleSuffix="."
+      name="BackyTracky"
+      link="https://backytracky.com/"
+      tags={[
+        { name: "svelte", value: "svelte" },
+        { name: "tailwind.css", value: "tailwind" },
+        { name: "serverless", value: "serverless" },
+        { name: "node.js", value: "node" },
+        { name: "mongo", value: "mongo" },
+      ]}
+    >
+      <p>something to help you practice solos, scales and licks.</p>
+      <p>
+        create your own tracks, or jam to other peoples <em>backing tracks</em>!
+      </p>
+    </Project>
+
+    <Project
+      titlePrefix="Launch of the "
+      titleSuffix=""
+      name="BattleRockets!"
+      link="https://battlerockets.netlify.app/"
+      tags={[
+        { name: "svelte", value: "svelte" },
+        { name: "phaser", value: "phaser" },
+        { name: "websockets", value: "websockets" },
+        { name: "serverless", value: "serverless" },
+        { name: "node.js", value: "node" },
+        { name: "mongo", value: "mongo" },
+      ]}
+    >
+      <p>
+        Simplistic <em>"io-type"-game</em>. Purely skill based, perfectly
+        balanced and 100% free!
+      </p>
     </Project>
   </div>
 </section>

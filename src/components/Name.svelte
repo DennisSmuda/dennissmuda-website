@@ -58,6 +58,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <title>Dennis Smuda</title>
     <g class="firstname">
       {#if mounted}
         <path

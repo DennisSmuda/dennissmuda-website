@@ -15,9 +15,9 @@
       <!-- Intro -->
       <h1 class="big-paragraph">
         <span class="hidden">Dennis Smuda - </span>
-        <span class="keyword">Frontend Developer</span>
+        <span class="keyword">frontend developer</span>
         <span>from</span>
-        <span class="emphasis">Germany.</span>
+        <span class="emphasis">germany.</span>
       </h1>
       <!-- Buttons -->
       <div class="button-row">

@@ -76,19 +76,17 @@
   }
 
   :global(body.light-mode) {
-    background-color: #fdfbf5;
     color: #191c26;
-
     --primary-color: #191c26;
-    --copy-color: #7d7966;
+    --copy-color: #0f172a;
     --link-color: #00a1d3;
-    --background-color: #fdfbf5;
-    /* --second-background-color: #fcf5d8;
-    --third-background-color: #ded8b8;
-    --blackest-background: #efebdb; */
-    --second-background-color: #f5f2e8;
-    --third-background-color: #eae4d9;
-    --blackest-background: #e2dcc0;
+
+    background-color: #cbd5e1;
+    --background-color: #cbd5e1;
+    --second-background-color: #e2e8f0;
+    /* #e1e9f3 */
+    --third-background-color: #f1f5f9;
+    --blackest-background: #fff;
   }
 
   :global(h1, h2, h3, h4, h5, h6, .title) {
