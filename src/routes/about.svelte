@@ -24,15 +24,18 @@
       and I have been working as a <span class="keyword">web developer</span>
       for the
       <em>last {new Date().getFullYear() - 2014}+ years</em>. I have worked on
-      projects ranging from small company/personal websites to full fledged web
+      projects ranging from small company/personal websites to fully fledged web
       applications.
     </p>
     <p>
       I'm always looking for new challenges, ways to improve, and inspiration
-      from others.
+      from others. Also, I believe it's important to <span class="keyword"
+        >think</span
+      >
+      about the
       <span class="emphasis">Experiences</span>,
-      <span class="emphasis">Interactions</span> and their meaning in software has
-      pretty much driven me to be a web-developer.
+      <span class="emphasis">Interactions</span> and their meaning/influence that
+      they bring as software and products.
     </p>
     <p>
       I deeply enjoy building things that can be interacted with, especially if

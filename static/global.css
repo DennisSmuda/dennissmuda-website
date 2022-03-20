@@ -460,5 +460,18 @@ button:focus {
 .tag--terminal {
   color: var(--copy-color);
 }
+
+.tag--rust {
+  color: #fff;
+}
+
+.tag--bevy {
+  color: var(--copy-color);
+}
+
+.tag--gamedev,
+.tag--casual {
+  animation: colorChange 20s linear alternate infinite;
+}
 /*
 */

@@ -3,7 +3,8 @@
     return this.fetch(`blog.json`)
       .then((r) => r.json())
       .then((posts) => {
-        return { posts };
+        return { posts: posts.filter((post) => post.published) };
+        // return { posts };
       });
   }
 </script>
