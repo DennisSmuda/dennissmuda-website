@@ -4,6 +4,10 @@
 
 <svelte:head>
   <title>About Me | Dennis Smuda</title>
+  <meta
+    name="description"
+    content="About Me | Dennis Smuda, a programmer from Germany!"
+  />
 </svelte:head>
 
 <section class="h-padding container">

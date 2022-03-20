@@ -20,6 +20,8 @@
 <svelte:head>
   <title>{post.title} - Blog | Dennis Smuda</title>
   <meta name="description" content={post.description} />
+  <meta property="og:title" content="{post.title} - Blog | Dennis Smmuda" />
+  <meta property="og:description" content={post.description} />
 </svelte:head>
 
 <section class="h-padding container">

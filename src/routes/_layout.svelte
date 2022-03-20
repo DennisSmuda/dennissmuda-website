@@ -26,11 +26,12 @@
   <link rel="canonical" href="https://www.dennissmuda.com" />
 
   <meta property="og:url" content="https://www.dennissmuda.com" />
-  <meta property="og:type" content="website" /><meta
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dennissmuda.com/logo-512.png" />
+  <meta
     property="og:title"
     content="Dennis Smuda – Web-Developer based in Germany"
   />
-  <meta property="og:image" content="https://dennissmuda.com/logo-512.png" />
   <meta
     property="og:description"
     content="Hey, my name is Dennis, and I'm a web developer who loves code, design and everything that goes into creating unique experiences for others"

@@ -1,5 +1,11 @@
 <svelte:head>
   <title>Impressum | Dennis Smuda</title>
+  <meta name="description" content="Imprint | legally required content." />
+  <meta property="og:title" content="Impressum – Dennis Smuda" />
+  <meta
+    property="og:description"
+    content="Imprint | legally required content."
+  />
 </svelte:head>
 
 <section class="h-padding container">

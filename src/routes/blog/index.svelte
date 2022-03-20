@@ -15,7 +15,16 @@
 </script>
 
 <svelte:head>
-  <title>Blog | Dennis Smuda</title>
+  <title>Writing | Dennis Smuda</title>
+  <meta
+    name="description"
+    content="Writing | Dennis Smuda, a programmer from Germany!"
+  />
+  <meta property="og:title" content="Writing | Dennis Smuda" />
+  <meta
+    property="og:description"
+    content="Writing | Thoughts and words by yours truly."
+  />
 </svelte:head>
 
 <section class="h-padding container">
