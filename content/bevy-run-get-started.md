@@ -3,7 +3,7 @@ slug: "bevy-run-get-started"
 title: "Get started with Rust & Bevy."
 description: "Getting started with the Bevy game engine. Build a small app with input handling and game states"
 createdAt: "Mar. 20, 2022"
-published: false
+published: true
 tags:
   [
     { name: "gamedev", value: "gamedev" },
@@ -112,7 +112,7 @@ Pretty much in any game I have ever <em>tried</em> to make I needed some way to 
 In Bevy, we can create an `enum AppState` to help us keep track of "where we are" in our game. We only need three in total (for now) - `Menu, InGame & GameOver`.
 
 ```rust
-// main.rs
+// constants.rs
 
 //...
 
@@ -125,3 +125,40 @@ pub enum AppState {
 
 //...
 ```
+
+Now the fun part! Bevy-"Systems" are just Rust-functions, <em>but</em> you can "query" for all kinds of game-resources by just defining the function signature. So in any system that needs to change the `AppState` (what screen the player is on), we can define it as such:
+
+```rust
+// only example code
+fn some_game_system(mut state: ResMut<State<AppState>>) {
+  // ...
+  if (has_just_died) {
+    state.set(AppState::GameOver).unwrap();
+  }
+}
+```
+
+Now we need to tell Bevy what systems to run at what time - depending on our `AppState`. In your `main.rs` add these lines to the bottom of your AppBuilder-chain:
+
+```rust
+// main.rs
+fn main() {
+  app
+    // ...
+    .add_system_set(SystemSet::on_enter(AppState::Menu).with_system(setup_menu))
+    .add_system_set(SystemSet::on_update(AppState::Menu).with_system(update_menu))
+    .add_system_set(SystemSet::on_exit(AppState::Menu).with_system(teardown_state));
+
+  // ...
+}
+
+fn teardown_state(mut commands: Commands, entities: Query<Entity, Without<Camera>>) {
+  for entity in entities.iter() {
+    commands.entity(entity).despawn_recursive();
+  }
+}
+```
+
+We are going to use the `teardown_state` function for all our `on_exit` state logic. Here you can see, we don't have to worry about "`supplying`" the correct parameters to call the function. Rather, we only have to `define` what parameters a <s>function</s> system needs, and Bevy will take care of the rest. Also, it will try to be smart about how to run your code and try to optimize/cache queries - but that's above my skill level and beyond the scope of this post 😅.
+
+Thanks for sticking with me so far. I hope I have provided some insight on how to get started with a new game in Bevy. In the next post, we will go over the actual game-code. How to spawn actual entities with components, player-input and enemies.
