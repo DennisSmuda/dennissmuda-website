@@ -3,7 +3,7 @@ slug: "bevy-run-get-started"
 title: "Get started with Rust & Bevy."
 description: "Getting started with the Bevy game engine. Build a small app with input handling and game states"
 createdAt: "Mar. 20, 2022"
-published: true
+published: false
 tags:
   [
     { name: "gamedev", value: "gamedev" },
