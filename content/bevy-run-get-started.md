@@ -129,7 +129,7 @@ pub enum AppState {
 Now the fun part! Bevy-"Systems" are just Rust-functions, <em>but</em> you can "query" for all kinds of game-resources by just defining the function signature. So in any system that needs to change the `AppState` (what screen the player is on), we can define it as such:
 
 ```rust
-// only example code
+// just example code
 fn some_game_system(mut state: ResMut<State<AppState>>) {
   // ...
   if (has_just_died) {
@@ -144,21 +144,133 @@ Now we need to tell Bevy what systems to run at what time - depending on our `Ap
 // main.rs
 fn main() {
   app
-    // ...
+    // just example code
     .add_system_set(SystemSet::on_enter(AppState::Menu).with_system(setup_menu))
     .add_system_set(SystemSet::on_update(AppState::Menu).with_system(update_menu))
     .add_system_set(SystemSet::on_exit(AppState::Menu).with_system(teardown_state));
-
   // ...
 }
 
-fn teardown_state(mut commands: Commands, entities: Query<Entity, Without<Camera>>) {
+// implement this function!!
+pub fn teardown_state(
+  mut commands: Commands,
+  entities: Query<Entity, Without<Camera>>
+) {
   for entity in entities.iter() {
     commands.entity(entity).despawn_recursive();
   }
 }
 ```
 
-We are going to use the `teardown_state` function for all our `on_exit` state logic. Here you can see, we don't have to worry about "`supplying`" the correct parameters to call the function. Rather, we only have to `define` what parameters a <s>function</s> system needs, and Bevy will take care of the rest. Also, it will try to be smart about how to run your code and try to optimize/cache queries - but that's above my skill level and beyond the scope of this post 😅.
+The `teardown_state` function will be used for all our `on_exit` state logic. Here you can see, we don't have to worry about "`supplying`" the correct parameters to call the function. Rather, we only have to `define` what parameters a <s>function</s> system needs, and Bevy will take care of the rest. Also, it will try to be smart about how to run your code and try to optimize/cache queries - but that's above my skill level and beyond the scope of this post 😅.
 
-Thanks for sticking with me so far. I hope I have provided some insight on how to get started with a new game in Bevy. In the next post, we will go over the actual game-code. How to spawn actual entities with components, player-input and enemies.
+## Implementing States
+
+We are going to setup the structure right away - so go ahead and create three directories containing a `mod.rs` which will be the "entry-point" of every Screen. One for each AppState:
+
+- `game/mod.rs`
+- `main_menu/mod.rs`
+- `game_over/mod.rs`
+
+Each of these are what's called a <span class="keyword">Plugin</span> in Bevy. You can use plugins to organize your code. We are going to make every AppState a Plugin, but you are free to get creative of course. Depending on your game you might even need a seperate `DamagePlugin` that can run multiple `DamageSystems` in order to combine lots of different status effects and buffs with a "singular blow".
+
+Let's start with the `MainMenuPlugin`
+
+```rust
+// src/main_menu/mod.rs
+
+use crate::*;
+
+pub struct MainMenuPlugin;
+
+impl Plugin for MainMenuPlugin {
+  fn build(&self, app: &mut App) {
+    app
+      .add_system_set(SystemSet::on_enter(AppState::Menu).with_system(setup_menu_system))
+      .add_system_set(SystemSet::on_update(AppState::Menu).with_system(update_menu_system))
+      .add_system_set(SystemSet::on_exit(AppState::Menu).with_system(teardown_state));
+  }
+}
+
+///
+/// Setup Main Menu
+fn setup_menu_system(mut commands: Commands, asset_server: Res<AssetServer>) {
+  // Headline
+  commands.spawn_bundle(TextBundle {
+    style: Style {
+      position_type: PositionType::Absolute,
+      position: Rect {
+        top: Val::Px(4.0),
+        left: Val::Px(24.0),
+        ..Default::default()
+      },
+      ..Default::default()
+    },
+    text: Text::with_section(
+      format!("Run in Rust"),
+      TextStyle {
+        font: asset_server.load("fonts/Efforts.ttf"),
+        font_size: 64.0,
+        color: Color::WHITE,
+      },
+      TextAlignment {
+        horizontal: HorizontalAlign::Center,
+        vertical: VerticalAlign::Center,
+      },
+    ),
+    ..Default::default()
+  });
+}
+
+///
+/// Update Main Menu
+fn update_menu_system(mut state: ResMut<State<AppState>>, keyboard_input: Res<Input<KeyCode>>) {
+  if keyboard_input.just_released(KeyCode::Space) {
+    state.set(AppState::InGame).unwrap();
+  }
+}
+```
+
+This is it! Our very first state. I think you can finish off the other states by yourself. You make it so that every screen has a different headline-text and have to press `Escape` to go back to the main menu.
+
+The last thing to do is to tell Bevy to use our new plugins. So in your `main.rs`:
+
+```rust
+use bevy::prelude::*;
+
+mod constants;
+use constants::*;
+
+///
+/// State Plugins
+mod main_menu;
+use main_menu::MainMenuPlugin;
+mod game;
+use game::GamePlugin;
+mod game_over;
+use game_over::GameOverPlugin;
+
+fn main() {
+  let mut app = App::new();
+  // Window setup
+  app
+    .insert_resource(ClearColor(BG_COLOR))
+    .insert_resource(WindowDescriptor {
+      title: "Run Rust!".to_string(),
+      width: GAME_WIDTH,
+      height: GAME_HEIGHT,
+      ..Default::default()
+    })
+    // Bevy default plugins
+    .add_plugins(DefaultPlugins)
+    // States
+    .add_plugin(MainMenuPlugin)
+    .add_plugin(GamePlugin)
+
+    .add_state(AppState::Menu); // This is the state we start in!
+  // ...
+```
+
+Thanks for sticking with me if you got this far. I hope I have provided some insight on how to get started with a new game in Bevy, and keep your code organized. In the next post, we will go over the actual game-code. How to spawn actual entities with components, player-input and enemies.
+
+<small>I'm no expert on Rust nor Bevy! If you have any feedback on how to improve, please reach out directly, or open issues/pull requests in <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">the repo</a>.</small>
