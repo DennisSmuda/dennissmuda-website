@@ -181,8 +181,17 @@ blockquote {
   background-color: var(--blackest-background);
   border-left: 3px solid var(--copy-color);
 }
+
 blockquote p {
   margin-bottom: 0;
+}
+
+blockquote.disclaimer {
+  border-left: 3px solid var(--error-color);
+}
+
+blockquote.disclaimer > span {
+  color: var(--error-color);
 }
 
 @media screen and (min-width: 768px) {

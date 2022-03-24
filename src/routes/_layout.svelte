@@ -71,6 +71,7 @@
     --second-background-color: #1d212f;
     --third-background-color: #23293e;
     --outline-color: #ffc400;
+    --error-color: #ff0054;
     font-size: 100%;
 
     transition: background-color 0.3s;

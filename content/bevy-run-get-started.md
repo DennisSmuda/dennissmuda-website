@@ -12,13 +12,21 @@ tags:
   ]
 ---
 
-> In order to follow this tutorial you will need to <a href="https://doc.rust-lang.org/book/ch01-01-installation.html" target="_blank">get setup</a> with Rust and at least be able to run your very first example `hello world` code!
+> Check out the <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">source code</a>! You can run/inspect both, the end result and the code for this post. I suggest to keep it handy while reading.
 
 [Bevy](https://bevyengine.org/) is a <span class="keyword">data-driven game engine</span> for Rust. It provides a fully custom <em>ECS</em> - Entity Component System - a popular design-pattern in games. Pretty much like MVC <s>is</s> was a popular design-pattern for Web-Applications.
 
 It helps to have some prior game-dev experience. Especially if your project grows in size and complexity, the ECS-approach helps (and forces you) to keep your code lean and decoupled while also giving you ways to <span class="keyword">compose</span> functionality across different Entities.
 
+<blockquote class="disclaimer">
+  <p>
+    In order to follow this tutorial you will need to <a href="https://doc.rust-lang.org/book/ch01-01-installation.html" target="_blank">get setup</a> with Rust and at least be able to run your very first example `hello world` code!
+  </p>
+</blockquote>
+
 ## Create a new project
+
+This is how you start a new project in Rust. <span class="keyword">Cargo</span> for Rust is <i>kind of</i> like <span class="keyword">npm</span> for Node.
 
 ```bash
 cargo new bevy_run_tutorial
@@ -38,9 +46,13 @@ rand = "0.8"
 bevy-inspector-egui = "0.9"
 ```
 
-And edit `src/main.rs` to:
+Just by adding these few lines, we now have access to all of Bevy's features. `rand` is a library to help us with random number generation and `bevy-inspector-egui` is a very useful debugging-tool as it shows you what entities are present within your ecs.
+
+Let's edit `src/main.rs` to actually use Bevy-features:
 
 ```rust
+use bevy::prelude::*;
+
 fn main() {
     App::new()
       .add_plugins(DefaultPlugins)
@@ -126,7 +138,7 @@ pub enum AppState {
 //...
 ```
 
-Now the fun part! Bevy-"Systems" are just Rust-functions, <em>but</em> you can "query" for all kinds of game-resources by just defining the function signature. So in any system that needs to change the `AppState` (what screen the player is on), we can define it as such:
+Now the fun part! Bevy-"Systems" are just Rust-functions, <em>but</em> you can "query" for all kinds of game-resources by just defining the function signature. So in any system that needs to change the `AppState`, like when the player has died and we want to enter the GameOver state, we can define it as such:
 
 ```rust
 // just example code
@@ -138,20 +150,26 @@ fn some_game_system(mut state: ResMut<State<AppState>>) {
 }
 ```
 
-Now we need to tell Bevy what systems to run at what time - depending on our `AppState`. In your `main.rs` add these lines to the bottom of your AppBuilder-chain:
+Now we need to tell Bevy what systems to run depending on our `AppState`. In your `main.rs` you could add these lines to the bottom of your AppBuilder-chain:
 
 ```rust
-// main.rs
 fn main() {
   app
     // just example code
     .add_system_set(SystemSet::on_enter(AppState::Menu).with_system(setup_menu))
     .add_system_set(SystemSet::on_update(AppState::Menu).with_system(update_menu))
     .add_system_set(SystemSet::on_exit(AppState::Menu).with_system(teardown_state));
-  // ...
 }
+```
 
-// implement this function!!
+As you can see, `SystemSet` provides useful "Lifecycle-Hooks" so you can run different systems when you enter/exit the AppState as well!
+
+One thing we actually need, is the `teardown_state` function - our first system!
+
+```rust
+// main.rs
+
+// ..
 pub fn teardown_state(
   mut commands: Commands,
   entities: Query<Entity, Without<Camera>>
@@ -162,7 +180,7 @@ pub fn teardown_state(
 }
 ```
 
-The `teardown_state` function will be used for all our `on_exit` state logic. Here you can see, we don't have to worry about "`supplying`" the correct parameters to call the function. Rather, we only have to `define` what parameters a <s>function</s> system needs, and Bevy will take care of the rest. Also, it will try to be smart about how to run your code and try to optimize/cache queries - but that's above my skill level and beyond the scope of this post 😅.
+The `teardown_state` function will be used for all our `on_exit` state logic. Here you can see, we don't have to worry about <i>supplying</i> the correct parameters to call the function. Rather, we only have to `define` what parameters a <s>function</s> system needs, and Bevy will take care of the rest. Also, it will try to be smart about how to run your code and try to optimize/cache queries - but that's above my skill level and beyond the scope of this post 😅.
 
 ## Implementing States
 
@@ -172,7 +190,9 @@ We are going to setup the structure right away - so go ahead and create three di
 - `main_menu/mod.rs`
 - `game_over/mod.rs`
 
-Each of these are what's called a <span class="keyword">Plugin</span> in Bevy. You can use plugins to organize your code. We are going to make every AppState a Plugin, but you are free to get creative of course. Depending on your game you might even need a seperate `DamagePlugin` that can run multiple `DamageSystems` in order to combine lots of different status effects and buffs with a "singular blow".
+Each of these are what's called a <span class="keyword">Plugin</span> in Bevy. You can use plugins to organize your code. We are going to make <em>every</em> AppState a Plugin, but you are free to get creative of course.
+
+Depending on your game you might even need a seperate `DamagePlugin` that can run multiple `DamageSystems` in order to combine lots of different status effects and buffs with a singular blow.
 
 Let's start with the `MainMenuPlugin`
 
@@ -273,4 +293,9 @@ fn main() {
 
 Thanks for sticking with me if you got this far. I hope I have provided some insight on how to get started with a new game in Bevy, and keep your code organized. In the next post, we will go over the actual game-code. How to spawn actual entities with components, player-input and enemies.
 
-<small>I'm no expert on Rust nor Bevy! If you have any feedback on how to improve, please reach out directly, or open issues/pull requests in <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">the repo</a>.</small>
+<blockquote class="disclaimer">
+  <span>Disclaimer</span>
+  <p>
+    I'm no expert on Rust nor Bevy! If you have any feedback on how to improve, please reach out directly, or open issues/pull requests in <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">on github</a>.
+  </p>
+</blockquote>
