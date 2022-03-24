@@ -26,7 +26,7 @@ It helps to have some prior game-dev experience. Especially if your project grow
 
 ## Create a new project
 
-This is how you start a new project in Rust. <span class="keyword">Cargo</span> for Rust is <i>kind of</i> like <span class="keyword">npm</span> for Node.
+If you have gone thrugh Rust's installation, you know that creating a new project is just one command away:
 
 ```bash
 cargo new bevy_run_tutorial
@@ -35,7 +35,9 @@ cd bevy_run_tutorial
 cargo run
 ```
 
-Edit your `Cargo.toml` dependencies as follows:
+<span class="keyword">Cargo</span> for Rust is <i>kind of</i> like <span class="keyword">npm</span> for Node. You can just add dependencies to your cargo file and they will get installed automatically.
+
+Go ahead, and edit your `Cargo.toml` dependencies as follows:
 
 ```toml
 // ...
@@ -48,7 +50,7 @@ bevy-inspector-egui = "0.9"
 
 Just by adding these few lines, we now have access to all of Bevy's features. `rand` is a library to help us with random number generation and `bevy-inspector-egui` is a very useful debugging-tool as it shows you what entities are present within your ecs.
 
-Let's edit `src/main.rs` to actually use Bevy-features:
+Let's edit `src/main.rs` to actually use some Bevy features:
 
 ```rust
 use bevy::prelude::*;
@@ -60,7 +62,7 @@ fn main() {
 }
 ```
 
-You should now `cargo run` your project and confirm everything was setup correctly! It will probably take a while on your first go.
+You should now `cargo run` your project and confirm everything was done correctly. It will probably take a while on your first go, subsequent runs will be faster, once the dependencies are installed.
 
 ## Making a window
 
