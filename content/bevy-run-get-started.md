@@ -72,8 +72,8 @@ Let's setup some constants for our game first! Create `src/constants.rs` and ent
 use bevy::prelude::Color;
 
 // Dimensions
-pub const GAME_WIDTH: f32 = 720.;
-pub const GAME_HEIGHT: f32 = 420.;
+pub const WINDOW_WIDTH: f32 = 720.;
+pub const WINDOW_HEIGHT: f32 = 420.;
 
 // Colors
 pub const BG_COLOR: Color = Color::rgb(38. / 255., 20. / 255., 40. / 255.);
@@ -279,8 +279,8 @@ fn main() {
     .insert_resource(ClearColor(BG_COLOR))
     .insert_resource(WindowDescriptor {
       title: "Run Rust!".to_string(),
-      width: GAME_WIDTH,
-      height: GAME_HEIGHT,
+      width: WINDOW_WIDTH,
+      height: WINDOW_HEIGHT,
       ..Default::default()
     })
     // Bevy default plugins
