@@ -23,9 +23,10 @@
       <span class="keyword">Dennis</span>
       and I have been working as a <span class="keyword">web developer</span>
       for the
-      <em>last {new Date().getFullYear() - 2014}+ years</em>. I have worked on
+      <em>last {new Date().getFullYear() - 2014}+ years</em>. 
+      <!-- I have worked on
       projects ranging from small company/personal websites to fully fledged web
-      applications.
+      applications.-->
     </p>
     <p>
       I'm always looking for new challenges, ways to improve, and inspiration
