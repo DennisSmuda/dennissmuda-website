@@ -27,5 +27,5 @@ jobs:
         with:
           node-version: 16.10.0
       - run: npm ci
-      - run: npm build
+      - run: npm run build
       - run: npm run test-github
