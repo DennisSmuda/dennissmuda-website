@@ -2,11 +2,11 @@
 
 const config = {
 	webServer: {
-		command: 'npm run dev',
-		// command: 'npm run build && npm run preview',
-		reuseExistingServer: true,
-		// port: 3000
-		port: 4173
+		// command: 'npm run dev',
+		command: 'npm run build && npm run preview',
+		port: 3000
+		// reuseExistingServer: true,
+		// port: 4173
 	}
 }
 
