@@ -10,6 +10,7 @@
 		"prepare": "svelte-kit sync",
 		"test": "playwright test",
 		"test-debug": "npx playwright test --debug",
+		"test-github": "concurrently \"npm run dev --kill-others\" \"npm t --kill-others\"",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
@@ -41,5 +42,8 @@
 		"typescript": "^4.7.4",
 		"vite": "^2.9.13"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"concurrently": "^7.2.2"
+	}
 }
