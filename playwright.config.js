@@ -1,6 +1,6 @@
-import type { PlaywrightTestConfig } from '@playwright/test'
+// import type { PlaywrightTestConfig } from '@playwright/test'
 
-const config: PlaywrightTestConfig = {
+const config = {
 	webServer: {
 		command: 'npm run dev',
 		// command: 'npm run build && npm run preview',
