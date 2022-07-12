@@ -3,16 +3,15 @@ export const manifest = {
 	assets: new Set([".DS_Store","favicon.png","fonts/04B_03.ttf","images/blog/insomnia_register.png","images/blog/vercel_env_variables.png","logo-128.png","logo-192.png","logo-512.png","robots.txt","zipclick.flac"]),
 	mimeTypes: {".png":"image/png",".ttf":"font/ttf",".txt":"text/plain",".flac":"audio/x-flac"},
 	_: {
-		entry: {"file":"immutable/start-f8626b55.js","imports":["immutable/start-f8626b55.js","immutable/chunks/index-2dbaace3.js","immutable/chunks/index-87c96118.js","immutable/chunks/preload-helper-96c8edfa.js"],"stylesheets":[]},
+		entry: {"file":"immutable/start-07f6ed36.js","imports":["immutable/start-07f6ed36.js","immutable/chunks/index-2dbaace3.js","immutable/chunks/index-87c96118.js","immutable/chunks/preload-helper-96c8edfa.js"],"stylesheets":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
-			() => import('./nodes/11.js'),
+			() => import('./nodes/10.js'),
 			() => import('./nodes/2.js'),
 			() => import('./nodes/8.js'),
-			() => import('./nodes/10.js'),
-			() => import('./nodes/12.js'),
 			() => import('./nodes/9.js'),
+			() => import('./nodes/11.js'),
 			() => import('./nodes/4.js'),
 			() => import('./nodes/5.js'),
 			() => import('./nodes/6.js'),
@@ -77,24 +76,13 @@ export const manifest = {
 			},
 			{
 				type: 'page',
-				id: "blog/post_layout",
-				pattern: /^\/blog\/post_layout\/?$/,
-				names: [],
-				types: [],
-				path: "/blog/post_layout",
-				shadow: null,
-				a: [0,7],
-				b: [1]
-			},
-			{
-				type: 'page',
 				id: "blog/content/bevy-run-get-started",
 				pattern: /^\/blog\/content\/bevy-run-get-started\/?$/,
 				names: [],
 				types: [],
 				path: "/blog/content/bevy-run-get-started",
 				shadow: null,
-				a: [0,8],
+				a: [0,7],
 				b: [1]
 			},
 			{
@@ -105,7 +93,7 @@ export const manifest = {
 				types: [],
 				path: "/blog/content/hello-world",
 				shadow: null,
-				a: [0,9],
+				a: [0,8],
 				b: [1]
 			},
 			{
@@ -116,7 +104,7 @@ export const manifest = {
 				types: [],
 				path: "/blog/content/serverless-api-tutorial",
 				shadow: null,
-				a: [0,10],
+				a: [0,9],
 				b: [1]
 			},
 			{
@@ -127,7 +115,7 @@ export const manifest = {
 				types: [],
 				path: "/blog/content/serverless-auth-tutorial",
 				shadow: null,
-				a: [0,11],
+				a: [0,10],
 				b: [1]
 			},
 			{
@@ -138,7 +126,7 @@ export const manifest = {
 				types: [null],
 				path: null,
 				shadow: () => import('./entries/endpoints/blog/_slug_.js'),
-				a: [0,12],
+				a: [0,11],
 				b: [1]
 			}
 		],

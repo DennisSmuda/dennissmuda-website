@@ -12,7 +12,7 @@ const Cv_list = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		<span class="${"cv-entry__end-date svelte-1kvbkxk"}">currently at</span>
 		<h3 class="${"cv-entry__headline svelte-1kvbkxk"}">FTAPI \u{1F512}</h3>
 		<p class="${"cv-entry__description svelte-1kvbkxk"}">secure data-transfer applications.</p></a>
-	<a href="${"https://voll.digital/"}" class="${"cv-entry svelte-1kvbkxk"}" target="${"_blank"}" rel="${"noreferrer"}"><span class="${"timeline__dot"}"></span>
+	<a href="${"https://urlaubsguru.de/"}" class="${"cv-entry svelte-1kvbkxk"}" target="${"_blank"}" rel="${"noreferrer"}"><span class="${"timeline__dot"}"></span>
 		<span class="${"cv-entry__end-date svelte-1kvbkxk"}">until 2022 </span>
 		<h3 class="${"cv-entry__headline svelte-1kvbkxk"}">Urlaubsguru \u{1F3DD}</h3>
 		<p class="${"cv-entry__description svelte-1kvbkxk"}">frontend rework with vue/nuxt including a component library in storybook.

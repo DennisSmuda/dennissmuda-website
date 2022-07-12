@@ -36,7 +36,7 @@
       "_index-c894ed74.js"
     ],
     "css": [
-      "immutable/assets/entries/pages/__layout.svelte-8d6d427b.css"
+      "immutable/assets/entries/pages/__layout.svelte-40bec5f7.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -84,14 +84,6 @@
     ],
     "css": [
       "immutable/assets/entries/pages/blog/index.svelte-ab671df6.css"
-    ]
-  },
-  "src/routes/blog/post_layout.svelte": {
-    "file": "entries/pages/blog/post_layout.svelte.js",
-    "src": "src/routes/blog/post_layout.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-0082f715.js"
     ]
   },
   "src/routes/imprint.svelte": {
