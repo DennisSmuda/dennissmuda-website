@@ -1,0 +1,211 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "immutable/start-c904fd2f.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_index-87c96118.js",
+      "_preload-helper-96c8edfa.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/about.svelte",
+      "src/routes/blog/[slug].svelte",
+      "src/routes/blog/content/bevy-run-get-started.md",
+      "src/routes/blog/content/hello-world.md",
+      "src/routes/blog/content/serverless-api-tutorial.md",
+      "src/routes/blog/content/serverless-auth-tutorial.md",
+      "src/routes/blog/index.svelte",
+      "src/routes/blog/post_layout.svelte",
+      "src/routes/imprint.svelte",
+      "src/routes/index.svelte",
+      "src/routes/work.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "immutable/pages/__layout.svelte-5050c788.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_index-49e9c59f.js",
+      "_index-87c96118.js"
+    ],
+    "css": [
+      "immutable/assets/pages/__layout.svelte-b6ff051b.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "immutable/error.svelte-1efac9e9.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/about.svelte": {
+    "file": "immutable/pages/about.svelte-e8d3de27.js",
+    "src": "src/routes/about.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_header-a5ebed0b.js"
+    ],
+    "css": [
+      "immutable/assets/pages/about.svelte-8ae8b630.css"
+    ]
+  },
+  "src/routes/blog/[slug].svelte": {
+    "file": "immutable/pages/blog/_slug_.svelte-2a617c49.js",
+    "src": "src/routes/blog/[slug].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_preload-helper-96c8edfa.js",
+      "_index-2dbaace3.js",
+      "_header-a5ebed0b.js"
+    ],
+    "dynamicImports": [
+      "src/routes/blog/content/bevy-run-get-started.md",
+      "src/routes/blog/content/hello-world.md",
+      "src/routes/blog/content/serverless-api-tutorial.md",
+      "src/routes/blog/content/serverless-auth-tutorial.md"
+    ]
+  },
+  "src/routes/blog/content/bevy-run-get-started.md": {
+    "file": "immutable/pages/blog/content/bevy-run-get-started.md-200e045a.js",
+    "src": "src/routes/blog/content/bevy-run-get-started.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/blog/content/hello-world.md": {
+    "file": "immutable/pages/blog/content/hello-world.md-e12bd671.js",
+    "src": "src/routes/blog/content/hello-world.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/blog/content/serverless-api-tutorial.md": {
+    "file": "immutable/pages/blog/content/serverless-api-tutorial.md-cfc4297b.js",
+    "src": "src/routes/blog/content/serverless-api-tutorial.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/blog/content/serverless-auth-tutorial.md": {
+    "file": "immutable/pages/blog/content/serverless-auth-tutorial.md-11f30857.js",
+    "src": "src/routes/blog/content/serverless-auth-tutorial.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/blog/index.svelte": {
+    "file": "immutable/pages/blog/index.svelte-0ba5d8db.js",
+    "src": "src/routes/blog/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_header-a5ebed0b.js"
+    ],
+    "css": [
+      "immutable/assets/pages/blog/index.svelte-ec589e40.css"
+    ]
+  },
+  "src/routes/blog/post_layout.svelte": {
+    "file": "immutable/pages/blog/post_layout.svelte-6cb6f54a.js",
+    "src": "src/routes/blog/post_layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "src/routes/imprint.svelte": {
+    "file": "immutable/pages/imprint.svelte-ae3c9568.js",
+    "src": "src/routes/imprint.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_header-a5ebed0b.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "immutable/pages/index.svelte-a5a9a78c.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_index-49e9c59f.js",
+      "_index-ddbad8de.js",
+      "_index-87c96118.js"
+    ],
+    "css": [
+      "immutable/assets/pages/index.svelte-9d2a36a9.css"
+    ]
+  },
+  "src/routes/work.svelte": {
+    "file": "immutable/pages/work.svelte-2b1d94b9.js",
+    "src": "src/routes/work.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-2dbaace3.js",
+      "_header-a5ebed0b.js",
+      "_index-ddbad8de.js"
+    ]
+  },
+  "_index-2dbaace3.js": {
+    "file": "immutable/chunks/index-2dbaace3.js"
+  },
+  "_index-87c96118.js": {
+    "file": "immutable/chunks/index-87c96118.js",
+    "imports": [
+      "_index-2dbaace3.js"
+    ]
+  },
+  "_preload-helper-96c8edfa.js": {
+    "file": "immutable/chunks/preload-helper-96c8edfa.js"
+  },
+  "_index-49e9c59f.js": {
+    "file": "immutable/chunks/index-49e9c59f.js",
+    "imports": [
+      "_index-87c96118.js",
+      "_index-2dbaace3.js"
+    ]
+  },
+  "_header-a5ebed0b.js": {
+    "file": "immutable/chunks/header-a5ebed0b.js",
+    "imports": [
+      "_index-2dbaace3.js"
+    ],
+    "css": [
+      "immutable/assets/header-4a7d36bb.css"
+    ]
+  },
+  "_index-ddbad8de.js": {
+    "file": "immutable/chunks/index-ddbad8de.js",
+    "imports": [
+      "_index-2dbaace3.js"
+    ],
+    "css": [
+      "immutable/assets/index-f8a7cda1.css"
+    ]
+  }
+}

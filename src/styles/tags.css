@@ -1,0 +1,115 @@
+.tag--gamedev,
+.tag--casual {
+	animation: rainbow 20s linear alternate infinite;
+}
+
+.tag--git {
+	color: #f05133;
+}
+
+.tag--coffee {
+	/* color: white; */
+	color: #ff7070;
+}
+
+.tag--js {
+	color: #000;
+	background-color: #000;
+}
+
+.dark .tag--js {
+	color: #f7df1e;
+}
+
+.tag--css {
+	color: #1572b6;
+}
+
+.tag--svelte {
+	color: #ff3e00;
+	/* color: white; */
+}
+
+.tag--node {
+	color: #339933;
+	/* color: white; */
+}
+
+.tag--serverless {
+	/* background-color: #000; */
+	color: var(--primary-color);
+}
+
+.tag--vue {
+	color: #00a591;
+	/* color: white; */
+}
+
+.tag--graphql {
+	/* background-color: #fff; */
+	color: #e10098;
+}
+
+.tag--mongo {
+	color: #47a248;
+	/* color: #fff; */
+}
+
+.tag--phaser {
+	color: #99388c;
+	/* color: #fff; */
+}
+
+.tag--figma {
+	color: #1abcfe;
+	/* background-color: black; */
+}
+
+.tag--websockets {
+	color: #8731d2;
+	/* color: #fff; */
+}
+
+.tag--tailwind {
+	color: #38b2ac;
+}
+
+.tag--godot {
+	color: #478cbf;
+}
+
+.tag--aseprite {
+	color: #7d929e;
+}
+
+.tag--netlify {
+	color: #00c7b7;
+}
+
+.tag--spotify {
+	color: #1ed760;
+}
+
+.tag--vscode {
+	color: #007acc;
+}
+
+.tag--vim {
+	color: #019733;
+}
+
+.tag--pug {
+	color: #a86454;
+}
+
+.tag--greensock {
+	color: #88ce02;
+}
+
+.tag--terminal {
+	color: var(--copy-color);
+}
+
+.tag--rust {
+	color: #fff;
+}

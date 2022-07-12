@@ -1,0 +1,24 @@
+
+
+/ /.netlify/functions/index 200
+//__data.json /.netlify/functions/index 200
+/about /.netlify/functions/about 200
+/about/__data.json /.netlify/functions/about 200
+/blog /.netlify/functions/blog 200
+/blog/__data.json /.netlify/functions/blog 200
+/imprint /.netlify/functions/imprint 200
+/imprint/__data.json /.netlify/functions/imprint 200
+/work /.netlify/functions/work 200
+/work/__data.json /.netlify/functions/work 200
+/blog/post_layout /.netlify/functions/blog-post_layout 200
+/blog/post_layout/__data.json /.netlify/functions/blog-post_layout 200
+/blog/content/bevy-run-get-started /.netlify/functions/blog-content-bevy-run-get-started 200
+/blog/content/bevy-run-get-started/__data.json /.netlify/functions/blog-content-bevy-run-get-started 200
+/blog/content/hello-world /.netlify/functions/blog-content-hello-world 200
+/blog/content/hello-world/__data.json /.netlify/functions/blog-content-hello-world 200
+/blog/content/serverless-api-tutorial /.netlify/functions/blog-content-serverless-api-tutorial 200
+/blog/content/serverless-api-tutorial/__data.json /.netlify/functions/blog-content-serverless-api-tutorial 200
+/blog/content/serverless-auth-tutorial /.netlify/functions/blog-content-serverless-auth-tutorial 200
+/blog/content/serverless-auth-tutorial/__data.json /.netlify/functions/blog-content-serverless-auth-tutorial 200
+/blog/:1 /.netlify/functions/blog-_1 200
+/blog/:1/__data.json /.netlify/functions/blog-_1 200

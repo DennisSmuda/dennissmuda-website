@@ -1,0 +1,43 @@
+@import './code.css';
+@import './tags.css';
+@import './overwrites.css';
+@import './animations.css';
+
+.ds-prose {
+	@apply prose md:prose-base lg:prose-lg dark:prose-invert;
+}
+
+.ds-prose p {
+	max-width: 30em;
+}
+
+.container--narrow {
+	max-width: 920px;
+}
+
+.marker-link {
+	@apply bg-pink text-white rounded-md py-1 px-2 inline-block no-underline;
+}
+
+.timeline {
+	@apply bg-orange dark:bg-orange;
+}
+
+.timeline:after {
+	/* @apply from-orange to-white dark:to-black; */
+	@apply from-orange to-transparent;
+}
+
+.timeline {
+	@apply absolute top-4 bottom-12 w-1 -left-5 rounded-t-full;
+}
+
+.timeline:after {
+	content: '';
+	@apply -bottom-16 -left-0 -right-0 bg-gradient-to-b h-16 w-1 absolute z-20;
+}
+
+.timeline__dot {
+	@apply absolute top-1 md:top-2 -left-6 w-3 h-3 rounded-full mr-px;
+	@apply bg-orange dark:bg-orange ring-4 ring-white dark:ring-black transition-all duration-700;
+}

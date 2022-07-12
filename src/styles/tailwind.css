@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* 04B_03 - Pixel Font --- maybe later */
+	/* @font-face {
+		font-family: 'Pixel';
+		src: local('Pixel'), url('/fonts/04B_03.ttf');
+		font-weight: normal;
+		font-display: swap;
+	} */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-black;
+	}
+
+	h1 {
+		@apply text-6xl;
+	}
+
+	h1.main-heading {
+		letter-spacing: -0.3vw;
+		font-size: calc(1rem + 8vw);
+		line-height: 0.9;
+	}
+	@screen xl {
+		h1.main-heading {
+			font-size: 120px;
+		}
+	}
+	.hero h1.emoji {
+		letter-spacing: -0.3vw;
+		font-size: calc(1rem + 4vw);
+	}
+
+	@screen md {
+		.hero h1 {
+			@apply text-8xl;
+		}
+	}
+
+	h2 {
+		@apply text-4xl;
+	}
+
+	h2.rotated {
+		@apply font-thin text-rose -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
+	}
+
+	h3 {
+		@apply text-2xl;
+	}
+
+	em {
+		@apply not-italic text-pink;
+	}
+	.keyword {
+		@apply text-malachite;
+	}
+	.emphasis {
+		@apply font-medium text-malachite dark:text-greenyellow;
+	}
+
+	/**
+	 * Buttons
+	 */
+	.button,
+	button {
+		@apply rounded-md p-2 whitespace-nowrap;
+		@apply flex items-center justify-between;
+	}
+
+	.button svg {
+		@apply ml-3 h-4 w-4;
+	}
+
+	.button:focus,
+	button:focus {
+		@apply outline-none ring-2 ring-offset-2 ring-offset-black ring-black dark:ring-white;
+	}
+
+	.nav-button[aria-current] {
+		@apply text-orange dark:text-yellow bg-lightgray dark:bg-gray;
+		@apply underline underline-offset-8 sm:no-underline;
+		animation: colorChange 20s linear alternate infinite;
+	}
+	@screen md {
+		.nav-button[aria-current] {
+			animation: none;
+		}
+	}
+
+	a.tag-button {
+		@apply text-black dark:text-white bg-lightgray dark:bg-gray;
+		@apply no-underline font-normal;
+	}
+
+	/**
+	 * Links
+	 */
+	button:focus,
+	a:focus,
+	.prose a:focus {
+		@apply outline-none ring-1 ring-offset-2 ring-offset-black ring-black dark:ring-white no-underline;
+	}
+
+	/**
+	 * Theme toggle - pure css -> on flicker
+	 */
+	.light-button {
+		@apply hidden;
+	}
+
+	.dark .dark-button {
+		@apply hidden;
+	}
+
+	.dark .light-button {
+		@apply block;
+	}
+
+	.background-shape {
+		@apply bg-lightgray dark:bg-gray transition-colors duration-700;
+	}
+
+	*::selection {
+		@apply bg-iceberg text-black;
+	}
+	/**
+	 * Tags
+	**/
+
+	.tag.button {
+		padding: 0.5rem 0.75rem;
+		margin-right: 0.75rem;
+		margin-bottom: 0.75rem;
+		font-size: 0.75rem;
+		border-radius: 0.25rem;
+		display: flex;
+		flex-grow: 0;
+		align-items: center;
+		transform: scale(1);
+		user-select: none;
+		cursor: pointer;
+		@apply bg-lightgray dark:bg-gray;
+	}
+
+	.tag.button svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.tag.button img {
+		/* height: 2rem; */
+		width: 2rem;
+	}
+
+	.tag.button span {
+		margin: 0 0.5rem;
+	}
+}

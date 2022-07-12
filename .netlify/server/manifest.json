@@ -1,0 +1,225 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/hooks.js"
+    ]
+  },
+  "src/routes/blog/index.js": {
+    "file": "entries/endpoints/blog/index.js",
+    "src": "src/routes/blog/index.js",
+    "isEntry": true,
+    "imports": [
+      "_bevy-run-get-started-0f1aea50.js",
+      "_hello-world-4f7b32ac.js",
+      "_serverless-api-tutorial-fee14790.js",
+      "_serverless-auth-tutorial-ac079489.js",
+      "_index-0082f715.js"
+    ]
+  },
+  "src/routes/blog/[slug].js": {
+    "file": "entries/endpoints/blog/_slug_.js",
+    "src": "src/routes/blog/[slug].js",
+    "isEntry": true
+  },
+  "src/routes/__layout.svelte": {
+    "file": "entries/pages/__layout.svelte.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_index-c894ed74.js"
+    ],
+    "css": [
+      "immutable/assets/entries/pages/__layout.svelte-8d6d427b.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "src/routes/about.svelte": {
+    "file": "entries/pages/about.svelte.js",
+    "src": "src/routes/about.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_header-5fa0d2bd.js"
+    ],
+    "css": [
+      "immutable/assets/entries/pages/about.svelte-143a8ad9.css"
+    ]
+  },
+  "src/routes/blog/[slug].svelte": {
+    "file": "entries/pages/blog/_slug_.svelte.js",
+    "src": "src/routes/blog/[slug].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_header-5fa0d2bd.js"
+    ],
+    "dynamicImports": [
+      "_bevy-run-get-started-0f1aea50.js",
+      "_hello-world-4f7b32ac.js",
+      "_serverless-api-tutorial-fee14790.js",
+      "_serverless-auth-tutorial-ac079489.js"
+    ]
+  },
+  "src/routes/blog/index.svelte": {
+    "file": "entries/pages/blog/index.svelte.js",
+    "src": "src/routes/blog/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_header-5fa0d2bd.js"
+    ],
+    "css": [
+      "immutable/assets/entries/pages/blog/index.svelte-ab671df6.css"
+    ]
+  },
+  "src/routes/blog/post_layout.svelte": {
+    "file": "entries/pages/blog/post_layout.svelte.js",
+    "src": "src/routes/blog/post_layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "src/routes/imprint.svelte": {
+    "file": "entries/pages/imprint.svelte.js",
+    "src": "src/routes/imprint.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_header-5fa0d2bd.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_index-c894ed74.js",
+      "_index-a15ea047.js"
+    ],
+    "css": [
+      "immutable/assets/entries/pages/index.svelte-6a9c5950.css"
+    ]
+  },
+  "src/routes/work.svelte": {
+    "file": "entries/pages/work.svelte.js",
+    "src": "src/routes/work.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_header-5fa0d2bd.js",
+      "_index-a15ea047.js"
+    ]
+  },
+  "src/routes/blog/content/bevy-run-get-started.md": {
+    "file": "entries/pages/blog/content/bevy-run-get-started.md.js",
+    "src": "src/routes/blog/content/bevy-run-get-started.md",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_bevy-run-get-started-0f1aea50.js"
+    ]
+  },
+  "src/routes/blog/content/hello-world.md": {
+    "file": "entries/pages/blog/content/hello-world.md.js",
+    "src": "src/routes/blog/content/hello-world.md",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_hello-world-4f7b32ac.js"
+    ]
+  },
+  "src/routes/blog/content/serverless-api-tutorial.md": {
+    "file": "entries/pages/blog/content/serverless-api-tutorial.md.js",
+    "src": "src/routes/blog/content/serverless-api-tutorial.md",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_serverless-api-tutorial-fee14790.js"
+    ]
+  },
+  "src/routes/blog/content/serverless-auth-tutorial.md": {
+    "file": "entries/pages/blog/content/serverless-auth-tutorial.md.js",
+    "src": "src/routes/blog/content/serverless-auth-tutorial.md",
+    "isEntry": true,
+    "imports": [
+      "_index-0082f715.js",
+      "_serverless-auth-tutorial-ac079489.js"
+    ]
+  },
+  "_index-0082f715.js": {
+    "file": "immutable/chunks/index-0082f715.js"
+  },
+  "_bevy-run-get-started-0f1aea50.js": {
+    "file": "immutable/chunks/bevy-run-get-started-0f1aea50.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "_hello-world-4f7b32ac.js": {
+    "file": "immutable/chunks/hello-world-4f7b32ac.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "_serverless-api-tutorial-fee14790.js": {
+    "file": "immutable/chunks/serverless-api-tutorial-fee14790.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "_serverless-auth-tutorial-ac079489.js": {
+    "file": "immutable/chunks/serverless-auth-tutorial-ac079489.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "_index-c894ed74.js": {
+    "file": "immutable/chunks/index-c894ed74.js",
+    "imports": [
+      "_index-0082f715.js"
+    ]
+  },
+  "_header-5fa0d2bd.js": {
+    "file": "immutable/chunks/header-5fa0d2bd.js",
+    "imports": [
+      "_index-0082f715.js"
+    ],
+    "css": [
+      "immutable/assets/header-ee608cb7.css"
+    ]
+  },
+  "_index-a15ea047.js": {
+    "file": "immutable/chunks/index-a15ea047.js",
+    "imports": [
+      "_index-0082f715.js"
+    ],
+    "css": [
+      "immutable/assets/index-7ee5161c.css"
+    ]
+  },
+  ".svelte-kit/build/hooks.js": {
+    "file": "immutable/chunks/hooks-d259abab.js",
+    "src": ".svelte-kit/build/hooks.js",
+    "isDynamicEntry": true
+  }
+}
