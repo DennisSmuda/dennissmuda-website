@@ -5,7 +5,8 @@ const config = {
 		command: 'npm run dev',
 		// command: 'npm run build && npm run preview',
 		reuseExistingServer: true,
-		port: 3000
+		// port: 3000
+		port: 4173
 	}
 }
 

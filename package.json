@@ -10,7 +10,7 @@
 		"prepare": "svelte-kit sync",
 		"test": "playwright test",
 		"test-debug": "npx playwright test --debug",
-		"test-github": "concurrently \"npm run dev --kill-others\" \"npm t --kill-others\"",
+		"test-github": "concurrently \"npm run preview --kill-others\" \"npm t --kill-others\"",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
