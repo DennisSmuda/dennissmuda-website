@@ -102,7 +102,7 @@
     "imports": [
       "_index-0082f715.js",
       "_index-c894ed74.js",
-      "_index-a15ea047.js"
+      "_index-66c4196b.js"
     ],
     "css": [
       "immutable/assets/entries/pages/index.svelte-6a9c5950.css"
@@ -115,7 +115,7 @@
     "imports": [
       "_index-0082f715.js",
       "_header-5fa0d2bd.js",
-      "_index-a15ea047.js"
+      "_index-66c4196b.js"
     ]
   },
   "src/routes/blog/content/bevy-run-get-started.md": {
@@ -200,8 +200,8 @@
       "immutable/assets/header-ee608cb7.css"
     ]
   },
-  "_index-a15ea047.js": {
-    "file": "immutable/chunks/index-a15ea047.js",
+  "_index-66c4196b.js": {
+    "file": "immutable/chunks/index-66c4196b.js",
     "imports": [
       "_index-0082f715.js"
     ],

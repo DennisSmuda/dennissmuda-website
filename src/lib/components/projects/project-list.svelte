@@ -1,4 +1,10 @@
-<script>
+<script lang="ts">
+	// type Project = {
+	// 	url: string
+	// 	headline: string
+	// 	subline: string
+	// 	description: string
+	// }
 	import Project from './project.svelte'
 
 	import { allProjects } from './index'
