@@ -4,7 +4,7 @@
 	import { allProjects } from './index'
 </script>
 
-<article class="ds-prose">
+<article class="ds-prose" id="project-list">
 	{#each allProjects as project}
 		<Project
 			url={project.url}

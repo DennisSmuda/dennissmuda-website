@@ -12,7 +12,7 @@
 		<p class="cv-entry__description">secure data-transfer applications.</p>
 	</a>
 	<a
-		href="https://voll.digital/"
+		href="https://urlaubsguru.de/"
 		class="cv-entry"
 		target="_blank"
 		rel="noreferrer"
