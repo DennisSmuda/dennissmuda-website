@@ -10,7 +10,6 @@
 		"prepare": "svelte-kit sync",
 		"test": "playwright test",
 		"test-debug": "npx playwright test --debug",
-		"test-github": "concurrently \"npm run preview\" \"npm t\"",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
@@ -18,7 +17,6 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",
-		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-netlify": "^1.0.0-next.67",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "^0.5.3",
@@ -41,9 +39,6 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"vite": "^2.9.13"
-	},
-	"dependencies": {
-		"concurrently": "^7.2.2"
 	},
 	"type": "module"
 }
