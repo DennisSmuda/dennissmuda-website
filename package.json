@@ -42,7 +42,6 @@
 		"typescript": "^4.7.4",
 		"vite": "^2.9.13"
 	},
-	"type": "module",
 	"dependencies": {
 		"concurrently": "^7.2.2"
 	}
