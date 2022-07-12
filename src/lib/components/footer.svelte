@@ -7,7 +7,7 @@
 
 <footer class="footer transition-opacity duration-700">
 	<div class="p-8 grid grid-cols-4 items-end">
-		<div class="links col-span-3">
+		<div class="links col-span-3" id="social-links">
 			<!-- <div class="socials"> -->
 			<div class="flex flex-row w-full mb-4">
 				<a href="https://github.com/dennissmuda" target="_blank">

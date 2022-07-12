@@ -1,53 +1,49 @@
 import { expect, test } from '@playwright/test'
 
-test('index page has expected hero & title', async ({ page }) => {
-	await page.goto('/')
+test.describe('page: index', () => {
+	test.beforeEach(async ({ page }) => {
+		await page.goto('/')
+	})
 
-	await expect(page).toHaveTitle(/Dennis Smuda/)
+	test('has expected hero & title', async ({ page }) => {
+		await expect(page).toHaveTitle(/Dennis Smuda/)
 
-	expect(await page.textContent('p.intro__paragraph')).toContain(
-		'web developer based in germany'
-	)
-})
+		expect(await page.textContent('p.intro__paragraph')).toContain(
+			'web developer based in germany'
+		)
+	})
 
-test('index page shows all 3 important headlines', async ({ page }) => {
-	await page.goto('/')
+	test('shows all 3 important headlines', async ({ page }) => {
+		const headlines = await page.locator('h2.rotated')
+		await expect(headlines).toHaveCount(3)
+	})
 
-	const headlines = await page.locator('h2.rotated')
-	await expect(headlines).toHaveCount(3)
-})
+	test('shows a working cta button for the blog', async ({ page }) => {
+		const blogCta = await page.locator('aside .marker-link')
+		await expect(blogCta).toBeDefined
 
-test('index page shows a working cta button for the blog', async ({ page }) => {
-	await page.goto('/')
+		await blogCta.click()
+		await expect(page).toHaveTitle(/Writing/)
+	})
 
-	const blogCta = await page.locator('aside .marker-link')
-	await expect(blogCta).toBeDefined
+	test('shows my three lastest projects', async ({ page }) => {
+		const cvEntries = await page.locator('a.project')
+		await expect(cvEntries).toHaveCount(3)
 
-	await blogCta.click()
-	await expect(page).toHaveTitle(/Writing/)
-})
+		const firstEntry = cvEntries.nth(0)
+		await expect(firstEntry).toHaveAttribute('target', '_blank')
+	})
 
-test('index page shows my three lastest projects', async ({ page }) => {
-	await page.goto('/')
+	test('shows my two lastest posts', async ({ page }) => {
+		const cvEntries = await page.locator('a.latest-post')
+		await expect(cvEntries).toHaveCount(2)
 
-	const cvEntries = await page.locator('a.project')
-	await expect(cvEntries).toHaveCount(3)
+		const firstEntry = cvEntries.first()
+		await expect(firstEntry).not.toHaveAttribute('target', '_blank')
+		await expect(firstEntry).toHaveAttribute('href', /blog/)
 
-	const firstEntry = cvEntries.nth(0)
-	await expect(firstEntry).toHaveAttribute('target', '_blank')
-})
-
-test('index page shows my two lastest posts', async ({ page }) => {
-	await page.goto('/')
-
-	const cvEntries = await page.locator('a.latest-post')
-	await expect(cvEntries).toHaveCount(2)
-
-	const firstEntry = cvEntries.first()
-	await expect(firstEntry).not.toHaveAttribute('target', '_blank')
-	await expect(firstEntry).toHaveAttribute('href', /blog/)
-
-	const secondEntry = cvEntries.last()
-	await expect(secondEntry).not.toHaveAttribute('target', '_blank')
-	await expect(secondEntry).toHaveAttribute('href', /blog/)
+		const secondEntry = cvEntries.last()
+		await expect(secondEntry).not.toHaveAttribute('target', '_blank')
+		await expect(secondEntry).toHaveAttribute('href', /blog/)
+	})
 })
