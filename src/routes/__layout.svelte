@@ -22,13 +22,14 @@
 </script>
 
 <svelte:head>
-	<!-- TODO: self host? https://www.jvp.design/blog/self-hosting-a-font-with-tailwind-and-sveltekit -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
 		rel="stylesheet"
 	/>
-	<!-- TODO: ADD TO GO LIVE -->
-	<!-- <meta name="google-site-verification" content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998" /> -->
+	<meta
+		name="google-site-verification"
+		content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998"
+	/>
 </svelte:head>
 
 <div
