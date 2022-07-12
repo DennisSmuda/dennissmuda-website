@@ -1,10 +1,16 @@
-<script>
+<script lang="ts">
+	// type Project = {
+	// 	url: string
+	// 	headline: string
+	// 	subline: string
+	// 	description: string
+	// }
 	import Project from './project.svelte'
 
 	import { allProjects } from './index'
 </script>
 
-<article class="ds-prose">
+<article class="ds-prose" id="project-list">
 	{#each allProjects as project}
 		<Project
 			url={project.url}

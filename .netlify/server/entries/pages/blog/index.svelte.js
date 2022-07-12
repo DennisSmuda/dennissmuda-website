@@ -17,7 +17,7 @@ ${validate_component(Header, "Header").$$render($$result, {
     subtitle: "some thoughts and words"
   }, {}, {})}
 
-<section class="${"container lg:max-w-4xl mx-auto px-8"}"><div class="${"ds-prose relative"}"><div class="${"timeline svelte-1qgy4kg"}"></div>
+<section class="${"container lg:max-w-4xl mx-auto px-8"}"><div class="${"ds-prose relative"}" id="${"blog-post-list"}"><div class="${"timeline svelte-1qgy4kg"}"></div>
 		${each(posts, (post) => {
     return `<a class="${"post svelte-1qgy4kg"}" href="${"/blog/" + escape(post.path, true)}" sveltekit:prefetch><div class="${"timeline__dot svelte-1qgy4kg"}"></div>
 				<div class="${"post__date svelte-1qgy4kg"}">${escape(post.createdAt)}</div>

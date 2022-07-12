@@ -1,11 +1,4 @@
-type Project = {
-	url: string
-	headline: string
-	subline: string
-	description: string
-}
-
-const projects: Project[] = [
+const projects = [
 	{
 		url: 'https://dennissmuda.itch.io/generic-rogue-shooter',
 		headline: `I put a <span class="emphasis">game</span> on itch 🎮`,

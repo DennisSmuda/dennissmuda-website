@@ -36,7 +36,7 @@
       "_index-c894ed74.js"
     ],
     "css": [
-      "immutable/assets/entries/pages/__layout.svelte-8d6d427b.css"
+      "immutable/assets/entries/pages/__layout.svelte-40bec5f7.css"
     ]
   },
   ".svelte-kit/runtime/components/error.svelte": {
@@ -86,14 +86,6 @@
       "immutable/assets/entries/pages/blog/index.svelte-ab671df6.css"
     ]
   },
-  "src/routes/blog/post_layout.svelte": {
-    "file": "entries/pages/blog/post_layout.svelte.js",
-    "src": "src/routes/blog/post_layout.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-0082f715.js"
-    ]
-  },
   "src/routes/imprint.svelte": {
     "file": "entries/pages/imprint.svelte.js",
     "src": "src/routes/imprint.svelte",
@@ -110,7 +102,7 @@
     "imports": [
       "_index-0082f715.js",
       "_index-c894ed74.js",
-      "_index-a15ea047.js"
+      "_index-66c4196b.js"
     ],
     "css": [
       "immutable/assets/entries/pages/index.svelte-6a9c5950.css"
@@ -123,7 +115,7 @@
     "imports": [
       "_index-0082f715.js",
       "_header-5fa0d2bd.js",
-      "_index-a15ea047.js"
+      "_index-66c4196b.js"
     ]
   },
   "src/routes/blog/content/bevy-run-get-started.md": {
@@ -208,8 +200,8 @@
       "immutable/assets/header-ee608cb7.css"
     ]
   },
-  "_index-a15ea047.js": {
-    "file": "immutable/chunks/index-a15ea047.js",
+  "_index-66c4196b.js": {
+    "file": "immutable/chunks/index-66c4196b.js",
     "imports": [
       "_index-0082f715.js"
     ],

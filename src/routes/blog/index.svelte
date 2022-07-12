@@ -23,7 +23,7 @@
 <Header title="writing ✏️" subtitle="some thoughts and words" />
 
 <section class="container lg:max-w-4xl mx-auto px-8">
-	<div class="ds-prose relative">
+	<div class="ds-prose relative" id="blog-post-list">
 		<div class="timeline" />
 		{#each posts as post}
 			<a class="post" href="/blog/{post.path}" sveltekit:prefetch>
