@@ -9,7 +9,6 @@
 
 <header class="header p-4">
 	<Logo active={path === '/'} />
-	<!-- on:click={playClick} -->
 
 	<div class="header__nav">
 		<a

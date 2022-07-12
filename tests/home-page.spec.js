@@ -6,6 +6,7 @@ test.describe('page: index', () => {
 	})
 
 	test('has expected hero & title', async ({ page }) => {
+		await page.screenshot({ path: 'screenshot.png', fullPage: true })
 		await expect(page).toHaveTitle(/Dennis Smuda/)
 
 		expect(await page.textContent('p.intro__paragraph')).toContain(

@@ -23,6 +23,11 @@ test.describe('component: navbar', () => {
 
 		await expect(html).toHaveClass('dark')
 
+		await page.reload()
+		await page.waitForTimeout(1500)
+
+		await page.screenshot({ path: 'screenshot-dark.png', fullPage: true })
+
 		await themeButton.click()
 		await expect(html).not.toHaveClass('dark')
 	})
