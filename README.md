@@ -1,5 +1,7 @@
 # Personal Website 👨🏻‍💻
 
+[![CI](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml/badge.svg)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml)
+
 This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
 <!-- ![screenshot](./screenshot.png) -->
