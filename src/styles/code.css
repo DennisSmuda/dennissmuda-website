@@ -9,9 +9,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-	color: #c5c8c6;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	/* font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace; */
 	@apply font-mono;
 	direction: ltr;
 	text-align: left;
@@ -41,16 +39,16 @@ pre[class*='language-'] {
 	overflow: auto;
 	@apply rounded-none;
 }
+
 @screen sm {
 	pre[class*='language-'] {
 		@apply rounded-lg border-l-orange border-l-4;
-		/* border-left: 3px solid; */
 	}
 }
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-	background: #101114;
+	@apply bg-pure-black;
 }
 
 /* Inline code */
@@ -77,10 +75,11 @@ pre[class*='language-'] {
 .token.keyword,
 .token.tag {
 	color: #96cbfe;
+	@apply text-iceberg;
 }
 
 .token.class-name {
-	color: #ffffb6;
+	@apply text-orange;
 	text-decoration: underline;
 }
 
@@ -136,6 +135,7 @@ pre[class*='language-'] {
 
 .token.function {
 	color: #dad085;
+	@apply text-yellow;
 }
 
 .token.regex {

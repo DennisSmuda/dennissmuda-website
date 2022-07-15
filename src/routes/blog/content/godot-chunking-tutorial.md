@@ -21,7 +21,7 @@ Also, create two scripts for the `Player` and `Camera2D`. The Camera script is o
 # res://scenes/Player.gd
 extends RigidBody2D
 
-var move_speed = 256
+const move_speed = 256
 
 var new_body_velocity: Vector2 = Vector2(0, 0)
 var direction_vector: Vector2 = Vector2(0, 0)
