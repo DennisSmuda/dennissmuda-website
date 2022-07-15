@@ -10,6 +10,8 @@
 	let expanded: boolean = false
 	let mounted: boolean = false
 	let interactive: boolean = false
+	let shortAnimation: boolean = false
+
 	let coords = spring(
 		{ x: -200, y: -270 },
 		{
@@ -20,11 +22,15 @@
 	let size = spring(13)
 	onMount(() => {
 		mounted = true
-		setTimeout(() => {
-			coords.set({ x: 308, y: 17 })
-			size.set(13)
-			interactive = true
-		}, 700)
+		shortAnimation = window.innerWidth < 800
+		setTimeout(
+			() => {
+				coords.set({ x: 308, y: 17 })
+				size.set(13)
+				interactive = true
+			},
+			shortAnimation ? 700 : 1
+		)
 	})
 	function move(e: MouseEvent) {
 		const ratio = svgWidth / initialWidth
@@ -132,7 +138,7 @@
 		{#if mounted}
 			<g class="lastname color-change">
 				<path
-					in:fly={{ y: 20, delay: 500 }}
+					in:fly={{ y: 20, delay: shortAnimation ? 50 : 500 }}
 					d="M34.68 154.96C28.84 154.96 23.64 153.96 19.08 151.96C14.52 149.96
           10.92 147.24 8.28 143.8C5.64 140.28 4.16 136.36 3.84
           132.04H24.12C24.36 134.36 25.44 136.24 27.36 137.68C29.28 139.12 31.64
@@ -152,7 +158,7 @@
           40.12 154.96 34.68 154.96Z"
 				/>
 				<path
-					in:fly={{ y: 20, delay: 400 }}
+					in:fly={{ y: 20, delay: shortAnimation ? 40 : 400 }}
 					d="M149.88 86.32C158.2 86.32 164.8 88.84 169.68 93.88C174.64 98.92
           177.12 105.92 177.12 114.88V154H156.72V117.64C156.72 113.32 155.56 110
           153.24 107.68C151 105.28 147.88 104.08 143.88 104.08C139.88 104.08
@@ -166,7 +172,7 @@
           92.12 136.8 89.8C140.8 87.48 145.16 86.32 149.88 86.32Z"
 				/>
 				<path
-					in:fly={{ y: 20, delay: 300 }}
+					in:fly={{ y: 20, delay: shortAnimation ? 30 : 300 }}
 					d="M246.96 87.04V154H226.44V144.88C224.36 147.84 221.52 150.24 217.92
           152.08C214.4 153.84 210.48 154.72 206.16 154.72C201.04 154.72 196.52
           153.6 192.6 151.36C188.68 149.04 185.64 145.72 183.48 141.4C181.32
@@ -176,7 +182,7 @@
           123.4V87.04H246.96Z"
 				/>
 				<path
-					in:fly={{ y: 20, delay: 200 }}
+					in:fly={{ y: 20, delay: shortAnimation ? 20 : 200 }}
 					d="M247.36 120.4C247.36 113.52 248.64 107.48 251.2 102.28C253.84 97.08
           257.4 93.08 261.88 90.28C266.36 87.48 271.36 86.08 276.88 86.08C281.28
           86.08 285.28 87 288.88 88.84C292.56 90.68 295.44 93.16 297.52
@@ -191,7 +197,7 @@
           129.68 297.52 125.64 297.52 120.52Z"
 				/>
 				<path
-					in:fly={{ y: 20, delay: 100 }}
+					in:fly={{ y: 20, delay: shortAnimation ? 10 : 100 }}
 					d="M318.36 120.4C318.36 113.52 319.64 107.48 322.2 102.28C324.84 97.08
           328.4 93.08 332.88 90.28C337.36 87.48 342.36 86.08 347.88 86.08C352.6
           86.08 356.72 87.04 360.24 88.96C363.84 90.88 366.6 93.4 368.52
@@ -206,13 +212,7 @@
           132.64C367.08 129.68 368.52 125.64 368.52 120.52Z"
 				/>
 			</g>
-			<circle
-				in:fly={{ y: 0, delay: 250 }}
-				cx={$coords.x}
-				cy={$coords.y}
-				r={$size}
-				class="dot"
-			/>
+			<circle cx={$coords.x} cy={$coords.y} r={$size} class="dot" />
 		{/if}
 	</svg>
 </div>
