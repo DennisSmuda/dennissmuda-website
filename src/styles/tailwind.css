@@ -89,6 +89,7 @@
 		@apply text-orange dark:text-yellow bg-lightgray dark:bg-gray;
 		@apply underline underline-offset-8 sm:no-underline;
 		animation: colorChange 20s linear alternate infinite;
+		@apply transition-colors duration-700;
 	}
 	@screen md {
 		.nav-button[aria-current] {
