@@ -11,6 +11,10 @@
 	max-width: 30em;
 }
 
+.ds-prose img {
+	@apply rounded-lg -ml-4;
+}
+
 .container--narrow {
 	max-width: 920px;
 }

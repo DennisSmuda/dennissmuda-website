@@ -34,9 +34,7 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-	padding: 1.25em;
-	margin: 1.5rem -2rem;
-	overflow: auto;
+	@apply my-6 -mx-8 p-5 overflow-auto;
 	@apply rounded-none;
 }
 

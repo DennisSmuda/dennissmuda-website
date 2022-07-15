@@ -6,7 +6,7 @@
 		title: string
 		description: string
 		createdAt: string
-		tags: [any]
+		tags: [tag: { name: string; value: string }]
 	}
 
 	export let posts: [Post]
