@@ -30,6 +30,8 @@
 		name="google-site-verification"
 		content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998"
 	/>
+	<link rel="canonical" href="https://dennissmuda.com/" />
+	<meta property="og:url" content="https://dennissmuda.com" />
 </svelte:head>
 
 <div
