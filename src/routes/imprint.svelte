@@ -8,7 +8,7 @@
 	<meta property="og:title" content="Impressum – Dennis Smuda" />
 	<meta
 		property="og:description"
-		content="Imprint | legally required content."
+		content="Impressum | legally required content."
 	/>
 </svelte:head>
 
