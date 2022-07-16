@@ -2,7 +2,7 @@
 slug: 'godot-chunk-loading-tutorial'
 title: 'Threaded chunks with Godot 🌎'
 description: 'Making a randomly generated top-down 2d world that uses multiple threads to load/unload our chunks'
-createdAt: 'Jul. 15, 2022'
+createdAt: 'Jul. 16, 2022'
 published: true
 tags:
   [
