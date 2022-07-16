@@ -1,6 +1,6 @@
 blockquote {
-	@apply p-1 not-italic rounded-lg;
-	background: #101114;
+	@apply not-italic rounded-l-lg bg-pure-black;
+	@apply p-1 -ml-4 -mr-8;
 }
 
 .ds-prose blockquote :where(a):not(:where([class~='not-prose'] *)) {
@@ -21,6 +21,6 @@ blockquote.disclaimer > span {
 
 @media screen and (min-width: 768px) {
 	blockquote {
-		border-radius: 0.5rem;
+		@apply rounded-lg;
 	}
 }

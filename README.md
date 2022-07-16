@@ -27,4 +27,4 @@ To run playwright locally, I recommend the official [vs code plugin] - which is 
 
 ## Contributions 🥁
 
-Feel free to submit PRs 👋
+Feel free to submit PRs or [issues](https://github.com/DennisSmuda/dennissmuda-website/issues) 👋

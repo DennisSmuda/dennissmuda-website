@@ -14,6 +14,7 @@ module.exports = {
 			}
 		},
 		colors: {
+			'pure-black': '#101114',
 			transparent: 'transparent',
 			current: 'currentColor',
 			black: '#16171A',

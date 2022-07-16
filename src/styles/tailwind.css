@@ -10,7 +10,6 @@
 		font-weight: normal;
 		font-display: swap;
 	} */
-
 	h1,
 	h2,
 	h3,
@@ -29,11 +28,13 @@
 		font-size: calc(1rem + 8vw);
 		line-height: 0.9;
 	}
+
 	@screen xl {
 		h1.main-heading {
 			font-size: 120px;
 		}
 	}
+
 	.hero h1.emoji {
 		letter-spacing: -0.3vw;
 		font-size: calc(1rem + 4vw);
@@ -60,9 +61,11 @@
 	em {
 		@apply not-italic text-pink;
 	}
+
 	.keyword {
 		@apply text-malachite;
 	}
+
 	.emphasis {
 		@apply font-medium text-malachite dark:text-greenyellow;
 	}
@@ -88,11 +91,13 @@
 	.nav-button[aria-current] {
 		@apply text-orange dark:text-yellow bg-lightgray dark:bg-gray;
 		@apply underline underline-offset-8 sm:no-underline;
+		@apply transition-colors duration-700;
 		animation: colorChange 20s linear alternate infinite;
 	}
+
 	@screen md {
 		.nav-button[aria-current] {
-			animation: none;
+			@apply animate-none;
 		}
 	}
 
@@ -137,31 +142,22 @@
 	**/
 
 	.tag.button {
-		padding: 0.5rem 0.75rem;
-		margin-right: 0.75rem;
-		margin-bottom: 0.75rem;
-		font-size: 0.75rem;
-		border-radius: 0.25rem;
-		display: flex;
-		flex-grow: 0;
-		align-items: center;
-		transform: scale(1);
-		user-select: none;
-		cursor: pointer;
+		@apply text-xs rounded-md;
+		@apply py-2 px-3 mr-3 mb-3;
+		@apply flex grow-0 items-center;
+		@apply scale-100 select-none cursor-pointer;
 		@apply bg-lightgray dark:bg-gray;
 	}
 
 	.tag.button svg {
-		width: 1.5rem;
-		height: 1.5rem;
+		@apply w-6 h-6;
 	}
 
 	.tag.button img {
-		/* height: 2rem; */
-		width: 2rem;
+		@apply w-8;
 	}
 
 	.tag.button span {
-		margin: 0 0.5rem;
+		@apply mx-2;
 	}
 }

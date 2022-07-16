@@ -11,6 +11,10 @@
 	max-width: 30em;
 }
 
+.ds-prose img {
+	@apply rounded-lg -ml-4;
+}
+
 .container--narrow {
 	max-width: 920px;
 }
@@ -40,4 +44,8 @@
 .timeline__dot {
 	@apply absolute top-1 md:top-2 -left-6 w-3 h-3 rounded-full mr-px;
 	@apply bg-orange dark:bg-orange ring-4 ring-white dark:ring-black transition-all duration-700;
+}
+
+hr {
+	@apply border-black dark:border-white border-t-0 opacity-50;
 }

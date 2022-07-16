@@ -6,7 +6,7 @@
 		title: string
 		description: string
 		createdAt: string
-		tags: [any]
+		tags: [tag: { name: string; value: string }]
 	}
 
 	export let posts: [Post]
@@ -54,13 +54,14 @@
 
 <style lang="postcss">
 	.post {
-		@apply no-underline my-16 md:my-32 block px-2 -inset-x-2 relative rounded-lg;
+		@apply no-underline my-16 md:my-24 block px-2 -inset-x-2 relative rounded-lg;
 	}
 
 	.post__date {
 		@apply absolute leading-none opacity-50;
 		top: -25px;
 	}
+
 	@screen md {
 		.post__date {
 			top: -27px;

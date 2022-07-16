@@ -71,7 +71,7 @@ mongodb+srv://<DB_USER>:<PASSWORD>@cluster0.m1wek.mongodb.net/<DB_NAME>?retryWri
 
 Now head over to <a href="https://vercel.com/" target="_blank" rel="nofollower noreferer">Vercel</a> you will need to create some _environment variables_, which you can find within your project under the _settings tab_.
 
-![Vercel Environment Variables](images/blog/vercel_env_variables.png)
+![Vercel Environment Variables](/images/blog/vercel_env_variables.png)
 
 For the `JWT_SECRET` you can go ahead and just generate some random password (<a href="https://github.com/dwyl/hapi-auth-jwt2/issues/48#issuecomment-109944109" target="_blank" rel="nofollower noreferer">github issue</a> if you want to know why).
 
