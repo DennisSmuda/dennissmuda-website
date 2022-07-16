@@ -1,15 +1,24 @@
 ---
 slug: 'godot-chunk-loading-tutorial'
 title: 'Threaded chunks with Godot 🌎'
-description: 'Getting started with the Bevy game engine. Build a small app with input handling and game states'
+description: 'Making a randomly generated top-down 2d world that uses multiple threads to load/unload our chunks'
 createdAt: 'Jul. 15, 2022'
 published: true
-tags: [{ name: 'godot', value: 'godot' }, { name: 'gamedev', value: 'gamedev' }]
+tags:
+  [
+    { name: 'godot', value: 'godot' },
+    { name: 'gamedev', value: 'gamedev' },
+    { name: 'rng', value: 'random' }
+  ]
 ---
+
+## What are we doing? 🤨
+
+This post is about how to make a randomly generated top-down 2D world that you can move around in. It uses multiple threads to load and unload chunks of our world. A chunk consists of `chunk_size * chunk_size` tiles. A tile can be grass, sand and collides with the player.
 
 > Check out the <a href="https://github.com/DennisSmuda/godot-chunking-system" target="_blank">source code</a> for this post! I expect you to know your way around godot and how to create scenes and setup autoload-scripts in the project settings.
 
-First you need a main scene - I tried to setup everything as simple and minimal as possible. So you only need a `Node2D` and save it under `res://scenes/Main.tscn`. This is our main scene:
+First, we need a main scene to run our project. I tried to setup everything as simple and minimal as possible. You need a `Node2D` and save it to `res://scenes/Main.tscn`:
 
 ![MainScene in the project](/images/blog/godot-chunking/main_scene.png)
 
@@ -57,7 +66,7 @@ extends Node
 signal player_move(position)
 ```
 
-This enables us to have a global `player_move` event in our code. It might be a little overkill but it's something I've been using ever since I learned about it in <a href="https://github.com/DennisSmuda/godot-chunking-system/blob/master/scenes/Player.gd" target="_blank" rel="nofollower">this guide</a> by <em>GDQuest</em>.
+This enables us to have a global `player_move` event in our code. It might be a little overkill but it's something I've been using ever since I learned about it in <a href="https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/event-bus/" target="_blank" rel="nofollower">this guide</a> by <em>GDQuest</em>.
 
 ## Tiles and Chunks ⛰
 
