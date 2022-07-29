@@ -13,8 +13,7 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. .",
-		"postbuild": "npx svelte-sitemap --domain https://dennissmuda.com"
+		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",

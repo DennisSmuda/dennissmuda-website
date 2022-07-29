@@ -11,7 +11,7 @@ test.describe('component: footer', () => {
 	})
 
 	test('shows social links', async ({ page }) => {
-		const links = await page.locator('footer #social-links a')
+		const links = await page.locator('footer .icon-link')
 		await expect(links).toHaveCount(4)
 	})
 })
