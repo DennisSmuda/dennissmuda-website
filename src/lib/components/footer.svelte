@@ -10,7 +10,11 @@
 		<div class="links col-span-3" id="social-links">
 			<!-- <div class="socials"> -->
 			<div class="flex flex-row w-full mb-4">
-				<a href="https://github.com/dennissmuda" target="_blank">
+				<a
+					class="icon-link"
+					href="https://github.com/dennissmuda"
+					target="_blank"
+				>
 					github
 					<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 						><title>GitHub</title><path
@@ -18,7 +22,7 @@
 						/></svg
 					>
 				</a>
-				<a href="mailto:smuda.dennis@gmail.com">
+				<a class="icon-link" href="mailto:smuda.dennis@gmail.com">
 					e-mail
 					<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 						><title>Mail.Ru</title><path
@@ -26,7 +30,10 @@
 						/></svg
 					>
 				</a>
-				<a href="https://discordapp.com/users/dennis_butz#6737">
+				<a
+					class="icon-link"
+					href="https://discordapp.com/users/dennis_butz#6737"
+				>
 					discord
 					<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 						><title>Discord</title><path
@@ -34,7 +41,12 @@
 						/></svg
 					>
 				</a>
-				<a href="https://dennissmuda.itch.io/" target="_blank" rel="noreferrer">
+				<a
+					class="icon-link"
+					href="https://dennissmuda.itch.io/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					itch.io
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +62,14 @@
 			</div>
 			<span class="text-xs opacity-50"
 				>©{date} built and designed with ♥️ by me.
+				<a
+					class="inline-flex text-xs underline hover:no-underline"
+					href="https://github.com/DennisSmuda/dennissmuda-website"
+					target="_blank"
+					rel="noreferrer"
+				>
+					source</a
+				>
 			</span>
 		</div>
 
@@ -106,13 +126,9 @@
 		@apply flex flex-col items-start justify-end flex-wrap w-full;
 	}
 
-	.links a {
-		@apply inline-flex items-center justify-center rounded-lg mt-4 mr-4 md:mr-8;
+	.icon-link {
+		@apply relative inline-flex items-center justify-center rounded-lg mt-4 mr-4 md:mr-8;
 		font-size: 0;
-	}
-
-	.links a {
-		position: relative;
 	}
 
 	.links svg {
