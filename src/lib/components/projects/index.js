@@ -1,5 +1,12 @@
 const projects = [
 	{
+		url: 'https://backytracky.com/',
+		headline: `Practice music with <span class="emphasis">BackyTracky</span> 🎹`,
+		subline: `remix-run fullstack react application`,
+		description: `something to help you practice solos, scales and licks.
+				create your own tracks, or jam to other peoples <span class="emphasis">backing tracks</span>!`
+	},
+	{
 		url: 'https://dennissmuda.itch.io/generic-rogue-shooter',
 		headline: `I put a <span class="emphasis">game</span> on itch 🎮`,
 		subline: 'generic roguelike shooter to play in your browser',
@@ -24,13 +31,6 @@ const projects = [
 		headline: `We've built <span class="emphasis">KontaktHelfer</span> 📒`,
 		subline: `vue.js, graphql and qr-codes`,
 		description: `a platform to handle <span class="emphasis">contact-list</span> keeping via qr-codes.`
-	},
-	{
-		url: 'https://backytracky.com/',
-		headline: `Practice music with <span class="emphasis">BackyTracky</span> 🎹`,
-		subline: `svelte frontend + serverless API`,
-		description: `something to help you practice solos, scales and licks.
-				create your own tracks, or jam to other peoples <span class="emphasis">backing tracks</span>!`
 	}
 ]
 
