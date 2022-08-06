@@ -1,10 +1,12 @@
 <!-- Some TECH Tags -->
 <div class="flex flex-wrap mt-4 gap-4">
 	<a href="blog" class="button tag-button tag-button--vue"> Javascript </a>
-	<a href="/blog" class="button tag-button tag-button--vue"> Vue </a>
-	<a href="/blog" class="button tag-button tag-button--vue"> Svelte </a>
 	<a href="/blog" class="button tag-button tag-button--css"> CSS </a>
+	<a href="/blog" class="button tag-button tag-button--vue"> Vue </a>
+	<a href="/blog" class="button tag-button tag-button--react"> React </a>
+	<a href="/blog" class="button tag-button tag-button--vue"> Svelte </a>
 	<a href="/blog" class="button tag-button tag-button--vue"> Godot </a>
+	<a href="/blog" class="button tag-button tag-button--tailwind"> Tailwind </a>
 	<a href="/blog" class="button tag-button tag-button--vue"> Rust </a>
 </div>
 
