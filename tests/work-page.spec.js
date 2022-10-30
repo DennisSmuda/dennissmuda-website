@@ -1,7 +1,5 @@
 import { expect, test } from '@playwright/test'
 
-import { allProjects } from '../src/lib/components/projects/index.js'
-
 test.describe('page: work', () => {
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/work')
@@ -15,8 +13,8 @@ test.describe('page: work', () => {
 		await expect(heading).toHaveText('work 🏁')
 	})
 
-	test(`shows all ${allProjects.length} projects`, async ({ page }) => {
+	test(`shows all ${5} projects`, async ({ page }) => {
 		const projects = await page.locator('#project-list a')
-		await expect(projects).toHaveCount(allProjects.length)
+		await expect(projects).toHaveCount(5)
 	})
 })
