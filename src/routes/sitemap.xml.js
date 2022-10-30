@@ -57,13 +57,13 @@ const sitemap = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  `
+		)
+		.join('')}
 
   <url>
     <loc>${website}/imprint</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
-  `
-		)
-		.join('')}
 </urlset>`

@@ -38,7 +38,7 @@
 	class="app-wrapper"
 	on:mousemove={(e) => {
 		coords.set({ x: e.clientX, y: e.clientY })
-		const currentTag = e.target.tagName.toLowerCase()
+		const currentTag = e?.target.tagName.toLowerCase()
 
 		if (currentTag === 'button' || currentTag === 'a') {
 			size.set(25)

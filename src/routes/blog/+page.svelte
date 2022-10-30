@@ -9,7 +9,7 @@
 		tags: [tag: { name: string; value: string }]
 	}
 
-	export let posts: [Post]
+	export let data: { posts: [Post] }
 </script>
 
 <svelte:head>
@@ -30,8 +30,8 @@
 <section class="container lg:max-w-4xl mx-auto px-8">
 	<div class="ds-prose relative" id="blog-post-list">
 		<div class="timeline" />
-		{#each posts as post}
-			<a class="post" href="/blog/{post.path}" sveltekit:prefetch>
+		{#each data.posts as post}
+			<a class="post" href="/blog/{post.path}" data-sveltekit-prefetch>
 				<div class="timeline__dot" />
 				<div class="post__date">
 					{post.createdAt}

@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	export const load = async ({ params }: LoadEvent) => {
+		console.log('Load ')
 		try {
 			const post = await import(`./content/${params.slug}.md`)
 			console.log('load post with params', params)
@@ -24,7 +25,7 @@
 	import Header from '$lib/components/header.svelte'
 
 	export let PostContent: any
-	export let meta: any
+	export let meta: any = {}
 	// export let post: any
 	// console.log('Meta', meta)
 </script>
