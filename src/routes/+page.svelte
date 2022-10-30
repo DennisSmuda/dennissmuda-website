@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Dennis Smuda – web developer based in Germany</title>
+	<title>Dennis Smuda - web developer based in Germany</title>
 	<meta
 		name="description"
 		content="I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch"

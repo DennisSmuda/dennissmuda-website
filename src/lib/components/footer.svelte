@@ -67,7 +67,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					source</a
+					(source code)</a
 				>
 			</span>
 		</div>
