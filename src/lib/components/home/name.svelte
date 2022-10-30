@@ -43,6 +43,7 @@
 <div class="wrapper" bind:clientWidth={svgWidth} bind:clientHeight={svgHeight}>
 	<svg
 		on:click={() => (expanded = !expanded)}
+		on:keydown={() => (expanded = !expanded)}
 		on:mousemove={(e) => move(e)}
 		on:mouseleave={(e) => {
 			coords.set({ x: 308, y: 17 })
