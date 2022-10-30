@@ -1,10 +1,11 @@
-// const isDev = process.env.MODE === 'development' ? true : false
-
 const config = {
 	webServer: {
-		// command: isDev ? 'npm run dev' : 'npm run preview',
-		// port: isDev ? 5173 : 4173,
-		// reuseExistingServer: isDev ? true : false
+		// Use this for dev:
+		// command: 'npm run dev',
+		// port: 5173,
+		// reuseExistingServer: true
+
+		// this for CI/Prod
 		command: 'npm run preview',
 		port: 4173
 	}

@@ -23,7 +23,7 @@ npm run dev -- --open
 
 Tests run on [github actions](https://github.com/DennisSmuda/dennissmuda-website/actions), everytime a PR gets opened.
 
-To run playwright locally, I recommend the official [vs code plugin] - which is amazingly convenient - you can also just run `npm t`.
+To run playwright locally, I recommend the official [vs code plugin] - which is amazingly convenient - you can also just run `npm t`. But you have to `useExistingServer` inside `playwright.config.js`.
 
 ## Contributions 🥁
 
