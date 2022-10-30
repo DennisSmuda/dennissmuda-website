@@ -1,4 +1,4 @@
-const isDev = process.env.MODE === 'development'
+const isDev = process.env.MODE === 'development' || true
 
 const config = {
 	webServer: {
