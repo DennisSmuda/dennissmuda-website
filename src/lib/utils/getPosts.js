@@ -10,5 +10,6 @@ export async function getPosts() {
 				new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 		)
 
+	console.log('UTIL: Get posts')
 	return posts
 }

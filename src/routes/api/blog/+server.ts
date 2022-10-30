@@ -2,6 +2,8 @@ import { json, type RequestHandler } from '@sveltejs/kit'
 
 export type PostMeta = {
 	path: string
+	slug: string
+	isPrivate: boolean
 	title: string
 	description: string
 	createdAt: string
