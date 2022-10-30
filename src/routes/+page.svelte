@@ -3,7 +3,7 @@
 	import Project from '$lib/components/projects/project.svelte'
 	import HomeSidebar from '$lib/components/home/sidebar.svelte'
 
-	import { topProjects } from '$lib/components/projects/index'
+	import { topProjects } from '$lib/data/projects'
 </script>
 
 <svelte:head>
