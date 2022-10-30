@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-import { allProjects } from '../src/lib/components/projects/index.js'
+import { projects as allProjects } from '../src/lib/data/projects.js'
 
 test.describe('page: work', () => {
 	test.beforeEach(async ({ page }) => {

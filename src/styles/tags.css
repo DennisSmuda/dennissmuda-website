@@ -1,6 +1,8 @@
-.button.tag {
+.button.tag,
+.tag-button {
 	@apply transition-colors duration-700;
 }
+
 .tag--gamedev,
 .tag--casual {
 	animation: rainbow 20s linear alternate infinite;
