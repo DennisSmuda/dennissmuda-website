@@ -3,11 +3,11 @@
 	import Project from '$lib/components/projects/project.svelte'
 	import HomeSidebar from '$lib/components/home/sidebar.svelte'
 
-	import { topProjects } from '$lib/components/projects/index'
+	import { topProjects } from '$lib/data/projects'
 </script>
 
 <svelte:head>
-	<title>Dennis Smuda – web developer based in Germany</title>
+	<title>Dennis Smuda - web developer based in Germany</title>
 	<meta
 		name="description"
 		content="I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch"

@@ -36,4 +36,4 @@ const projects = [
 
 const topProjects = projects.slice(0, 3)
 
-export { projects as allProjects, topProjects }
+export { projects, topProjects }

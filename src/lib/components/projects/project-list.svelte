@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Project from './project.svelte'
 
-	import { allProjects } from './index'
+	import { projects as allProjects } from '$lib/data/projects'
 </script>
 
 <article class="ds-prose mt-12" id="project-list">
