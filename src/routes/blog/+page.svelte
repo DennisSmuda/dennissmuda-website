@@ -1,13 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/header.svelte'
-
-	type Post = {
-		path: string
-		title: string
-		description: string
-		createdAt: string
-		tags: [tag: { name: string; value: string }]
-	}
+	import type { Post } from '../api/blog/+server'
 
 	export let data: { posts: [Post] }
 </script>
