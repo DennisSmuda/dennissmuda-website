@@ -1,6 +1,4 @@
 <script>
-	import ThemeToggle from './theme-toggle.svelte'
-
 	const date = new Date().getFullYear()
 	let segment = ''
 </script>
@@ -112,15 +110,9 @@
 
 <style lang="postcss">
 	.brand {
-		user-select: none;
+		@apply select-none font-bold no-underline rounded-lg px-2 -ml-2;
 		font-size: 2rem;
-		font-weight: 700;
 		letter-spacing: -2.3px;
-		text-decoration: none;
-		border-radius: 0.5rem;
-		line-height: 1.5;
-		padding: 0 0.5rem;
-		margin-left: -0.5rem;
 	}
 
 	.links {
@@ -133,9 +125,7 @@
 	}
 
 	.links svg {
-		width: 2rem;
-		height: 2rem;
-		padding: 0.25rem;
+		@apply w-8 h-8 p-1;
 	}
 
 	.links svg {

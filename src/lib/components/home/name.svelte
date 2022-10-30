@@ -218,29 +218,31 @@
 	</svg>
 </div>
 
-<style>
+<style lang="postcss">
 	svg {
 		overflow: visible;
 		margin-left: -0.25rem;
 		cursor: none;
 		pointer-events: none;
 	}
+
 	svg.interactive {
 		pointer-events: visible;
 	}
+
 	.firstname path {
 		transition: transform 0.2s ease, fill 0.5s;
-	}
-	.firstname path {
 		@apply fill-black dark:fill-white;
 	}
+
 	.firstname path:hover {
 		@apply fill-malachite;
 	}
+
 	svg.interactive:hover .firstname path {
-		/* fill: var(--accent-color); */
 		transform: translateY(-32px);
 	}
+
 	svg .firstname path:nth-child(5) {
 		transition-delay: 0s;
 	}
@@ -257,13 +259,15 @@
 	svg .firstname path:nth-child(6) {
 		transition-delay: 0.05s;
 	}
+
 	.lastname path {
-		/* @apply fill-orange; */
 		animation: colorChange 20s linear alternate infinite;
 	}
+
 	.dot {
 		pointer-events: none;
 	}
+
 	@keyframes nameColorChange {
 		0% {
 			fill: var(--primary-color);
@@ -278,15 +282,18 @@
 			fill: var(--copy-color);
 		}
 	}
+
 	svg circle {
 		@apply fill-orange;
 	}
+
 	svg:hover circle {
 		@apply fill-white dark:fill-white;
 		mix-blend-mode: difference;
 		mix-blend-mode: exclusion;
 		transform: translateX(-3.5px) translateY(-2px);
 	}
+
 	.wrapper {
 		overflow: visible;
 		width: 100%;

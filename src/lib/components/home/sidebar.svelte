@@ -13,6 +13,10 @@
 <!-- Latest Posts -->
 <h2 class="rotated md:pt-24">latest posts ✏️</h2>
 
+<a class="latest-post mt-8" href="/blog/godot-chunking-tutorial">
+	<span class="latest-post__date"> Jul. 16, 2022 </span>
+	<h3 class="latest-post__title">Threaded chunks with Godot 🌎</h3>
+</a>
 <a class="latest-post mt-8" href="/blog/bevy-run-get-started">
 	<span class="latest-post__date"> Mar. 20, 2022 </span>
 	<h3 class="latest-post__title">Get started with Rust & Bevy 🎮</h3>

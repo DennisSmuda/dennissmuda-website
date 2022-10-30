@@ -1,9 +1,4 @@
 <script>
-	// import { playClick } from "../utils/Sounds";
-	// import { fade } from "svelte/transition";
-	const playClick = () => {
-		console.log('PLay Click')
-	}
 	import Name from './name.svelte'
 </script>
 
@@ -16,13 +11,11 @@
 				<Name />
 			</div>
 			<div class="intro">
-				<!-- <h1 class="emoji">👋</h1> -->
 				<!-- Intro -->
 				<p class="intro__paragraph">
 					<span class="rainbow font-medium whitespace-nowrap"
 						>web developer</span
 					>
-					<!-- <br /> -->
 					<span> based in </span>
 					<span class="german-color-change">germany 🇩🇪</span>
 					<a href="/projects">making 👨🏻‍💻</a> things and
@@ -61,9 +54,11 @@
 	.intro__paragraph a {
 		@apply underline underline-offset-2 font-medium;
 	}
+
 	.intro__paragraph a:hover {
 		@apply no-underline text-pink;
 	}
+
 	.hero .container {
 		max-width: 1440px;
 		margin: 0 auto;
@@ -72,45 +67,26 @@
 		align-items: center;
 		gap: 2rem;
 		position: relative;
-		/* overflow: hidden; */
 	}
 
-	.button-row {
-		margin-top: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 1rem;
-		flex-direction: row;
-		align-items: baseline;
-	}
-	.keyword {
-		animation: colorChange 20s linear alternate infinite;
-	}
-	.reach-me {
-		transform: rotate(32deg);
-	}
 	@screen md {
 		.hero .container {
 			flex-direction: row;
 			align-items: flex-end;
 		}
+
 		.title {
-			/* width: calc(100% - 22rem); */
 			width: 45vw;
 			max-width: 620px;
 		}
+
 		.title,
 		.intro__paragraph {
 			text-align: left;
 		}
+
 		.title {
 			margin-bottom: -1.75vw;
-		}
-
-		.button-row {
-			@apply justify-start;
 		}
 	}
 </style>

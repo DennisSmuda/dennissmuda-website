@@ -1,6 +1,6 @@
 export async function getPosts() {
 	const posts = await Object.entries(
-		import.meta.globEager('../../routes/blog/content/*.{svx,md}')
+		import.meta.glob('../../routes/blog/content/*.{svx,md}', { eager: true })
 	)
 		// get post metadata
 		.map(([, post]) => post.metadata)

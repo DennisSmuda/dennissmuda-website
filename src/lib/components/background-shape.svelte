@@ -18,21 +18,16 @@
 		@apply absolute z-0 top-0 left-0 right-0 h-full overflow-hidden;
 	}
 	.background-shape {
-		position: relative;
-		left: 0;
-		right: 0;
-		width: 100%;
 		height: 14rem;
 		transform: rotate(-4deg) scaleX(1.8) scaleY(3) translateX(10%);
-		@apply origin-center;
-		/* z-index: -10; */
-		opacity: 0.5;
+		@apply origin-center opacity-50 w-full left-0 right-0 relative;
 	}
 
 	.svg-shape-wrapper {
 		@apply fixed z-50 top-0 left-0 right-0 h-full overflow-hidden pointer-events-none;
 		@apply mix-blend-difference hidden;
 	}
+
 	@screen md {
 		.svg-shape-wrapper {
 			@apply block;
@@ -40,10 +35,7 @@
 	}
 
 	svg {
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		z-index: 0;
+		@apply w-full h-full fixed z-0;
 	}
 
 	circle {
