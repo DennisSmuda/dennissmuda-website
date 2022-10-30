@@ -45,7 +45,7 @@
 		on:click={() => (expanded = !expanded)}
 		on:keydown={() => (expanded = !expanded)}
 		on:mousemove={(e) => move(e)}
-		on:mouseleave={(e) => {
+		on:mouseleave={() => {
 			coords.set({ x: 308, y: 17 })
 			size.set(12)
 		}}
@@ -213,7 +213,7 @@
           132.64C367.08 129.68 368.52 125.64 368.52 120.52Z"
 				/>
 			</g>
-			<circle cx={$coords.x} cy={$coords.y} r={$size} class="dot" />
+			<circle cx={$coords.x} cy={$coords.y} r={Math.abs($size)} class="dot" />
 		{/if}
 	</svg>
 </div>

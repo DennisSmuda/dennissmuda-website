@@ -1,6 +1,6 @@
 import { json, type RequestHandler } from '@sveltejs/kit'
 
-export type Post = {
+export type PostMeta = {
 	path: string
 	title: string
 	description: string
@@ -9,7 +9,10 @@ export type Post = {
 }
 
 export const GET: RequestHandler = () => {
-	const allPostFiles = import.meta.glob('./content/*.{svx,md}', { eager: true })
+	const allPostFiles: Record<string, { metadata: PostMeta }> = import.meta.glob(
+		'./content/*.{svx,md}',
+		{ eager: true }
+	)
 
 	const allPosts = Object.entries(allPostFiles).map(([path, post]) => {
 		const postPath = path.slice(10, -3) // remove "./content" + ".md"
@@ -23,7 +26,6 @@ export const GET: RequestHandler = () => {
 		(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 	)
 
-	// return new Response(JSON.stringify(posts))
 	return json({
 		posts: posts
 	})

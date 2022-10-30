@@ -2,8 +2,6 @@
 	import Header from '$lib/components/header.svelte'
 	import CvList from '$lib/components/about/cv-list.svelte'
 	import Tags from '$lib/components/about/tech-tags.svelte'
-
-	function playClick() {}
 </script>
 
 <svelte:head>
@@ -54,31 +52,31 @@
 		<!-- I LIke -->
 		<h2 class="rotated">I like ❤️‍🔥</h2>
 		<ul>
-			<li on:click={playClick}>
+			<li>
 				<div>
 					to play music
 					<span class="emoji">🎶 🎸 🎹 🥁 🎧</span>
 				</div>
 			</li>
-			<li on:click={playClick}>
+			<li>
 				<div>
 					learning new things
 					<span class="emoji">🤔 📖 ✨</span>
 				</div>
 			</li>
-			<li on:click={playClick}>
+			<li>
 				<div>
 					being part of a team
 					<span class="emoji">🎩 🧢 👒 ⛑</span>
 				</div>
 			</li>
-			<li on:click={playClick}>
+			<li>
 				<div>
 					riding my bike
 					<span class="emoji">🚴‍♂️ 💨</span>
 				</div>
 			</li>
-			<li on:click={playClick}>
+			<li>
 				<div>
 					cheese
 					<span class="emoji">🧀</span>
