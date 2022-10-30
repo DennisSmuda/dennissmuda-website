@@ -43,20 +43,23 @@
 	.cv-wrapper {
 		@apply relative mb-24;
 	}
+
 	.cv-entry {
 		@apply no-underline relative mb-12 block;
 	}
+
 	.cv-entry:hover .cv-entry__headline {
 		@apply underline underline-offset-2;
 	}
+
 	.cv-entry__headline {
 		@apply mt-1 mb-0;
 	}
-	.cv-entry__start-date {
-	}
+
 	.cv-entry__end-date {
 		@apply opacity-50;
 	}
+
 	.cv-entry__description {
 		@apply opacity-50;
 	}

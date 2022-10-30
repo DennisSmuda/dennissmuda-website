@@ -33,7 +33,6 @@
 	}
 
 	.project__headline {
-		/* @apply bg-gray; */
 		@apply mb-0 underline-offset-2 pointer-events-none;
 	}
 

@@ -35,9 +35,9 @@ test.describe('page: index', () => {
 		await expect(firstEntry).toHaveAttribute('target', '_blank')
 	})
 
-	test('shows my two lastest posts', async ({ page }) => {
+	test('shows my three lastest posts', async ({ page }) => {
 		const cvEntries = await page.locator('a.latest-post')
-		await expect(cvEntries).toHaveCount(2)
+		await expect(cvEntries).toHaveCount(3)
 
 		const firstEntry = cvEntries.first()
 		await expect(firstEntry).not.toHaveAttribute('target', '_blank')

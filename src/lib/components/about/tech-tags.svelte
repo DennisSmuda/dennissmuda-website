@@ -1,9 +1,5 @@
-<script>
-	function playClick() {}
-</script>
-
 <div class="brands tech-tags">
-	<div class="tag button tag--js" on:click={playClick}>
+	<div class="tag button tag--js">
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 630 630">
 			<g id="js-logo">
 				<rect
@@ -42,7 +38,7 @@
 
 		<span>javascript</span>
 	</div>
-	<div class="tag button tag--css" on:click={playClick}>
+	<div class="tag button tag--css">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>CSS3</title><path
 				fill="currentColor"
@@ -52,7 +48,7 @@
 		<span>CSS</span>
 	</div>
 
-	<div class="tag button tag--vue" on:click={playClick}>
+	<div class="tag button tag--vue">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Vue.js</title><path
 				fill="currentColor"
@@ -62,7 +58,7 @@
 		<span>vue.js</span>
 	</div>
 
-	<div class="tag button tag--figma" on:click={playClick}>
+	<div class="tag button tag--figma">
 		<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg"
 			><path
 				d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z"
@@ -84,7 +80,7 @@
 		<span>Figma</span>
 	</div>
 
-	<div class="tag button tag--svelte" on:click={playClick}>
+	<div class="tag button tag--svelte">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Svelte</title><path
 				fill="currentColor"
@@ -94,7 +90,7 @@
 		<span>svelte</span>
 	</div>
 
-	<div class="tag button tag--pug" on:click={playClick}>
+	<div class="tag button tag--pug">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Pug</title><path
 				fill="currentColor"
@@ -104,7 +100,7 @@
 		<span>pug</span>
 	</div>
 
-	<div class="tag button tag--godot" on:click={playClick}>
+	<div class="tag button tag--godot">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Godot Engine</title><path
 				fill="currentColor"
@@ -114,7 +110,7 @@
 		<span>godot</span>
 	</div>
 
-	<div class="tag button tag--greensock" on:click={playClick}>
+	<div class="tag button tag--greensock">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>GreenSock</title><path
 				fill="currentColor"
@@ -124,7 +120,7 @@
 		<span> greensock </span>
 	</div>
 
-	<div class="tag button tag--tailwind" on:click={playClick}>
+	<div class="tag button tag--tailwind">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Tailwind CSS</title><path
 				fill="currentColor"
@@ -133,7 +129,7 @@
 		>
 		<span> tailwind.css </span>
 	</div>
-	<div class="tag button tag--node" on:click={playClick}>
+	<div class="tag button tag--node">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Node.js</title><path
 				fill="currentColor"
@@ -143,7 +139,7 @@
 		<span>node.js</span>
 	</div>
 
-	<div class="tag button tag--aseprite" on:click={playClick}>
+	<div class="tag button tag--aseprite">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Aseprite</title><path
 				fill="currentColor"
@@ -153,7 +149,7 @@
 		<span>aseprite</span>
 	</div>
 
-	<div class="tag button tag--mongo" on:click={playClick}>
+	<div class="tag button tag--mongo">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>MongoDB</title><path
 				fill="currentColor"
@@ -163,7 +159,7 @@
 		<span>mongo</span>
 	</div>
 
-	<div class="tag button tag--netlify" on:click={playClick}>
+	<div class="tag button tag--netlify">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Netlify</title><path
 				fill="currentColor"
@@ -173,7 +169,7 @@
 		<span>netlify</span>
 	</div>
 
-	<div class="tag button tag--git" on:click={playClick}>
+	<div class="tag button tag--git">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
 			<path
 				fill="#F05133"
@@ -189,7 +185,7 @@
 		</svg>
 		<span>git</span>
 	</div>
-	<div class="tag button tag--terminal" on:click={playClick}>
+	<div class="tag button tag--terminal">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Windows Terminal</title><path
 				fill="currentColor"
@@ -198,7 +194,7 @@
 		>
 		<span> terminals </span>
 	</div>
-	<div class="tag button tag--vscode" on:click={playClick}>
+	<div class="tag button tag--vscode">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Visual Studio Code</title><path
 				fill="currentColor"
@@ -208,7 +204,7 @@
 		<span>VS Code</span>
 	</div>
 
-	<div class="tag button tag--vim" on:click={playClick}>
+	<div class="tag button tag--vim">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Vim</title><path
 				fill="currentColor"
@@ -218,7 +214,7 @@
 		<span>vim</span>
 	</div>
 
-	<div class="tag button tag--spotify" on:click={playClick}>
+	<div class="tag button tag--spotify">
 		<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
 			><title>Spotify</title><path
 				fill="currentColor"
@@ -228,7 +224,7 @@
 		<span>spotify</span>
 	</div>
 
-	<div class="tag button tag--coffee" on:click={playClick}>
+	<div class="tag button tag--coffee">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="icon icon-tabler icon-tabler-mug"

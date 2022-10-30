@@ -12,7 +12,7 @@ tags:
   ]
 ---
 
-> Check out the <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">source code</a>! You can run/inspect both, the end result and the code for this post. I suggest to keep it handy while reading.
+> Check out the <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank" rel="noreferrer">source code</a>! You can run/inspect both, the end result and the code for this post. I suggest to keep it handy while reading.
 
 [Bevy](https://bevyengine.org/) is a <span class="keyword">data-driven game engine</span> for Rust. It provides a fully custom <em>ECS</em> - Entity Component System - a popular design-pattern in games. Pretty much like MVC <s>is</s> was a popular design-pattern for Web-Applications.
 
@@ -20,7 +20,7 @@ It helps to have some prior game-dev experience. Especially if your project grow
 
 <blockquote class="disclaimer">
   <p>
-    In order to follow this tutorial you will need to <a href="https://doc.rust-lang.org/book/ch01-01-installation.html" target="_blank">get setup</a> with Rust and at least be able to run your very first example `hello world` code!
+    In order to follow this tutorial you will need to <a href="https://doc.rust-lang.org/book/ch01-01-installation.html" target="_blank" rel="noreferrer">get setup</a> with Rust and at least be able to run your very first example `hello world` code!
   </p>
 </blockquote>
 
@@ -117,11 +117,11 @@ fn camera_setup(mut commands: Commands) {
 }
 ```
 
-This code should spawn a `720 x 420` window with a title and two cameras. Pretty much "standard" bevy setup code - if this seems too daunting right now, you might want to go through <a href="https://bevyengine.org/learn/book/getting-started/" target="_blank">bevy's own getting started guide</a> to get comfortable with the basics first.
+This code should spawn a `720 x 420` window with a title and two cameras. Pretty much "standard" bevy setup code - if this seems too daunting right now, you might want to go through <a href="https://bevyengine.org/learn/book/getting-started/" target="_blank" rel="noreferrer">bevy's own getting started guide</a> to get comfortable with the basics first.
 
 ## Changing "Screens"
 
-Pretty much in any game I have ever <em>tried</em> to make I needed some way to go from one "screen" to another. In <a href="https://godotengine.org/" target="blank">Godot</a> you can implement a `SceneManager` that will transition from one `Node` to another. <a href="https://unity.com/" target="_blank">Unity</a> has `Scenes` and <a href="https://www.yoyogames.com/en" target="_blank">GameMaker</a> has `rooms` - but they all do very similar things for your game.
+Pretty much in any game I have ever <em>tried</em> to make I needed some way to go from one "screen" to another. In <a href="https://godotengine.org/" target="blank" rel="noreferrer">Godot</a> you can implement a `SceneManager` that will transition from one `Node` to another. <a href="https://unity.com/" target="_blank" rel="noreferrer">Unity</a> has `Scenes` and <a href="https://www.yoyogames.com/en" target="_blank" rel="noreferrer">GameMaker</a> has `rooms` - but they all do very similar things for your game.
 
 In Bevy, we can create an `enum AppState` to help us keep track of "where we are" in our game. We only need three in total (for now) - `Menu, InGame & GameOver`.
 
@@ -298,6 +298,6 @@ Thanks for sticking with me if you got this far. I hope I have provided some ins
 <blockquote class="disclaimer">
   <span>Disclaimer</span>
   <p>
-    I'm no expert on Rust nor Bevy! If you have any feedback on how to improve, please reach out directly, or open issues/pull requests in <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank">on github</a>.
+    I'm no expert on Rust nor Bevy! If you have any feedback on how to improve, please reach out directly, or open issues/pull requests in <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank" rel="noreferrer">on github</a>.
   </p>
 </blockquote>

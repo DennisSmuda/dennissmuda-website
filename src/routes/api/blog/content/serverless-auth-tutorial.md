@@ -87,13 +87,13 @@ Pretty straight forward, right? We check the request body to make sure the perso
 
 ## CORS detour
 
-something we have completely neglected are <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="nofollower noreferer">CORS issues</a>.
+something we have completely neglected are <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="nofollower noreferrer">CORS issues</a>.
 
 To put it simply, let's imagine we are going to have our API "serving endpoints" from some domain like `serverless-api.com`. But our client-application is running on `client-for-api.com` - now if these two domains could just share resources (information) as they pleased, we would have huge security flaws!
 
 This is pretty much why Cross Origin Resource Sharing (_CORS_) exist - so that developers can specify which "origins" should be able to have access.
 
-I would still recommend checking out the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="nofollower noreferer">MDN article</a> on the topic, if you want to delve deep.
+I would still recommend checking out the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="nofollower noreferrer">MDN article</a> on the topic, if you want to delve deep.
 
 ## Configuration and Middlewares
 
@@ -222,13 +222,13 @@ const register = async (req, res) => {
 }
 ```
 
-I ommitted some stuff for clarity, but you can checkout the <a href="https://github.com/DennisSmuda/serverless-sample-api/blob/master/api/auth/register.js" target="_blank" rel="nofollower noreferer">full version here</a>.
+I ommitted some stuff for clarity, but you can checkout the <a href="https://github.com/DennisSmuda/serverless-sample-api/blob/master/api/auth/register.js" target="_blank" rel="nofollower noreferrer">full version here</a>.
 
 It starts off very similar to our login function, by checking the request body for valid input. We make sure the same e-mail hasn't been registered to another user and create a new one with a hashed password.
 
 > _Never_ store plain user passwords in your database!
 
-If you have a API testing tool (like <a href="https://insomnia.rest/" target="_blank" rel="nofollower noreferer">insomnia</a>) you can now try to register your first user!
+If you have a API testing tool (like <a href="https://insomnia.rest/" target="_blank" rel="nofollower noreferrer">insomnia</a>) you can now try to register your first user!
 
 ![Vercel Environment Variables](/images/blog/insomnia_register.png)
 
@@ -241,6 +241,6 @@ curl -H "Authorization: Bearer <ACCESS_TOKEN>" -X GET http://localhost:3000/api/
 ## That's it!
 
 We now have a full working node.js serverless API! If you want to check out the code in full, because I missed something or you want to give me a star, go to the
-<a href="https://github.com/DennisSmuda/serverless-sample-api" target="_blank" rel="nofollower noreferer">repository</a>.
+<a href="https://github.com/DennisSmuda/serverless-sample-api" target="_blank" rel="nofollower noreferrer">repository</a>.
 
-If you are wondering (like me) if you could build a "whole application" with a serverless API, the answer is yes, and yes I did exactly that. I built a small backing-track/jam-along app which is basically an extended version of this tutorials API. It has some relationships within the models and a couple of aggregation functions. You can <a href="https://backytracky.com/" target="_blank" rel="nofollower noreferer">check it out here</a>.
+If you are wondering (like me) if you could build a "whole application" with a serverless API, the answer is yes, and yes I did exactly that. I built a small backing-track/jam-along app which is basically an extended version of this tutorials API. It has some relationships within the models and a couple of aggregation functions. You can <a href="https://backytracky.com/" target="_blank" rel="nofollower noreferrer">check it out here</a>.
