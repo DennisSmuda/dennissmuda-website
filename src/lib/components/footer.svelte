@@ -60,15 +60,15 @@
 				</a>
 			</div>
 			<span class="text-xs opacity-50"
-				>©{date} built and designed with ♥️ by me.
+				>©{date} built and designed with ♥️ by me
 				<a
 					class="inline-flex text-xs underline hover:no-underline"
 					href="https://github.com/DennisSmuda/dennissmuda-website"
 					target="_blank"
 					rel="noreferrer"
 				>
-					(source code)</a
-				>
+					(source code)
+				</a>
 			</span>
 		</div>
 
