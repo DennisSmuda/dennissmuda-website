@@ -1,6 +1,7 @@
 # Personal Website 👨🏻‍💻
 
 [![CI](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml/badge.svg)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5487d096-f9f1-496e-8ae4-613220817b9a/deploy-status)](https://app.netlify.com/sites/dennissmuda/deploys)
 
 This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
@@ -10,9 +11,9 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
 </a>
 </p>
 
-<!-- ![screenshot](./screenshot.png) -->
-
-![screenshot dark](./screenshot-dark.png)
+| Dark Theme                                | Light Theme                     |
+| ----------------------------------------- | ------------------------------- |
+| ![screenshot dark](./screenshot-dark.png) | ![screenshot](./screenshot.png) |
 
 ## Developing 🛠
 
