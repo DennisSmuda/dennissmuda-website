@@ -19,13 +19,16 @@ test.describe('component: navbar', () => {
 		const themeButton = await page.locator('#theme-toggle')
 		const html = await page.locator('html')
 
+		await page.waitForTimeout(1500)
+		await page.screenshot({ path: 'screenshot.png', fullPage: true })
+
 		await themeButton.click()
 
 		await expect(html).toHaveClass('dark')
 
 		await page.reload()
-		await page.waitForTimeout(1500)
 
+		await page.waitForTimeout(1500)
 		await page.screenshot({ path: 'screenshot-dark.png', fullPage: true })
 
 		await themeButton.click()

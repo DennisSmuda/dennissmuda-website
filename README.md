@@ -11,9 +11,9 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
 </a>
 </p>
 
-<!-- ![screenshot](./screenshot.png) -->
-
-![screenshot dark](./screenshot-dark.png)
+| Dark Theme                                | Light Theme                     |
+| ----------------------------------------- | ------------------------------- |
+| ![screenshot dark](./screenshot-dark.png) | ![screenshot](./screenshot.png) |
 
 ## Developing 🛠
 
