@@ -13,12 +13,12 @@ tags:
 
 > We will be using _Vercel and MongoDB_ - cloud software which is _fast and free_, but requires you to create some accounts and do stuff via their ui.
 
-In this Post I will show you, how to get started with API development using <a href="https://vercel.com/" target="_blank" rel="nofollower noreferer">Vercel</a> and node.js.
+In this Post I will show you, how to get started with API development using <a href="https://vercel.com/" target="_blank" rel="nofollower noreferrer">Vercel</a> and node.js.
 I recommend you _head over there and create an account_, because we will have to connect our git repo to vercel, so it can deploy your API whenever you push changes!
 
 ## Create a new project
 
-In order for any of this to work, you need to have <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="nofollower noreferer">git</a> and <a href="https://nodejs.org/en/" target="_blank" rel="nofollower noreferer">node.js</a> installed on your machine. If you do and have been doing web dev for some time, these steps should look very familiar to you:
+In order for any of this to work, you need to have <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="nofollower noreferrer">git</a> and <a href="https://nodejs.org/en/" target="_blank" rel="nofollower noreferrer">node.js</a> installed on your machine. If you do and have been doing web dev for some time, these steps should look very familiar to you:
 
 ```bash
 mkdir my-api
@@ -56,11 +56,11 @@ By default your app will get served to `localhost:3000`. By sending a request to
 curl -X GET http://localhost:3000/api/users
 ```
 
-I recommend using a tool like <a href="https://insomnia.rest/" target="_blank" rel="nofollower noreferer">insomnia</a> to develop your API locally. It has a lot of useful features and is of course _free_.
+I recommend using a tool like <a href="https://insomnia.rest/" target="_blank" rel="nofollower noreferrer">insomnia</a> to develop your API locally. It has a lot of useful features and is of course _free_.
 
 ## Database setup
 
-Let's create our database now! Head over to <a href="https://www.mongodb.com/" target="_blank" rel="nofollower noreferer">mongodb.com</a>, create a new cluster and stay within the free tier.
+Let's create our database now! Head over to <a href="https://www.mongodb.com/" target="_blank" rel="nofollower noreferrer">mongodb.com</a>, create a new cluster and stay within the free tier.
 
 Inside the UI of your cluster, under `collections` you can _create a new database_. Afterwards, you can find the `connect` button and _connect your application_.
 
@@ -69,11 +69,11 @@ Inside the UI of your cluster, under `collections` you can _create a new databas
 mongodb+srv://<DB_USER>:<PASSWORD>@cluster0.m1wek.mongodb.net/<DB_NAME>?retryWrites=true&w=majority
 ```
 
-Now head over to <a href="https://vercel.com/" target="_blank" rel="nofollower noreferer">Vercel</a> you will need to create some _environment variables_, which you can find within your project under the _settings tab_.
+Now head over to <a href="https://vercel.com/" target="_blank" rel="nofollower noreferrer">Vercel</a> you will need to create some _environment variables_, which you can find within your project under the _settings tab_.
 
 ![Vercel Environment Variables](/images/blog/vercel_env_variables.png)
 
-For the `JWT_SECRET` you can go ahead and just generate some random password (<a href="https://github.com/dwyl/hapi-auth-jwt2/issues/48#issuecomment-109944109" target="_blank" rel="nofollower noreferer">github issue</a> if you want to know why).
+For the `JWT_SECRET` you can go ahead and just generate some random password (<a href="https://github.com/dwyl/hapi-auth-jwt2/issues/48#issuecomment-109944109" target="_blank" rel="nofollower noreferrer">github issue</a> if you want to know why).
 
 ## Mongoose Models
 
@@ -158,4 +158,4 @@ In the next blog post we will handle the _authentication_ part of our API, which
 
 ## FYI
 
-If you want to see the _end result_ we are going to build <a href="https://github.com/DennisSmuda/serverless-sample-api" target="_blank" rel="nofollower noreferer">check out the repo</a>.
+If you want to see the _end result_ we are going to build <a href="https://github.com/DennisSmuda/serverless-sample-api" target="_blank" rel="nofollower noreferrer">check out the repo</a>.

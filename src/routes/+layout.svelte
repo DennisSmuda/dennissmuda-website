@@ -2,11 +2,11 @@
 	import { spring, type Spring } from 'svelte/motion'
 
 	import BackgroundShape from '$lib/components/background-shape.svelte'
-	import Navbar from '$lib/components/navbar.svelte'
+	import Navbar from '$lib/features/navbar/index.svelte'
+	import Footer from '$lib/features/footer/index.svelte'
 
 	import '../styles/tailwind.css'
 	import '../styles/app.css'
-	import Footer from '$lib/components/footer.svelte'
 
 	let coords = spring(
 		{ x: 50, y: 50 },

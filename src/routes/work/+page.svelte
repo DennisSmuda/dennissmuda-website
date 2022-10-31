@@ -1,6 +1,5 @@
 <script>
-	import Header from '$lib/components/header.svelte'
-	import ProjectList from '$lib/components/projects/project-list.svelte'
+	import Projects from '$lib/features/projects/index.svelte'
 </script>
 
 <svelte:head>
@@ -16,8 +15,4 @@
 	/>
 </svelte:head>
 
-<Header title="work 🏁" subtitle="past projects" />
-
-<section class="container lg:max-w-4xl mx-auto px-8">
-	<ProjectList />
-</section>
+<Projects />

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import Logo from './logo.svelte'
-	import ThemeToggle from './theme-toggle.svelte'
+	import Logo from '$lib/components/logo.svelte'
+	import ThemeToggle from '$lib/components/theme-toggle.svelte'
 	let path: string
 
 	$: path = $page.url.pathname
