@@ -16,7 +16,7 @@ tags:
 
 This post is about how to make a randomly generated top-down 2D world that you can move around in. It uses multiple threads to load and unload chunks of our world. A chunk consists of `chunk_size * chunk_size` tiles. A tile can be grass, sand and collides with the player.
 
-> Check out the <a href="https://github.com/DennisSmuda/godot-chunking-system" target="_blank">source code</a> for this post! I expect you to know your way around godot and how to create scenes and setup autoload-scripts in the project settings.
+> Check out the <a href="https://github.com/DennisSmuda/godot-chunking-system" target="_blank" rel="noreferrer">source code</a> for this post! I expect you to know your way around godot and how to create scenes and setup autoload-scripts in the project settings.
 
 First, we need a main scene to run our project, so create a `Node2D` and save it to `res://scenes/Main.tscn`:
 
@@ -24,7 +24,7 @@ First, we need a main scene to run our project, so create a `Node2D` and save it
 
 Go ahead and also create our player - which is just a `RigidBody2D` with three child nodes: `Camera2D`, `Sprite` and `CollisionShape2D`. Based on the screenshot above you can see how to setup those nodes, don't forget to **disable gravity** for the players body!
 
-Also, create two scripts for the `Player` and `Camera2D`. The Camera script is ommited in this post, because it just handles the camera's zoom, but you can check it out <a href="https://github.com/DennisSmuda/godot-chunking-system/blob/master/scenes/Camera2D.gd" target="_blank" rel="nofollower">here</a>.
+Also, create two scripts for the `Player` and `Camera2D`. The Camera script is ommited in this post, because it just handles the camera's zoom, but you can check it out <a href="https://github.com/DennisSmuda/godot-chunking-system/blob/master/scenes/Camera2D.gd" target="_blank" rel="noreferrer">here</a>.
 
 ```gdscript
 # res://scenes/Player.gd
@@ -45,7 +45,7 @@ func _ready() -> void:
 
 We initialize and handle all our player movement in this file. It's pretty basic vector based velocity addition and it's pretty fast, but it's enough to demonstrate the chunk loading functionality.
 
-Check out the rest of <a href="https://github.com/DennisSmuda/godot-chunking-system/blob/master/scenes/Player.gd" target="_blank" rel="nofollower">Player.gd</a>.
+Check out the rest of <a href="https://github.com/DennisSmuda/godot-chunking-system/blob/master/scenes/Player.gd" target="_blank" rel="noreferrer">Player.gd</a>.
 
 You might have noticed the line `Events.emit_signal`. This will cause our code to break because there is no <em>global</em> named "Events" yet!
 
@@ -66,7 +66,7 @@ extends Node
 signal player_move(position)
 ```
 
-This enables us to have a global `player_move` event in our code. It might be a little overkill but it's something I've been using ever since I learned about it in <a href="https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/event-bus/" target="_blank" rel="nofollower">this guide</a> by <em>GDQuest</em>.
+This enables us to have a global `player_move` event in our code. It might be a little overkill but it's something I've been using ever since I learned about it in <a href="https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/event-bus/" target="_blank" rel="noreferrer">this guide</a> by <em>GDQuest</em>.
 
 ## Tiles and Chunks ⛰
 
