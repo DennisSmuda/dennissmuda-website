@@ -9,7 +9,7 @@ tags: [{ name: 'casual', value: 'casual' }, { name: 'svelte', value: 'svelte' }]
 
 Cool, you made it! Welcome to my website, I hope you like what you've seen so far. Continue reading if you'd like to kow more about it.
 
-Of course, I'm most excited about trying out (and loving) <a href="https://svelte.dev/" target="_blank">svelte</a>. I highly recommend checking it out - the interactive tutorial is perfect to get your feet wet, with no setup whatsoever.
+Of course, I'm most excited about trying out (and loving) <a href="https://svelte.dev/" target="_blank" rel="noreferrer">svelte</a>. I highly recommend checking it out - the interactive tutorial is perfect to get your feet wet, with no setup whatsoever.
 
 ## Enter Svelte
 
@@ -69,8 +69,8 @@ Within the markup, we can now setup events on the svg element similar to a lot o
 
 As you can see - it's pretty simple to understand if you know basic javascript and a few concepts from single page applications. Plus, I didn't even have to install anything, and I can trust the compiler, that only the code that is "needed", actually gets send to the client.
 
-So far, I'm having a blast trying out svelte - I even made a "full app" with it - it's called BackyTracky and you can check it out <a href="https://backytracky.com/" target="_blank">here</a>.
+So far, I'm having a blast trying out svelte - I even made a "full app" with it - it's called BackyTracky and you can check it out <a href="https://backytracky.com/" target="_blank" rel="noreferrer">here</a>.
 
 ## Further Information
 
-If you want to know more about svelte, I highly recommend watching this <a href="https://www.youtube.com/watch?v=AdNJ3fydeao" target="_blank">talk by Richard Harris</a>, the creator of svelte himself.
+If you want to know more about svelte, I highly recommend watching this <a href="https://www.youtube.com/watch?v=AdNJ3fydeao" target="_blank" rel="noreferrer">talk by Richard Harris</a>, the creator of svelte himself.

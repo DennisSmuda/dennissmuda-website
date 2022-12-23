@@ -19,6 +19,18 @@
 	let size = spring(10, {
 		stiffness: 0.15
 	})
+
+  function onMouseMove(e: MouseEvent) {
+		coords.set({ x: e.clientX, y: e.clientY })
+    const target = e.target as HTMLElement
+		const currentTag = target.tagName.toLowerCase()
+
+		if (currentTag === 'button' || currentTag === 'a') {
+			size.set(25)
+		} else {
+			size.set(10)
+		}
+  }
 </script>
 
 <svelte:head>
@@ -36,16 +48,7 @@
 
 <div
 	class="app-wrapper"
-	on:mousemove={(e) => {
-		coords.set({ x: e.clientX, y: e.clientY })
-		const currentTag = e?.target.tagName.toLowerCase()
-
-		if (currentTag === 'button' || currentTag === 'a') {
-			size.set(25)
-		} else {
-			size.set(10)
-		}
-	}}
+	on:mousemove={(e) => { onMouseMove(e) }}
 	on:mousedown={() => size.set(50)}
 	on:mouseup={() => size.set(10)}
 >
