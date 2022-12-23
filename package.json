@@ -7,7 +7,6 @@
 		"local-build": "rm -rf build/* && vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync",
 		"test": "MODE='development' playwright test",
 		"test-debug": "npx playwright test --debug",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
