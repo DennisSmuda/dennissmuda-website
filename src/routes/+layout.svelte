@@ -34,10 +34,6 @@
 </script>
 
 <svelte:head>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
-		rel="stylesheet"
-	/>
 	<meta
 		name="google-site-verification"
 		content="BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998"
