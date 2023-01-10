@@ -6,7 +6,6 @@
 	let svgWidth: number
 	let svgHeight: number
 	const initialWidth: number = 397
-	const initialHeight: number = 172
 
 	let expanded: boolean = false
 	let mounted: boolean = false
@@ -22,22 +21,17 @@
 		}
 	)
 
-
 	onMount(() => {
-		// mounted = true
 		animationTime = window.innerWidth < 800 ? 0 : 50
-    setTimeout(() => {
-		 mounted = true
-    }, 100)
+		setTimeout(() => {
+			mounted = true
+		}, 100)
 
-		setTimeout(
-			() => {
-				coords.set({ x: 308, y: 17 })
-				size.set(13)
-				interactive = true
-			},
-			animationTime * 15
-		)
+		setTimeout(() => {
+			coords.set({ x: 308, y: 17 })
+			size.set(13)
+			interactive = true
+		}, animationTime * 15)
 	})
 
 	function move(e: MouseEvent) {
