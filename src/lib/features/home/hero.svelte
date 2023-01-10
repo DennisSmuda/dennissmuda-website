@@ -13,16 +13,16 @@
 			<div class="intro">
 				<!-- Intro -->
 				<p class="intro__paragraph">
-					<span class="rainbow font-medium whitespace-nowrap"
-						>web developer</span
-					>
+					<span class="rainbow font-medium whitespace-nowrap">
+						web developer
+					</span>
 					<span> based in </span>
 					<span class="german-color-change">germany 🇩🇪</span>
 					<a href="/projects">making 👨🏻‍💻</a> things and
 					<a href="/blog">writing ✏️</a> about stuff. feel free to
-					<a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com"
-						>get in touch 📫</a
-					>
+					<a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com">
+						get in touch 📫
+					</a>
 					, or get to
 					<a class="whitespace-nowrap" href="/about"> know me 👋</a>
 					first.
