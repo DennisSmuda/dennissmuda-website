@@ -26,7 +26,7 @@ test.describe('page: index', () => {
 		await expect(page).toHaveTitle(/Writing/)
 	})
 
-	test('shows my three lastest projects', async ({ page }) => {
+	test('shows my three latest projects', async ({ page }) => {
 		const cvEntries = await page.locator('a.project')
 		await expect(cvEntries).toHaveCount(3)
 
@@ -34,9 +34,9 @@ test.describe('page: index', () => {
 		await expect(firstEntry).toHaveAttribute('target', '_blank')
 	})
 
-	test('shows my three lastest posts', async ({ page }) => {
+	test('shows my latest posts', async ({ page }) => {
 		const cvEntries = await page.locator('a.latest-post')
-		await expect(cvEntries).toHaveCount(3)
+		await expect(cvEntries).toHaveCount(4)
 
 		const firstEntry = cvEntries.first()
 		await expect(firstEntry).not.toHaveAttribute('target', '_blank')
