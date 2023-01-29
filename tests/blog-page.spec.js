@@ -15,6 +15,6 @@ test.describe('page: blog', () => {
 
 	test(`/blog shows all blog posts`, async ({ page }) => {
 		const projects = await page.locator('#blog-post-list a')
-		await expect(projects).toHaveCount(5)
+		await expect(projects).toHaveCount(6)
 	})
 })

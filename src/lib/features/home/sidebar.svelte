@@ -13,6 +13,11 @@
 <!-- Latest Posts -->
 <h2 class="rotated md:pt-24">latest posts ✏️</h2>
 
+<a class="latest-post mt-8" href="/blog/low-res-voxels">
+	<span class="latest-post__date"> Jan. 29, 2023 </span>
+	<h3 class="latest-post__title">Low-Res Graphics 🌊⛵️</h3>
+</a>
+
 <a class="latest-post mt-8" href="/blog/godot-chunking-tutorial">
 	<span class="latest-post__date"> Jul. 16, 2022 </span>
 	<h3 class="latest-post__title">Threaded chunks with Godot 🌎</h3>
