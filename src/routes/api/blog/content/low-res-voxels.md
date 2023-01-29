@@ -62,7 +62,7 @@ After we can resize our game's resolution however we like:
 
 The `TextureRect` will scale it to fit our window dimensions, and produce a "pixelated" look!
 
-Basically it makes my `1920x1080` game render through a `240x135` lense.
+Basically it makes our `1920x1080` game render through a `240x135` lense.
 
 ## Why?
 
