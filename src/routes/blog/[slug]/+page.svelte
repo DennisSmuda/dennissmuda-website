@@ -12,7 +12,7 @@
 <svelte:head>
 	<title>{meta.title} - Blog | Dennis Smuda</title>
 	<meta name="description" content={meta.description} />
-	<meta property="og:title" content="{meta.title} - Blog | Dennis Smmuda" />
+	<meta property="og:title" content="{meta.title} - Blog | Dennis Smuda" />
 	<meta property="og:description" content={meta.description} />
 </svelte:head>
 
