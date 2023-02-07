@@ -1,5 +1,6 @@
 <script>
 	import Header from '$lib/components/header.svelte'
+	import KBar from '$lib/features/kbar/KBar.svelte'
 </script>
 
 <svelte:head>
@@ -8,3 +9,5 @@
 </svelte:head>
 
 <Header title="👀" subtitle="hmmm..." />
+
+<KBar />
