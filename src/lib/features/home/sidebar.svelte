@@ -15,7 +15,7 @@
 
 <a class="latest-post mt-8" href="/blog/low-res-voxels">
 	<span class="latest-post__date"> Jan. 29, 2023 </span>
-	<h3 class="latest-post__title">Low-Res Graphics 🌊⛵️</h3>
+	<h3 class="latest-post__title">Low-Res Graphics with Voxels 🌊⛵️</h3>
 </a>
 
 <a class="latest-post mt-8" href="/blog/godot-chunking-tutorial">
