@@ -73,7 +73,7 @@
 	}
 
 	h2.rotated {
-		@apply font-thin text-rose -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
+		@apply font-thin dark:text-rose text-pink -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
 	}
 
 	h3 {
