@@ -11,21 +11,21 @@
 		font-display: swap;
 	} */
 
-  @font-face {
+	@font-face {
 		font-family: 'Poppins';
 		src: local('Poppins'), url('/fonts/Poppins-Bold.ttf');
 		font-weight: bold;
 		font-display: swap;
 	}
 
-  @font-face {
+	@font-face {
 		font-family: 'Poppins';
 		src: local('Poppins'), url('/fonts/Poppins-Medium.ttf');
 		font-weight: medium;
 		font-display: swap;
 	}
 
-  @font-face {
+	@font-face {
 		font-family: 'Poppins';
 		src: local('Poppins'), url('/fonts/Poppins-Light.ttf');
 		font-weight: 300;
@@ -89,7 +89,7 @@
 	}
 
 	.emphasis {
-		@apply font-medium text-malachite dark:text-greenyellow;
+		@apply font-black text-lavender dark:text-greenyellow;
 	}
 
 	/**
