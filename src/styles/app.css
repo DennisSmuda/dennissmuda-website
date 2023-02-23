@@ -20,7 +20,7 @@
 }
 
 .marker-link {
-	@apply bg-pink text-white rounded-md py-1 px-2 inline-block no-underline;
+	@apply bg-rose text-black font-black rounded-md py-2 px-5 inline-block no-underline;
 }
 
 .timeline {

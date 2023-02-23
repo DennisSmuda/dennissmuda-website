@@ -89,7 +89,7 @@
 	}
 
 	.emphasis {
-		@apply font-medium text-malachite dark:text-greenyellow;
+		@apply font-black text-lavender dark:text-greenyellow;
 	}
 
 	/**
