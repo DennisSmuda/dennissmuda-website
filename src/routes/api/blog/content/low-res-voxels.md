@@ -35,7 +35,7 @@ Our "container scene" basically just holds both our UI and our Game:
 
 ### Beta bugs?
 
-Because I've found some buggy behaviour when attaching the `ViewportTexture` to `GameTextureRect` - and that's how it's supposed to be - we are setting the texture at runtime as a workaround. The error only occurs when the texture is set in the editor. This way we **don't set it**, but let gdscript take care of it for us:
+Because I've found some buggy behaviour when attaching the `ViewportTexture` to `GameTextureRect` - and that's how it's supposed to be - you can set the texture at runtime as a workaround. The error only occurs when the texture is set in the editor. This way we **don't set it**, but let gdscript take care of it for us:
 
 ```gdscript
 # attach this script to the GameTextureRect
