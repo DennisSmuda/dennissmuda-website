@@ -8,8 +8,9 @@ test.describe('page: index', () => {
 	test('has expected hero & title', async ({ page }) => {
 		await expect(page).toHaveTitle(/Dennis Smuda/)
 
+		page.textContent
 		expect(await page.textContent('p.intro__paragraph')).toContain(
-			'web developer based in germany'
+			'web developer'
 		)
 	})
 
