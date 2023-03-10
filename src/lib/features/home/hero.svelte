@@ -34,12 +34,7 @@
 
 <style lang="postcss">
 	.title {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		overflow: visible;
-		width: 100%;
-		max-width: 420px;
+		@apply flex flex-col items-center overflow-visible w-full max-w-[420px];
 	}
 
 	.intro {
@@ -60,19 +55,13 @@
 	}
 
 	.hero .container {
+		@apply mx-auto flex flex-col items-center gap-8 relative;
 		max-width: 1440px;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		position: relative;
 	}
 
 	@screen md {
 		.hero .container {
-			flex-direction: row;
-			align-items: flex-end;
+			@apply flex-row items-end;
 		}
 
 		.title {
@@ -82,7 +71,7 @@
 
 		.title,
 		.intro__paragraph {
-			text-align: left;
+			@apply text-left;
 		}
 
 		.title {

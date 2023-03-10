@@ -5,6 +5,7 @@
 	import Navbar from '$lib/features/navbar/index.svelte'
 	import Footer from '$lib/features/footer/index.svelte'
 
+	import '../styles/base.css'
 	import '../styles/tailwind.css'
 	import '../styles/app.css'
 
@@ -20,9 +21,9 @@
 		stiffness: 0.15
 	})
 
-  function onMouseMove(e: MouseEvent) {
+	function onMouseMove(e: MouseEvent) {
 		coords.set({ x: e.clientX, y: e.clientY })
-    const target = e.target as HTMLElement
+		const target = e.target as HTMLElement
 		const currentTag = target.tagName.toLowerCase()
 
 		if (currentTag === 'button' || currentTag === 'a') {
@@ -30,7 +31,7 @@
 		} else {
 			size.set(10)
 		}
-  }
+	}
 </script>
 
 <svelte:head>
@@ -44,7 +45,9 @@
 
 <div
 	class="app-wrapper"
-	on:mousemove={(e) => { onMouseMove(e) }}
+	on:mousemove={(e) => {
+		onMouseMove(e)
+	}}
 	on:mousedown={() => size.set(50)}
 	on:mouseup={() => size.set(10)}
 >
