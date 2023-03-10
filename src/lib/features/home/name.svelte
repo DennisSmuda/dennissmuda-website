@@ -221,14 +221,11 @@
 
 <style lang="postcss">
 	svg {
-		overflow: visible;
-		margin-left: -0.25rem;
-		cursor: none;
-		pointer-events: none;
+		@apply overflow-visible -ml-1 cursor-none pointer-events-none;
 	}
 
 	svg.interactive {
-		pointer-events: visible;
+		@apply pointer-events-auto;
 	}
 
 	.firstname path {
@@ -289,15 +286,11 @@
 	}
 
 	svg:hover circle {
-		@apply fill-white dark:fill-white;
-		mix-blend-mode: difference;
-		mix-blend-mode: exclusion;
+		@apply fill-white dark:fill-white mix-blend-exclusion;
 		transform: translateX(-3.5px) translateY(-2px);
 	}
 
 	.wrapper {
-		overflow: visible;
-		width: 100%;
-		height: 100%;
+		@apply overflow-visible w-full h-full;
 	}
 </style>
