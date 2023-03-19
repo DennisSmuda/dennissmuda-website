@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { topProjects } from '../src/lib/data/projects.ts'
+import { topProjects } from '../src/lib/data/projects.js'
 
 test.describe('page: index', () => {
 	test.beforeEach(async ({ page }) => {
