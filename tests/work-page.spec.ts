@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { projects as allProjects } from '../src/lib/data/projects.ts'
 
 test.describe('page: work', () => {
 	test.beforeEach(async ({ page }) => {
@@ -15,6 +16,6 @@ test.describe('page: work', () => {
 
 	test(`shows all ${5} projects`, async ({ page }) => {
 		const projects = await page.locator('#project-list a')
-		await expect(projects).toHaveCount(5)
+		await expect(projects).toHaveCount(allProjects.length)
 	})
 })

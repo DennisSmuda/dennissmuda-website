@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { topProjects } from '../src/lib/data/projects.ts'
 
 test.describe('page: index', () => {
 	test.beforeEach(async ({ page }) => {
@@ -28,10 +29,10 @@ test.describe('page: index', () => {
 	})
 
 	test('shows my three latest projects', async ({ page }) => {
-		const cvEntries = await page.locator('a.project')
-		await expect(cvEntries).toHaveCount(3)
+		const projects = await page.locator('a.project')
+		await expect(projects).toHaveCount(topProjects.length)
 
-		const firstEntry = cvEntries.nth(0)
+		const firstEntry = projects.nth(0)
 		await expect(firstEntry).toHaveAttribute('target', '_blank')
 	})
 
