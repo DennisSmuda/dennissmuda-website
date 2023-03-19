@@ -1,5 +1,12 @@
 const projects = [
 	{
+		url: 'https://dennissmuda.github.io/match-city/',
+		headline: `Play <span class="emphasis">Match City</span> in your browser 🟥`,
+		subline: `game written in typescript`,
+		description: `casual 🚽 game to play in short bursts!
+				try to beat my highscore (22000+) by <span class="emphasis">matching tiles</span>!`
+	},
+	{
 		url: 'https://backytracky.com/',
 		headline: `Practice music with <span class="emphasis">BackyTracky</span> 🎹`,
 		subline: `remix-run fullstack react application`,
@@ -34,6 +41,6 @@ const projects = [
 	}
 ]
 
-const topProjects = projects.slice(0, 3)
+const topProjects = projects.slice(0, 4)
 
 export { projects, topProjects }

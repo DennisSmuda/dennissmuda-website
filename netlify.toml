@@ -4,7 +4,8 @@
   functions = "build/functions/"
 
 [dev]
- command = "svelte-kit dev"
+#  command = " dev"
+ targetPort = 5173
 
 [functions]
   directory = "netlify/functions"
