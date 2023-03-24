@@ -1,6 +1,6 @@
 const projects = [
 	{
-		url: 'https://dennissmuda.github.io/match-city/',
+		url: 'https://matchcity.dennissmuda.com/',
 		headline: `Play <span class="emphasis">Match City</span> in your browser 🟥`,
 		subline: `game written in typescript`,
 		description: `casual 🚽 game to play in short bursts!
