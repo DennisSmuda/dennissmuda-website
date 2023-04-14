@@ -12,7 +12,7 @@ blockquote p {
 }
 
 blockquote.disclaimer {
-	@apply border-l-4 border-l-red relative -inset-x-4;
+	@apply border-l-4 border-l-red relative;
 }
 
 blockquote.disclaimer > span {

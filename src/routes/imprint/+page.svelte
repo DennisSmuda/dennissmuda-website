@@ -5,7 +5,7 @@
 <svelte:head>
 	<title>Impressum | Dennis Smuda</title>
 	<meta name="description" content="Imprint | legally required content." />
-	<meta property="og:title" content="Impressum – Dennis Smuda" />
+	<meta property="og:title" content="Impressum - Dennis Smuda" />
 	<meta
 		property="og:description"
 		content="Impressum | legally required content."
@@ -18,8 +18,6 @@
 	<div class="ds-prose">
 		<p>
 			Dennis Smuda
-			<br />
-			Prinzenstraße 13
 			<br />
 			44809 Bochum | Germany
 		</p>
