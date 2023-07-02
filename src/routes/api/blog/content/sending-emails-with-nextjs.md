@@ -3,7 +3,7 @@ slug: 'e-mails-with-nextjs'
 title: 'Sending E-Mails with Next.js'
 description: 'A guide on how to use Next 13 with the new app directory to send e-mails on the server'
 createdAt: 'Jul. 2, 2023'
-published: true
+published: false
 tags:
   [{ name: 'node', value: 'node' }, { name: 'typescript', value: 'typescript' }]
 ---

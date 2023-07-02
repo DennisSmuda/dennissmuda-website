@@ -18,7 +18,9 @@ export const GET: RequestHandler = () => {
 		(a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 	)
 
+	const publishedPosts = posts.filter((post) => post.published === true)
+
 	return json({
-		posts: posts
+		posts: publishedPosts
 	})
 }
