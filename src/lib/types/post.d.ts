@@ -3,6 +3,7 @@ export namespace Model {
 		path: string
 		slug: string
 		isPrivate: boolean
+		published: boolean
 		title: string
 		description: string
 		createdAt: string
