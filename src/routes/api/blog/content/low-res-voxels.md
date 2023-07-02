@@ -3,7 +3,7 @@ slug: 'low-res-voxels'
 title: 'Low Res Graphics with Voxels 🧊'
 description: 'Low Resolution pixelated graphics in a 3D space'
 createdAt: 'Jan. 29, 2023'
-published: true
+published: false
 tags: [{ name: 'godot', value: 'godot' }, { name: 'voxel', value: 'voxel' }]
 ---
 
