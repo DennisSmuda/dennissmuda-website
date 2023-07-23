@@ -18,7 +18,7 @@
 					</span>
 					<span> based in </span>
 					<span class="german-color-change">germany 🇩🇪</span>
-					<a href="/projects">making 👨🏻‍💻</a> things and
+					<a href="/work">making 👨🏻‍💻</a> things and
 					<a href="/blog">writing ✏️</a> about stuff. feel free to
 					<a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com">
 						get in touch 📫
