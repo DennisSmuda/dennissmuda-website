@@ -63,8 +63,8 @@
 			role="dialog"
 			class={'kbar__dialog-default'}
 			bind:this={kbarBinding}
-			in:fly={{ y: 200 }}
-			out:fly={{ y: 0 }}
+			in:fly|global={{ y: 200 }}
+			out:fly|global={{ y: 0 }}
 		>
 			KBar
 		</div>
