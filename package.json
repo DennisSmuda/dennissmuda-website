@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",
-		"@sveltejs/adapter-netlify": "^2.0.6",
+		"@sveltejs/adapter-netlify": "^4.1.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@tailwindcss/typography": "^0.5.3",
 		"@types/jest": "^28.1.4",
