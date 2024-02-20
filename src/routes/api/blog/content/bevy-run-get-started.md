@@ -18,7 +18,7 @@ tags:
   </p>
 </blockquote>
 
-> Check out the <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank" rel="noreferrer">source code</a>! You can run/inspect both, the end result and the code for this post. I suggest to keep it handy while reading.
+> This post was initially written using bevy `0.6.1`. You can check out the <a href="https://github.com/DennisSmuda/run_bevy_tutorial" target="_blank" rel="noreferrer">source code</a> and the concepts still apply, but it'll differ from what is written in this post!
 
 [Bevy](https://bevyengine.org/) is a <span class="keyword">data-driven game engine</span> for Rust. It provides a fully custom <em>ECS</em> - Entity Component System - a popular design-pattern in games. Pretty much like MVC <s>is</s> was a popular design-pattern for Web-Applications.
 

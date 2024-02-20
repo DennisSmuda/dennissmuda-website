@@ -1,6 +1,6 @@
 {
 	"name": "dennis-smuda-website",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -16,8 +16,8 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",
-		"@sveltejs/adapter-netlify": "^2.0.6",
-		"@sveltejs/kit": "^1.20.4",
+		"@sveltejs/adapter-netlify": "^4.1.0",
+		"@sveltejs/kit": "^2.0.0",
 		"@tailwindcss/typography": "^0.5.3",
 		"@types/jest": "^28.1.4",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
@@ -35,7 +35,7 @@
 		"tailwindcss": "^3.1.5",
 		"tslib": "^2.3.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.1.5"
+		"vite": "^5.0.0"
 	},
 	"type": "module"
 }
