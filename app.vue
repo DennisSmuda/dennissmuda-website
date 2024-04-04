@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Dennis Smuda - web developer based in Germany',
+  ogTitle: 'Dennis Smuda - web developer based in Germany',
+  description: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
+  ogDescription: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
+})
+</script>
+
 <template>
   <Navbar />
   <NuxtPage />
