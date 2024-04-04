@@ -24,7 +24,9 @@
     "@antfu/eslint-config": "^2.11.6",
     "@nuxtjs/color-mode": "^3.3.3",
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@playwright/test": "^1.42.1",
     "@tailwindcss/typography": "^0.5.12",
+    "@types/node": "^20.12.4",
     "eslint": "^8.57.0"
   }
 }
