@@ -1,0 +1,12 @@
+[build]
+command = "npm run build"
+publish = "dist"
+# functions = "dist/functions/"
+
+# [dev]
+#  command = " dev"
+# targetPort = 5173
+
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
