@@ -1,0 +1,62 @@
+<script setup lang="ts">
+const router = useRouter()
+const isActive = useState('activeBlogPostId')
+
+router.afterEach((to) => {
+  console.log('To', to.href.includes('blog'))
+  if (!to.href.includes('blog')) {
+    console.log('Resetting active blog post id')
+    isActive.value = null
+  }
+})
+</script>
+
+<template>
+  <main>
+    <ContentDoc v-slot="{ doc }">
+      <div
+        :class="`
+        link-background
+        background-tag--${doc.tags[0].value}
+      `"
+      />
+      <div class="container mx-auto px-6 md:px-8 pt-32 pb-2">
+        <NuxtLink to="/blog" class="breadcrumb inline-block">
+          ⬅
+          blog
+        </NuxtLink>
+        <div class="-rotate-3 flex flex-col relative md:-inset-x-4">
+          <h1 class="main-heading color-change">
+            {{ doc.title }}
+          </h1>
+        </div>
+      </div>
+      <div class="ds-prose container lg:max-w-4xl mx-auto px-8">
+        <ContentRenderer :value="doc" />
+      </div>
+    </ContentDoc>
+  </main>
+</template>
+
+<style lang="css" scoped>
+h1 {
+  view-transition-name: blog-header;
+  contain: layout;
+}
+
+.breadcrumb {
+  @apply font-black text-xl -rotate-3 relative;
+  view-transition-name: page-header;
+  contain: layout;
+}
+.link-background {
+  @apply absolute -z-10 w-full h-48 -rotate-3 scale-150;
+  view-transition-name: blog-header-background;
+  contain: layout;
+}
+
+.link-background::after {
+  content: '';
+  @apply block absolute -bottom-4 left-0 w-full bg-black h-32 z-10;
+}
+</style>
