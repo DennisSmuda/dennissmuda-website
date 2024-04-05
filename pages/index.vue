@@ -19,7 +19,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="h-screen container mx-auto p-8">
     <h2>
       Projects
     </h2>
