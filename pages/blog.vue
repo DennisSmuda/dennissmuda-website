@@ -12,7 +12,7 @@ const isActive = useState('activeBlogPostId')
     {{ pending ? 'Loading...' : '' }}
     <div class="flex flex-col container mx-auto mt-16 px-6 md:px-8">
       <template v-for="post in data" :key="post._id">
-        <div>
+        <div class="mb-12">
           <NuxtLink
             :to="`/blog/${post.slug}`"
             class="text-2xl font-bold mb-4 relative inline-flex"

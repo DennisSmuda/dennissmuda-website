@@ -6,9 +6,9 @@ createdAt: 'Mar. 20, 2022'
 published: true
 tags:
   [
-    { name: 'gamedev', value: 'gamedev' },
     { name: 'rust', value: 'rust' },
-    { name: 'bevy', value: 'bevy' }
+    { name: 'bevy', value: 'bevy' },
+    { name: 'gamedev', value: 'gamedev' }
   ]
 ---
 
@@ -113,7 +113,6 @@ fn main() {
   app.add_startup_system(camera_setup);
   // Run the app
   app.run();
-
 
 fn camera_setup(mut commands: Commands) {
   // 2D orthographic camera

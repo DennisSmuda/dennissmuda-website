@@ -1,35 +1,6 @@
 @tailwind base;
 
 @layer base {
-	/* 04B_03 - Pixel Font --- maybe later */
-	/* @font-face {
-		font-family: 'Pixel';
-		src: local('Pixel'), url('/fonts/04B_03.ttf');
-		font-weight: normal;
-		font-display: swap;
-	} */
-
-	/* @font-face {
-		font-family: 'Poppins';
-		src: local('Poppins'), url('/fonts/Poppins-Bold.ttf');
-		font-weight: bold;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Poppins';
-		src: local('Poppins'), url('/fonts/Poppins-Medium.ttf');
-		font-weight: medium;
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: 'Poppins';
-		src: local('Poppins'), url('/fonts/Poppins-Light.ttf');
-		font-weight: 300;
-		font-display: swap;
-	} */
-
 	h1,
 	h2,
 	h3,

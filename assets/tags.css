@@ -87,6 +87,9 @@
 	color: #38b2ac;
 }
 
+.background-tag--godot {
+	background-color: #478cbf;
+}
 .tag--godot {
 	color: #478cbf;
 }
@@ -123,6 +126,9 @@
 	color: var(--copy-color);
 }
 
+.background-tag--rust {
+	background-color: #CE422B;
+}
 .tag--rust {
 	color: #fff;
 }

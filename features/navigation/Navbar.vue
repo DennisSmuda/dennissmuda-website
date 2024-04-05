@@ -15,3 +15,9 @@
     </nav>
   </header>
 </template>
+
+<style scoped>
+.router-link-active {
+  @apply underline;
+}
+</style>
