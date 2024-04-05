@@ -28,7 +28,7 @@
   @apply underline;
 } */
 .header {
-  @apply flex items-center justify-between select-none p-4;
+  @apply flex items-center justify-between select-none p-4 z-50 relative;
 }
 
 .header__nav {
