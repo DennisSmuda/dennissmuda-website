@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="flex items-center justify-between p-2 fixed top-0 left-0 right-0 z-50">
+  <header class="header">
     <Logo />
     <nav class="header__nav">
       <NuxtLink to="/blog" class="button nav-button">
@@ -28,7 +28,7 @@
   @apply underline;
 } */
 .header {
-  @apply flex items-center justify-between select-none py-4;
+  @apply flex items-center justify-between select-none p-4;
 }
 
 .header__nav {
