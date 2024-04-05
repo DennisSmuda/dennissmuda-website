@@ -17,7 +17,7 @@
 </template>
 
 <style scoped>
-.router-link-active {
+nav .router-link-active {
   @apply underline;
 }
 </style>

@@ -1,25 +1,14 @@
-<script setup lang="ts">
-const router = useRouter()
-const isActive = useState('activeBlogPostId')
-
-router.afterEach((to) => {
-  console.log('To', to.href.includes('blog'))
-  if (!to.href.includes('blog')) {
-    console.log('Resetting active blog post id')
-    isActive.value = null
-  }
-})
-</script>
-
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
-      <div
-        :class="`
+      <div class="absolute w-full h-80 top-0 left-0 right-0 overflow-x-hidden">
+        <div
+          :class="`
         link-background
         background-tag--${doc.tags[0].value}
       `"
-      />
+        />
+      </div>
       <div class="container mx-auto px-6 md:px-8 pt-32 pb-2">
         <NuxtLink to="/blog" class="breadcrumb inline-block">
           ⬅
@@ -49,8 +38,9 @@ h1 {
   view-transition-name: page-header;
   contain: layout;
 }
+
 .link-background {
-  @apply absolute -z-10 w-full h-48 -rotate-3 scale-150;
+  @apply absolute -z-10 w-full right-0 h-48 -rotate-3 scale-150;
   view-transition-name: blog-header-background;
   contain: layout;
 }

@@ -10,23 +10,43 @@ useSeoMeta({
 <template>
   <Navbar />
   <NuxtPage />
+  <PageFooter />
 </template>
 
 <style lang="css">
-html, body {
+html,
+body {
   @apply dark:bg-black dark:text-white;
 }
 
-::view-transition-old(root) {
-  /* animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out; */
+/* ::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
 }
 
 ::view-transition-new(root) {
-  /* animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in; */
-}
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
+} */
 
 ::view-transition-old(header),
 ::view-transition-new(header) {
   width: auto;
+}
+
+body {
+  @apply bg-white text-black relative min-h-screen;
+  @apply dark:bg-black dark:text-white;
+  @apply transition-colors duration-700 overflow-x-hidden;
+}
+
+body::-webkit-scrollbar {
+  @apply z-50 w-1;
+}
+
+/* body::-webkit-scrollbar-track {
+  @apply bg-gray;
+} */
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-orange outline-orange;
 }
 </style>
