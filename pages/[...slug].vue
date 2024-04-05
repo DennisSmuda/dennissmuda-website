@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const isActive = useState('activeBlogPostId')
+</script>
+
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
@@ -10,7 +14,7 @@
         />
       </div>
       <div class="container mx-auto px-6 md:px-8 pt-32 pb-2">
-        <NuxtLink to="/blog" class="breadcrumb inline-block">
+        <NuxtLink to="/blog" class="breadcrumb inline-block" @click="isActive = doc._id">
           ⬅
           blog
         </NuxtLink>

@@ -1,21 +1,22 @@
 <script setup lang="ts">
 const { data, pending } = await useAsyncData(
   'blog',
-  () => queryContent('blog').find(),
+  () => queryContent('blog').sort({ createdAt: 1 }).find(),
 )
 const isActive = useState('activeBlogPostId')
 </script>
 
 <template>
   <main>
-    <PageTitle title="Blog" subtitle="some thoughts and words" />
+    <PageTitle title="writing ✏️" subtitle="some thoughts and words" />
     {{ pending ? 'Loading...' : '' }}
-    <div class="flex flex-col container mx-auto mt-16 px-6 md:px-8">
-      <template v-for="post in data" :key="post._id">
-        <div class="mb-12">
+    <section class="container lg:max-w-4xl mx-auto px-8">
+      <div id="blog-post-list" class="ds-prose relative">
+        <div class="timeline" />
+        <template v-for="post in data" :key="post._id">
           <NuxtLink
             :to="`/blog/${post.slug}`"
-            class="text-2xl font-bold mb-4 relative inline-flex"
+            class="post"
             @click="isActive = post._id"
           >
             <div
@@ -25,20 +26,25 @@ const isActive = useState('activeBlogPostId')
                 ${isActive === post._id ? 'active' : ''}
               `"
             />
-            <h2
-              :class="{ active: isActive === post._id }"
-            >
+            <div class="timeline__dot" />
+            <div class="post__date">
+              {{ post.createdAt }}
+            </div>
+            <h2 class="post__headling" :class="{ active: isActive === post._id }">
               {{ post.title }}
             </h2>
+            <p class="post__subline">
+              {{ post.description }}
+            </p>
           </NuxtLink>
           <div class="flex">
             <button v-for="tag in post.tags" :key="tag.value" :class="`button tag tag--${tag.value}`">
               {{ tag.name }}
             </button>
           </div>
-        </div>
-      </template>
-    </div>
+        </template>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -56,5 +62,44 @@ const isActive = useState('activeBlogPostId')
 .link-background.active {
   view-transition-name: blog-header-background;
   contain: layout;
+}
+
+.post {
+  @apply no-underline my-16 md:my-24 block px-2 -inset-x-2 relative rounded-lg;
+}
+
+.post__date {
+  @apply absolute leading-none opacity-50;
+  top: -25px;
+}
+
+@screen md {
+  .post__date {
+    top: -27px;
+  }
+}
+
+.post__headline {
+  @apply mb-0;
+}
+
+.post:hover .post__headline {
+  @apply underline;
+}
+
+.post__subline {
+  @apply mb-2 text-sm opacity-50 pointer-events-none;
+}
+
+.post:hover .timeline__dot {
+  @apply scale-150 bg-pink;
+}
+
+.timeline {
+  @apply -top-6;
+}
+
+.timeline__dot {
+  @apply -top-6 -left-4 duration-200;
 }
 </style>

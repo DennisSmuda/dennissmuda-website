@@ -4,7 +4,7 @@ import About from '~/features/about/About.vue'
 
 <template>
   <PageTitle
-    title="About Me" subtitle="been where done what?"
+    title="about me 👨🏻‍💻️" subtitle="been where done what?"
   />
   <About />
 </template>
