@@ -66,31 +66,33 @@ const date = new Date().getFullYear()
 
       <div class="w-full mt-0 flex justify-end flex-wrap items-baseline ">
         <div class="internal w-full">
-          <a
-            href="/blog"
+          <NuxtLink
+            to="/blog"
             class="button"
           >
             writing
-          </a>
-          <a
-            href="/about"
+          </NuxtLink>
+          <NuxtLink
+            to="/about"
             class="button"
           >
             about
-          </a>
-          <a
-            href="/work"
+          </NuxtLink>
+          <NuxtLink
+            to="/work"
             class="button"
           >
             work
-          </a>
-          <a
-            href="/imprint"
+          </NuxtLink>
+          <NuxtLink
+            to="/imprint"
             class="button"
           >
             imprint
-          </a>
-          <a href="./" class="brand text-black dark:text-white -mb-2">ds.</a>
+          </NuxtLink>
+          <NuxtLink to="/" class="brand text-black dark:text-white -mb-2">
+            ds.
+          </NuxtLink>
         </div>
       </div>
     </div>
