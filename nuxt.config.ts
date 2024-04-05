@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: 'tokyo-night',
+      langs: ['javascript', 'typescript', 'json', 'bash', 'shell', 'yaml', 'markdown', 'gdscript', 'rust', 'jsx', 'toml'],
     },
   },
   fonts: {
