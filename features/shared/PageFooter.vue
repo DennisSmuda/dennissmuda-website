@@ -85,7 +85,7 @@ const date = new Date().getFullYear()
             work
           </NuxtLink>
           <NuxtLink
-            to="/imprint"
+            to="/impressum"
             class="button"
           >
             imprint

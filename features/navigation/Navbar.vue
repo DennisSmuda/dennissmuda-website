@@ -5,19 +5,53 @@
 <template>
   <header class="flex items-center justify-between p-2 fixed top-0 left-0 right-0 z-50">
     <Logo />
-    <nav class="mr-2 flex gap-4">
-      <NuxtLink to="/blog">
-        writing
+    <nav class="mr-2 flex gap-4 header__nav">
+      <NuxtLink to="/blog" class="button nav-button">
+        <span> writing </span>
+        <span> ✏️ </span>
       </NuxtLink>
-      <NuxtLink to="/about">
-        about
+      <NuxtLink to="/about" class="button nav-button">
+        <span>about</span>
+        <span> 👨🏻‍💻 </span>
       </NuxtLink>
+      <NuxtLink to="/work" class="button nav-button">
+        <span>work</span>
+        <span> 🏋️‍♀️ </span>
+      </NuxtLink>
+      <ThemeToggle />
     </nav>
   </header>
 </template>
 
 <style scoped>
-nav .router-link-active {
+/* nav .router-link-active {
   @apply underline;
+} */
+.header {
+  @apply flex items-center justify-between select-none py-4;
+}
+
+.header__nav {
+  @apply flex items-center justify-center;
+}
+
+.header__nav>span {
+  @apply mx-1 opacity-50 hidden;
+}
+
+.header__nav a {
+  @apply mx-1 sm:mx-2 sm:px-3 py-1 rounded-lg font-medium;
+}
+
+.header__nav a:hover {
+  @apply text-pink;
+}
+
+.header__nav a span:first-child {
+  @apply sr-only sm:not-sr-only sm:mr-2;
+}
+
+.header__nav a span:last-child {
+  @apply flex text-2xl;
 }
 </style>
