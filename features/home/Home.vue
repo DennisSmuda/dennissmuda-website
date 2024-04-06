@@ -7,13 +7,19 @@
         </div>
 
         <div class="intro">
-          <p class="intro__paragraph svelte-tx45cf">
+          <p class="intro__paragraph">
             <span class="sr-only">Hi I'm Dennis Smuda, a</span>
-            <span class="rainbow font-medium whitespace-nowrap">web developer</span> <span>based in</span> <span class="german-color-change">germany 🇩🇪</span> <a href="/work" class="svelte-tx45cf">making 👨🏻‍💻</a> things and
-            <a href="/blog" class="svelte-tx45cf">writing ✏️</a> about stuff. feel free to
-            <a class="whitespace-nowrap svelte-tx45cf" href="mailto:smuda.dennis@gmail.com">get in touch 📫</a>
+            <span class="rainbow font-medium whitespace-nowrap">web developer</span> <span>based in</span> <span class="german-color-change">germany 🇩🇪</span> <NuxtLink to="/work">
+              making 👨🏻‍💻
+            </NuxtLink> things and
+            <NuxtLink to="/blog">
+              writing ✏️
+            </NuxtLink> about stuff. feel free to
+            <a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com">get in touch 📫</a>
             , or get to
-            <a class="whitespace-nowrap svelte-tx45cf" href="/about">know me 👋</a>
+            <NuxtLink to="/about" class="whitespace-nowrap">
+              know me 👋
+            </NuxtLink>
             first.
           </p>
         </div>

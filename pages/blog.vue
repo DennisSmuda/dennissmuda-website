@@ -14,33 +14,34 @@ const isActive = useState('activeBlogPostId')
       <div id="blog-post-list" class="ds-prose relative">
         <div class="timeline" />
         <template v-for="post in data" :key="post._id">
-          <NuxtLink
-            :to="`/blog/${post.slug}`"
-            class="post"
-            @click="isActive = post._id"
-          >
-            <div
+          <div class="post">
+            <NuxtLink
+              :to="`/blog/${post.slug}`"
+              @click="isActive = post._id"
+            >
+              <!-- <div
               :class="`
                 link-background
                 background-tag--${post.tags[0].value}
                 ${isActive === post._id ? 'active' : ''}
               `"
-            />
-            <div class="timeline__dot" />
-            <div class="post__date">
-              {{ post.createdAt }}
+            /> -->
+              <div class="timeline__dot" />
+              <div class="post__date">
+                {{ post.createdAt }}
+              </div>
+              <h2 class="post__headline" :class="{ active: isActive === post._id }">
+                {{ post.title }}
+              </h2>
+              <p class="post__subline">
+                {{ post.description }}
+              </p>
+            </NuxtLink>
+            <div class="flex">
+              <button v-for="tag in post.tags" :key="tag.value" :class="`button tag tag--${tag.value}`">
+                {{ tag.name }}
+              </button>
             </div>
-            <h2 class="post__headling" :class="{ active: isActive === post._id }">
-              {{ post.title }}
-            </h2>
-            <p class="post__subline">
-              {{ post.description }}
-            </p>
-          </NuxtLink>
-          <div class="flex">
-            <button v-for="tag in post.tags" :key="tag.value" :class="`button tag tag--${tag.value}`">
-              {{ tag.name }}
-            </button>
           </div>
         </template>
       </div>
@@ -65,7 +66,10 @@ const isActive = useState('activeBlogPostId')
 }
 
 .post {
-  @apply no-underline my-16 md:my-24 block px-2 -inset-x-2 relative rounded-lg;
+  @apply my-16 md:my-24 block px-2 -inset-x-2 relative rounded-lg;
+}
+.post a {
+  @apply no-underline;
 }
 
 .post__date {

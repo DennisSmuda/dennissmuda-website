@@ -16,7 +16,7 @@ const isActive = useState('activeBlogPostId')
       <div class="container mx-auto px-6 md:px-8 pt-32 pb-2">
         <NuxtLink to="/blog" class="breadcrumb inline-block" @click="isActive = doc._id">
           ⬅
-          blog
+          writing
         </NuxtLink>
         <div class="-rotate-3 flex flex-col relative md:-inset-x-4">
           <h1 class="main-heading color-change">
@@ -45,8 +45,8 @@ h1 {
 
 .link-background {
   @apply absolute -z-10 w-full right-0 h-48 -rotate-3 scale-150;
-  view-transition-name: blog-header-background;
-  contain: layout;
+  /* view-transition-name: blog-header-background; */
+  /* contain: layout; */
 }
 
 .link-background::after {
