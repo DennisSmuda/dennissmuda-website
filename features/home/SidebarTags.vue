@@ -1,7 +1,4 @@
 <template>
-  <h2 class="rotated">
-    making things with 🛠
-  </h2>
   <div class="flex flex-wrap mt-4 gap-4">
     <NuxtLink to="blog" class="button tag-button tag-button--vue">
       JavaScript

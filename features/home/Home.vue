@@ -7,7 +7,7 @@
         </div>
 
         <div class="intro">
-          <p class="intro__paragraph">
+          <h1 class="intro__paragraph">
             <span class="sr-only">Hi I'm Dennis Smuda, a</span>
             <span class="rainbow font-medium whitespace-nowrap">web developer</span> <span>based in</span> <span class="german-color-change">germany 🇩🇪</span> <NuxtLink to="/work">
               making 👨🏻‍💻
@@ -21,7 +21,7 @@
               know me 👋
             </NuxtLink>
             first.
-          </p>
+          </h1>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
 }
 </style>
 
-<style lang="css">
+<style lang="css" scoped>
 	.title {
 		@apply flex flex-col items-center overflow-visible w-full max-w-[420px];
 	}
@@ -44,7 +44,7 @@
 		max-width: 380px;
 	}
 
-	.intro__paragraph {
+	h1.intro__paragraph {
 		@apply text-xl text-center block font-thin leading-normal;
 	}
 
@@ -72,7 +72,7 @@
 		}
 
 		.title,
-		.intro__paragraph {
+		h1.intro__paragraph {
 			@apply text-left;
 		}
 

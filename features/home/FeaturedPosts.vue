@@ -4,10 +4,6 @@ const isActive = useState('activeBlogPostId')
 </script>
 
 <template>
-  <!-- Latest Posts -->
-  <h2 class="rotated md:pt-24">
-    latest posts ✏️
-  </h2>
   <!-- {{ data }} -->
 
   <NuxtLink

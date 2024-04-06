@@ -15,7 +15,15 @@
     </article>
 
     <aside class="ds-prose col-span-5 -mt-12">
+      <h2 class="rotated">
+        making things with 🛠
+      </h2>
       <SidebarTags />
+
+      <!-- Latest Posts -->
+      <h2 class="rotated md:pt-24">
+        latest posts ✏️
+      </h2>
       <FeaturedPosts />
     </aside>
   </section>
