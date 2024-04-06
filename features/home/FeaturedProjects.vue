@@ -1,14 +1,17 @@
 <script setup lang="ts">
-onMounted(async () => {
-  const data = await $fetch('/content/projects')
-  console.log('data', data)
-})
+const { data, error, pending } = useFetch('/api/projects')
 </script>
 
 <template>
-  <h2 class="rotated">
-    latest work 🏁
-  </h2>
-  projects
   <!-- {{ data }} -->
+  <!-- <Suspense> -->
+  <span v-if="pending">Loading...</span>
+  <template v-for="project in data" v-else-if="data" :key="project._id">
+    <Project
+      :title="project.title" :subtitle="project.subtitle" :description="project.description"
+      :url="project.url"
+    />
+    <!-- {{project }} -->
+  </template>
+  <span v-else-if="error">Error: {{ error }}</span>
 </template>
