@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
   if (query.limit) {
     const limit = Number.parseInt(query.limit as string)
-    const content = await serverQueryContent(event).limit(limit).where({ _dir: 'projects' }).find()
+    const content = await serverQueryContent(event).limit(limit).where({ _dir: 'projects' }).sort({ order: 1 }).find()
     return content
   }
   else {

@@ -10,15 +10,11 @@ defineProps<{
 <template>
   <a class="project" :href="url" target="_blank" rel="noreferrer">
     <span class="visit">visit 👀</span>
-    <h2 class="project__headline">
-      {{ title }}
-    </h2>
+    <h2 class="project__headline" v-html="title" />
     <p class="project__subline">
       {{ subtitle }}
     </p>
-    <p class="project__description">
-      {{ description }}
-    </p>
+    <p class="project__description" v-html="description" />
   </a>
 </template>
 
