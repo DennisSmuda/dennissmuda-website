@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data, error, pending } = useFetch('/api/blog?limit=3')
+const { data } = useFetch('/api/blog?limit=4')
 const isActive = useState('activeBlogPostId')
 </script>
 

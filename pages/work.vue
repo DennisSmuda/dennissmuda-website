@@ -1,4 +1,11 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Work | Dennis Smuda',
+  ogTitle: 'Work | Dennis Smuda',
+  description: 'All of my past projects! Feel free to check out my work and reach out if you have any questions!',
+  ogDescription: 'All of my past projects! Feel free to check out my work and reach out if you have any questions!',
+})
+
 const { data } = await useAsyncData(
   'projects',
   () => queryContent('projects').sort({ createdAt: 1 }).find(),

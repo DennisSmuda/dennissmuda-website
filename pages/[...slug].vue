@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const isActive = useState('activeBlogPostId')
+
+const { data: page } = await useAsyncData('my-page', queryContent('/').findOne)
+
+useContentHead(page)
 </script>
 
 <template>
