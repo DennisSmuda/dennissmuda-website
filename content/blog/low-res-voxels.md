@@ -5,6 +5,7 @@ description: 'Low Resolution pixelated graphics in a 3D space'
 createdAt: 'Jan. 29, 2023'
 published: true
 tags: [{ name: 'godot', value: 'godot' }, { name: 'voxel', value: 'voxel' }]
+order: 1
 ---
 
 > Check out the <a href="https://github.com/DennisSmuda/low-rez-voxel-demo" target="_blank" rel="noreferrer">source code</a>. If you do, make sure to use the latest Godot 4 version!

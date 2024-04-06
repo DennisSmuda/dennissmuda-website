@@ -16,7 +16,7 @@
 
     <aside class="ds-prose col-span-5 -mt-12">
       <SidebarTags />
-      <SidebarPosts />
+      <FeaturedPosts />
     </aside>
   </section>
 </template>

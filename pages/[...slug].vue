@@ -5,7 +5,7 @@ const isActive = useState('activeBlogPostId')
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
-      <div class="absolute w-full h-80 top-0 left-0 right-0 overflow-x-hidden">
+      <div class="absolute w-full h-32 top-0 left-0 right-0 overflow-x-hidden z-0">
         <div
           :class="`
         link-background

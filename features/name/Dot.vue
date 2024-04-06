@@ -63,5 +63,6 @@ defineExpose({ onMouseMove, onMouseLeave })
 #dot {
   @apply mix-blend-exclusion;
   @apply mix-blend-difference;
+  @apply animate-bounce;
 }
 </style>

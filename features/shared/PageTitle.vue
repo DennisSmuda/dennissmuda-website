@@ -20,6 +20,7 @@ defineProps<{
 
 <style lang="css" scoped>
 h1 {
+  @apply relative z-10;
   view-transition-name: page-header;
 }
 .subtitle {

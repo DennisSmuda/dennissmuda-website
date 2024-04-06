@@ -5,9 +5,10 @@ export default defineEventHandler(async (event) => {
   const limit = Number.parseInt(query.limit as string)
 
   const content = await serverQueryContent(event)
-    .where({ _dir: 'projects' })
+    .where({ _dir: 'blog' })
     .sort({ order: 1 })
-    .limit(limit)
+    .limit(limit || 16)
     .find()
+
   return content
 })
