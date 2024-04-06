@@ -15,21 +15,22 @@ const isActive = useState('activeBlogPostId')
         <div class="timeline" />
         <template v-for="post in data" :key="post._id">
           <div class="post">
-            <NuxtLink
-              :to="`/blog/${post.slug}`"
-              @click="isActive = post._id"
-            >
-              <!-- <div
+            <!-- <div
               :class="`
                 link-background
                 background-tag--${post.tags[0].value}
                 ${isActive === post._id ? 'active' : ''}
               `"
             /> -->
-              <div class="timeline__dot" />
-              <div class="post__date">
-                {{ post.createdAt }}
-              </div>
+            <div class="timeline__dot" />
+            <div class="post__date">
+              {{ post.createdAt }}
+            </div>
+            <NuxtLink
+              :to="`/blog/${post.slug}`"
+              class="inline-flex flex-col mb-2"
+              @click="isActive = post._id"
+            >
               <h2 class="post__headline" :class="{ active: isActive === post._id }">
                 {{ post.title }}
               </h2>
@@ -69,7 +70,7 @@ const isActive = useState('activeBlogPostId')
   @apply my-16 md:my-24 block px-2 -inset-x-2 relative rounded-lg;
 }
 .post a {
-  @apply no-underline;
+  @apply no-underline rounded-lg;
 }
 
 .post__date {
@@ -84,7 +85,7 @@ const isActive = useState('activeBlogPostId')
 }
 
 .post__headline {
-  @apply mb-0;
+  @apply my-0;
 }
 
 .post:hover .post__headline {

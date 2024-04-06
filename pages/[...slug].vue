@@ -5,12 +5,9 @@ const isActive = useState('activeBlogPostId')
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
-      <div class="absolute w-full h-32 top-0 left-0 right-0 overflow-x-hidden z-0">
+      <div class="absolute w-full h-32 top-0 left-0 right-0 overflow-hidden z-0">
         <div
-          :class="`
-        link-background
-        background-tag--${doc.tags[0].value}
-      `"
+          :class="`link-background background-tag--${doc.tags[0].value}`"
         />
       </div>
       <div class="container mx-auto px-6 md:px-8 pt-32 pb-2">
@@ -38,13 +35,13 @@ h1 {
 }
 
 .breadcrumb {
-  @apply font-black text-xl -rotate-3 relative;
+  @apply font-black text-xl -rotate-3 relative rounded-lg px-2;
   view-transition-name: page-header;
   contain: layout;
 }
 
 .link-background {
-  @apply absolute -z-10 w-full right-0 h-48 -rotate-3 scale-150;
+  @apply absolute -z-10 w-full right-0 h-40 -rotate-3 scale-150;
   /* view-transition-name: blog-header-background; */
   /* contain: layout; */
 }

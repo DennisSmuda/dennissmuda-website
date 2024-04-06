@@ -100,9 +100,9 @@
 	/**
 	 * Links
 	 */
-	button:focus,
-	a:focus,
-	.prose a:focus {
+	button:focus-visible,
+	a:focus-visible,
+	.prose a:focus-visible {
 		@apply outline-none ring-1 ring-offset-2 ring-offset-black ring-black dark:ring-white no-underline;
 	}
 
