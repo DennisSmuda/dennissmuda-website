@@ -34,7 +34,7 @@
         Here are some of
         <span class="emphasis">my favorites:</span>
       </p>
-      <!-- <Tags /> -->
+      <FavoriteTech />
 
       <!-- I LIke -->
       <h2 class="rotated">

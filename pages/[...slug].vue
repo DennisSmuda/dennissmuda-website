@@ -24,7 +24,7 @@ const isActive = useState('activeBlogPostId')
           </h1>
         </div>
       </div>
-      <div class="ds-prose container lg:max-w-4xl mx-auto px-8">
+      <div class="blog-post ds-prose container lg:max-w-4xl mx-auto px-8">
         <ContentRenderer :value="doc" />
       </div>
     </ContentDoc>

@@ -10,12 +10,12 @@
 	@apply rounded-lg -ml-4;
 }
 
-.ds-prose h1,
-.ds-prose h2,
-.ds-prose h3,
-.ds-prose h4,
-.ds-prose h5,
-.ds-prose h6 {
+.blog-post.ds-prose h1,
+.blog-post.ds-prose h2,
+.blog-post.ds-prose h3,
+.blog-post.ds-prose h4,
+.blog-post.ds-prose h5,
+.blog-post.ds-prose h6 {
 	@apply mb-2;
 	& a {
 		@apply no-underline font-black;

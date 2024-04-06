@@ -3,7 +3,7 @@ import { useSpring } from 'vue-use-spring'
 import { useMouse } from '@vueuse/core'
 
 const dot = ref<SVGPathElement>()
-const { x, y, sourceType } = useMouse()
+const { x, y } = useMouse()
 
 const initialDotPosition = ref({
   x: 0,
@@ -29,14 +29,15 @@ onMounted(() => {
 })
 
 function onMouseMove(event: MouseEvent) {
-  const { clientX, clientY, offsetX, offsetY } = event
-  console.log('Client ', x.value, offsetX, offsetX - initialDotPosition.value.x)
-  const values = {
-    x: offsetX - initialDotPosition.value.x, // + parentPosition.value.x,
-    y: y.value - initialDotPosition.value.y - parentPosition.value.y,
-  }
-  position.x = values.x
-  position.y = values.y
+
+  // const { clientX, clientY, offsetX, offsetY } = event
+  // console.log('Client ', x.value, offsetX, offsetX - initialDotPosition.value.x)
+  // const values = {
+  //   x: offsetX - initialDotPosition.value.x, // + parentPosition.value.x,
+  //   y: y.value - initialDotPosition.value.y - parentPosition.value.y,
+  // }
+  // position.x = values.x
+  // position.y = values.y
 }
 
 function onMouseLeave() {

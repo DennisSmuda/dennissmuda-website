@@ -1,28 +1,6 @@
 <script setup lang="ts">
 const svg = ref()
 const dot = ref()
-
-onMounted(() => {
-  console.log('hello')
-  // svg.value.childNodes.forEach((letter, i) => {
-  // svg.value.style.opacity = 0
-  // console.log("child", letter)
-  // const { play, finish } = useAnimate(svg, [{
-  //   opacity: 0,
-  //   transform: 'translateY(200px)'
-  // }, {
-  //   opacity: 1,
-  //   transform: 'translateY(0px)'
-  // }], { delay: 100, duration: 300, commitStyles: true})
-  // play()
-  // finish()
-  // })
-  // console.log('jo', play)
-  // play()
-  // setTimeout(() => {
-  //   play()
-  // }, 1000)
-})
 </script>
 
 <template>
