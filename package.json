@@ -16,6 +16,7 @@
     "@nuxt/fonts": "^0.6.1",
     "@vueuse/core": "^10.9.0",
     "nuxt": "^3.3.2",
+    "sitemap": "^7.1.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue-use-spring": "^0.3.3"
