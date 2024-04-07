@@ -1,0 +1,79 @@
+.rainbow {
+	animation: colorChange 10s linear alternate infinite;
+}
+
+.color-change {
+	animation: colorChange 20s linear alternate infinite;
+}
+
+.german-color-change {
+	@apply font-medium;
+	animation: germanFlagColors 30s linear alternate infinite;
+}
+
+@keyframes colorChange {
+	0% {
+		@apply text-pink fill-pink;
+	}
+	25% {
+		@apply text-cgblue fill-cgblue;
+	}
+	50% {
+		@apply text-lavender fill-lavender;
+	}
+	75% {
+		@apply text-yellow fill-yellow;
+	}
+	100% {
+		@apply text-malachite fill-malachite;
+	}
+}
+
+@keyframes germanFlagColors {
+	25% {
+		color: red;
+	}
+	75% {
+		color: yellow;
+	}
+}
+
+@keyframes rainbow {
+	100%,
+	0% {
+		color: rgb(255, 0, 0);
+	}
+	8% {
+		color: rgb(255, 127, 0);
+	}
+	16% {
+		color: rgb(255, 255, 0);
+	}
+	25% {
+		color: rgb(127, 255, 0);
+	}
+	33% {
+		color: rgb(0, 255, 0);
+	}
+	41% {
+		color: rgb(0, 255, 127);
+	}
+	50% {
+		color: rgb(0, 255, 255);
+	}
+	58% {
+		color: rgb(0, 127, 255);
+	}
+	66% {
+		color: rgb(0, 0, 255);
+	}
+	75% {
+		color: rgb(127, 0, 255);
+	}
+	83% {
+		color: rgb(255, 0, 255);
+	}
+	91% {
+		color: rgb(255, 0, 127);
+	}
+}
