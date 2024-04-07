@@ -7,7 +7,6 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
 
 <p align="left" style="padding: 4rem 8rem 4rem 0;">
 <img style="float:middle" width="auto" alt="PAGESPEED" src="./public/pagespeed.svg">
-</a>
 </p>
 
 | Dark Theme                                | Light Theme                     |
