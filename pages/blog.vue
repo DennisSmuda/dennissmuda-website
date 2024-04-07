@@ -8,7 +8,7 @@ useSeoMeta({
 
 const { data, pending } = await useAsyncData(
   'blog',
-  () => queryContent('blog').sort({ createdAt: 1 }).find(),
+  () => queryContent('blog').sort({ order: -1 }).find(),
 )
 const isActive = useState('activeBlogPostId')
 </script>

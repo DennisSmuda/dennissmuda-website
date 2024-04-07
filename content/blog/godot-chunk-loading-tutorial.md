@@ -10,6 +10,7 @@ tags:
     { name: 'gamedev', value: 'gamedev' },
     { name: 'rng', value: 'random' }
   ]
+order: 5
 ---
 
 ## What are we doing? 🤨
@@ -34,7 +35,6 @@ const move_speed = 256
 
 var new_body_velocity: Vector2 = Vector2(0, 0)
 var direction_vector: Vector2 = Vector2(0, 0)
-
 
 # ready function
 func _ready() -> void:
@@ -85,7 +85,6 @@ var chunk_x: int = 0
 var chunk_y: int = 0
 
 var should_remove := false
-
 
 func _ready() -> void:
 	for x in range(chunk_x, chunk_x + chunk_size):
@@ -175,7 +174,6 @@ func create_chunk(x, y) -> Chunk:
 	new_chunk.chunk_y = y
 	return new_chunk
 
-
 # get chunk at x,y position
 func get_chunk(x, y) -> Chunk:
 	var key = str(x) + "," + str(y)
@@ -183,7 +181,6 @@ func get_chunk(x, y) -> Chunk:
 		return chunks.get(key)
 
 	return null
-
 
 # set all chunks to should_remove = true
 func set_all_chunks_to_remove() -> void:
@@ -201,7 +198,6 @@ To be able to create new chunks based on the player's position, we need to keep 
 # update player pos internal variable
 func on_player_move(_position: Vector2) -> void:
 	player_pos = _position
-
 
 # can also be in update -> watch for performance
 func _on_update_timer_timeout() -> void:
@@ -244,7 +240,6 @@ func add_chunk(x: int, y: int) -> void:
 		unready_chunks[key] = 1
 		spawn_thread.start(self, "load_chunk", [spawn_thread, x, y])
 
-
 # load a new chunk in a spawn_thread
 func load_chunk(args: Array) -> void:
 	var _thread = args[0]
@@ -254,7 +249,6 @@ func load_chunk(args: Array) -> void:
 	var new_chunk = create_chunk(x, y)
 
 	call_deferred("load_done", x, y, new_chunk, _thread)
-
 
 func load_done(x: int, y: int, chunk: Chunk, _thread: Thread) -> void:
 	var key = str(x) + "," + str(y)
@@ -278,7 +272,6 @@ func clean_up_chunks() -> void:
 				chunk.visible = false
 				kill_thread.start(self, "free_chunk", [chunk, key, kill_thread])
 
-
 # free chunk inside a thread
 func free_chunk(args) -> void:
 	var _chunk = args[0]
@@ -289,7 +282,6 @@ func free_chunk(args) -> void:
 	_chunk.queue_free()
 
 	call_deferred("on_free_chunk", _chunk, _key, _thread)
-
 
 # thread wait to finish function -> if some work needs to happen after chunk deletion
 func on_free_chunk(_chunk: Chunk, _key: String, _thread: Thread) -> void:

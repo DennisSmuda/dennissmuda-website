@@ -9,6 +9,7 @@ tags:
     { name: 'node.js', value: 'node' },
     { name: 'serverless', value: 'serverless' }
   ]
+order: 3
 ---
 
 Welcome to _part two_ of my serverless api introduction, where we will tackle user login and registration.
@@ -28,56 +29,55 @@ import User from '../../models/User'
 /**
  * Login Function
  */
-const login = async (req, res) => {
-	await connectToDatabase()
-	const { body } = req
-	if (!req.body) {
-		return res.json({ message: `NO BODY!`, body })
-	}
+async function login(req, res) {
+  await connectToDatabase()
+  const { body } = req
+  if (!req.body)
+    return res.json({ message: `NO BODY!`, body })
 
-	try {
-		await checkIfInputIsValid(body)
-		const user = await User.findOne({ email: body.email })
+  try {
+    await checkIfInputIsValid(body)
+    const user = await User.findOne({ email: body.email })
 
-		if (!user) {
-			return res
-				.status(401)
-				.json({ error: 'User with that e-mail does not exist.' })
-		}
+    if (!user) {
+      return res
+        .status(401)
+        .json({ error: 'User with that e-mail does not exist.' })
+    }
 
-		const token = await comparePassword(body.password, user.password, user._id)
+    const token = await comparePassword(body.password, user.password, user._id)
 
-		res.status(200).json({ token, user })
-	} catch (e) {
-		res.status(401).send({ error: e.message })
-	}
+    res.status(200).json({ token, user })
+  }
+  catch (e) {
+    res.status(401).send({ error: e.message })
+  }
 }
 
 function checkIfInputIsValid(eventBody) {
-	if (!(eventBody.password && eventBody.password.length >= 7)) {
-		throw new Error(
-			'Password error. Password needs to be longer than 8 characters.'
-		)
-	}
+  if (!(eventBody.password && eventBody.password.length >= 7)) {
+    throw new Error(
+      'Password error. Password needs to be longer than 8 characters.'
+    )
+  }
 
-	if (!(eventBody.email && typeof eventBody.email === 'string'))
-		throw new Error('Email error. Email must have valid characters.')
+  if (!(eventBody.email && typeof eventBody.email === 'string'))
+    throw new Error('Email error. Email must have valid characters.')
 }
 
 async function comparePassword(eventPassword, userPassword, userId) {
-	const match = await bcrypt.compare(eventPassword, userPassword)
+  const match = await bcrypt.compare(eventPassword, userPassword)
 
-	if (!match) {
-		throw new Error('The credentials do not match.')
-	}
+  if (!match)
+    throw new Error('The credentials do not match.')
 
-	return signToken(userId)
+  return signToken(userId)
 }
 
 function signToken(id) {
-	return jwt.sign({ id: id }, process.env.JWT_SECRET, {
-		expiresIn: 86400 // expires in 24 hours
-	})
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: 86400 // expires in 24 hours
+  })
 }
 
 export default login
@@ -102,22 +102,22 @@ Create a `verecel.json` file in the root of your project
 ```json
 // vercel.json
 {
-	"headers": [
-		{
-			"source": "/api/(.*)",
-			"headers": [
-				{ "key": "Access-Control-Allow-Credentials", "value": "true" },
-				{
-					"key": "Access-Control-Allow-Methods",
-					"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-				},
-				{
-					"key": "Access-Control-Allow-Headers",
-					"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-				}
-			]
-		}
-	]
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -127,15 +127,17 @@ You can go ahead and set this header to `"*"` inside your vercel config file, bu
 
 ```js
 // middleware/basic
-const basicMiddleware = (fn) => async (req, res) => {
-	res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
+function basicMiddleware(fn) {
+  return async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
 
-	if (req.method === 'OPTIONS') {
-		// for preflight OPTION requests
-		return res.status(200).end()
-	}
+    if (req.method === 'OPTIONS') {
+      // for preflight OPTION requests
+      return res.status(200).end()
+    }
 
-	return await fn(req, res)
+    return await fn(req, res)
+  }
 }
 
 export default basicMiddleware
@@ -155,28 +157,28 @@ For authenticated requests, we will wrap the relevant routes inside our auth-mid
 
 ```js
 // middleware/auth
-const authMiddleware = (fn) => async (req, res) => {
-	res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*')
+function authMiddleware(fn) {
+  return async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*')
 
-	if (req.method === 'OPTIONS') {
-		return res.status(200).end()
-	}
+    if (req.method === 'OPTIONS')
+      return res.status(200).end()
 
-	if (!isAuthenticated(req)) {
-		res.status(401).send({ message: 'Not Authenticated!' })
-	}
+    if (!isAuthenticated(req))
+      res.status(401).send({ message: 'Not Authenticated!' })
 
-	return await fn(req, res)
+    return await fn(req, res)
+  }
 }
 
-const isAuthenticated = (req) => {
-	if (
-		!req.headers.authorization ||
-		req.headers.authorization.indexOf('Bearer ') === -1
-	) {
-		return false
-	}
-	return true
+function isAuthenticated(req) {
+  if (
+    !req.headers.authorization
+    || !req.headers.authorization.includes('Bearer ')
+  )
+    return false
+
+  return true
 }
 
 export default authMiddleware
@@ -190,35 +192,35 @@ The part we have all been waiting for - _user creation_! You will need to create
 
 ```js
 // api/auth/register
-const register = async (req, res) => {
-	await connectToDatabase()
+async function register(req, res) {
+  await connectToDatabase()
 
-	// Check for empty body
-	const { body } = req
+  // Check for empty body
+  const { body } = req
 
-	try {
-		await checkIfInputIsValid(body)
+  try {
+    await checkIfInputIsValid(body)
 
-		// Check if an e-mail is already taken
-		const existingUser = await User.findOne({ email: body.email })
-		if (existingUser) {
-			return res.status(303).json({ message: 'User exists already!' })
-		}
+    // Check if an e-mail is already taken
+    const existingUser = await User.findOne({ email: body.email })
+    if (existingUser)
+      return res.status(303).json({ message: 'User exists already!' })
 
-		// Create a new user with a hashed password
-		const hashedPass = await bcrypt.hash(body.password, 8)
-		const newUser = await User.create({
-			username: body.username,
-			email: body.email,
-			password: hashedPass
-		})
+    // Create a new user with a hashed password
+    const hashedPass = await bcrypt.hash(body.password, 8)
+    const newUser = await User.create({
+      username: body.username,
+      email: body.email,
+      password: hashedPass
+    })
 
-		const token = signToken(newUser.id)
-		// Send back user + token (optional - you may want to have a "double opt-in" flow)
-		return res.status(200).json({ user: newUser, token })
-	} catch (e) {
-		return res.status(401).json({ message: e.message })
-	}
+    const token = signToken(newUser.id)
+    // Send back user + token (optional - you may want to have a "double opt-in" flow)
+    return res.status(200).json({ user: newUser, token })
+  }
+  catch (e) {
+    return res.status(401).json({ message: e.message })
+  }
 }
 ```
 
