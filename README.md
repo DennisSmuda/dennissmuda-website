@@ -11,7 +11,7 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
 
 | Dark Theme                                | Light Theme                     |
 | ----------------------------------------- | ------------------------------- |
-| ![screenshot dark](./screenshot-dark.png) | ![screenshot](./screenshot.png) |
+| ![screenshot dark](./public/screenshot-dark.png) | ![screenshot](./public/screenshot.png) |
 
 ## Developing 🛠
 
