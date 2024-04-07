@@ -4,7 +4,6 @@ import { useSpring } from 'vue-use-spring'
 interface LetterProps {
   path: string
   delay: number
-  color?: string
   animateColor?: boolean
   initialX?: number
   initialY?: number
@@ -13,7 +12,6 @@ const props = withDefaults(defineProps<LetterProps>(), {
   initialX: 0,
   initialY: 100,
   animateColor: false,
-  color: '#FAFDFF',
 })
 
 const position = useSpring({ x: props.initialX, y: props.initialY, opacity: 0 })
@@ -28,10 +26,10 @@ setTimeout(() => {
 
 <template>
   <path
+    class="fill-black dark:fill-white"
     :class="{ animate: props.animateColor }"
     :style="{ transform: `translate3d(${position.x}px, ${position.y}px, 0px)`, opacity: position.opacity }"
     :d="path"
-    :fill="color"
   />
 </template>
 
