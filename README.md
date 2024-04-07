@@ -1,12 +1,12 @@
 # Personal Website 👨🏻‍💻
 
-[![CI](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml/badge.svg)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/main.yml)
+[![Playwright E2E-Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml/badge.svg)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5487d096-f9f1-496e-8ae4-613220817b9a/deploy-status)](https://app.netlify.com/sites/dennissmuda/deploys)
 
 This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
 <p align="left" style="padding: 4rem 8rem 4rem 0;">
-<a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdennissmuda.com%2F&form_factor=desktop">
+<!-- <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdennissmuda.com%2F&form_factor=desktop"> -->
 <img style="float:middle" width="auto" alt="PAGESPEED" src="./static/pagespeed.svg">
 </a>
 </p>
