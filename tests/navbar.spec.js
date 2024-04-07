@@ -20,7 +20,7 @@ test.describe('component: navbar', () => {
     const html = await page.locator('html')
 
     await page.waitForTimeout(1500)
-    await page.screenshot({ path: 'screenshot.png', fullPage: true })
+    await page.screenshot({ path: './public/screenshot.png', fullPage: true })
 
     await themeButton.click()
 
@@ -29,7 +29,7 @@ test.describe('component: navbar', () => {
     await page.reload()
 
     await page.waitForTimeout(1500)
-    await page.screenshot({ path: 'screenshot-dark.png', fullPage: true })
+    await page.screenshot({ path: './public/screenshot-dark.png', fullPage: true })
 
     await themeButton.click()
     await expect(html).not.toHaveClass('dark')

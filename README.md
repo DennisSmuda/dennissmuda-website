@@ -6,14 +6,13 @@
 This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
 <p align="left" style="padding: 4rem 8rem 4rem 0;">
-<!-- <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdennissmuda.com%2F&form_factor=desktop"> -->
-<img style="float:middle" width="auto" alt="PAGESPEED" src="./static/pagespeed.svg">
+<img style="float:middle" width="auto" alt="PAGESPEED" src="./public/pagespeed.svg">
 </a>
 </p>
 
 | Dark Theme                                | Light Theme                     |
 | ----------------------------------------- | ------------------------------- |
-| ![screenshot dark](./screenshot-dark.png) | ![screenshot](./screenshot.png) |
+| ![screenshot dark](./public/screenshot-dark.png) | ![screenshot](./public/screenshot.png) |
 
 ## Developing 🛠
 
@@ -22,8 +21,6 @@ After you've cloned/forked/whatever the repo, you can do this:
 ```bash
 npm run install
 npm run dev
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
 ## Tests 🧪
