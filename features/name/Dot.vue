@@ -25,7 +25,6 @@ onMounted(() => {
   const parentRect = (dot.value?.parentElement as SVGElement).getBoundingClientRect()
   initialDotPosition.value = { x: left, y: top }
   parentPosition.value = { x: parentRect.left, y: parentRect.top }
-  console.log('initial position')
 })
 
 function onMouseMove(event: MouseEvent) {
