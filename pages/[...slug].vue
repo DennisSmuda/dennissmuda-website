@@ -52,6 +52,6 @@ h1 {
 
 .link-background::after {
   content: '';
-  @apply block absolute -bottom-4 left-0 w-full bg-white dark:bg-black h-32 z-10;
+  @apply block absolute -bottom-4 left-0 w-full bg-white dark:bg-black transition-colors duration-700 h-32 z-10;
 }
 </style>
