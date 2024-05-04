@@ -13,7 +13,9 @@ const isActive = useState('activeBlogPostId')
     :to="post._path"
     @click="isActive = post._id"
   >
-    <span class="latest-post__date"> Jan. 29, 2023 </span>
+    <span class="latest-post__date">
+      {{ post.createdAt }}
+    </span>
     <h3
       class="latest-post__title"
       :class="`${isActive === post._id ? 'active' : ''}`"
