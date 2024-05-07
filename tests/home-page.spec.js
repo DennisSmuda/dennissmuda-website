@@ -27,13 +27,13 @@ test.describe('page: index', () => {
     await expect(page).toHaveTitle(/Writing/)
   })
 
-  // test('shows my three latest projects', async ({ page }) => {
-  //   const projects = await page.locator('a.project')
-  //   await expect(projects).toHaveCount(topProjects.length)
+  test('shows my three latest projects', async ({ page }) => {
+    const projects = await page.locator('a.project')
+    await expect(projects).toHaveCount(3)
 
-  //   const firstEntry = projects.nth(0)
-  //   await expect(firstEntry).toHaveAttribute('target', '_blank')
-  // })
+    const firstEntry = projects.nth(0)
+    await expect(firstEntry).toHaveAttribute('target', '_blank')
+  })
 
   test('shows my latest posts', async ({ page }) => {
     const cvEntries = await page.locator('a.latest-post')
