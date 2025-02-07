@@ -22,12 +22,12 @@
     "vue-use-spring": "^0.3.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.19.0",
+    "@antfu/eslint-config": "^4.1.1",
     "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.12.12",
-    "eslint": "^9.3.0"
+    "eslint": "^9.19.0"
   }
 }
