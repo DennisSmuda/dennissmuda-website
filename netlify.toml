@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-publish = ".output/"
+publish = "dist"
 # functions = "dist/functions/"
 
 # [dev]
