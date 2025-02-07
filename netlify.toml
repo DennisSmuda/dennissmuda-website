@@ -1,6 +1,6 @@
 [build]
 command = "npm run build"
-publish = ".output/server/index.mjs"
+publish = ".output/"
 # functions = "dist/functions/"
 
 # [dev]
