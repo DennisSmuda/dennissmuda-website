@@ -16,7 +16,7 @@ const isActiveId = useState('activeBlogPostId')
 
   <NuxtLink
     class="latest-post"
-    :to="slug"
+    :to="`/blog/${slug}`"
     @click="isActiveId = id"
   >
     <span class="latest-post__date">
