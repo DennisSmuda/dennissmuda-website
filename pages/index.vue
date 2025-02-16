@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Intro from '~/features/intro/Intro.vue'
-
 const { data: projects } = await useAsyncData(() =>
   queryCollection('projects').order('order', 'DESC').limit(3).all(),
 )
@@ -11,7 +9,9 @@ const { data: posts } = await useAsyncData(() =>
 </script>
 
 <template>
-  <Intro />
+  <FeatureIntro>
+    <FeatureName />
+  </FeatureIntro>
 
   <!-- Project List + Sidebar -->
   <section

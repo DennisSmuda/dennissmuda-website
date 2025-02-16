@@ -1,13 +1,9 @@
-<script lang="ts" setup>
-import Name from '~/features/name/Name.vue'
-</script>
-
 <template>
   <section class="px-8 py-16">
     <div class="hero -rotate-3">
       <div class="container main-padding">
         <div class="title">
-          <Name />
+          <slot />
         </div>
 
         <div class="intro">
