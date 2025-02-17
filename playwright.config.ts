@@ -9,6 +9,9 @@ const url = 'http://localhost:3000'
 export default defineConfig<ConfigOptions>({
   testDir: './e2e',
   fullyParallel: true,
+  forbidOnly: !!isCI,
+  retries: isCI ? 2 : 0,
+  reporter: 'html',
 
   use: {
     baseURL: url,
@@ -19,6 +22,13 @@ export default defineConfig<ConfigOptions>({
       // rootDir: fileURLToPath(new URL('.', import.meta.url)),
     },
   },
+
+  // projects: [
+  //   {
+  //     name: 'chromium',
+  //     use: { ...devices['Desktop Chrome'] },
+  //   },
+  // ],
 
   webServer: {
     command: `npm run dev`,
