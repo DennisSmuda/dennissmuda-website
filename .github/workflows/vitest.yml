@@ -1,4 +1,4 @@
-name: Vitest Component + Unit Tests
+name: Vitest E2E + Component + Unit Tests
 on:
   push:
     branches: [main, master]

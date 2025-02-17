@@ -1,10 +1,25 @@
-import { expect, test } from '@nuxt/test-utils/playwright'
+import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
+import About from '~/pages/about.vue'
 
-test.beforeEach(async ({ goto }) => {
-  await goto('/about')
-})
+describe('page: about', async () => {
+  it('is defined', () => {
+    expect(About).toBeDefined()
+    // ...
+  })
 
-test('page: about - shows correct title', async ({ page }) => {
-  const headingContent = await page.textContent('h1')
-  await expect(headingContent).toContain('about me')
+  it('can render', async () => {
+    const wrapper = mount(About)
+    expect(wrapper.html()).toContain('about me')
+
+    wrapper.unmount()
+  })
+
+  it('shows three subheadings', async () => {
+    const wrapper = mount(About)
+    const headings = wrapper.findAll('h2')
+
+    expect(headings).toHaveLength(3)
+    wrapper.unmount()
+  })
 })
