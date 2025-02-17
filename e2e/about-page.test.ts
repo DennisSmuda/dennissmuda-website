@@ -1,25 +1,41 @@
-import { mount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
-import About from '~/pages/about.vue'
+import { expect, test } from '@nuxt/test-utils/playwright'
 
-describe('page: about', async () => {
-  it('is defined', () => {
-    expect(About).toBeDefined()
-    // ...
+test.describe('page: about', () => {
+  test.beforeEach(async ({ goto }) => {
+    await goto('/about')
   })
 
-  it('can render', async () => {
-    const wrapper = mount(About)
-    expect(wrapper.html()).toContain('about me')
-
-    wrapper.unmount()
+  test('shows correct title', async ({ page }) => {
+    const headingContent = await page.textContent('h1')
+    await expect(headingContent).toContain('about me')
   })
 
-  it('shows three subheadings', async () => {
-    const wrapper = mount(About)
-    const headings = wrapper.findAll('h2')
+  test(`shows three different sections`, async ({ page }) => {
+    const headlines = await page.locator('h2.rotated')
+    await expect(headlines).toHaveCount(3)
+  })
 
-    expect(headings).toHaveLength(3)
-    wrapper.unmount()
+  test(`shows and links to my past work places (external links)`, async ({
+    page,
+  }) => {
+    const cvEntries = await page.locator('.cv-wrapper a')
+    await expect(cvEntries).toHaveCount(3)
+
+    const numEntries = await cvEntries.count()
+    const firstEntry = cvEntries.nth(numEntries - 1)
+    const secondEntry = cvEntries.nth(numEntries - 2)
+    const thirdEntry = cvEntries.nth(numEntries - 3)
+
+    await expect(firstEntry).toContainText('VOLL digital')
+    await expect(firstEntry).toHaveAttribute('target', '_blank')
+    await expect(firstEntry).toHaveAttribute('href', /voll.digital/)
+
+    await expect(secondEntry).toContainText('Urlaubsguru')
+    await expect(secondEntry).toHaveAttribute('target', '_blank')
+    await expect(secondEntry).toHaveAttribute('href', /urlaubsguru.de/)
+
+    await expect(thirdEntry).toContainText('FTAPI')
+    await expect(thirdEntry).toHaveAttribute('target', '_blank')
+    await expect(thirdEntry).toHaveAttribute('href', /ftapi.com/)
   })
 })
