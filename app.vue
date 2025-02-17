@@ -9,15 +9,21 @@ useSeoMeta({
 </script>
 
 <template>
-  <Navbar />
+  <SharedNavbar />
   <NuxtPage />
-  <PageFooter />
+  <SharedFooter />
 </template>
 
 <style lang="css">
 html,
 body {
   @apply dark:bg-black dark:text-white;
+}
+
+body {
+  @apply bg-white text-black relative min-h-screen;
+  @apply dark:bg-black dark:text-white;
+  @apply transition-colors duration-700 overflow-x-hidden;
 }
 
 /* ::view-transition-old(root) {
@@ -31,12 +37,6 @@ body {
 ::view-transition-old(header),
 ::view-transition-new(header) {
   width: auto;
-}
-
-body {
-  @apply bg-white text-black relative min-h-screen;
-  @apply dark:bg-black dark:text-white;
-  @apply transition-colors duration-700 overflow-x-hidden;
 }
 
 body::-webkit-scrollbar {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import About from '~/features/about/About.vue'
-
 useSeoMeta({
   title: 'About Me | Dennis Smuda',
   ogTitle: 'About Me | Dennis Smuda',
@@ -10,8 +8,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <PageTitle
+  <SharedPageTitle
     title="about me 👨🏻‍💻️" subtitle="been where done what?"
   />
-  <About />
+  <WidgetAboutMe />
 </template>

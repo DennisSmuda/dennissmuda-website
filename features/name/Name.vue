@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Dot from './Dot.vue'
+import Letter from './Letter.vue'
+
 const svg = ref()
 const dot = ref()
 </script>

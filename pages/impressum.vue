@@ -8,7 +8,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <PageTitle
+  <SharedPageTitle
     title="Impressum" subtitle="muss halt"
   />
 

@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+coverage
 
 # Node dependencies
 node_modules
@@ -23,6 +24,4 @@ logs
 .env.*
 !.env.example
 /test-results/
-/playwright-report/
 /blob-report/
-/playwright/.cache/

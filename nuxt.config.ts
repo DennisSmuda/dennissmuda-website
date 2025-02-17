@@ -1,38 +1,91 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   experimental: {
     viewTransition: true,
   },
+
   css: [
     'assets/styles.css',
   ],
-  components: [
-    {
-      path: '~/features',
-      pathPrefix: false,
-    },
-  ],
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxt/content',
     '@nuxt/fonts',
+    '@nuxt/test-utils/module',
   ],
+
   content: {
-    highlight: {
-      theme: 'tokyo-night',
-      langs: ['javascript', 'typescript', 'json', 'bash', 'shell', 'yaml', 'markdown', 'gdscript', 'rust', 'jsx', 'toml'],
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'tokyo-night',
+          langs: [
+            'javascript',
+            'typescript',
+            'gdscript',
+            'json',
+            'bash',
+            'shell',
+            'yaml',
+            'markdown',
+            'gdscript',
+            'rust',
+            'jsx',
+            'toml',
+          ],
+        },
+      },
     },
   },
+
   fonts: {
     defaults: {
       weights: [300, 500, 700],
     },
   },
+
+  // FSD Layers
+  components: [
+    {
+      path: 'shared-ui',
+      extensions: ['.vue'],
+      prefix: 'Shared',
+    },
+    {
+      path: 'features',
+      extensions: ['.vue'],
+      prefix: 'Feature',
+    },
+    {
+      path: 'widgets',
+      extensions: ['.vue'],
+      prefix: 'Widget',
+    },
+    {
+      path: 'entities',
+      extensions: ['.vue'],
+      prefix: 'Entity',
+    },
+  ],
+  imports: {
+    dirs: [
+      'shared/**/*.ts',
+      'shared-ui/**/*.ts',
+      'features/**/*.ts',
+      'widgets/**/*.ts',
+      'entities/**/*.ts',
+    ],
+  },
+
+  // color mode module options
   colorMode: {
     classSuffix: '',
   },
+  // Default App-Head (Meta-Tags)
   app: {
     head: {
       link: [
