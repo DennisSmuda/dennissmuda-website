@@ -18,7 +18,7 @@ const { data: posts } = await useAsyncData(() =>
     class="flex flex-col-reverse max-w-lg md:max-w-2xl md:grid p-8 gap-16 md:grid-cols-12 container mx-auto lg:max-w-4xl"
   >
     <article class="ds-prose col-span-7 md:mt-20">
-      <h2 class="rotated">
+      <h2 data-testid="rotated-heading" class="rotated">
         latest work 🏁
       </h2>
 
@@ -33,13 +33,13 @@ const { data: posts } = await useAsyncData(() =>
     </article>
 
     <aside class="ds-prose col-span-5 -mt-12">
-      <h2 class="rotated">
+      <h2 data-testid="rotated-heading" class="rotated">
         making things with 🛠
       </h2>
       <FeatureTagsSidebar />
 
       <!-- Latest Posts -->
-      <h2 class="rotated md:pt-24">
+      <h2 data-testid="rotated-heading" class="rotated md:pt-24">
         latest posts ✏️
       </h2>
       <!-- <FeaturedPosts /> -->

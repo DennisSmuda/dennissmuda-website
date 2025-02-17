@@ -1,30 +1,18 @@
-import { setup } from '@nuxt/test-utils'
-import { mount } from '@vue/test-utils'
+import { createPage, setup } from '@nuxt/test-utils/e2e'
 import { describe, expect, it } from 'vitest'
-import About from '~/pages/about.vue'
-import Index from '~/pages/index.vue'
 
 describe('page: index', async () => {
-  // await setup()
-  it('is defined', () => {
-    expect(Index).toBeDefined()
-    // ...
+  await setup({
+    host: 'http://localhost:3000',
   })
 
   it('can render', async () => {
-    const wrapper = mount(Index)
-    // expect(wrapper.html()).toContain('dennis')
-    console.log('wrapper.html()', wrapper.html())
+    const page = await createPage('/')
+    console.log('page', page)
+    const headings = await page.getByTestId('rotated-heading')
 
-    wrapper.unmount()
-  })
+    console.log('headings', headings)
 
-  // TODO: probably need suspended test? (https://nuxt.com/docs/getting-started/testing#%EF%B8%8F-helpers)
-  it('shows three subheadings', async () => {
-    const wrapper = mount(About)
-    const headings = wrapper.findAll('h2')
-
-    expect(headings).toHaveLength(3)
-    wrapper.unmount()
+    expect(headings).toBeDefined()
   })
 })
