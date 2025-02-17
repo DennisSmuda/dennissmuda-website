@@ -1,75 +1,33 @@
-# Nuxt Minimal Starter
+# Personal Website 👨🏻‍💻
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Playwright E2E-Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml/badge.svg)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5487d096-f9f1-496e-8ae4-613220817b9a/deploy-status)](https://app.netlify.com/sites/dennissmuda/deploys)
 
-## Setup
+This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
-Make sure to install dependencies:
+<p align="left" style="padding: 4rem 8rem 4rem 0;">
+<img style="float:middle" width="auto" alt="PAGESPEED" src="./public/pagespeed.svg">
+</p>
 
-```bash
-# npm
-npm install
+| Dark Theme                                | Light Theme                     |
+| ----------------------------------------- | ------------------------------- |
+| ![screenshot dark](./public/screenshot-dark.png) | ![screenshot](./public/screenshot.png) |
 
-# pnpm
-pnpm install
+## Developing 🛠
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+After you've cloned/forked/whatever the repo, you can do this:
 
 ```bash
-# npm
+npm run install
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Tests 🧪
 
-Build the application for production:
+Tests run on [github actions](https://github.com/DennisSmuda/dennissmuda-website/actions), everytime a PR gets opened.
 
-```bash
-# npm
-npm run build
+To run playwright locally, I recommend the official [vs code plugin] - which is amazingly convenient - you can also just run `npm t`. But you have to `useExistingServer` inside `playwright.config.js`.
 
-# pnpm
-pnpm build
+## Contributions 🥁
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Feel free to submit PRs or [issues](https://github.com/DennisSmuda/dennissmuda-website/issues) 👋
