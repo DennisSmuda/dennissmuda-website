@@ -11,7 +11,7 @@ useSeoMeta({
 <template>
   <SharedNavbar />
   <NuxtPage />
-  <SharedFooter />
+  <SharedPageFooter />
 </template>
 
 <style lang="css">

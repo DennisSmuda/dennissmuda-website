@@ -52,7 +52,7 @@ const date = new Date().getFullYear()
             /></svg>
           </a>
         </div>
-        <span class="text-xs opacity-50">©{{ date }} built and designed with ♥️ by me
+        <span data-testid="signature" class="text-xs opacity-50">©{{ date }} built and designed with ♥️ by me
           <a
             class="inline-flex text-xs underline hover:no-underline"
             href="https://github.com/DennisSmuda/dennissmuda-website"

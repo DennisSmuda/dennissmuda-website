@@ -1,21 +1,20 @@
+<script lang="ts" setup>
+const {
+  data: content,
+} = await useAsyncData(() =>
+  queryCollection('copy').where('title', '=', 'about me').first(),
+)
+
+console.log('content', content.value)
+</script>
+
 <template>
   <section class="container lg:max-w-4xl mx-auto px-8">
     <div class="ds-prose ">
-      <p>
-        Nice to meet you! 👋 My name is
-        <span class="keyword">Dennis</span>
-        and I have been working as a
-        <span class="color-change font-medium">web developer</span>
-        for the
-        <em>last {{ new Date().getFullYear() - 2014 }}+ years</em>. I have worked on
-        projects (mainly UI-focused) ranging from small company and personal websites to full fledged
-        web applications.
-      </p>
-      <p>
-        I deeply enjoy building things that can be interacted with, especially if
-        it's something <span class="emphasis">fun</span>
-        or <em>useful</em> <span class="opacity-50">... or both!</span>
-      </p>
+      <ContentRenderer
+        v-if="content"
+        :value="content"
+      />
 
       <h2 class="rotated">
         Where I've been 🗺

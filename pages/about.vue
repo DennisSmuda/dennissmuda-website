@@ -11,5 +11,6 @@ useSeoMeta({
   <SharedPageTitle
     title="about me 👨🏻‍💻️" subtitle="been where done what?"
   />
+
   <WidgetAboutMe />
 </template>
