@@ -11,8 +11,8 @@ useSeoMeta({
   <main>
     <SharedPageTitle title="writing ✏️" subtitle="some thoughts and words" />
 
-    <section class="container lg:max-w-4xl mx-auto px-8">
+    <SharedPageContainer>
       <FeaturePostsAllPosts />
-    </section>
+    </SharedPageContainer>
   </main>
 </template>

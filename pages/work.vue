@@ -10,7 +10,9 @@ useSeoMeta({
 <template>
   <SharedPageTitle title="work 🏁" subtitle="let's see some of my projects" />
 
-  <WidgetWork />
+  <SharedPageContainer class="mt-8">
+    <FeatureProjectsAllProjects />
+  </SharedPageContainer>
 </template>
 
 <style scoped>
