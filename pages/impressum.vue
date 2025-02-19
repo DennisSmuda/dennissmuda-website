@@ -5,6 +5,12 @@ useSeoMeta({
   description: 'Impressum | legally required content.',
   ogDescription: 'Impressum | legally required content.',
 })
+
+const {
+  data: content,
+} = await useAsyncData(() =>
+  queryCollection('copy').where('title', '=', 'impressum').first(),
+)
 </script>
 
 <template>
@@ -13,6 +19,10 @@ useSeoMeta({
   />
 
   <SharedPageContainer prose>
+    <ContentRenderer
+      v-if="content"
+      :value="content"
+    />
     <p>
       Dennis Smuda
       <br>
