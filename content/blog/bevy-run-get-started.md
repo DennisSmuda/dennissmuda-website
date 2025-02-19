@@ -47,7 +47,7 @@ cargo run
 Go ahead, and edit your `Cargo.toml` dependencies as follows:
 
 ```toml
-// ...
+# ...
 
 [dependencies]
 bevy = "0.6.1"

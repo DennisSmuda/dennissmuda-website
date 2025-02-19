@@ -1,4 +1,4 @@
-import type { BlogCollectionItem } from "@nuxt/content";
+import type { BlogCollectionItem } from '@nuxt/content'
 
 export const MOCK_POSTS: BlogCollectionItem[] = [
   {

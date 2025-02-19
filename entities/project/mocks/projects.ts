@@ -1,4 +1,4 @@
-import type { ProjectsCollectionItem } from "@nuxt/content";
+import type { ProjectsCollectionItem } from '@nuxt/content'
 
 export const MOCK_PROJECTS: ProjectsCollectionItem[] = [
   {

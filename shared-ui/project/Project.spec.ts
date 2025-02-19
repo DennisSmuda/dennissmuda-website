@@ -1,6 +1,7 @@
-import { describe, expect, it } from 'vitest'
-import Project, { type ProjectProps } from './Project.vue'
+import type { ProjectProps } from './Project.vue'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
+import Project from './Project.vue'
 
 const MOCK_PROJECT = {
   title: 'Title',
@@ -48,5 +49,4 @@ describe('shared: Project', () => {
     expect(description?.text()).toBe(MOCK_PROJECT.subtitle)
     wrapper.unmount()
   })
-
 })

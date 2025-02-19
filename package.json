@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:e2e": "playwright test",

@@ -21,11 +21,10 @@ const isActive = useState('activeBlogPostId')
               `"
             /> -->
         <div class="timeline__dot" />
-        <div 
-          data-testid="post-create-date" 
+        <div
+          data-testid="post-create-date"
           class="post__date"
         >
-
           {{ post.createdAt }}
         </div>
         <NuxtLink

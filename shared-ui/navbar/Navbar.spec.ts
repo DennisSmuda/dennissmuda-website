@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import Navbar from './Navbar.vue'
 import Logo from './Logo.vue'
+import Navbar from './Navbar.vue'
 
 function mountNavbar() {
   return mount(Navbar, {

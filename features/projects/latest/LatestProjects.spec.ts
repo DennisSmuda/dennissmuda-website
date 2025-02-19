@@ -1,8 +1,8 @@
 import type { ProjectsCollectionItem } from '@nuxt/content'
 import type { DOMWrapper } from '@vue/test-utils'
+import { MOCK_PROJECTS } from '@/entities/project/mocks/projects'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
-import { MOCK_PROJECTS } from '@/entities/project/mocks/projects'
 import LatestProjects from './LatestProjects.vue'
 
 const getLatestProjects = vi.fn()
@@ -31,7 +31,7 @@ describe('feature: LatestProjects', () => {
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mount(LatestProjects)
-      console.log("html", wrapper.html())
+      console.log('html', wrapper.html())
       expect(wrapper.findAll('.project').length).toBe(2)
       wrapper.unmount()
     })

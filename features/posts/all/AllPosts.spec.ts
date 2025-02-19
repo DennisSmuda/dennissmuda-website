@@ -1,8 +1,8 @@
-import type { BlogCollectionItem, ProjectsCollectionItem } from '@nuxt/content'
+import type { BlogCollectionItem } from '@nuxt/content'
 import type { DOMWrapper } from '@vue/test-utils'
+import { MOCK_POSTS } from '@/entities/post/mocks/posts'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
-import { MOCK_POSTS } from '@/entities/post/mocks/posts'
 import AllPosts from './AllPosts.vue'
 
 const getPosts = vi.fn()
@@ -50,11 +50,11 @@ describe('feature: AllPosts', () => {
     it.each([
       { ...MOCK_POSTS[0], index: 0 },
       { ...MOCK_POSTS[1], index: 1 },
-    ])('should render post $headline with title, subline and correct link', ({ 
-      title, 
+    ])('should render post $headline with title, subline and correct link', ({
+      title,
       description,
       path,
-      index 
+      index,
     }) => {
       const wrapper = mountAllPosts()
       const post = wrapper.findAll('a').at(index) as DOMWrapper<Element>
