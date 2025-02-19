@@ -1,21 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { usePosts } from './usePosts'
 
-const MOCK_POSTS = [
-  {
-    title: 'Post 1',
-  },
-  {
-    title: 'Post 2',
-  },
-  {
-    title: 'Post 3',
-  },
-  {
-    title: 'Post 4',
-  },
-]
-
 vi.mock('~/entities/post/api/getPostsQuery', () => ({
   getPostsQuery: () => Promise.resolve(MOCK_POSTS),
 }))

@@ -3,34 +3,35 @@ import type { DOMWrapper } from '@vue/test-utils'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { MOCK_PROJECTS } from '@/entities/project/mocks/projects'
-import AllProjects from './AllProjects.vue'
+import LatestProjects from './LatestProjects.vue'
 
-const getProjects = vi.fn()
+const getLatestProjects = vi.fn()
 
 vi.mock('@/entities/project/model/useProjects', () => ({
   useProjects: () => ({
-    getProjects,
-    projects: ref(MOCK_PROJECTS as ProjectsCollectionItem[]),
+    getLatestProjects,
+    latestProjects: ref(MOCK_PROJECTS as ProjectsCollectionItem[]),
   }),
 }))
 
-describe('feature: AllProjects', () => {
+describe('feature: LatestProjects', () => {
   it('should be defined', () => {
-    expect(AllProjects).toBeDefined()
+    expect(LatestProjects).toBeDefined()
   })
 
   it('should render correctly', () => {
-    const wrapper = mount(AllProjects)
+    const wrapper = mount(LatestProjects)
 
-    expect(getProjects).toHaveBeenCalled()
+    expect(getLatestProjects).toHaveBeenCalled()
     expect(wrapper.exists()).toBe(true)
 
     wrapper.unmount()
   })
 
-  describe('projects list', () => {
-    it('should render projects list', () => {
-      const wrapper = mount(AllProjects)
+  describe('latest projects list', () => {
+    it('should render latest projects', () => {
+      const wrapper = mount(LatestProjects)
+      console.log("html", wrapper.html())
       expect(wrapper.findAll('.project').length).toBe(2)
       wrapper.unmount()
     })
@@ -39,7 +40,7 @@ describe('feature: AllProjects', () => {
       { ...MOCK_PROJECTS[0], index: 0 },
       { ...MOCK_PROJECTS[1], index: 1 },
     ])('should render project $headline with headline, subline, description', ({ headline, subline, url, description, index }) => {
-      const wrapper = mount(AllProjects)
+      const wrapper = mount(LatestProjects)
       const project = wrapper.findAll('.project').at(index) as DOMWrapper<Element>
 
       expect(project.find('h2').text()).toContain(headline)
