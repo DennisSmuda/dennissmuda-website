@@ -1,4 +1,6 @@
 import type { BlogCollectionItem } from '@nuxt/content'
+import { getLatestPostsQuery } from '~/entities/post/api/getLatestPostsQuery'
+import { getPostsQuery } from '~/entities/post/api/getPostsQuery'
 
 export function usePosts() {
   const posts = useState<BlogCollectionItem[]>()
@@ -6,14 +8,14 @@ export function usePosts() {
 
   const getPosts = async () => {
     const { data } = await useAsyncData(() =>
-      queryCollection('blog').order('order', 'DESC').all(),
+      getPostsQuery(),
     )
     posts.value = data.value as BlogCollectionItem[]
   }
 
   const getLatestPosts = async () => {
     const { data } = await useAsyncData(() =>
-      queryCollection('blog').order('order', 'DESC').limit(3).all(),
+      getLatestPostsQuery(),
     )
     latestPosts.value = data.value as BlogCollectionItem[]
   }

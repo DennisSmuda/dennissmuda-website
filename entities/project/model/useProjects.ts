@@ -1,4 +1,6 @@
 import type { ProjectsCollectionItem } from '@nuxt/content'
+import { getLatestProjectsQuery } from '~/entities/project/api/getLatestProjectsQuery'
+import { getProjectsQuery } from '~/entities/project/api/getProjectsQuery'
 
 export function useProjects() {
   const projects = useState<ProjectsCollectionItem[]>()
@@ -6,14 +8,14 @@ export function useProjects() {
 
   const getProjects = async () => {
     const { data } = await useAsyncData(() =>
-      queryCollection('projects').order('order', 'DESC').all(),
+      getProjectsQuery(),
     )
     projects.value = data.value as ProjectsCollectionItem[]
   }
 
   const getLatestProjects = async () => {
     const { data } = await useAsyncData(() =>
-      queryCollection('projects').order('order', 'DESC').limit(3).all(),
+      getLatestProjectsQuery(),
     )
     latestProjects.value = data.value as ProjectsCollectionItem[]
   }
