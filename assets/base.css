@@ -10,6 +10,15 @@
 		@apply font-black font-sans;
 	}
 
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 {
+		@apply !font-black !font-sans !no-underline;
+	}
+
 	h1 {
 		@apply text-6xl;
 	}
