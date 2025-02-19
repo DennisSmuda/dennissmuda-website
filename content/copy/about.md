@@ -14,7 +14,3 @@ web applications.
 I deeply enjoy building things that can be interacted with, especially if
 it's something <span class="emphasis">fun</span>
 or <em>useful</em> <span class="opacity-50">... or both!</span>
-
-<h2 class="rotated">
-  Where I've been 🗺
-</h2>

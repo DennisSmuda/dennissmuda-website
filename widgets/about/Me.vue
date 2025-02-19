@@ -4,8 +4,6 @@ const {
 } = await useAsyncData(() =>
   queryCollection('copy').where('title', '=', 'about me').first(),
 )
-
-console.log('content', content.value)
 </script>
 
 <template>
