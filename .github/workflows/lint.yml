@@ -13,6 +13,10 @@ jobs:
     name: Run linters
     runs-on: ubuntu-latest
 
+    permissions:
+      # Required to checkout the code
+      contents: read
+
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
@@ -20,11 +24,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 20.x
 
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: npm ci
+      - name: Install Deps
+        run: npm install
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
