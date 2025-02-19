@@ -10,7 +10,7 @@ const getLatestPosts = vi.fn()
 vi.mock('~/entities/post/model/usePosts', () => ({
   usePosts: () => ({
     getLatestPosts,
-    latestPosts: ref(MOCK_POSTS as BlogCollectionItem[]),
+    latestPosts: ref(MOCK_POSTS.slice(0, 3) as BlogCollectionItem[]),
   }),
 }))
 
@@ -43,14 +43,14 @@ describe('feature: LatestPosts', () => {
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mountLatestPosts()
-      expect(wrapper.findAll('a').length).toBe(2)
+      expect(wrapper.findAll('a').length).toBe(3)
       wrapper.unmount()
     })
 
     it.each([
       { ...MOCK_POSTS[0], index: 0 },
       { ...MOCK_POSTS[1], index: 1 },
-    ])('should render post $headline with title and created date', ({ title, createdAt, url, index }) => {
+    ])('should render post $headline with title and created date', ({ title, createdAt, path, index }) => {
       const wrapper = mountLatestPosts()
       const post = wrapper.findAll('a').at(index) as DOMWrapper<Element>
 
@@ -58,7 +58,7 @@ describe('feature: LatestPosts', () => {
       expect(post.find('span').text()).toContain(createdAt)
 
       const link = wrapper.findAll('a').at(index) as DOMWrapper<Element>
-      expect(link.attributes('href')).toBe(url)
+      expect(link.attributes('to')).toBe(path)
 
       wrapper.unmount()
     })

@@ -43,7 +43,7 @@ describe('feature: AllPosts', () => {
   describe('all posts list', () => {
     it('should render all projects', () => {
       const wrapper = mountAllPosts()
-      expect(wrapper.findAll('a').length).toBe(2)
+      expect(wrapper.findAll('a').length).toBe(6)
       wrapper.unmount()
     })
 
