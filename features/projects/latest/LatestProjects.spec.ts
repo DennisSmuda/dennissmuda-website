@@ -31,7 +31,6 @@ describe('feature: LatestProjects', () => {
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mount(LatestProjects)
-      console.log('html', wrapper.html())
       expect(wrapper.findAll('.project').length).toBe(2)
       wrapper.unmount()
     })
