@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   ],
 
   modules: [
+    'motion-v/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxt/content',

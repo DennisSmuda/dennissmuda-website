@@ -1,19 +1,21 @@
-<script lang="ts" setup>
-defineProps<{
+<script lang="ts">
+export interface PostLinkProps {
   id: string
   title: string
   subtitle?: string
   description?: string
   slug: string
   createdAt: string
-}>()
+}
+</script>
+
+<script lang="ts" setup>
+defineProps<PostLinkProps>()
 
 const isActiveId = useState('activeBlogPostId')
 </script>
 
 <template>
-  <!-- {{ data }} -->
-
   <NuxtLink
     class="latest-post"
     :to="`/blog/${slug}`"

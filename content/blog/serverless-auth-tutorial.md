@@ -19,12 +19,12 @@ Welcome to _part two_ of my serverless api introduction, where we will tackle us
 Let's start with the former and create `api/auth/login.js`. Go ahead and also install `jsonwebtoken` and `bcrypt` as npm dependencies.
 
 ```js
+import bcrypt from 'bcrypt'
 // api/auth/login.js
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
 
-import { connectToDatabase } from '../../utils/db'
 import User from '../../models/User'
+import { connectToDatabase } from '../../utils/db'
 
 /**
  * Login Function
@@ -175,8 +175,9 @@ function isAuthenticated(req) {
   if (
     !req.headers.authorization
     || !req.headers.authorization.includes('Bearer ')
-  )
+  ) {
     return false
+  }
 
   return true
 }

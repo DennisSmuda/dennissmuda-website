@@ -41,6 +41,7 @@
 		@apply text-4xl;
 	}
 
+	.ds-prose h2.rotated,
 	h2.rotated {
 		@apply font-thin dark:text-rose text-pink -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
 	}

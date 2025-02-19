@@ -93,7 +93,7 @@ Inside our `models/User.js` we will now create our Models, which are "fancy cons
 
 ```js
 // models/User.js
-import { Schema, model } from 'mongoose'
+import { model, Schema } from 'mongoose'
 
 const User = model(
   'User',
@@ -134,9 +134,9 @@ export { connectToDatabase }
 This is pretty much all you need to start talking to your database inside your endpoint. We can now _get real users_ by connnecting to our database and basically using our User model to query it:
 
 ```js
+import User from '../../models/User'
 // api/users/index.js
 import { connectToDatabase } from '../../utils/db'
-import User from '../../models/User'
 
 async function getUsers(req, res) {
   await connectToDatabase()

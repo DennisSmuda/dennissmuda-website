@@ -35,17 +35,17 @@ Svelte takes things a bit further. Because everything gets "compiled away", they
 
 ```javascript
 import { onMount } from 'svelte' // lifecycle
-import { fly } from 'svelte/transition' // transition
 import { spring } from 'svelte/motion' // spring-animation
+import { fly } from 'svelte/transition' // transition
 
 const sizeSpring = spring(0)
 
 onMount(() => {
-	mounted = true
+  mounted = true
 
-	setTimeout(() => {
-		sizeSpring.set(13)
-	}, 700)
+  setTimeout(() => {
+    sizeSpring.set(13)
+  }, 700)
 })
 ```
 
@@ -54,17 +54,18 @@ Within the markup, we can now setup events on the svg element similar to a lot o
 
 ```jsx
 <svg
-    on:mousedown={() => size.set(64)}
-    on:mouseup={() => size.set(32)}
-  >
-    <g class="firstname">
-      {#if mounted}
-        <path
-          in:fly={{ y: -20, delay: 0 }}
-          d="M14.36 68.4C14.36 61.52 15.6..."
-        />
-      {/if}
-    </g>
+  on:mousedown={() => size.set(64)}
+  on:mouseup={() => size.set(32)}
+>
+  <g class="firstname">
+    {mounted
+    && (
+      <path
+        in:fly={{ y: -20, delay: 0 }}
+        d="M14.36 68.4C14.36 61.52 15.6..."
+      />
+    )}
+  </g>
 </svg>
 ```
 

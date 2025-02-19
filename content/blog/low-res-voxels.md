@@ -46,8 +46,8 @@ extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	texture = game_viewport.get_texture() as ViewportTexture
-	texture.set_viewport_path_in_scene("GameTextureRect/GameViewport")
+  texture = game_viewport.get_texture() as ViewportTexture
+  texture.set_viewport_path_in_scene("GameTextureRect/GameViewport")
 
 ```
 

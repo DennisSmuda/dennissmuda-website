@@ -1,8 +1,7 @@
 import type { ConfigOptions } from '@nuxt/test-utils/playwright'
 
-import { fileURLToPath } from 'node:url'
-import { defineConfig, devices } from '@playwright/test'
-import { isCI, isWindows } from 'std-env'
+import { defineConfig } from '@playwright/test'
+import { isCI } from 'std-env'
 
 const url = 'http://localhost:3000'
 

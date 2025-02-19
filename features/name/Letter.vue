@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSpring } from 'vue-use-spring'
+import { useSpring } from 'motion-v'
 
 interface LetterProps {
   path: string
@@ -14,13 +14,16 @@ const props = withDefaults(defineProps<LetterProps>(), {
   animateColor: false,
 })
 
-const position = useSpring({ x: props.initialX, y: props.initialY, opacity: 0 })
+// const position = useSpring({ x: props.initialX, y: props.initialY, opacity: 0 })
+const positionX = useSpring(0)
+const positionY = useSpring(0)
+const opacity = useSpring(0)
 
 // change position like you would usually
 setTimeout(() => {
-  position.x = 0
-  position.y = 0
-  position.opacity = 1
+  positionX.set(0)
+  positionY.set(0)
+  opacity.set(1)
 }, props.delay)
 </script>
 
@@ -28,7 +31,7 @@ setTimeout(() => {
   <path
     class="fill-black dark:fill-white"
     :class="{ animate: props.animateColor }"
-    :style="{ transform: `translate3d(${position.x}px, ${position.y}px, 0px)`, opacity: position.opacity }"
+    :style="{ transform: `translate3d(${positionX}px, ${positionY}px, 0px)`, opacity }"
     :d="path"
   />
 </template>

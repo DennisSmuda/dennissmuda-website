@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// const isActive = ref(useRoute().path === '/')
-// const isActive = ref(false)
-</script>
-
 <template>
   <NuxtLink to="/" class="logo button">
     ds

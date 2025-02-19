@@ -1,10 +1,14 @@
-<script setup lang="ts">
-defineProps<{
+<script lang="ts">
+export interface ProjectProps {
   title: string
   subtitle?: string
   description?: string
   url: string
-}>()
+}
+</script>
+
+<script setup lang="ts">
+defineProps<ProjectProps>()
 </script>
 
 <template>
