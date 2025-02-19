@@ -31,7 +31,7 @@ describe('feature: AllProjects', () => {
   describe('projects list', () => {
     it('should render projects list', () => {
       const wrapper = mount(AllProjects)
-      expect(wrapper.findAll('.project').length).toBe(2)
+      expect(wrapper.findAll('.project').length).toBe(MOCK_PROJECTS.length)
       wrapper.unmount()
     })
 

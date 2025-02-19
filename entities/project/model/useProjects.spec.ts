@@ -1,20 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useProjects } from './useProjects'
+import { MOCK_PROJECTS } from '../mocks/projects'
 
-const MOCK_PROJECTS = [
-  {
-    title: 'Project 1',
-  },
-  {
-    title: 'Project 2',
-  },
-  {
-    title: 'Project 3',
-  },
-  {
-    title: 'Project 4',
-  },
-]
+import { useProjects } from './useProjects'
 
 vi.mock('~/entities/project/api/getProjectsQuery', () => ({
   getProjectsQuery: () => Promise.resolve(MOCK_PROJECTS),

@@ -10,7 +10,7 @@ const getLatestProjects = vi.fn()
 vi.mock('@/entities/project/model/useProjects', () => ({
   useProjects: () => ({
     getLatestProjects,
-    latestProjects: ref(MOCK_PROJECTS as ProjectsCollectionItem[]),
+    latestProjects: ref(MOCK_PROJECTS.slice(0, 3) as ProjectsCollectionItem[]),
   }),
 }))
 
@@ -31,7 +31,7 @@ describe('feature: LatestProjects', () => {
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mount(LatestProjects)
-      expect(wrapper.findAll('.project').length).toBe(2)
+      expect(wrapper.findAll('.project').length).toBe(3)
       wrapper.unmount()
     })
 
