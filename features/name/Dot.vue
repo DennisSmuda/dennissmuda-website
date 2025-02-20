@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { useMouse } from '@vueuse/core'
 import { useSpring } from 'motion-v'
-// import { useMouse } from '@vueuse/core'
 // const dot = ref<SVGPathElement>()
 
 const initialDotPosition = ref({
@@ -13,6 +13,7 @@ const radiusSpring = useSpring(15)
 const currentX = ref(initialDotPosition.value.x)
 const currentY = ref(initialDotPosition.value.y)
 const radius = ref(15)
+const mouse = useMouse()
 
 onMounted(() => {
   // TODO: Fix math..
@@ -35,6 +36,7 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function onMouseMove(event: MouseEvent) {
+  console.log('onMouseMove', event.layerX - initialDotPosition.value.x)
   positionX.set(event.offsetX)
   positionY.set(event.offsetY)
   radiusSpring.set(45)
@@ -42,8 +44,10 @@ function onMouseMove(event: MouseEvent) {
 
 function onMouseLeave() {
   setTimeout(() => {
-    positionX.set(initialDotPosition.value.x)
-    positionY.set(initialDotPosition.value.y)
+    // positionX.set(initialDotPosition.value.x)
+    // positionY.set(initialDotPosition.value.y)
+    positionX.set(0)
+    positionY.set(0)
     radiusSpring.set(15)
   }, 100)
 }
@@ -55,6 +59,8 @@ defineExpose({ onMouseMove, onMouseLeave })
   <circle
     id="dot"
     :r="radius"
+    :cx="initialDotPosition.x"
+    :cy="initialDotPosition.y"
     :style="{ transform: `translate3D(${currentX}px, ${currentY}px, 0px)` }"
     class="pointer-events-none fill-orange"
     :class="`${radius > 30 ? 'fill-white' : 'fill-orange'}`"
