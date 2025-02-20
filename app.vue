@@ -10,6 +10,7 @@ useSeoMeta({
 
 <template>
   <SharedNavbar />
+  <div class="z-50 fixed top-0 right-0 size-5 bg-white" />
   <NuxtPage />
   <SharedFooter />
 </template>

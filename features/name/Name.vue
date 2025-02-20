@@ -9,7 +9,9 @@ const dot = ref()
 <template>
   <svg
     ref="svg" width="397" height="172" viewBox="0 0 397 172" fill="none"
-    xmlns="http://www.w3.org/2000/svg" @mouseleave="dot.onMouseLeave" @mousemove="dot.onMouseMove"
+    xmlns="http://www.w3.org/2000/svg"
+    @mouseleave="dot.onMouseLeave"
+    @mousemove="dot.onMouseMove"
   >
     <title>DS Logo</title>
     <Letter
