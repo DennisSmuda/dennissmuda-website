@@ -6,7 +6,7 @@ import { isCI } from 'std-env'
 const url = 'http://localhost:3000'
 
 export default defineConfig<ConfigOptions>({
-  testDir: './e2e',
+  testDir: './test/e2e',
   fullyParallel: true,
   forbidOnly: !!isCI,
   retries: isCI ? 2 : 0,

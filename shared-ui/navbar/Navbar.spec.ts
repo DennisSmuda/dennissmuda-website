@@ -1,5 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+import { axe } from 'vitest-axe'
+import { checkA11y } from '~/test/utils'
 import Logo from './Logo.vue'
 import Navbar from './Navbar.vue'
 
@@ -35,6 +37,12 @@ describe('shared: Navbar', () => {
     const wrapper = mountNavbar()
     const links = wrapper.findAllComponents({ name: 'RouterLink' })
     expect(links.length).toBe(4)
+    wrapper.unmount()
+  })
+
+  it('should be accessible', async () => {
+    const wrapper = await mountNavbar()
+    checkA11y(wrapper.html())
     wrapper.unmount()
   })
 })
