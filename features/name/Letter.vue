@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSpring } from 'motion-v'
+import { Motion } from 'motion-v'
 
 interface LetterProps {
   path: string
@@ -14,24 +14,24 @@ const props = withDefaults(defineProps<LetterProps>(), {
   animateColor: false,
 })
 
-// const position = useSpring({ x: props.initialX, y: props.initialY, opacity: 0 })
-const positionX = useSpring(0)
-const positionY = useSpring(0)
-const opacity = useSpring(0)
-
-// change position like you would usually
-setTimeout(() => {
-  positionX.set(0)
-  positionY.set(0)
-  opacity.set(1)
-}, props.delay)
+const randomRotation = () => Math.floor(Math.random() * 11) - 5
 </script>
 
 <template>
-  <path
+  <Motion
+    as="path"
     class="fill-black dark:fill-white"
     :class="{ animate: props.animateColor }"
-    :style="{ transform: `translate3d(${positionX}px, ${positionY}px, 0px)`, opacity }"
+    :hover="{ scale: 1.025 }"
+    :press="{
+      scale: 0.975,
+      rotate: randomRotation(),
+    }"
+    :transition="{
+      type: 'spring',
+      stiffness: 500,
+      damping: 10,
+    }"
     :d="path"
   />
 </template>
@@ -39,5 +39,9 @@ setTimeout(() => {
 <style>
 path.animate {
   animation: colorChange 20s linear alternate infinite;
+}
+
+path {
+  @apply focus:select-none focus:outline-none cursor-pointer;
 }
 </style>

@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+import { checkA11y } from '~/test/utils'
 import Footer from './Footer.vue'
 
 function mountFooter() {
@@ -37,6 +38,12 @@ describe('shared: Footer', () => {
     const links = wrapper.findAll('footer .icon-link')
     expect(links).toHaveLength(4)
 
+    wrapper.unmount()
+  })
+
+  it('should be accessible', async () => {
+    const wrapper = await mountFooter()
+    checkA11y(wrapper.html())
     wrapper.unmount()
   })
 })

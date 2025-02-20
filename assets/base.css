@@ -10,6 +10,15 @@
 		@apply font-black font-sans;
 	}
 
+	.ds-prose h1 a,
+	.ds-prose h2 a,
+	.ds-prose h3 a,
+	.ds-prose h4 a,
+	.ds-prose h5 a,
+	.ds-prose h6 {
+		@apply !font-black !font-sans !no-underline;
+	}
+
 	h1 {
 		@apply text-6xl;
 	}
@@ -120,10 +129,6 @@
 
 	.dark .light-button {
 		@apply block;
-	}
-
-	.background-shape {
-		@apply bg-lightgray dark:bg-gray transition-colors duration-700;
 	}
 
 	*::selection {
