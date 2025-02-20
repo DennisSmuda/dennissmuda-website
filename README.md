@@ -13,7 +13,6 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
   <img style="float:middle" width="auto" alt="PAGESPEED" src="./public/pagespeed.svg">
 </p>
 
-
 | Dark Theme                                | Light Theme                     |
 | ----------------------------------------- | ------------------------------- |
 | ![screenshot dark](./public/screenshot-dark.png) | ![screenshot](./public/screenshot.png) |
@@ -23,15 +22,52 @@ This is the code for my website! You can [see it live](https://dennissmuda.com/)
 After you've cloned/forked/whatever the repo, you can do this:
 
 ```bash
+# install dependencies
 npm run install
+
+# start dev server http://localhost:3000/
 npm run dev
 ```
 
 ## Tests 🧪
 
-Tests run on [github actions](https://github.com/DennisSmuda/dennissmuda-website/actions), everytime a PR gets opened.
+All tests run on [github actions](https://github.com/DennisSmuda/dennissmuda-website/actions), everytime a PR gets opened.
 
-To run playwright locally, I recommend the official [vs code plugin] - which is amazingly convenient - you can also just run `npm t`. But you have to `useExistingServer` inside `playwright.config.js`.
+### Component Tests
+
+Run Component tests in the project root:
+
+```bash
+# run in watch mode
+npm run test
+
+# with coverage
+npm run test:coverage
+```
+
+### E2E Tests
+
+To run playwright locally, your dev server needs to be running (`npm run dev` in a second terminal).
+
+```bash
+# so the tests run against localhost:3000
+npm run dev
+
+# run playwright tests
+npm run test:e2e
+```
+
+### Lint
+
+I use [antuf's config](https://github.com/antfu/eslint-config) to lint all the code in this repo. Follow the instructions for editor support!
+
+```bash
+# lint project
+npm run lint
+
+# with automatic fixes
+npm run lint:fix
+```
 
 ## Contributions 🥁
 
