@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { axe } from 'vitest-axe'
 import { checkA11y } from '~/test/utils'
 import Footer from './Footer.vue'
 
