@@ -1,18 +1,18 @@
 # Personal Website 👨🏻‍💻
 
 [![Playwright E2E-Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml/badge.svg?branch=master)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml)
-
 [![Vitest E2E + Component + Unit Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/vitest.yml/badge.svg?branch=master)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/vitest.yml)
-
 [![Lint](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/lint.yml)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5487d096-f9f1-496e-8ae4-613220817b9a/deploy-status)](https://app.netlify.com/sites/dennissmuda/deploys)
 
 This is the code for my website! You can [see it live](https://dennissmuda.com/) here!
 
-<p align="left" style="padding: 4rem 8rem 4rem 0;">
+---
+
+<p align="left">
   <img style="float:middle" width="auto" alt="PAGESPEED" src="./public/pagespeed.svg">
 </p>
+
 
 | Dark Theme                                | Light Theme                     |
 | ----------------------------------------- | ------------------------------- |
