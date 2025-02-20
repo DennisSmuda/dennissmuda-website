@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useMouse } from '@vueuse/core'
 import { useSpring } from 'motion-v'
-// const dot = ref<SVGPathElement>()
+
+const dot = ref<SVGPathElement>()
 
 const initialDotPosition = ref({
   x: 308,
   y: 10,
 })
+const parentRect = ref<DOMRect>()
 const positionX = useSpring(initialDotPosition.value.x)
 const positionY = useSpring(initialDotPosition.value.y)
 const radiusSpring = useSpring(15)
@@ -20,9 +22,9 @@ onMounted(() => {
   // const { left, top } = (dot.value as SVGPathElement).getBoundingClientRect()
   // initialDotPosition.value = { x: left, y: top }
   // console.log('Dot: mounted', dot.value?.getBoundingClientRect())
-  // const parentRect = (dot.value?.parentElement as SVGElement).getBoundingClientRect()
+  parentRect.value = (dot.value?.parentElement as SVGElement).getBoundingClientRect()
   // parentPosition.value = { x: parentRect.left, y: parentRect.top }
-  // console.log('parent rect', parentRect)
+  console.log('parent rect', parentRect.value)
 })
 
 useMotionValueEvent(positionX, 'change', (latest) => {
@@ -36,16 +38,16 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function onMouseMove(event: MouseEvent) {
-  console.log('onMouseMove', event.layerX - initialDotPosition.value.x)
-  positionX.set(event.offsetX)
-  positionY.set(event.offsetY)
+  console.log('onMouseMoveX: ', mouse.x.value)
+  console.log('onMouseMoveY: ', event.offsetY)
+  // positionX.set(event.offsetX)
+  positionX.set(0)
+  positionY.set(event.offsetY - dot.value!.getBoundingClientRect().height)
   radiusSpring.set(45)
 }
 
 function onMouseLeave() {
   setTimeout(() => {
-    // positionX.set(initialDotPosition.value.x)
-    // positionY.set(initialDotPosition.value.y)
     positionX.set(0)
     positionY.set(0)
     radiusSpring.set(15)
@@ -58,6 +60,7 @@ defineExpose({ onMouseMove, onMouseLeave })
 <template>
   <circle
     id="dot"
+    ref="dot"
     :r="radius"
     :cx="initialDotPosition.x"
     :cy="initialDotPosition.y"
