@@ -72,8 +72,4 @@ const dot = ref()
 svg {
   @apply overflow-visible w-full h-full;
 }
-
-#dot {
-  @apply fill-yellow;
-}
 </style>

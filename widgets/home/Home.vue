@@ -2,7 +2,7 @@
   <section
     class="flex flex-col-reverse max-w-lg md:max-w-2xl md:grid p-8 gap-16 md:grid-cols-12 container mx-auto lg:max-w-4xl"
   >
-    <article class="ds-prose col-span-7 md:mt-20">
+    <article class="ds-prose col-span-7 md:mt-12">
       <h2 data-testid="rotated-heading" class="rotated">
         latest work 🏁
       </h2>
