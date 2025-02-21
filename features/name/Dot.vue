@@ -7,15 +7,15 @@ const dotSvgX = 77.5
 const dotSvgY = 5
 
 const parentRect = ref<DOMRect>()
-const positionX = useSpring(dotSvgX, {
+const springConfig = {
   stiffness: 180,
   damping: 4,
-})
-const positionY = useSpring(dotSvgY, {
-  stiffness: 180,
-  damping: 4,
-})
+}
+
+const xSpring = useSpring(dotSvgX, springConfig)
+const ySpring = useSpring(dotSvgY, springConfig)
 const radiusSpring = useSpring(15)
+
 const currentX = ref(dotSvgX)
 const currentY = ref(dotSvgY)
 const radius = ref(15)
@@ -24,10 +24,10 @@ onMounted(() => {
   parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
 })
 
-useMotionValueEvent(positionX, 'change', (latest) => {
+useMotionValueEvent(xSpring, 'change', (latest) => {
   currentX.value = latest
 })
-useMotionValueEvent(positionY, 'change', (latest) => {
+useMotionValueEvent(ySpring, 'change', (latest) => {
   currentY.value = latest
 })
 useMotionValueEvent(radiusSpring, 'change', (latest) => {
@@ -35,15 +35,15 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function onMouseMove(event: MouseEvent) {
-  positionX.set(event.offsetX / parentRect.value!.width * 100)
-  positionY.set(event.offsetY / parentRect.value!.height * 100)
+  xSpring.set(event.offsetX / parentRect.value!.width * 100)
+  ySpring.set(event.offsetY / parentRect.value!.height * 100)
   radiusSpring.set(60)
 }
 
 function onMouseLeave() {
   setTimeout(() => {
-    positionX.set(dotSvgX)
-    positionY.set(dotSvgY)
+    xSpring.set(dotSvgX)
+    ySpring.set(dotSvgY)
     radiusSpring.set(15)
   }, 100)
 }
