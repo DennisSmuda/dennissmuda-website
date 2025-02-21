@@ -8,7 +8,9 @@ function mountNavbar() {
   return mount(Navbar, {
     global: {
       stubs: {
-        RouterLink: true,
+        NuxtLink: {
+          template: '<a><slot /></a>',
+        },
       },
     },
   })
@@ -34,7 +36,7 @@ describe('shared: Navbar', () => {
 
   it('should render the navigation links', () => {
     const wrapper = mountNavbar()
-    const links = wrapper.findAllComponents({ name: 'RouterLink' })
+    const links = wrapper.findAll('a')
     expect(links.length).toBe(4)
     wrapper.unmount()
   })

@@ -15,6 +15,7 @@ export default defineVitestConfig({
         '**/test/**',
         './.nuxt/*',
         '*.config.ts',
+        'app.vue',
         '*.mjs',
       ],
     },

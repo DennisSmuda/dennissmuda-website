@@ -1,6 +1,7 @@
 <template>
   <section class="px-8 py-16">
-    <div class="hero -rotate-3">
+    <!-- TODO: remove rotate -->
+    <div class="hero  ---rotate-3">
       <div class="container main-padding">
         <div class="title">
           <slot />
