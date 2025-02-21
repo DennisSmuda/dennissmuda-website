@@ -1,30 +1,27 @@
 <script setup lang="ts">
-import { useMouse } from '@vueuse/core'
 import { useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
 
-const initialDotPosition = ref({
-  x: 308,
-  y: 10,
-})
+const dotSvgX = 77.5
+const dotSvgY = 5
+
 const parentRect = ref<DOMRect>()
-const positionX = useSpring(initialDotPosition.value.x)
-const positionY = useSpring(initialDotPosition.value.y)
+const positionX = useSpring(dotSvgX, {
+  stiffness: 180,
+  damping: 4,
+})
+const positionY = useSpring(dotSvgY, {
+  stiffness: 180,
+  damping: 4,
+})
 const radiusSpring = useSpring(15)
-const currentX = ref(initialDotPosition.value.x)
-const currentY = ref(initialDotPosition.value.y)
+const currentX = ref(dotSvgX)
+const currentY = ref(dotSvgY)
 const radius = ref(15)
-const mouse = useMouse()
 
 onMounted(() => {
-  // TODO: Fix math..
-  // const { left, top } = (dot.value as SVGPathElement).getBoundingClientRect()
-  // initialDotPosition.value = { x: left, y: top }
-  // console.log('Dot: mounted', dot.value?.getBoundingClientRect())
-  parentRect.value = (dot.value?.parentElement as SVGElement).getBoundingClientRect()
-  // parentPosition.value = { x: parentRect.left, y: parentRect.top }
-  console.log('parent rect', parentRect.value)
+  parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
 })
 
 useMotionValueEvent(positionX, 'change', (latest) => {
@@ -38,18 +35,15 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function onMouseMove(event: MouseEvent) {
-  console.log('onMouseMoveX: ', mouse.x.value)
-  console.log('onMouseMoveY: ', event.offsetY)
-  // positionX.set(event.offsetX)
-  positionX.set(0)
-  positionY.set(event.offsetY - dot.value!.getBoundingClientRect().height)
-  radiusSpring.set(45)
+  positionX.set(event.offsetX / parentRect.value!.width * 100)
+  positionY.set(event.offsetY / parentRect.value!.height * 100)
+  radiusSpring.set(60)
 }
 
 function onMouseLeave() {
   setTimeout(() => {
-    positionX.set(0)
-    positionY.set(0)
+    positionX.set(dotSvgX)
+    positionY.set(dotSvgY)
     radiusSpring.set(15)
   }, 100)
 }
@@ -62,25 +56,17 @@ defineExpose({ onMouseMove, onMouseLeave })
     id="dot"
     ref="dot"
     :r="radius"
-    :cx="initialDotPosition.x"
-    :cy="initialDotPosition.y"
-    :style="{ transform: `translate3D(${currentX}px, ${currentY}px, 0px)` }"
-    class="pointer-events-none fill-orange"
+    :cx="0"
+    :cy="0"
+    :style="{ transform: `translate3D(${currentX}%, ${currentY}%, 0px)` }"
     :class="`${radius > 30 ? 'fill-white' : 'fill-orange'}`"
   />
-  <!-- <path
-    id="dot" ref="dot"
-    :style="{ transform: `translate3D(${currentX - initialDotPosition.x}px, ${currentY - initialDotPosition.y}px, 0px)` }"
-    d="M298.88 24.96C301.2 27.04 304.16 28.08 307.76 28.08C311.28 28.08 314.16 27.04 316.4 24.96C318.72 22.8 319.88 20.16 319.88 17.04C319.88 13.84 318.72 11.2 316.4 9.12001C314.16 6.96001 311.28 5.88 307.76 5.88C304.16 5.88 301.2 6.96001 298.88 9.12001C296.64 11.2 295.52 13.84 295.52 17.04C295.52 20.16 296.64 22.8 298.88 24.96Z"
-    class="hidden"
-    fill="#FAFDFF"
-  /> -->
 </template>
 
 <style scoped lang="css">
 #dot {
   @apply mix-blend-exclusion;
   @apply mix-blend-difference;
-  /* @apply animate-bounce; */
+  @apply pointer-events-none;
 }
 </style>
