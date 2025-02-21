@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { SpringOptions } from 'motion-v'
 import { useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
@@ -6,15 +7,14 @@ const dot = ref<SVGPathElement>()
 const dotSvgX = 77.5
 const dotSvgY = 5
 
+const springConfig: SpringOptions = {
+  stiffness: 180,
+  damping: 5,
+}
+
 const parentRect = ref<DOMRect>()
-const positionX = useSpring(dotSvgX, {
-  stiffness: 180,
-  damping: 4,
-})
-const positionY = useSpring(dotSvgY, {
-  stiffness: 180,
-  damping: 4,
-})
+const positionX = useSpring(dotSvgX, springConfig)
+const positionY = useSpring(dotSvgY, springConfig)
 const radiusSpring = useSpring(15)
 const currentX = ref(dotSvgX)
 const currentY = ref(dotSvgY)

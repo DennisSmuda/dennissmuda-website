@@ -42,6 +42,6 @@ path.animate {
 }
 
 path {
-  @apply focus:select-none focus:outline-none cursor-pointer;
+  @apply select-none focus:outline-none cursor-pointer;
 }
 </style>
