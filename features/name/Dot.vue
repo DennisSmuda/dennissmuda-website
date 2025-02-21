@@ -15,6 +15,7 @@ const springConfig: SpringOptions = {
 const parentRect = ref<DOMRect>()
 const positionX = useSpring(dotSvgX, springConfig)
 const positionY = useSpring(dotSvgY, springConfig)
+const parentRect = ref<DOMRect>()
 const radiusSpring = useSpring(15)
 const currentX = ref(dotSvgX)
 const currentY = ref(dotSvgY)
