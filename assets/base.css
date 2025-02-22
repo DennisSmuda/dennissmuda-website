@@ -18,6 +18,14 @@
 	.ds-prose h6 {
 		@apply !font-black !font-sans !no-underline;
 	}
+	.ds-prose h1.rotated a,
+	.ds-prose h2.rotated a,
+	.ds-prose h3.rotated a,
+	.ds-prose h4.rotated a,
+	.ds-prose h5.rotated a,
+	.ds-prose h6.rotated {
+		@apply !font-thin !font-sans !no-underline text-rose;
+	}
 
 	h1 {
 		@apply text-6xl;
