@@ -59,12 +59,12 @@ Within the markup, we can now setup events on the svg element similar to a lot o
 >
   <g class="firstname">
     {mounted
-    && (
-      <path
-        in:fly={{ y: -20, delay: 0 }}
-        d="M14.36 68.4C14.36 61.52 15.6..."
-      />
-    )}
+      && (
+        <path
+          in:fly={{ y: -20, delay: 0 }}
+          d="M14.36 68.4C14.36 61.52 15.6..."
+        />
+      )}
   </g>
 </svg>
 ```
