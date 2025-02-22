@@ -50,4 +50,12 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   @apply bg-orange outline-orange;
 }
+
+.keyword {
+  @apply text-malachite;
+}
+
+.emphasis {
+  @apply font-black text-lavender dark:text-greenyellow;
+}
 </style>
