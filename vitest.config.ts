@@ -16,8 +16,15 @@ export default defineVitestConfig({
         './.nuxt/*',
         '*.config.ts',
         'app.vue',
+        '**/pages/**',
         '*.mjs',
       ],
+      thresholds: {
+        lines: 70,
+        branches: 70,
+        functions: 30,
+        statements: 70,
+      },
     },
   },
 })

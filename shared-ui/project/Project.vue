@@ -1,9 +1,11 @@
 <script lang="ts">
+import type { ProjectsCollectionItem } from '@nuxt/content'
+
 export interface ProjectProps {
-  title: string
-  subtitle?: string
-  description?: string
-  url: string
+  title: ProjectsCollectionItem['title']
+  subtitle?: ProjectsCollectionItem['subline']
+  description?: ProjectsCollectionItem['description']
+  url: ProjectsCollectionItem['url']
 }
 </script>
 

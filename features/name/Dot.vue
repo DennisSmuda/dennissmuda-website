@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { useSpring } from 'motion-v'
+import { delay, useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
 
+const initialX = 60
+const initialY = -10
+const initialRadius = 0
 const dotSvgX = 77.5
 const dotSvgY = 5
+const targetRadius = 15
 
 const parentRect = ref<DOMRect>()
 const springConfig = {
@@ -12,16 +16,21 @@ const springConfig = {
   damping: 4,
 }
 
-const xSpring = useSpring(dotSvgX, springConfig)
-const ySpring = useSpring(dotSvgY, springConfig)
-const radiusSpring = useSpring(15)
+const xSpring = useSpring(initialX, springConfig)
+const ySpring = useSpring(initialY, springConfig)
+const radiusSpring = useSpring(initialRadius)
 
-const currentX = ref(dotSvgX)
-const currentY = ref(dotSvgY)
-const radius = ref(15)
+const currentX = ref(initialX)
+const currentY = ref(initialY)
+const radius = ref(initialRadius)
 
 onMounted(() => {
   parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
+  delay(() => {
+    xSpring.set(dotSvgX)
+    ySpring.set(dotSvgY)
+    radiusSpring.set(targetRadius)
+  }, 1)
 })
 
 useMotionValueEvent(xSpring, 'change', (latest) => {
@@ -44,7 +53,7 @@ function onMouseLeave() {
   setTimeout(() => {
     xSpring.set(dotSvgX)
     ySpring.set(dotSvgY)
-    radiusSpring.set(15)
+    radiusSpring.set(targetRadius)
   }, 100)
 }
 
@@ -59,14 +68,14 @@ defineExpose({ onMouseMove, onMouseLeave })
     :cx="0"
     :cy="0"
     :style="{ transform: `translate3D(${currentX}%, ${currentY}%, 0px)` }"
-    :class="`${radius > 30 ? 'fill-white' : 'fill-orange'}`"
+    :class="`${radius > 30 ? 'fill-orange dark:fill-white' : 'fill-orange'}`"
   />
 </template>
 
 <style scoped lang="css">
 #dot {
-  @apply mix-blend-exclusion;
-  @apply mix-blend-difference;
+  @apply dark:mix-blend-difference;
+  @apply mix-blend-saturation;
   @apply pointer-events-none;
 }
 </style>

@@ -10,13 +10,18 @@
 		@apply font-black font-sans;
 	}
 
-	.ds-prose h1 a,
-	.ds-prose h2 a,
-	.ds-prose h3 a,
-	.ds-prose h4 a,
-	.ds-prose h5 a,
-	.ds-prose h6 {
-		@apply !font-black !font-sans !no-underline;
+	h2.rotated,
+	.ds-prose h1.rotated a,
+	.ds-prose h2.rotated a,
+	.ds-prose h3.rotated a,
+	.ds-prose h4.rotated a,
+	.ds-prose h5.rotated a,
+	.ds-prose h6.rotated a {
+		@apply font-thin !no-underline dark:!text-rose !text-pink;
+	}
+
+	.rotated {
+		@apply -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
 	}
 
 	h1 {
@@ -50,25 +55,12 @@
 		@apply text-4xl;
 	}
 
-	.ds-prose h2.rotated,
-	h2.rotated {
-		@apply font-thin dark:text-rose text-pink -rotate-3 -translate-x-0 sm:-translate-x-4 md:-translate-x-8 whitespace-nowrap;
-	}
-
 	h3 {
 		@apply text-2xl;
 	}
 
 	em {
 		@apply not-italic text-pink;
-	}
-
-	.keyword {
-		@apply text-malachite;
-	}
-
-	.emphasis {
-		@apply font-black text-lavender dark:text-greenyellow;
 	}
 
 	/**
@@ -134,10 +126,10 @@
 	*::selection {
 		@apply bg-iceberg text-black;
 	}
+
 	/**
 	 * Tags
 	**/
-
 	.tag.button {
 		@apply text-xs rounded-md;
 		@apply py-2 px-3 mr-3 mb-3;

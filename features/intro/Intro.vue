@@ -57,7 +57,7 @@ h1.intro__paragraph {
 }
 
 .hero .container {
-@apply mx-auto flex flex-col items-center gap-8 relative;
+@apply mx-auto flex flex-col items-center justify-center gap-8 relative;
   max-width: 1440px;
 }
 
