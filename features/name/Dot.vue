@@ -44,6 +44,7 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function onMouseMove(event: MouseEvent) {
+  console.log('mouse move!')
   xSpring.set(event.offsetX / parentRect.value!.width * 100)
   ySpring.set(event.offsetY / parentRect.value!.height * 100)
   radiusSpring.set(60)
