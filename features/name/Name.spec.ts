@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { checkA11y } from '~/test/utils'
 import Dot from './Dot.vue'
 import Name from './Name.vue'
