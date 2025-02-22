@@ -3,6 +3,9 @@ import { useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
 
+const initialX = -50
+const initialY = -50
+const initialRadius = 15
 const dotSvgX = 77.5
 const dotSvgY = 5
 
@@ -12,16 +15,18 @@ const springConfig = {
   damping: 4,
 }
 
-const xSpring = useSpring(dotSvgX, springConfig)
-const ySpring = useSpring(dotSvgY, springConfig)
-const radiusSpring = useSpring(15)
+const xSpring = useSpring(initialX, springConfig)
+const ySpring = useSpring(initialY, springConfig)
+const radiusSpring = useSpring(initialRadius)
 
-const currentX = ref(dotSvgX)
-const currentY = ref(dotSvgY)
-const radius = ref(15)
+const currentX = ref(initialX)
+const currentY = ref(initialY)
+const radius = ref(initialRadius)
 
 onMounted(() => {
   parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
+  xSpring.set(dotSvgX)
+  ySpring.set(dotSvgY)
 })
 
 useMotionValueEvent(xSpring, 'change', (latest) => {
@@ -44,7 +49,7 @@ function onMouseLeave() {
   setTimeout(() => {
     xSpring.set(dotSvgX)
     ySpring.set(dotSvgY)
-    radiusSpring.set(15)
+    radiusSpring.set(initialRadius)
   }, 100)
 }
 
