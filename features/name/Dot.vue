@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { useSpring } from 'motion-v'
+import { delay, useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
 
-const initialX = -50
-const initialY = -50
-const initialRadius = 15
+const initialX = 60
+const initialY = -10
+const initialRadius = 0
 const dotSvgX = 77.5
 const dotSvgY = 5
+const targetRadius = 15
 
 const parentRect = ref<DOMRect>()
 const springConfig = {
@@ -25,8 +26,11 @@ const radius = ref(initialRadius)
 
 onMounted(() => {
   parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
-  xSpring.set(dotSvgX)
-  ySpring.set(dotSvgY)
+  delay(() => {
+    xSpring.set(dotSvgX)
+    ySpring.set(dotSvgY)
+    radiusSpring.set(targetRadius)
+  }, 1)
 })
 
 useMotionValueEvent(xSpring, 'change', (latest) => {
@@ -49,7 +53,7 @@ function onMouseLeave() {
   setTimeout(() => {
     xSpring.set(dotSvgX)
     ySpring.set(dotSvgY)
-    radiusSpring.set(initialRadius)
+    radiusSpring.set(targetRadius)
   }, 100)
 }
 
