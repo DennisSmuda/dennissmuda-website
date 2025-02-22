@@ -33,7 +33,7 @@ useMotionValueEvent(radiusSpring, 'change', (latest) => {
 })
 
 function handleMouseEnter(_event: MouseEvent) {
-  xSpring.set(-40)
+  xSpring.set(-39)
   ySpring.set(-16)
   radiusSpring.set(24)
 }
@@ -55,7 +55,7 @@ function handleMouseLeave() {
       ds
       <span
         class="block size-0.5 rounded-full absolute bottom-[0.9rem] right-[0.9rem]"
-        :class="`${radius > 8 ? 'bg-white' : 'bg-orange'}`"
+        :class="`${radius > 8 ? 'bg-orange dark:bg-white' : 'bg-orange'}`"
         :style="{
           transform: `scale(${radius}) translate3D(${currentX}%, ${currentY}%, 0px)`,
         }"
@@ -79,18 +79,7 @@ function handleMouseLeave() {
 }
 
 .logo span {
-  @apply mix-blend-difference;
-}
-
-.logo[aria-current] span {
-  @apply text-orange;
-}
-
-.logo:hover span {
-  @apply -translate-y-2;
-}
-
-.logo:focus span {
-  @apply translate-y-0 duration-75;
+  @apply dark:mix-blend-difference;
+  @apply mix-blend-saturation;
 }
 </style>

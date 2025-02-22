@@ -59,14 +59,14 @@ defineExpose({ onMouseMove, onMouseLeave })
     :cx="0"
     :cy="0"
     :style="{ transform: `translate3D(${currentX}%, ${currentY}%, 0px)` }"
-    :class="`${radius > 30 ? 'fill-white' : 'fill-orange'}`"
+    :class="`${radius > 30 ? 'fill-orange dark:fill-white' : 'fill-orange'}`"
   />
 </template>
 
 <style scoped lang="css">
 #dot {
-  @apply mix-blend-exclusion;
-  @apply mix-blend-difference;
+  @apply dark:mix-blend-difference;
+  @apply mix-blend-saturation;
   @apply pointer-events-none;
 }
 </style>
