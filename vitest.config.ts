@@ -19,6 +19,12 @@ export default defineVitestConfig({
         '**/pages/**',
         '*.mjs',
       ],
+      thresholds: {
+        lines: 60,
+        branches: 60,
+        functions: 60,
+        statements: 60,
+      },
     },
   },
 })
