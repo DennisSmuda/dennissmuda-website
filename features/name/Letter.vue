@@ -21,8 +21,8 @@ const opacity = ref(0)
 const positionY = ref(32)
 
 const ySpring = useSpring(32, {
-  stiffness: 180,
-  damping: 4,
+  stiffness: 280,
+  damping: 15,
 })
 
 const opacityMotion = useTransform(

@@ -1,18 +1,22 @@
 <script lang="ts" setup>
-const initialX = 0
+const initialX = 80
 const initialY = 0
+const initialRadius = 4
 
 const springConfig = {
-  stiffness: 180,
-  damping: 4,
+  stiffness: 280,
+  damping: 15,
 }
+
 const xSpring = useSpring(initialX, springConfig)
 const ySpring = useSpring(initialY, springConfig)
+const radiusSpring = useSpring(initialRadius, springConfig)
 const parentRect = ref<DOMRect>()
 const elementRef = ref<HTMLElement>()
 
 const currentX = ref(initialX)
 const currentY = ref(initialY)
+const radius = ref(initialRadius)
 
 onMounted(() => {
   parentRect.value = elementRef.value?.getBoundingClientRect()
@@ -24,20 +28,20 @@ useMotionValueEvent(xSpring, 'change', (latest) => {
 useMotionValueEvent(ySpring, 'change', (latest) => {
   currentY.value = latest
 })
+useMotionValueEvent(radiusSpring, 'change', (latest) => {
+  radius.value = latest
+})
 
-function handleMouseEnter(event: MouseEvent) {
-  const { screenX, screenY } = event
-  xSpring.set(screenX / window.innerWidth * 100)
-  ySpring.set(screenY / window.innerHeight * 100)
-  // const { width, height, left, top } = parentRect.value || { width: 0, height: 0, left: 0, top: 0 }
-  // const x = ((clientX - left) / width - 0.5) * 100
-  // const y = ((clientY - top) / height - 0.5) * 100
-  // xSpring.set(x)
-  // ySpring.set(y)
+function handleMouseEnter(_event: MouseEvent) {
+  xSpring.set(-40)
+  ySpring.set(-16)
+  radiusSpring.set(24)
 }
+
 function handleMouseLeave() {
   xSpring.set(initialX)
   ySpring.set(initialY)
+  radiusSpring.set(initialRadius)
 }
 </script>
 
@@ -50,8 +54,12 @@ function handleMouseLeave() {
     <NuxtLink to="/" class="logo button relative">
       ds
       <span
-        :style="{ transform: `translate3D(${currentX}%, ${currentY}%, 0px)` }"
-      >.</span>
+        class="block size-0.5 rounded-full absolute bottom-[0.9rem] right-[0.9rem]"
+        :class="`${radius > 8 ? 'bg-white' : 'bg-orange'}`"
+        :style="{
+          transform: `scale(${radius}) translate3D(${currentX}%, ${currentY}%, 0px)`,
+        }"
+      />
     </NuxtLink>
   </div>
 </template>
@@ -61,7 +69,7 @@ function handleMouseLeave() {
   @apply flex items-center justify-center;
   @apply text-4xl font-black;
   @apply py-2 h-12 cursor-pointer m-0 rounded-lg;
-  @apply px-2;
+  @apply pl-2 pr-4;
   letter-spacing: -2.3px;
 }
 
@@ -71,7 +79,7 @@ function handleMouseLeave() {
 }
 
 .logo span {
-  @apply transition-transform translate-y-0;
+  @apply mix-blend-difference;
 }
 
 .logo[aria-current] span {
