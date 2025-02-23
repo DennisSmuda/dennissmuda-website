@@ -13,7 +13,7 @@ export default defineVitestConfig({
       exclude: [
         '**/entities/**/api/**',
         '**/test/**',
-        './.nuxt/*',
+        './.nuxt/**',
         '*.config.ts',
         'app.vue',
         '**/pages/**',

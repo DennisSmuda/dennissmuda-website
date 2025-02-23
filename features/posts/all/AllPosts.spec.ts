@@ -40,6 +40,15 @@ describe('feature: AllPosts', () => {
     wrapper.unmount()
   })
 
+  it('can be clicked', async () => {
+    const wrapper = mountAllPosts()
+    const post = wrapper.findAll('a').at(0) as DOMWrapper<Element>
+    await post.trigger('click')
+
+    expect(post.attributes('to')).toBe(MOCK_POSTS[0].path)
+    wrapper.unmount()
+  })
+
   describe('all posts list', () => {
     it('should render all projects', () => {
       const wrapper = mountAllPosts()
