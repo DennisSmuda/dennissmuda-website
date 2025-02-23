@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import { getContentQuery } from '~/entities/content/api/getContentQuery'
+
 const {
   data: content,
 } = await useAsyncData(() =>
-  queryCollection('copy').where('title', '=', 'about me').first(),
+  getContentQuery('about me'),
 )
 </script>
 

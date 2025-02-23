@@ -9,7 +9,7 @@
       <FeatureProjectsLatestProjects />
     </article>
 
-    <aside class="ds-prose col-span-5 -mt-12">
+    <div class="ds-prose col-span-5 -mt-12">
       <h2 data-testid="rotated-heading" class="rotated">
         making things with 🛠
       </h2>
@@ -25,6 +25,6 @@
       <NuxtLink class="marker-link mt-4" to="/blog">
         check out all posts 📖
       </NuxtLink>
-    </aside>
+    </div>
   </section>
 </template>
