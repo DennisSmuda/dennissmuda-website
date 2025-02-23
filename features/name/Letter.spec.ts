@@ -58,7 +58,7 @@ describe('feature: Letter', () => {
     const rotation = match ? Number.parseFloat(match[1]) : 0
 
     wrapper.trigger('mouseleave')
-    await delay(100)
+    await delay(150)
     expect(path.attributes('style')).not.toContain(`rotate(${rotation}deg)`)
 
     wrapper.unmount()
