@@ -19,7 +19,7 @@ test.describe('page: index', async () => {
   })
 
   test('shows a working cta button for the blog', async ({ page }) => {
-    const blogCta = await page.locator('aside .marker-link')
+    const blogCta = await page.locator('.marker-link')
     await expect(blogCta).toBeDefined
 
     await blogCta.click()

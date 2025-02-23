@@ -10,3 +10,5 @@ export async function checkA11y(html: string, injectLandmarks?: boolean) {
 
   expect(await axe(htmlToCheck)).toHaveNoViolations()
 }
+
+export const delay = (ms: number) => new Promise(r => setTimeout(r, ms))
