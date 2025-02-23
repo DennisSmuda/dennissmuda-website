@@ -59,7 +59,7 @@ npm run test:e2e
 
 ### Lint
 
-I use [antuf's config](https://github.com/antfu/eslint-config) to lint all the code in this repo. Follow the instructions for editor support!
+I use [antfu's config](https://github.com/antfu/eslint-config) to lint all the code in this repo. Follow the instructions for editor support!
 
 ```bash
 # lint project
