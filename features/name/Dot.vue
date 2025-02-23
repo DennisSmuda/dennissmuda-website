@@ -31,7 +31,7 @@ onMounted(() => {
     xSpring.set(dotSvgX)
     ySpring.set(dotSvgY)
     radiusSpring.set(targetRadius)
-  }, 0.5)
+  }, 0.25)
 })
 
 useMotionValueEvent(xSpring, 'change', (latest) => {
@@ -41,7 +41,6 @@ useMotionValueEvent(ySpring, 'change', (latest) => {
   currentY.value = latest
 })
 useMotionValueEvent(radiusSpring, 'change', (latest) => {
-  // console.log('spring change event alla', latest)
   radius.value = latest
 })
 
@@ -70,7 +69,7 @@ defineExpose({ onMouseMove, onMouseLeave })
     :cx="0"
     :cy="0"
     :style="{ transform: `translate3D(${currentX}%, ${currentY}%, 0px)` }"
-    :class="`${radius > 30 ? 'fill-orange dark:fill-white' : 'fill-orange'}`"
+    :class="`${radius > 20 ? 'fill-orange dark:fill-white' : 'fill-orange'}`"
   />
 </template>
 

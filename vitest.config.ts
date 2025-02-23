@@ -22,7 +22,7 @@ export default defineVitestConfig({
       thresholds: {
         lines: 70,
         branches: 70,
-        functions: 30,
+        functions: 50,
         statements: 70,
       },
     },

@@ -22,50 +22,44 @@ describe('feature: Name', () => {
   })
 
   describe('events', () => {
-    describe('mouse move', () => {
+    describe('mouse move + leave', () => {
       let wrapper: VueWrapper
+      let dot: VueWrapper
 
       beforeAll(() => {
-        // vi.useFakeTimers()
-
         wrapper = mountName()
+        dot = wrapper.findComponent(Dot)
       })
 
       it('should grow the dot\'s radius after mount', async () => {
-        const dot = wrapper.findComponent(Dot)
         const circle = dot.find('circle')
 
         expect(Number.parseInt(circle.attributes('r') as string)).toBe(0)
-
         expect(dot.exists()).toBe(true)
+        await delay(290)
+        expect(Number.parseInt(circle.attributes('r') as string)).toBeGreaterThan(0)
+      })
 
-        await delay(800)
-        expect(Number.parseInt(circle.attributes('r') as string)).toBeGreaterThan(14)
+      it('should change the dot\'s color on mouse move', async () => {
+        wrapper.trigger('mousemove', { offsetX: 327, offsetY: 10 })
+        await delay(100)
+        expect(dot.classes()).toContain('dark:fill-white')
+      })
+
+      it('should reset the dot\'s radius on mouse leave', async () => {
+        wrapper.trigger('mousemove', { offsetX: 327, offsetY: 10 })
+        await delay(100)
+        expect(dot.classes()).toContain('dark:fill-white')
+
+        await wrapper.trigger('mouseleave')
+        await delay(100)
+
+        await delay(300)
+        expect(dot.classes()).not.toContain('dark:fill-white')
       })
 
       afterAll(() => {
         vi.resetAllMocks()
-      })
-    })
-
-    describe('mouse leave', () => {
-      it.skip('should reset the dot\'s radius', async () => {
-        const wrapper = mountName()
-        const dot = wrapper.findComponent(Dot)
-        expect(dot.exists()).toBe(true)
-
-        wrapper.trigger('mousemove', { offsetX: 100, offsetY: 100 })
-        vi.advanceTimersByTime(150)
-
-        expect(dot.classes()).toContain('dark:fill-white')
-
-        await wrapper.trigger('mouseleave')
-        vi.advanceTimersByTime(400)
-        // await delay(400)
-
-        expect(dot.classes()).not.toContain('dark:fill-white')
-
-        wrapper.unmount()
       })
     })
   })
