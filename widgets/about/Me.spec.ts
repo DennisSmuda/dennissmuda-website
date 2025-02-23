@@ -1,5 +1,4 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import About from '~/pages/about.vue'
 import { checkA11y } from '~/test/utils'
