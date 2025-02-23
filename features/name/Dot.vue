@@ -3,8 +3,8 @@ import { delay, useSpring } from 'motion-v'
 
 const dot = ref<SVGPathElement>()
 
-const initialX = 60
-const initialY = -10
+const initialX = 70
+const initialY = -5
 const initialRadius = 0
 const dotSvgX = 77.5
 const dotSvgY = 5
@@ -26,11 +26,12 @@ const radius = ref(initialRadius)
 
 onMounted(() => {
   parentRect.value = (dot.value!.parentElement as HTMLElement).getBoundingClientRect()
+
   delay(() => {
     xSpring.set(dotSvgX)
     ySpring.set(dotSvgY)
     radiusSpring.set(targetRadius)
-  }, 1)
+  }, 0.5)
 })
 
 useMotionValueEvent(xSpring, 'change', (latest) => {
@@ -40,6 +41,7 @@ useMotionValueEvent(ySpring, 'change', (latest) => {
   currentY.value = latest
 })
 useMotionValueEvent(radiusSpring, 'change', (latest) => {
+  // console.log('spring change event alla', latest)
   radius.value = latest
 })
 
