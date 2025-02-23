@@ -8,19 +8,21 @@ interface LetterProps {
   initialX?: number
   initialY?: number
 }
+
+export const LETTER_START_Y = 24
 </script>
 
 <script setup lang="ts">
 const props = withDefaults(defineProps<LetterProps>(), {
   initialX: 0,
-  initialY: 100,
+  initialY: LETTER_START_Y,
   animateColor: false,
 })
 
 const opacity = ref(0)
-const positionY = ref(32)
+const positionY = ref(LETTER_START_Y)
 
-const ySpring = useSpring(32, {
+const ySpring = useSpring(LETTER_START_Y, {
   stiffness: 280,
   damping: 15,
 })
@@ -53,7 +55,7 @@ useMotionValueEvent(rotationSpring, 'change', (latest) => {
   rotation.value = latest
 })
 
-function handleMouseOver() {
+function handleMouseEnter() {
   rotationSpring.set(randomRotation)
 }
 </script>
@@ -68,7 +70,7 @@ function handleMouseOver() {
       rotate: ${rotation}deg;
       opacity: ${opacity};
     `"
-    @mouseover="handleMouseOver"
+    @mouseenter="handleMouseEnter"
     @mouseleave="rotationSpring.set(0)"
   />
 </template>
