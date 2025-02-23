@@ -43,6 +43,14 @@ describe('shared: PostLink', () => {
     wrapper.unmount()
   })
 
+  it('can be clicked', async () => {
+    const wrapper = mountPostLink()
+    const link = wrapper.find('a')
+    await link.trigger('click')
+    expect(wrapper.emitted('click')).toHaveLength(1)
+    wrapper.unmount()
+  })
+
   it('should render the created date', () => {
     const wrapper = mountPostLink()
     const date = wrapper.find('span')
