@@ -1,8 +1,11 @@
-<script lang="ts" setup>
+<script lang="ts">
+export const INITIAL_SCALE = 4
+
 const initialX = 80
 const initialY = 0
-const initialRadius = 4
+</script>
 
+<script lang="ts" setup>
 const springConfig = {
   stiffness: 280,
   damping: 15,
@@ -10,13 +13,13 @@ const springConfig = {
 
 const xSpring = useSpring(initialX, springConfig)
 const ySpring = useSpring(initialY, springConfig)
-const radiusSpring = useSpring(initialRadius, springConfig)
+const scaleSpring = useSpring(INITIAL_SCALE, springConfig)
 const parentRect = ref<DOMRect>()
 const elementRef = ref<HTMLElement>()
 
 const currentX = ref(initialX)
 const currentY = ref(initialY)
-const radius = ref(initialRadius)
+const scale = ref(INITIAL_SCALE)
 
 onMounted(() => {
   parentRect.value = elementRef.value?.getBoundingClientRect()
@@ -28,20 +31,20 @@ useMotionValueEvent(xSpring, 'change', (latest) => {
 useMotionValueEvent(ySpring, 'change', (latest) => {
   currentY.value = latest
 })
-useMotionValueEvent(radiusSpring, 'change', (latest) => {
-  radius.value = latest
+useMotionValueEvent(scaleSpring, 'change', (latest) => {
+  scale.value = latest
 })
 
 function handleMouseEnter(_event: MouseEvent) {
   xSpring.set(-39)
   ySpring.set(-16)
-  radiusSpring.set(24)
+  scaleSpring.set(24)
 }
 
 function handleMouseLeave() {
   xSpring.set(initialX)
   ySpring.set(initialY)
-  radiusSpring.set(initialRadius)
+  scaleSpring.set(INITIAL_SCALE)
 }
 </script>
 
@@ -55,9 +58,9 @@ function handleMouseLeave() {
       ds
       <span
         class="block size-0.5 rounded-full absolute bottom-[0.9rem] right-[0.9rem]"
-        :class="`${radius > 8 ? 'bg-orange dark:bg-white' : 'bg-orange'}`"
+        :class="`${scale > 8 ? 'bg-orange dark:bg-white' : 'bg-orange'}`"
         :style="{
-          transform: `scale(${radius}) translate3D(${currentX}%, ${currentY}%, 0px)`,
+          transform: `scale(${scale}) translate3D(${currentX}%, ${currentY}%, 0px)`,
         }"
       />
     </NuxtLink>
