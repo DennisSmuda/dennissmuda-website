@@ -40,10 +40,17 @@ describe('feature: LatestPosts', () => {
     wrapper.unmount()
   })
 
+  it('has a link to the blog page', () => {
+    const wrapper = mountLatestPosts()
+    const link = wrapper.find('a[to="/blog"]')
+    expect(link.exists()).toBe(true)
+    wrapper.unmount()
+  })
+
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mountLatestPosts()
-      expect(wrapper.findAll('a').length).toBe(3)
+      expect(wrapper.findAll('.latest-post').length).toBe(3)
       wrapper.unmount()
     })
 

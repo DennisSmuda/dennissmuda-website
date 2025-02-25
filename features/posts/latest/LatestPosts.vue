@@ -17,4 +17,9 @@ getLatestPosts()
     :slug="post.slug"
     :created-at="post.createdAt"
   />
+
+  <!-- Blog CTA -->
+  <NuxtLink class="marker-link mt-4" to="/blog">
+    check out all posts 📖
+  </NuxtLink>
 </template>
