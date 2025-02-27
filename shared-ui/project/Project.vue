@@ -43,7 +43,7 @@ a.project {
 }
 
 .project__subline {
-  @apply mb-2 text-sm opacity-50 pointer-events-none;
+  @apply mt-2 mb-0 text-sm opacity-50 pointer-events-none;
 }
 
 .project__description {
