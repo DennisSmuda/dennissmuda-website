@@ -4,5 +4,6 @@ updates:
     directory: /
     schedule:
       interval: daily
-    prefix: [skip ci]
+    pull-request-branch-name:
+      prefix: [skip ci]
     open-pull-requests-limit: 10
