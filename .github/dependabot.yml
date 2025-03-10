@@ -5,5 +5,5 @@ updates:
     schedule:
       interval: daily
     commit-message:
-      prefix: "[skip ci]"
+      prefix: '[skip ci]'
     open-pull-requests-limit: 10
