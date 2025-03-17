@@ -18,7 +18,6 @@ export default defineConfig<ConfigOptions>({
     nuxt: {
       build: false,
       host: url,
-      // rootDir: fileURLToPath(new URL('.', import.meta.url)),
     },
   },
 
