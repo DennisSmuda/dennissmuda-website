@@ -87,6 +87,13 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+
+  // Sitemap
+  site: {
+    url: 'https://dennissmuda.com',
+    name: 'Dennis Smuda - web developer based in Germany',
+  },
+
   // Default App-Head (Meta-Tags)
   app: {
     head: {
