@@ -3,3 +3,5 @@ Disallow: /nogooglebot/
 
 User-agent: *
 Allow: /
+
+Sitemap: https://www.dennissmuda.com/sitemap.xml

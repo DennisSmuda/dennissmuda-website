@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/test-utils/module',
+    '@nuxtjs/sitemap',
   ],
 
   content: {
@@ -86,6 +87,13 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+
+  // Sitemap
+  site: {
+    url: 'https://dennissmuda.com',
+    name: 'Dennis Smuda - web developer based in Germany',
+  },
+
   // Default App-Head (Meta-Tags)
   app: {
     head: {
