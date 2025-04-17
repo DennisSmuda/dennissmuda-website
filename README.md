@@ -72,3 +72,6 @@ npm run lint:fix
 ## Contributions 🥁
 
 Feel free to submit PRs or [issues](https://github.com/DennisSmuda/dennissmuda-website/issues) 👋
+
+Test Contribution from the backend!
+
