@@ -22,7 +22,7 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^13.1.0",
     "motion-v": "^1.0.1",
-    "nuxt": "^3.17.1",
+    "nuxt": "^3.17.2",
     "vue": "latest",
     "vue-router": "latest"
   },
