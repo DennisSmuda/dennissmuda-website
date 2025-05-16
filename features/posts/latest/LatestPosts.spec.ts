@@ -1,8 +1,8 @@
 import type { BlogCollectionItem } from '@nuxt/content'
 import type { DOMWrapper } from '@vue/test-utils'
-import { MOCK_POSTS } from '@/entities/post/mocks/posts'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
+import { MOCK_POSTS } from '@/entities/post/mocks/posts'
 import LatestPosts from './LatestPosts.vue'
 
 const getLatestPosts = vi.fn()
