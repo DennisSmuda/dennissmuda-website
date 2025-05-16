@@ -1,8 +1,8 @@
 import type { ProjectsCollectionItem } from '@nuxt/content'
 import type { DOMWrapper } from '@vue/test-utils'
-import { MOCK_PROJECTS } from '@/entities/project/mocks/projects'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
+import { MOCK_PROJECTS } from '@/entities/project/mocks/projects'
 import { checkA11y } from '~/test/utils'
 import LatestProjects from './LatestProjects.vue'
 
