@@ -28,7 +28,7 @@ test.describe('page: index', async () => {
 
   test('shows my three latest projects', async ({ page }) => {
     const projects = await page.locator('a.project')
-    await expect(projects).toHaveCount(3)
+    await expect(projects).toHaveCount(4)
 
     const firstEntry = projects.nth(0)
     await expect(firstEntry).toHaveAttribute('target', '_blank')
