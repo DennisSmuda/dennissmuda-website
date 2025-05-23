@@ -15,6 +15,6 @@ test.describe('page: work', () => {
 
   test(`shows all ${6} projects`, async ({ page }) => {
     const projects = await page.locator('.project')
-    await expect(projects).toHaveCount(6)
+    await expect(projects).toHaveCount(7)
   })
 })

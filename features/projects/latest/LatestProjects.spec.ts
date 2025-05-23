@@ -7,11 +7,12 @@ import { checkA11y } from '~/test/utils'
 import LatestProjects from './LatestProjects.vue'
 
 const getLatestProjects = vi.fn()
+const LATEST_PROJECTS_LIMIT = 4
 
 vi.mock('@/entities/project/model/useProjects', () => ({
   useProjects: () => ({
     getLatestProjects,
-    latestProjects: ref(MOCK_PROJECTS.slice(0, 3) as ProjectsCollectionItem[]),
+    latestProjects: ref(MOCK_PROJECTS.slice(0, LATEST_PROJECTS_LIMIT) as ProjectsCollectionItem[]),
   }),
 }))
 
@@ -36,7 +37,7 @@ describe('feature: LatestProjects', () => {
   describe('latest projects list', () => {
     it('should render latest projects', () => {
       const wrapper = mountLatestProjects()
-      expect(wrapper.findAll('.project').length).toBe(3)
+      expect(wrapper.findAll('.project').length).toBe(LATEST_PROJECTS_LIMIT)
       wrapper.unmount()
     })
 
