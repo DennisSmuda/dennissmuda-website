@@ -1,4 +1,4 @@
-# Personal Website 👨🏻‍💻
+# My Personal Website 👨🏻‍💻
 
 [![Playwright E2E-Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml/badge.svg?branch=master)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/playwright.yml)
 [![Vitest E2E + Component + Unit Tests](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/vitest.yml/badge.svg?branch=master)](https://github.com/DennisSmuda/dennissmuda-website/actions/workflows/vitest.yml)

@@ -112,6 +112,7 @@ Next, we will modify our `utils/db.js` like so:
 ```js
 // utils/db.js
 import mongoose from 'mongoose'
+
 let isConnected
 
 function connectToDatabase() {
