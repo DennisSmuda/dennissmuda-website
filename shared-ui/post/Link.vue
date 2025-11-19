@@ -47,7 +47,7 @@ const isActiveId = useState('activeBlogPostId')
 }
 
 .latest-post__title {
-  @apply mt-0 leading-6;
+  @apply mt-0 leading-8;
 }
 .latest-post__title.active {
   view-transition-name: blog-header;

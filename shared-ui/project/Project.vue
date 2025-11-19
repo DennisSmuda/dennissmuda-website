@@ -43,11 +43,11 @@ a.project {
 }
 
 .project__subline {
-  @apply my-2 text-sm opacity-50 pointer-events-none;
+  @apply my-2 opacity-50 pointer-events-none;
 }
 
 .project__description {
-  @apply mt-0 text-sm pointer-events-none max-w-xs;
+  @apply mt-0 pointer-events-none max-w-xs;
 }
 
 .visit {

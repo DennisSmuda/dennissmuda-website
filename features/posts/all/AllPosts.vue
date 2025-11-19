@@ -92,7 +92,7 @@ const isActive = useState('activeBlogPostId')
 }
 
 .post__subline {
-  @apply mb-2 text-sm opacity-50 pointer-events-none;
+  @apply mb-2 opacity-50 pointer-events-none;
 }
 
 .post:hover .timeline__dot {
