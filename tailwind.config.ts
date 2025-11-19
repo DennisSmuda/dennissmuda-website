@@ -9,7 +9,7 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', ...theme.fontFamily.sans],
+        sans: ['Outfit', ...theme.fontFamily.sans],
         pixel: ['Pixel', ...theme.fontFamily.mono],
       },
     },
