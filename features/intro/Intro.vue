@@ -15,12 +15,10 @@
             <NuxtLink to="/blog">
               writing ✏️
             </NuxtLink> about stuff. feel free to
-            <a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com">get in touch 📫</a>
-            , or get to
+            <a class="whitespace-nowrap" href="mailto:smuda.dennis@gmail.com">get in touch 📫</a>, or get to
             <NuxtLink to="/about" class="whitespace-nowrap">
-              know me 👋
+              know me first 👋
             </NuxtLink>
-            first.
           </h1>
         </div>
       </div>

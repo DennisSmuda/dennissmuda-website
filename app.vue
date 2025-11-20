@@ -21,8 +21,10 @@ body {
 }
 
 body {
-  @apply bg-white text-black relative min-h-screen;
+  letter-spacing: 0.01em;
+  @apply relative min-h-screen font-light;
   @apply dark:bg-black dark:text-white;
+  @apply bg-white text-black;
   @apply transition-colors duration-700 overflow-x-hidden;
 }
 
