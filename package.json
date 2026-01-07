@@ -18,7 +18,7 @@
     "@nuxt/content": "^3.10.0",
     "@nuxt/fonts": "^0.12.1",
     "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxtjs/sitemap": "^7.5.1",
+    "@nuxtjs/sitemap": "^7.5.2",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.1.0",
     "better-sqlite3": "^12.5.0",
