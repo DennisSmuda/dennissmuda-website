@@ -7,7 +7,7 @@ Dennis Smuda <br>
 44809 Bochum | Germany
 <p>
 
-[smuda.dennis@gmail.com](mailto:smuda.dennis@gmail.com)
+[hi@dennissmuda.com](mailto:hi@dennissmuda.com)
 
 ## Journalistisch-redaktionelle Angebote
 Inhaltlich verantwortlich: Dennis Smuda (Adresse wie oben)
