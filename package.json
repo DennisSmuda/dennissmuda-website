@@ -15,7 +15,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "^3.11.0",
+    "@nuxt/content": "^3.11.2",
     "@nuxt/fonts": "^0.13.0",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/sitemap": "^7.6.0",
