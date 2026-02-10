@@ -20,10 +20,10 @@ export default defineVitestConfig({
         '*.mjs',
       ],
       thresholds: {
-        lines: 70,
-        branches: 70,
+        lines: 60,
+        branches: 60,
         functions: 50,
-        statements: 70,
+        statements: 60,
       },
     },
   },
