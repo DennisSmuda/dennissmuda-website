@@ -14,10 +14,10 @@ export default defineNuxtConfig({
     'motion-v/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
     '@nuxt/content',
     '@nuxt/fonts',
     '@nuxt/test-utils/module',
-    '@nuxtjs/sitemap',
   ],
 
   content: {

@@ -3,7 +3,7 @@ import {
   defineContentConfig,
   z,
 } from '@nuxt/content'
-import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
   collections: {
@@ -38,7 +38,7 @@ export default defineContentConfig({
         ]).default(true),
       }),
     }),
-    blog: defineCollection(asSitemapCollection({
+    blog: defineCollection({
       type: 'page',
       source: 'blog/*.md',
       schema: z.object({
@@ -52,8 +52,12 @@ export default defineContentConfig({
           value: z.string(),
         })),
         order: z.number(),
+        sitemap: defineSitemapSchema({
+          name: 'blog',
+          filter: entry => entry.published,
+        }),
       }),
-    })),
+    }),
     projects: defineCollection({
       type: 'page',
       source: 'projects/*.md',
