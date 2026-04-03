@@ -7,3 +7,10 @@ updates:
     commit-message:
       prefix: '[skip netlify]'
     open-pull-requests-limit: 10
+    groups:
+      # All patch updates together, may be merged when CI is green.
+      patch-updates:
+        update-types: [patch]
+      # All minor updates together. Requires green CI + manual check.
+      minor-updates:
+        update-types: [minor]
