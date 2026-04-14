@@ -22,7 +22,7 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.2.1",
     "better-sqlite3": "^12.8.0",
-    "motion-v": "^2.2.0",
+    "motion-v": "^2.2.1",
     "nuxt": "^4.4.2",
     "vue": "latest",
     "vue-router": "latest"
