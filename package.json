@@ -20,7 +20,7 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/sitemap": "^8.0.15",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@vueuse/core": "^14.2.1",
+    "@vueuse/core": "^14.3.0",
     "better-sqlite3": "^12.9.0",
     "motion-v": "^2.2.1",
     "nuxt": "^4.4.4",
@@ -34,7 +34,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "@vitest/coverage-v8": "^4.1.5",
     "@vue/test-utils": "^2.4.10",
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "happy-dom": "^20.9.0",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
