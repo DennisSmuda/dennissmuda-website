@@ -21,7 +21,7 @@
     "@nuxtjs/sitemap": "^8.0.15",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.3.0",
-    "better-sqlite3": "^12.9.0",
+    "better-sqlite3": "^12.10.0",
     "motion-v": "^2.2.1",
     "nuxt": "^4.4.5",
     "vue": "latest",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^8.2.0",
     "@nuxt/test-utils": "^4.0.3",
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/typography": "^0.5.19",
     "@vitest/coverage-v8": "^4.1.6",
     "@vue/test-utils": "^2.4.10",
