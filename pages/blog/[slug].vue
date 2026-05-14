@@ -19,7 +19,8 @@ useSeoMeta({
 
 useHead(() => {
   const p = post.value
-  if (!p) return {}
+  if (!p)
+    return {}
 
   const articleUrl = new URL(route.path, siteUrl).toString()
 
@@ -30,13 +31,13 @@ useHead(() => {
         children: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Article',
-          headline: p.title,
-          description: p.description,
-          datePublished: p.createdAt,
-          url: articleUrl,
-          author: {
+          'headline': p.title,
+          'description': p.description,
+          'datePublished': p.createdAt,
+          'url': articleUrl,
+          'author': {
             '@type': 'Person',
-            name: 'Dennis Smuda',
+            'name': 'Dennis Smuda',
           },
         }),
       },

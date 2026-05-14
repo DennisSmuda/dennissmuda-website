@@ -39,8 +39,8 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        url: siteUrl,
-        name: 'Dennis Smuda - web developer based in Germany',
+        'url': siteUrl,
+        'name': 'Dennis Smuda - web developer based in Germany',
       }),
     },
     {
@@ -48,10 +48,10 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: 'Dennis Smuda',
-        url: siteUrl,
-        jobTitle: 'Web Developer',
-        sameAs: [
+        'name': 'Dennis Smuda',
+        'url': siteUrl,
+        'jobTitle': 'Web Developer',
+        'sameAs': [
           'https://github.com/DennisSmuda',
           'https://twitter.com/dennissmuda',
         ],
