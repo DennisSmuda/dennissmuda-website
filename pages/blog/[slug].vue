@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const isActive = useState('activeBlogPostId')
 
-const slug = useRoute().params.slug
+const route = useRoute()
+const slug = route.params.slug
+const {
+  public: { siteUrl },
+} = useRuntimeConfig()
 const { data: post } = await useAsyncData(`blog-${slug}`, () => {
   return queryCollection('blog').path(`/blog/${slug}`).first()
 })
@@ -11,6 +15,34 @@ useSeoMeta({
   description: post.value?.description,
   ogTitle: post.value?.title,
   ogDescription: post.value?.description,
+})
+
+useHead(() => {
+  const p = post.value
+  if (!p)
+    return {}
+
+  const articleUrl = new URL(route.path, siteUrl).toString()
+
+  return {
+    script: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          'headline': p.title,
+          'description': p.description,
+          'datePublished': p.createdAt,
+          'url': articleUrl,
+          'author': {
+            '@type': 'Person',
+            'name': 'Dennis Smuda',
+          },
+        }),
+      },
+    ],
+  }
 })
 </script>
 

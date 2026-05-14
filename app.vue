@@ -1,10 +1,63 @@
 <script setup lang="ts">
+const route = useRoute()
+const {
+  public: { siteUrl },
+} = useRuntimeConfig()
+const currentPageUrl = computed(() => new URL(route.path, siteUrl).toString())
+const ogImage = computed(() => new URL('/logo-512.png', siteUrl).toString())
+
 useSeoMeta({
   title: 'Dennis Smuda - web developer based in Germany',
   ogTitle: 'Dennis Smuda - web developer based in Germany',
   description: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
   ogDescription: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
-  ogUrl: 'https://dennissmuda.com',
+  ogUrl: () => currentPageUrl.value,
+  ogImage: () => ogImage.value,
+  ogImageAlt: 'Dennis Smuda logo',
+  ogType: 'website',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterSite: '@dennissmuda',
+})
+
+useHead(() => ({
+  link: [
+    {
+      rel: 'canonical',
+      href: currentPageUrl.value,
+    },
+  ],
+}))
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'url': siteUrl,
+        'name': 'Dennis Smuda - web developer based in Germany',
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        'name': 'Dennis Smuda',
+        'url': siteUrl,
+        'jobTitle': 'Web Developer',
+        'sameAs': [
+          'https://github.com/DennisSmuda',
+          'https://twitter.com/dennissmuda',
+        ],
+      }),
+    },
+  ],
 })
 </script>
 

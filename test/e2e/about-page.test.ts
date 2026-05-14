@@ -15,6 +15,11 @@ test.describe('page: about', () => {
     await expect(headlines).toHaveCount(3)
   })
 
+  test('sets canonical url for current page', async ({ page }) => {
+    const canonical = page.locator('link[rel="canonical"]')
+    await expect(canonical).toHaveAttribute('href', 'https://dennissmuda.com/about')
+  })
+
   test(`shows and links to my past work places (external links)`, async ({
     page,
   }) => {

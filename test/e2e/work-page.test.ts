@@ -13,6 +13,11 @@ test.describe('page: work', () => {
     await expect(heading).toHaveText('work 🏁')
   })
 
+  test('sets canonical url for current page', async ({ page }) => {
+    const canonical = page.locator('link[rel="canonical"]')
+    await expect(canonical).toHaveAttribute('href', 'https://dennissmuda.com/work')
+  })
+
   test(`shows all ${6} projects`, async ({ page }) => {
     const projects = await page.locator('.project')
     await expect(projects).toHaveCount(7)

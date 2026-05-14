@@ -34,6 +34,11 @@ test.describe('page: index', async () => {
     await expect(firstEntry).toHaveAttribute('target', '_blank')
   })
 
+  test('sets canonical url for current page', async ({ page }) => {
+    const canonical = page.locator('link[rel="canonical"]')
+    await expect(canonical).toHaveAttribute('href', 'https://dennissmuda.com/')
+  })
+
   test('shows my latest posts', async ({ page }) => {
     const cvEntries = await page.locator('a.latest-post')
     await expect(cvEntries).toHaveCount(3)
