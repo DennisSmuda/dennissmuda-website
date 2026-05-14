@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://dennissmuda.com',
+    },
+  },
+
   experimental: {
     viewTransition: true,
   },
@@ -129,20 +135,12 @@ export default defineNuxtConfig({
           href: '/safari-pinned-tab.svg',
           color: '#5bbad5',
         },
-        {
-          rel: 'canonical',
-          href: 'https://dennissmuda.com/',
-        },
       ],
       meta: [
         {
 
           name: 'google-site-verification',
           content: 'BLz4Vp0e1I1XHPqHChy-s_7qMz2fewxpIrRu-u2v998',
-        },
-        {
-          property: 'og:url',
-          content: 'https://dennissmuda.com',
         },
         {
           name: 'lang',

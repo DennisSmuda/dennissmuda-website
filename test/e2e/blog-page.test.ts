@@ -17,4 +17,20 @@ test.describe('page: blog', () => {
     const projects = await page.locator('#blog-post-list a')
     await expect(projects).toHaveCount(6)
   })
+
+  test('/blog sets canonical url for current page', async ({ page }) => {
+    const canonical = page.locator('link[rel="canonical"]')
+
+    await expect(canonical).toHaveAttribute('href', 'https://dennissmuda.com/blog')
+  })
+})
+
+test.describe('page: blog slug', () => {
+  test('/blog/[slug] sets canonical url for current page', async ({ page }) => {
+    await page.goto('/blog/hello-world')
+
+    const canonical = page.locator('link[rel="canonical"]')
+
+    await expect(canonical).toHaveAttribute('href', 'https://dennissmuda.com/blog/hello-world')
+  })
 })

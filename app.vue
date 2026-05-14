@@ -1,11 +1,26 @@
 <script setup lang="ts">
+const route = useRoute()
+const {
+  public: { siteUrl },
+} = useRuntimeConfig()
+const currentPageUrl = computed(() => new URL(route.path, siteUrl).toString())
+
 useSeoMeta({
   title: 'Dennis Smuda - web developer based in Germany',
   ogTitle: 'Dennis Smuda - web developer based in Germany',
   description: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
   ogDescription: 'I write about stuff I learn along the way and post about projects I release. Come find out more about me or my work, maybe get in touch',
-  ogUrl: 'https://dennissmuda.com',
+  ogUrl: () => currentPageUrl.value,
 })
+
+useHead(() => ({
+  link: [
+    {
+      rel: 'canonical',
+      href: currentPageUrl.value,
+    },
+  ],
+}))
 </script>
 
 <template>
