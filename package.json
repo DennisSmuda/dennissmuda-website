@@ -17,13 +17,13 @@
   "dependencies": {
     "@nuxt/content": "^3.14.0",
     "@nuxt/fonts": "^0.14.0",
-    "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/sitemap": "^8.0.15",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.3.0",
     "better-sqlite3": "^12.10.0",
     "motion-v": "^2.2.1",
-    "nuxt": "^4.4.7",
+    "nuxt": "^4.4.8",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -31,11 +31,11 @@
     "@antfu/eslint-config": "^9.0.0",
     "@nuxt/test-utils": "^4.0.3",
     "@playwright/test": "^1.60.0",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^4.1.8",
-    "@vue/test-utils": "^2.4.10",
+    "@vue/test-utils": "^2.4.11",
     "eslint": "^10.4.1",
-    "happy-dom": "^20.10.1",
+    "happy-dom": "^20.10.2",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
   }
