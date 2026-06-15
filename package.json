@@ -21,7 +21,7 @@
     "@nuxtjs/sitemap": "^8.2.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.3.0",
-    "better-sqlite3": "^12.10.0",
+    "better-sqlite3": "^12.10.1",
     "motion-v": "^2.3.0",
     "nuxt": "^4.4.8",
     "vue": "latest",
@@ -32,10 +32,10 @@
     "@nuxt/test-utils": "^4.0.3",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/typography": "^0.5.20",
-    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/coverage-v8": "^4.1.9",
     "@vue/test-utils": "^2.4.11",
     "eslint": "^10.4.1",
-    "happy-dom": "^20.10.2",
+    "happy-dom": "^20.10.3",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
   }
