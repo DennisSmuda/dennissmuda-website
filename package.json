@@ -30,11 +30,11 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
     "@nuxt/test-utils": "^4.0.3",
-    "@playwright/test": "^1.60.0",
+    "@playwright/test": "^1.61.0",
     "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^4.1.8",
     "@vue/test-utils": "^2.4.11",
-    "eslint": "^10.4.1",
+    "eslint": "^10.5.0",
     "happy-dom": "^20.10.2",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
