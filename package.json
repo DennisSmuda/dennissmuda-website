@@ -34,7 +34,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^4.1.10",
     "@vue/test-utils": "^2.4.11",
-    "eslint": "^10.6.0",
+    "eslint": "^10.7.0",
     "happy-dom": "^20.10.6",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
