@@ -6,11 +6,14 @@ const {
 } = await useAsyncData(() =>
   getContentQuery('about me'),
 )
+
+const yearsOfExperience = new Date().getFullYear() - 2015
 </script>
 
 <template>
   <ContentRenderer
     v-if="content"
     :value="content"
+    :data="{ yearsOfExperience }"
   />
 </template>
