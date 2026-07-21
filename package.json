@@ -38,5 +38,8 @@
     "happy-dom": "^20.11.0",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
+  },
+  "overrides": {
+    "vite": "^8.1.5"
   }
 }
