@@ -18,12 +18,12 @@
     "@nuxt/content": "^3.15.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxtjs/color-mode": "^4.0.1",
-    "@nuxtjs/sitemap": "^8.2.2",
+    "@nuxtjs/sitemap": "^8.3.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.3.0",
     "better-sqlite3": "^12.11.1",
     "motion-v": "^2.3.0",
-    "nuxt": "^4.4.8",
+    "nuxt": "^4.5.0",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -35,7 +35,7 @@
     "@vitest/coverage-v8": "^4.1.10",
     "@vue/test-utils": "^2.4.11",
     "eslint": "^10.7.0",
-    "happy-dom": "^20.10.6",
+    "happy-dom": "^20.11.0",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
   }
