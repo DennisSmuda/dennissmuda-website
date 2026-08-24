@@ -35,7 +35,7 @@
     "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.4.11",
     "eslint": "^10.8.1",
-    "happy-dom": "^20.11.2",
+    "happy-dom": "^20.11.6",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
   },
