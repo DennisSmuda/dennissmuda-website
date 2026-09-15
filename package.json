@@ -18,7 +18,7 @@
     "@nuxt/content": "^3.16.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxtjs/color-mode": "^4.0.1",
-    "@nuxtjs/sitemap": "^8.5.0",
+    "@nuxtjs/sitemap": "^8.5.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^14.4.0",
     "better-sqlite3": "^13.0.3",
@@ -35,7 +35,7 @@
     "@vitest/coverage-v8": "^5.0.0",
     "@vue/test-utils": "^2.5.0",
     "eslint": "^10.10.0",
-    "happy-dom": "^20.14.3",
+    "happy-dom": "^20.14.5",
     "vitest": "^4.0.18",
     "vitest-axe": "^0.1.0"
   },
