@@ -22,14 +22,14 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^15.0.0",
     "better-sqlite3": "^13.0.3",
-    "motion-v": "^2.5.1",
+    "motion-v": "^2.5.2",
     "nuxt": "^4.5.2",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.5.1",
-    "@nuxt/test-utils": "^4.3.2",
+    "@nuxt/test-utils": "^4.3.3",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^4.1.11",
