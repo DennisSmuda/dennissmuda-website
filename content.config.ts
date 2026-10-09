@@ -67,6 +67,7 @@ export default defineContentConfig({
         description: z.string(),
         url: z.string(),
         order: z.number(),
+        published: z.boolean().default(true),
       }),
     }),
   },

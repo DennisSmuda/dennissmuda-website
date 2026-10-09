@@ -7,8 +7,10 @@ Nice to meet you! 👋 My name is
 and I have been working as a
 <span class="color-change font-medium">web developer</span>
 for the
-<em>last {{ $doc.yearsOfExperience }}+ years</em>. I have worked on
-projects (mainly UI-focused) ranging from small company and personal websites to full fledged web applications.
+<em>last {{ $doc.yearsOfExperience }}+ years</em>.
+<br /> <br />
+Having worked on
+projects ranging from small company and personal websites to full fledged web applications, I care about accessibility, maintainable code and users having an awesome experience most of all.
 
 I deeply enjoy building things that can be interacted with, especially if
 it's something <span class="emphasis">fun</span>
@@ -41,4 +43,4 @@ Here are some of
 - learning new things <span class="emoji">🤔 📖 ✨</span>
 - being part of a team <span class="emoji">🎩 🧢 👒 ⛑</span>
 - riding my bike <span class="emoji">🚴‍♂️ 💨</span>
-- games, movies, books <span class="emoji">🎮🍿📖</span>
+- games, movies, shows, books <span class="emoji">🎮🍿📖</span>
