@@ -23,7 +23,7 @@
     "@vueuse/core": "^15.0.0",
     "better-sqlite3": "^13.0.3",
     "motion-v": "^2.6.0",
-    "nuxt": "^4.5.2",
+    "nuxt": "^4.6.0",
     "vue": "latest",
     "vue-router": "latest"
   },
