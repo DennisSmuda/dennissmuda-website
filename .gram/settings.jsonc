@@ -1,0 +1,16 @@
+{
+  "languages": {
+    "TypeScript": {
+      "language_servers": ["eslint", "typescript-language-server", "!vtsls", "!oxlint", "!oxfmt", "..."],
+      "formatter": [{ "code_action": "source.fixAll.eslint" }]
+    },
+    "JavaScript": {
+      "language_servers": ["eslint", "typescript-language-server", "!vtsls", "!oxlint", "!oxfmt", "..."],
+      "formatter": [{ "code_action": "source.fixAll.eslint" }]
+    },
+    "Vue.js": {
+      "language_servers": ["eslint", "tailwindcss-language-server", "typescript-language-server", "!vtsls", "!oxlint", "!oxfmt", "..."],
+      "formatter": [{ "code_action": "source.fixAll.eslint" }]
+    }
+  }
+}

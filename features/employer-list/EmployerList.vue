@@ -8,7 +8,7 @@
       rel="noreferrer"
     >
       <span class="timeline__dot" />
-      <span class="cv-entry__end-date">currently at</span>
+      <span class="cv-entry__end-date">2022 - now</span>
       <h3 class="cv-entry__headline">FTAPI 🔒</h3>
       <p class="cv-entry__description">
         secure data-transfer with vue, graphql and java.

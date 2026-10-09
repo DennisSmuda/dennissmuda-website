@@ -1,3 +1,3 @@
 export function getLatestProjectsQuery() {
-  return queryCollection('projects').order('order', 'DESC').limit(4).all()
+  return queryCollection('projects').where('published', '=', true).order('order', 'DESC').limit(4).all()
 }
