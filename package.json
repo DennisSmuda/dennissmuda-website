@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.16.1",
-    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/fonts": "^1.0.1",
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/sitemap": "^8.6.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
