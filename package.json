@@ -30,7 +30,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.5.1",
     "@nuxt/test-utils": "^4.3.3",
-    "@playwright/test": "^1.63.0",
+    "@playwright/test": "^1.64.0",
     "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^4.1.11",
     "@vue/test-utils": "^2.5.1",
