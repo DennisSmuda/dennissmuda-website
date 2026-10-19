@@ -22,7 +22,7 @@
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@vueuse/core": "^15.0.0",
     "better-sqlite3": "^13.0.3",
-    "motion-v": "^2.7.0",
+    "motion-v": "^2.8.0",
     "nuxt": "^4.6.1",
     "vue": "latest",
     "vue-router": "latest"
@@ -34,7 +34,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@vitest/coverage-v8": "^5.0.4",
     "@vue/test-utils": "^2.5.1",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "happy-dom": "^21.0.1",
     "vitest": "^5.0.0",
     "vitest-axe": "^0.1.0"
